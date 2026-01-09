@@ -64,9 +64,7 @@ export function Hero() {
 
         <div className="text-center animate-fade-in-up animate-delay-400">
           <a
-            href="https://go.hotmart.com/G87137068B"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#oferta"
             className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
             data-testid="button-cta-hero"
           >

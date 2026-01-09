@@ -43,9 +43,7 @@ export function Navbar() {
 
           <div className="hidden lg:block">
             <a
-              href="https://go.hotmart.com/G87137068B"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#oferta"
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-cta hover:bg-cta/90 rounded-xl transition-all duration-200 cta-glow"
               data-testid="button-cta-nav"
             >
@@ -79,9 +77,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="https://go.hotmart.com/G87137068B"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#oferta"
               onClick={() => setIsOpen(false)}
               className="block w-full text-center px-6 py-3 mt-4 text-sm font-semibold text-white bg-cta rounded-xl"
               data-testid="button-cta-mobile"
