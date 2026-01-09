@@ -70,11 +70,11 @@ export function OfferSection() {
           <div
             ref={checkoutRef}
             className={`overflow-hidden transition-all duration-500 ease-out ${
-              isCheckoutOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
+              isCheckoutOpen ? "max-h-[1200px] opacity-100" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="p-6 lg:p-8 bg-surface border border-stroke/50 rounded-3xl">
-              <div className="flex items-center justify-between mb-6">
+            <div className="p-4 lg:p-6 bg-surface border border-stroke/50 rounded-3xl">
+              <div className="flex items-center justify-between mb-4">
                 <h3 className="font-display font-semibold text-xl text-text">
                   Finalizar inscrição
                 </h3>
@@ -88,19 +88,13 @@ export function OfferSection() {
               </div>
               
               {isCheckoutOpen && (
-                <div className="flex justify-center">
-                  <a
-                    href={CHECKOUT_CONFIG.hotmart.productUrl}
-                    className="hotmart-fb hotmart__button-checkout inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white bg-green-600 hover:bg-green-700 rounded-xl transition-all duration-200"
-                    data-testid="button-hotmart-checkout"
-                  >
-                    <img 
-                      src="https://static.hotmart.com/img/btn-buy-green.png" 
-                      alt="Comprar agora" 
-                      className="h-6"
-                    />
-                    Ir para pagamento seguro
-                  </a>
+                <div className="w-full bg-white rounded-2xl overflow-hidden">
+                  <iframe
+                    src={CHECKOUT_CONFIG.hotmart.embedUrl}
+                    className="w-full h-[600px] lg:h-[700px] border-0"
+                    title="Checkout LaunchpadHub"
+                    data-testid="iframe-hotmart-checkout"
+                  />
                 </div>
               )}
               
