@@ -69,11 +69,11 @@ export function OfferSection() {
 
           <div
             ref={checkoutRef}
-            className={`overflow-hidden transition-all duration-500 ease-out ${
-              isCheckoutOpen ? "max-h-[1200px] opacity-100 lg:max-h-[1400px]" : "max-h-0 opacity-0"
+            className={`grid transition-all duration-500 ease-out ${
+              isCheckoutOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
             }`}
           >
-            <div className="p-4 lg:p-6 bg-surface border border-stroke/50 rounded-3xl">
+            <div className="overflow-hidden p-4 lg:p-6 bg-surface border border-stroke/50 rounded-3xl">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-display font-semibold text-xl text-text">
                   Finalizar inscrição
