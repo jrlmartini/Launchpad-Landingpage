@@ -13,7 +13,7 @@ const modules = [
   },
   {
     icon: Pencil,
-    title: "Módulo 3 — Desenvolvendo um Bom Projeto (campo a campo)",
+    title: "Módulo 3 — Desenvolvendo um Bom Projeto do Início ao Fim",
     description: "Leitura de edital, seções do projeto, mercado, impactos, riscos, orçamento, contrapartidas e armadilhas.",
   },
   {

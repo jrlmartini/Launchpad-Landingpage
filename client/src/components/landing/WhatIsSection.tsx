@@ -9,7 +9,7 @@ const pillars = [
   {
     icon: Layers,
     title: "Construir projetos robustos",
-    description: "Campo a campo, com critério",
+    description: "Completos e com critério",
   },
   {
     icon: Wallet,
@@ -33,7 +33,7 @@ export function WhatIsSection() {
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
             O LaunchpadHub é um hub de inovação e empreendedorismo para lançar ideias com responsabilidade.
-            Você aprende a transformar ambição em uma missão bem-sucedida:
+            Você aprende a transformar ambição em uma missão bem-sucedida, para qualquer edital - FAPESP, FINEP, CNPq, FAPs estaduais:
           </p>
         </div>
 
