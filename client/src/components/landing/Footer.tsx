@@ -1,14 +1,13 @@
-import { Rocket, Instagram, Youtube, Mail } from "lucide-react";
+import { Instagram, Youtube, Mail } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="py-12 lg:py-16 bg-surface/50 border-t border-stroke/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-2 text-xl font-display font-semibold text-text">
-            <Rocket className="w-6 h-6 text-cta" strokeWidth={1.5} />
-            <span>LaunchpadHub</span>
-          </div>
+          <a href="#" className="block">
+            <img src="/logo.png" alt="LaunchpadHub" className="h-10 w-auto" />
+          </a>
 
           <div className="flex items-center gap-6">
             <a
