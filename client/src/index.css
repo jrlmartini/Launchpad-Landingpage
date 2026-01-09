@@ -43,40 +43,40 @@
 }
 
 :root {
-  --background: 230 41% 5%;
+  --background: 222 41% 5%;
   --foreground: 222 35% 93%;
   
-  --surface: 240 67% 9%;
-  --stroke: 269 53% 17%;
+  --surface: 222 47% 9%;
+  --stroke: 222 44% 19%;
   --text: 222 35% 93%;
-  --text-muted: 222 28% 85%;
-  --cta: 348 92% 50%;
-  --highlight: 340 100% 24%;
+  --text-muted: 222 28% 74%;
+  --cta: 254 100% 68%;
+  --highlight: 314 100% 65%;
   
-  --card: 240 67% 9%;
+  --card: 222 47% 9%;
   --card-foreground: 222 35% 93%;
   
-  --popover: 240 67% 9%;
+  --popover: 222 47% 9%;
   --popover-foreground: 222 35% 93%;
   
-  --primary: 348 92% 50%;
+  --primary: 254 100% 68%;
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 269 53% 17%;
+  --secondary: 222 44% 19%;
   --secondary-foreground: 222 35% 93%;
   
-  --muted: 240 67% 12%;
-  --muted-foreground: 222 28% 85%;
+  --muted: 222 47% 12%;
+  --muted-foreground: 222 28% 74%;
   
-  --accent: 348 92% 50%;
+  --accent: 254 100% 68%;
   --accent-foreground: 0 0% 100%;
   
-  --destructive: 348 92% 50%;
+  --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 269 53% 17%;
-  --input: 269 53% 17%;
-  --ring: 348 92% 50%;
+  --border: 222 44% 19%;
+  --input: 222 44% 19%;
+  --ring: 254 100% 68%;
   
   --radius: 1rem;
 
@@ -150,13 +150,13 @@
   .card-glow {
     box-shadow: 
       0 0 0 1px hsl(var(--stroke)),
-      0 4px 24px -4px rgba(242, 15, 70, 0.08);
+      0 4px 24px -4px rgba(124, 92, 255, 0.08);
   }
   
   .cta-glow {
     box-shadow: 
-      0 0 0 1px hsl(348 92% 45%),
-      0 4px 32px -4px rgba(242, 15, 70, 0.4);
+      0 0 0 1px hsl(254 100% 58%),
+      0 4px 32px -4px rgba(124, 92, 255, 0.4);
   }
 }
 
