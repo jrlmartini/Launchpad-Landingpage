@@ -91,9 +91,10 @@ export function OfferSection() {
                 <div className="w-full bg-white rounded-2xl overflow-hidden">
                   <iframe
                     src={CHECKOUT_CONFIG.hotmart.embedUrl}
-                    className="w-full h-[900px] lg:h-[1000px] border-0"
+                    className="w-full min-h-[1400px] lg:min-h-[1200px] border-0"
                     title="Checkout LaunchpadHub"
                     data-testid="iframe-hotmart-checkout"
+                    scrolling="no"
                   />
                 </div>
               )}
