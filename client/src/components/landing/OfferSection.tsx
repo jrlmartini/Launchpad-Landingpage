@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { Play, FileSpreadsheet, CheckSquare, BookOpen, Sparkles, Target, Radio, ArrowRight } from "lucide-react";
-import { loadHotmartWidget, openHotmartCheckout } from "@/lib/checkout-widget";
+import { useState, useRef, useEffect } from "react";
+import { Play, FileSpreadsheet, Sparkles, Target, Radio, ArrowRight, ChevronUp, X } from "lucide-react";
+import { CHECKOUT_CONFIG } from "@/lib/checkout-widget";
 
 const features = [
   { icon: Play, text: "Aulas gravadas + materiais" },
@@ -11,9 +11,20 @@ const features = [
 ];
 
 export function OfferSection() {
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const checkoutRef = useRef<HTMLDivElement>(null);
+
+  const handleToggleCheckout = () => {
+    setIsCheckoutOpen(!isCheckoutOpen);
+  };
+
   useEffect(() => {
-    loadHotmartWidget();
-  }, []);
+    if (isCheckoutOpen && checkoutRef.current) {
+      setTimeout(() => {
+        checkoutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+    }
+  }, [isCheckoutOpen]);
 
   return (
     <section id="oferta" className="py-20 lg:py-28 bg-gradient-to-b from-cta/5 via-cta/10 to-cta/5 scroll-mt-20">
@@ -39,15 +50,62 @@ export function OfferSection() {
 
             <div className="text-center">
               <button
-                onClick={openHotmartCheckout}
+                onClick={handleToggleCheckout}
                 className="inline-flex items-center gap-3 px-10 py-5 text-lg font-bold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group cursor-pointer"
                 data-testid="button-cta-offer"
               >
                 Quero entrar no LaunchpadHub
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                {isCheckoutOpen ? (
+                  <ChevronUp className="w-5 h-5 transition-transform" />
+                ) : (
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                )}
               </button>
               <p className="mt-4 text-sm text-text-muted italic">
                 Explore novos mundos — com uma missão que para em pé.
+              </p>
+            </div>
+          </div>
+
+          <div
+            ref={checkoutRef}
+            className={`overflow-hidden transition-all duration-500 ease-out ${
+              isCheckoutOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="p-6 lg:p-8 bg-surface border border-stroke/50 rounded-3xl">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="font-display font-semibold text-xl text-text">
+                  Finalizar inscrição
+                </h3>
+                <button
+                  onClick={() => setIsCheckoutOpen(false)}
+                  className="p-2 text-text-muted hover:text-text transition-colors rounded-lg hover:bg-stroke/30"
+                  aria-label="Fechar"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              {isCheckoutOpen && (
+                <div className="flex justify-center">
+                  <a
+                    href={CHECKOUT_CONFIG.hotmart.productUrl}
+                    className="hotmart-fb hotmart__button-checkout inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white bg-green-600 hover:bg-green-700 rounded-xl transition-all duration-200"
+                    data-testid="button-hotmart-checkout"
+                  >
+                    <img 
+                      src="https://static.hotmart.com/img/btn-buy-green.png" 
+                      alt="Comprar agora" 
+                      className="h-6"
+                    />
+                    Ir para pagamento seguro
+                  </a>
+                </div>
+              )}
+              
+              <p className="mt-4 text-center text-sm text-text-muted">
+                Pagamento processado pela Hotmart com total segurança.
               </p>
             </div>
           </div>
