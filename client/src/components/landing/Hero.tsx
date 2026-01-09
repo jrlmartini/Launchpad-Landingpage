@@ -51,12 +51,12 @@ export function Hero() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 p-4 bg-surface/50 border border-stroke/50 rounded-2xl card-glow transition-all duration-200 hover:border-cta/30"
+                className="flex items-center gap-4 p-5 bg-surface/50 border border-stroke/50 rounded-2xl card-glow transition-all duration-200 hover:border-cta/30"
               >
-                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-cta/10 rounded-xl">
-                  <feature.icon className="w-5 h-5 text-cta" strokeWidth={1.5} />
+                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-cta/10 rounded-xl">
+                  <feature.icon className="w-6 h-6 text-cta" strokeWidth={1.5} />
                 </div>
-                <p className="text-text-muted leading-relaxed">{feature.text}</p>
+                <p className="text-text-muted leading-relaxed flex-1">{feature.text}</p>
               </div>
             ))}
           </div>
