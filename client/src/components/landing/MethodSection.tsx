@@ -5,7 +5,7 @@ const steps = [
     number: "1",
     icon: Map,
     title: "Mapa do jogo",
-    description: "Entenda instrumentos, programas e como governos financiam inovação — sem decorar, com lógica.",
+    description: "Navegue o ecossistema de fomento com clareza: FAPESP, FINEP, CNPq, FAPs estaduais — entendendo instrumentos, regras e o melhor encaixe por TRL.",
   },
   {
     number: "2",
