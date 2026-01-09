@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { Play, FileSpreadsheet, CheckSquare, BookOpen, Sparkles, Target, Radio, ArrowRight } from "lucide-react";
+import { loadHotmartWidget, openHotmartCheckout } from "@/lib/checkout-widget";
 
 const features = [
   { icon: Play, text: "Aulas gravadas + materiais" },
@@ -9,6 +11,10 @@ const features = [
 ];
 
 export function OfferSection() {
+  useEffect(() => {
+    loadHotmartWidget();
+  }, []);
+
   return (
     <section id="oferta" className="py-20 lg:py-28 bg-gradient-to-b from-cta/5 via-cta/10 to-cta/5 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -32,16 +38,14 @@ export function OfferSection() {
             </ul>
 
             <div className="text-center">
-              <a
-                href="https://go.hotmart.com/G87137068B"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-10 py-5 text-lg font-bold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
+              <button
+                onClick={openHotmartCheckout}
+                className="inline-flex items-center gap-3 px-10 py-5 text-lg font-bold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group cursor-pointer"
                 data-testid="button-cta-offer"
               >
                 Quero entrar no LaunchpadHub
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
               <p className="mt-4 text-sm text-text-muted italic">
                 Explore novos mundos — com uma missão que para em pé.
               </p>
