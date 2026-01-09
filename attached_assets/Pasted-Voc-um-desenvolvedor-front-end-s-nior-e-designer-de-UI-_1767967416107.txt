@@ -1,0 +1,275 @@
+Você é um desenvolvedor front-end sênior e designer de UI.
+
+Objetivo:
+Criar uma landing page completa para o LaunchpadHub (curso flagship: Fomento para Deep Tech), em português, com tom premium sóbrio e referências espaciais sutis. A página deve ser rápida, responsiva, acessível e otimizada para SEO.
+
+A navegação deve ser simples e o CTA facilmente acessível em pontos estratégicos. Utilize as melhores práticas de UI/UX para landing pages, tornando a página atrativa.
+
+Stack:
+Use Next.js + TailwindCSS + (opcional) shadcn/ui. Estruture em componentes reutilizáveis.
+Crie também um arquivo brand/BRAND.md com as regras de identidade visual abaixo e garanta que o código siga essas regras.
+
+Identidade visual (obrigatória):
+
+- Tema: deep space minimal, “mission control”, premium sóbrio
+- Cores:
+bg: #070A12
+surface: #0C1222
+stroke: #1B2A44
+text: #E7ECF6
+muted: #A8B3CF
+accent (CTA): #7C5CFF (use apenas essa cor como acento principal)
+highlight raramente: #FF4FD8
+- Tipografia:
+headings: Space Grotesk (600/700)
+body: Inter (400/500)
+- Componentes:
+Botão primário (accent), botão secundário (outline), cards com borda stroke, badges discretos.
+- Imagens:
+Sem fotos stock de pessoas.
+Use fundo com gradiente escuro + starfield MUITO sutil (pode ser um SVG/PNG leve ou CSS).
+Ícones outline (lucide).
+- Estilo:
+Muito respiro, grid limpo, cantos arredondados 16–24px, sombras leves.
+Animações leves (150–250ms), sem exagero.
+- Do/Don’t:
+NÃO usar múltiplas cores de acento.
+NÃO usar neon exagerado nem planetas/astronautas chamativos.
+
+Assets:
+Crie placeholders em /public/brand/
+
+- /public/brand/logo-launchpad.svg (placeholder simples)
+- /public/brand/starfield.svg (bem sutil) OU gere via CSS.
+
+Conteúdo da página (usar esta estrutura):
+
+### 1. Navbar
+
+logo à esquerda, links âncora  e CTA “Quero preparar minha missão”.
+
+### 2. HERO
+
+**LaunchpadHub — Explore novos mundos.**
+
+### Captação para Deep Tech, com método: transforme sua tecnologia em um projeto financiável.
+
+Um treinamento prático, **passa a passo**, para escrever e defender projetos de inovação com a lógica de quem avalia — com templates, checklists e um sistema replicável para operar um **pipeline de captação**.
+
+**Você vai aprender a:**
+
+- Escolher o **instrumento certo** para o seu estágio (TRL) e evitar chamadas que só consomem energia
+- Construir uma narrativa técnica que pontua: **problema → inovação → evidências → execução**
+- Montar **plano de trabalho, entregáveis, orçamento e contrapartidas** sem deixar lacunas
+- Preparar governança e prestação de contas para manter a missão em trajetória
+
+**[CTA] Quero preparar minha missão**
+
+Texto curto abaixo: *Sem promessas milagrosas. Com método, aderência e execução.*
+
+---
+
+### 3. DOBRA CURTA
+
+Deep tech não perde por tecnologia. Perde por proposta mal enquadrada, mal defendida e difícil de executar.
+
+O LaunchpadHub foi criado para mudar isso — com rigor, clareza e cadência de execução.
+
+---
+
+### 4. DOBRA - PROBLEMA
+
+ Porque projetos bons não decolam?
+
+O sistema de fomento é um ambiente competitivo: regras, critérios, elegibilidade e riscos.
+
+O que derruba a maioria dos projetos não é “falta de potencial”. É:
+
+- **Match errado:** o projeto não encaixa no edital (tema, TRL, contrapartida, ticket)
+- **Texto acadêmico:** muito contexto, pouca decisão
+- **Evidência fraca:** promessa sem baseline, métricas ou validação
+- **Plano inconsistente:** entregáveis e cronograma que não fecham
+- **Orçamento indefensável:** números sem lógica e sem justificativa
+- **Governança frágil:** prestação de contas vira caos (ou glosa)
+
+**Resultado:** a ideia fica na torre. E o recurso vai para quem apresentou melhor “missão e rota”.
+
+---
+
+### **5. DOBRA - LAUNCHPAD**
+
+ **O que é o LaunchpadHub?**
+
+O LaunchpadHub é um hub de inovação e empreendedorismo para lançar ideias com responsabilidade.
+
+Você aprende a transformar ambição em uma missão bem-sucedida:
+
+- **definir rotas claras** (estratégia e aderência)
+- **construir projetos robustos** (campo a campo, com critério)
+- **assegurar recursos** (instrumentos e programas)
+- **criar governança** (execução e prestação de contas)
+
+Sem enfeite. Com método.
+
+---
+
+### 6. DOBRA - ENTREGÁVEIS
+
+## O que você tem ao final?
+
+Ao final, você sai com:
+
+- Um **projeto estruturado** pronto para submissão/adaptação
+- Templates e planilhas: **EAP/WBS, WPs, canvas de TRL, cronograma, matriz de riscos, orçamento, contrapartidas, impactos e métricas.**
+- Um **eBook prático** para consulta rápida com o resumo do conteúdo
+- **Checklist pré-submissão** (o “controle de missão” antes do envio)
+- Kit de governança: trilha de evidências e modelos de relatórios
+
+---
+
+### 7. DOBRA - MÉTODO
+
+## Nosso Método
+
+### 1) Mapa do jogo
+
+Entenda instrumentos, programas e como governos financiam inovação — sem decorar, com lógica.
+
+### 2) Enquadramento e aderência
+
+Você aprende a ler edital como avaliador e escolher as melhores oportunidades para seu projeto, sem perder tempo e energia.
+
+### 3) Evidências e credibilidade
+
+Defina métricas e validações mínimas para tornar seu projeto crível em deep tech.
+
+### 4) Execução (plano e orçamento)
+
+Construa a estrutura do projeto com entregáveis, cronograma, equipe, riscos e orçamento defensável claros.
+
+### 5) Governança e prestação de contas
+
+Prepare a operação para manter a missão em trajetória até o fim — sem sustos.
+
+---
+
+### 8. DOBRA - PRA QUEM É
+
+## PARA QUEM É (e para quem não é)
+
+**Este curso é para você se:**
+
+- tem uma tecnologia forte e quer transformar isso em projeto financiável
+- quer parar de “tentar edital” e operar captação como processo
+- precisa de um método reutilizável, com templates e checklists
+
+**Não é para você se:**
+
+- procura “hack” ou promessa de aprovação garantida
+- não quer escrever, revisar e melhorar com rigor
+- quer conteúdo motivacional em vez de execução
+
+---
+
+### 9. DOBRA - MÓDULOS
+
+## O que você vai aprender?
+
+**Módulo 1 — O Sistema Nacional de Fomento à Inovação**
+
+Instrumentos, políticas, programas e como navegar o ecossistema com clareza.
+
+**Módulo 2 — Os Pilares de um Projeto de Inovação**
+
+Os 3 Pilares de um projeto e como estruturar
+
+**Módulo 3 — Desenvolvendo um Bom Projeto (campo a campo)**
+
+Leitura de edital, seções do projeto, mercado, impactos, riscos, orçamento, contrapartidas e armadilhas.
+
+**Módulo 4 — Prestação de Contas e Governança**
+
+Boas práticas, relatórios e trilha de evidências para auditoria e acompanhamento.
+
+**Bônus 1 — Projeções Financeiras**
+
+Premissas, receitas, custos, mão de obra e coerência com a narrativa do projeto.
+
+**Bônus 2 — IA para acelerar (sem virar texto genérico)**
+
+Prompt packs por seção, anti-alucinação e IA para pitch/voice-over.
+
+---
+
+### 10. DOBRA - SOBRE
+
+## Sobre o Launchpad
+
+**Explore novos mundos — com método.**
+
+O LaunchpadHub existe para ajudar organizações a explorar o espaço da inovação: um ambiente hostil, incerto e cheio de riscos, onde boas ideias não sobrevivem sem disciplina. Nossa missão é transformar ambição em missões bem-sucedidas — definindo rotas claras, construindo projetos robustos, assegurando recursos e criando governança para navegar a complexidade com precisão.
+
+Eu sou **José Renato Martini**, engenheiro de produção (UNESP/OTH), com pós-graduação em Administração de Empresas (FGV/HEC Paris) e especialização em Empreendedorismo e Inovação (MIT). Desde 2012, atuo diretamente em inovação tecnológica, com experiência em gestão de projetos, captação de recursos, planejamento estratégico e mapeamento tecnológico.
+
+Ao longo desse caminho, já aprovei **mais de R$ 35 milhões** em projetos de fomento reembolsáveis e não reembolsáveis para empresas dos segmentos automotivo, químico, alimentício, agrícola, saúde e tecnologia da informação. O LaunchpadHub nasceu dessa vivência: tirar inovação do “modo tentativa” e colocar em **trajetória**.
+
+---
+
+### 11. DOBRA - OFERTA - CHAMATIVO
+
+**Acesso ao curso + Ferramentas LaunchpadHub**
+
+- aulas gravadas + materiais
+- Templates, planilhas, checklists e oBook completo com todo o conteúdo
+- Aulas Bônus - Projeções Financeiras e IA para Projetos (com prompts!)
+- Missão final (capstone): seu projeto completo + checklist final
+- 1 ano de acesso às lives dos lançamentos de novos editais (fique atualizado!)
+
+**[CTA] Quero entrar no LaunchpadHub**
+
+Microtexto: *Explore novos mundos — com uma missão que para em pé.*
+
+---
+
+### 12. DOBRA - FAQ Com toggle em cada item
+
+## FAQ
+
+**Isso garante aprovação?**
+
+Não existe garantia honesta. O que existe é método para elevar sua proposta: aderência, evidências, execução e orçamento defensável.
+
+**Funciona para qualquer área de deep tech?**
+
+Sim. O conteúdo técnico muda, mas a lógica de avaliação e a engenharia do projeto permanecem.
+
+**Estou no começo (TRL baixo). Vale?**
+
+Vale — principalmente para escolher o instrumento certo e evitar o edital errado.
+
+**Não sou bom de escrita.**
+
+Você não precisa ser “bom de texto”. Precisa ser claro, objetivo e defensável. O curso te dá estrutura e templates para isso.
+
+---
+
+### 13. Rodapé:
+
+contato [placeholder], links [instagram, youtube - com ícones], direitos.
+
+---
+
+Requisitos técnicos:
+
+- Tailwind com design tokens: defina CSS variables e nomes semânticos (bg, surface, stroke, text, accent).
+- Layout responsivo perfeito no mobile.
+- SEO básico: title, description, Open Graph placeholders.
+- Performance: evitar imagens pesadas, usar SVG e CSS quando possível.
+- Acessibilidade: contraste, foco visível, headings corretos, aria-label nos botões.
+- Um placeholder para colocar o link do carrinho de checkout.
+
+Entrega:
+
+- Código organizado com componentes: components/Section.tsx, components/Button.tsx, components/Card.tsx.
+- Página em app/page.tsx (ou pages/index.tsx).
+- Um README curto explicando como rodar.
