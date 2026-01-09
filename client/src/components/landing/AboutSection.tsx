@@ -26,7 +26,7 @@ export function AboutSection() {
                 </div>
                 
                 <div>
-                  <h3 className="font-display font-bold text-xl text-text mb-4">José Renato Martini</h3>
+                  <h3 className="font-display font-bold text-xl text-text mb-4">José Renato Lanzi Martini</h3>
                   <p className="text-text-muted leading-relaxed mb-4">
                     Engenheiro de produção (UNESP/OTH), com pós-graduação em Administração de Empresas (FGV/HEC Paris) e especialização em Empreendedorismo e Inovação (MIT). Desde 2012, atuo diretamente em inovação tecnológica, com experiência em gestão de projetos, captação de recursos, planejamento estratégico e mapeamento tecnológico.
                   </p>
