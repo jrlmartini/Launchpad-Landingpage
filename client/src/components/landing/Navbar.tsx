@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Rocket } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#problema", label: "Problema" },
@@ -18,11 +18,14 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a 
             href="#" 
-            className="flex items-center gap-2 text-xl font-display font-semibold text-text"
+            className="flex items-center"
             data-testid="link-home"
           >
-            <Rocket className="w-6 h-6 text-cta" strokeWidth={1.5} />
-            <span>LaunchpadHub</span>
+            <img 
+              src="/logo.png" 
+              alt="LaunchpadHub - Explore novos mundos" 
+              className="h-8 lg:h-10 w-auto"
+            />
           </a>
 
           <div className="hidden lg:flex items-center gap-8">
