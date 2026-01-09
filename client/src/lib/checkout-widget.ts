@@ -7,32 +7,57 @@ export const CHECKOUT_CONFIG = {
 };
 
 let isHotmartLoaded = false;
+let hotmartReady = false;
 
-export function loadHotmartWidget() {
-  if (isHotmartLoaded) return;
+export function loadHotmartWidget(): Promise<void> {
+  return new Promise((resolve) => {
+    if (hotmartReady) {
+      resolve();
+      return;
+    }
 
-  const script = document.createElement("script");
-  script.src = CHECKOUT_CONFIG.hotmart.widgetScript;
-  document.head.appendChild(script);
+    if (isHotmartLoaded) {
+      const checkReady = setInterval(() => {
+        if ((window as any).hotmartFB) {
+          hotmartReady = true;
+          clearInterval(checkReady);
+          resolve();
+        }
+      }, 100);
+      return;
+    }
 
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.type = "text/css";
-  link.href = CHECKOUT_CONFIG.hotmart.widgetStyles;
-  document.head.appendChild(link);
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = CHECKOUT_CONFIG.hotmart.widgetStyles;
+    document.head.appendChild(link);
 
-  isHotmartLoaded = true;
+    const script = document.createElement("script");
+    script.src = CHECKOUT_CONFIG.hotmart.widgetScript;
+    script.onload = () => {
+      const checkReady = setInterval(() => {
+        if ((window as any).hotmartFB) {
+          hotmartReady = true;
+          clearInterval(checkReady);
+          resolve();
+        }
+      }, 100);
+    };
+    document.head.appendChild(script);
+
+    isHotmartLoaded = true;
+  });
 }
 
-export function openHotmartCheckout(e: React.MouseEvent) {
+export async function openHotmartCheckout(e: React.MouseEvent) {
   e.preventDefault();
-  loadHotmartWidget();
+  await loadHotmartWidget();
   
-  const link = document.createElement("a");
-  link.href = CHECKOUT_CONFIG.hotmart.productUrl;
-  link.className = "hotmart-fb hotmart__button-checkout";
-  link.style.display = "none";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  const hotmartFB = (window as any).hotmartFB;
+  if (hotmartFB && hotmartFB.open) {
+    hotmartFB.open(CHECKOUT_CONFIG.hotmart.productUrl);
+  } else {
+    window.open(CHECKOUT_CONFIG.hotmart.productUrl, "_blank");
+  }
 }
