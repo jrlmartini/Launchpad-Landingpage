@@ -22,7 +22,7 @@ export function AboutSection() {
             <div className="border-t border-stroke/50 pt-8">
               <div className="flex flex-col lg:flex-row gap-8 items-start">
                 <div className="flex-shrink-0 w-24 h-24 bg-cta/10 rounded-2xl flex items-center justify-center">
-                  <span className="font-display font-bold text-3xl text-cta">JRM</span>
+                  <span className="font-display font-bold text-3xl text-cta">JRLM</span>
                 </div>
                 
                 <div>
