@@ -44,32 +44,32 @@ export function MethodSection() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-cta via-cta/50 to-transparent hidden lg:block" />
-            
-            <div className="space-y-8">
-              {steps.map((step, index) => (
-                <div
-                  key={index}
-                  className="relative flex gap-6 lg:gap-8"
-                >
-                  <div className="hidden lg:flex flex-shrink-0 w-16 h-16 items-center justify-center bg-cta/10 border border-cta/30 rounded-2xl z-10">
-                    <span className="font-display font-bold text-2xl text-cta">{step.number}</span>
+          <div className="space-y-6">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className="flex gap-4 lg:gap-6"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center bg-cta text-white rounded-2xl shadow-lg">
+                    <span className="font-display font-bold text-xl lg:text-2xl">{step.number}</span>
                   </div>
-                  
-                  <div className="flex-1 p-6 bg-background/50 border border-stroke/50 rounded-2xl card-glow transition-all duration-200 hover:border-cta/30">
+                  {index < steps.length - 1 && (
+                    <div className="w-0.5 flex-1 mt-3 bg-gradient-to-b from-cta/40 to-transparent" />
+                  )}
+                </div>
+                
+                <div className="flex-1 pb-6">
+                  <div className="p-6 bg-background/50 border border-stroke/50 rounded-2xl card-glow transition-all duration-200 hover:border-cta/30">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="lg:hidden w-10 h-10 flex items-center justify-center bg-cta/10 rounded-xl">
-                        <span className="font-display font-bold text-lg text-cta">{step.number}</span>
-                      </div>
                       <step.icon className="w-5 h-5 text-cta" strokeWidth={1.5} />
-                      <h3 className="font-display font-semibold text-xl text-text">{step.title}</h3>
+                      <h3 className="font-display font-semibold text-lg lg:text-xl text-text">{step.title}</h3>
                     </div>
-                    <p className="text-text-muted lg:pl-0">{step.description}</p>
+                    <p className="text-text-muted">{step.description}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
