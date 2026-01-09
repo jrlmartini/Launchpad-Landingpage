@@ -33,7 +33,7 @@ export function OfferSection() {
 
             <div className="text-center">
               <a
-                href="#PLACEHOLDER_CHECKOUT_LINK"
+                href="www.conatusambiental.com.br"
                 className="inline-flex items-center gap-3 px-10 py-5 text-lg font-bold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
                 data-testid="button-cta-offer"
               >
