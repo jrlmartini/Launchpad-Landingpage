@@ -56,7 +56,7 @@ export function ProblemSection() {
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto p-6 bg-destructive/5 border border-destructive/20 rounded-2xl text-center">
+        <div className="max-w-2xl mx-auto p-6 bg-destructive/5 border border-destructive/20 rounded-2xl text-center text-[#e44142]">
           <p className="text-lg text-text">
             <strong>Resultado:</strong> a ideia fica na torre. E o recurso vai para quem apresentou melhor{" "}
             <span className="text-[#e7ebf3] font-extrabold">"missão e rota"</span>.
