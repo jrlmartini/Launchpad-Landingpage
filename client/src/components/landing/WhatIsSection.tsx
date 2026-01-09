@@ -3,22 +3,22 @@ import { Compass, Layers, Wallet, Settings } from "lucide-react";
 const pillars = [
   {
     icon: Compass,
-    title: "Definir rotas claras",
+    title: "Defina rotas claras",
     description: "Estratégia e aderência",
   },
   {
     icon: Layers,
-    title: "Construir projetos robustos",
+    title: "Construa projetos robustos",
     description: "Completos e com critério",
   },
   {
     icon: Wallet,
-    title: "Assegurar recursos",
+    title: "Assegure os recursos",
     description: "Instrumentos e programas",
   },
   {
     icon: Settings,
-    title: "Criar governança",
+    title: "Crie governança",
     description: "Execução e prestação de contas",
   },
 ];
