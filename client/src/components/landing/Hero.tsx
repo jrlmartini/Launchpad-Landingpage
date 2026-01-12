@@ -32,6 +32,7 @@ export function Hero() {
           </p>
           
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-text leading-tight tracking-tight mb-6 animate-fade-in-up">
+            {" "}
             <span className="text-gradient-accent">Fomento para Deeptechs</span>
           </h1>
           
