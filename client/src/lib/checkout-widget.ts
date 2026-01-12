@@ -1,7 +1,7 @@
 export const CHECKOUT_CONFIG = {
   hotmart: {
-    productUrl: "https://pay.hotmart.com/X87137833V?checkoutMode=2",
-    embedUrl: "https://pay.hotmart.com/X87137833V?checkoutMode=10",
+    productUrl: "https://pay.hotmart.com/O103803343R?checkoutMode=2",
+    embedUrl: "https://pay.hotmart.com/O103803343R?checkoutMode=10",
     widgetScript: "https://static.hotmart.com/checkout/widget.min.js",
     widgetStyles: "https://static.hotmart.com/css/hotmart-fb.min.css",
   },
