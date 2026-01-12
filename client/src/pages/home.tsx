@@ -7,6 +7,7 @@ import { DeliverablesSection } from "@/components/landing/DeliverablesSection";
 import { MethodSection } from "@/components/landing/MethodSection";
 import { ForWhoSection } from "@/components/landing/ForWhoSection";
 import { ModulesSection } from "@/components/landing/ModulesSection";
+import { LogoCarousel } from "@/components/landing/LogoCarousel";
 import { AboutSection } from "@/components/landing/AboutSection";
 import { OfferSection } from "@/components/landing/OfferSection";
 import { FAQSection } from "@/components/landing/FAQSection";
@@ -27,6 +28,7 @@ export default function Home() {
           <MethodSection />
           <ForWhoSection />
           <ModulesSection />
+          <LogoCarousel />
           <AboutSection />
           <OfferSection />
           <FAQSection />
