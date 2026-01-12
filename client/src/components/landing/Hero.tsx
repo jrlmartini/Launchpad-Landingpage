@@ -37,7 +37,8 @@ export function Hero() {
           </h1>
           
           <h2 className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-text mb-6 animate-fade-in-up animate-delay-100">
-            Captação para Deep Tech, com método: transforme sua tecnologia em um projeto financiável.
+            Captação para Deep Tech, com método:<br />
+            transforme sua tecnologia em um projeto financiável.
           </h2>
           
           <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
@@ -46,7 +47,7 @@ export function Hero() {
           
           <div className="overflow-hidden mb-10 animate-fade-in-up animate-delay-200">
             <div className="flex animate-marquee-continuous">
-              {[...Array(4)].flatMap((_, i) => [
+              {[
                 { src: "/logos/finep.png", alt: "Finep", scale: 1 },
                 { src: "/logos/cnpq.png", alt: "CNPq", scale: 1 },
                 { src: "/logos/fapesp.png", alt: "FAPESP", scale: 1 },
@@ -54,7 +55,28 @@ export function Hero() {
                 { src: "/logos/faperj.png", alt: "FAPERJ", scale: 1 },
                 { src: "/logos/senai.png", alt: "SENAI", scale: 1 },
                 { src: "/logos/centelha.png", alt: "Centelha", scale: 1 },
-              ]).map((logo, index) => (
+                { src: "/logos/finep.png", alt: "Finep", scale: 1 },
+                { src: "/logos/cnpq.png", alt: "CNPq", scale: 1 },
+                { src: "/logos/fapesp.png", alt: "FAPESP", scale: 1 },
+                { src: "/logos/fapemig.png", alt: "FAPEMIG", scale: 1.8 },
+                { src: "/logos/faperj.png", alt: "FAPERJ", scale: 1 },
+                { src: "/logos/senai.png", alt: "SENAI", scale: 1 },
+                { src: "/logos/centelha.png", alt: "Centelha", scale: 1 },
+                { src: "/logos/finep.png", alt: "Finep", scale: 1 },
+                { src: "/logos/cnpq.png", alt: "CNPq", scale: 1 },
+                { src: "/logos/fapesp.png", alt: "FAPESP", scale: 1 },
+                { src: "/logos/fapemig.png", alt: "FAPEMIG", scale: 1.8 },
+                { src: "/logos/faperj.png", alt: "FAPERJ", scale: 1 },
+                { src: "/logos/senai.png", alt: "SENAI", scale: 1 },
+                { src: "/logos/centelha.png", alt: "Centelha", scale: 1 },
+                { src: "/logos/finep.png", alt: "Finep", scale: 1 },
+                { src: "/logos/cnpq.png", alt: "CNPq", scale: 1 },
+                { src: "/logos/fapesp.png", alt: "FAPESP", scale: 1 },
+                { src: "/logos/fapemig.png", alt: "FAPEMIG", scale: 1.8 },
+                { src: "/logos/faperj.png", alt: "FAPERJ", scale: 1 },
+                { src: "/logos/senai.png", alt: "SENAI", scale: 1 },
+                { src: "/logos/centelha.png", alt: "Centelha", scale: 1 },
+              ].map((logo, index) => (
                 <div key={index} className="flex-shrink-0 mx-6 lg:mx-10 flex items-center justify-center">
                   <img
                     src={logo.src}
