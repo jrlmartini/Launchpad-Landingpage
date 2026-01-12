@@ -40,9 +40,32 @@ export function Hero() {
             Captação para Deep Tech, com método: transforme sua tecnologia em um projeto financiável.
           </h2>
           
-          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
+          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
             Um treinamento prático, <strong className="text-text">passo a passo</strong>, para escrever e defender projetos de inovação com a lógica de quem avalia — com templates, checklists e um sistema replicável para operar um <strong className="text-text">pipeline de captação</strong>.
           </p>
+          
+          <div className="overflow-hidden mb-10 animate-fade-in-up animate-delay-200">
+            <div className="flex animate-marquee-continuous">
+              {[...Array(4)].flatMap((_, i) => [
+                { src: "/logos/finep.png", alt: "Finep", scale: 1 },
+                { src: "/logos/cnpq.png", alt: "CNPq", scale: 1 },
+                { src: "/logos/fapesp.png", alt: "FAPESP", scale: 1 },
+                { src: "/logos/fapemig.png", alt: "FAPEMIG", scale: 1.8 },
+                { src: "/logos/faperj.png", alt: "FAPERJ", scale: 1 },
+                { src: "/logos/senai.png", alt: "SENAI", scale: 1 },
+                { src: "/logos/centelha.png", alt: "Centelha", scale: 1 },
+              ]).map((logo, index) => (
+                <div key={index} className="flex-shrink-0 mx-6 lg:mx-10 flex items-center justify-center">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-6 lg:h-8 w-auto object-contain opacity-40 brightness-0 invert"
+                    style={{ transform: `scale(${logo.scale})` }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto mb-12 animate-fade-in-up animate-delay-300">
