@@ -1,25 +1,35 @@
-import { BookOpen, Layers, Pencil, ClipboardCheck, Calculator, Sparkles } from "lucide-react";
+import { BookOpen, Layers, Pencil, ClipboardCheck, Calculator, Sparkles, Compass, Target } from "lucide-react";
 
 const modules = [
   {
+    icon: Compass,
+    title: "Módulo 0 — Introdução ao Fomento para Deep Techs",
+    description: "Como o curso funciona, diagnóstico do seu ponto de partida e o caminho mais curto para transformar tecnologia em projeto financiável.",
+  },
+  {
     icon: BookOpen,
     title: "Módulo 1 — O Sistema Nacional de Fomento à Inovação",
-    description: "Instrumentos, políticas, programas e como navegar o ecossistema com clareza.",
+    description: "Instrumentos, políticas e programas (FAPESP, FINEP, CNPq e outros) para navegar o ecossistema com clareza e escolher o recurso certo.",
+  },
+  {
+    icon: Target,
+    title: "Módulo 2 — Estratégia de Captação",
+    description: "Como ler edital como avaliador, medir aderência (Go/No-Go), montar pipeline por TRL e evitar chamadas que só consomem energia.",
   },
   {
     icon: Layers,
-    title: "Módulo 2 — Os Pilares de um Projeto de Inovação",
-    description: "Os 3 Pilares de um projeto e como estruturar.",
+    title: "Módulo 3 — Arquitetura de um Bom Projeto",
+    description: "Os pilares que sustentam aprovação: aderência, evidências e execução — com TRL na prática e storytelling técnico que gera confiança.",
   },
   {
     icon: Pencil,
-    title: "Módulo 3 — Desenvolvendo um Bom Projeto do Início ao Fim",
-    description: "Leitura de edital, seções do projeto, mercado, impactos, riscos, orçamento, contrapartidas e armadilhas.",
+    title: "Módulo 4 — Desenvolvendo o Projeto",
+    description: "Campo a campo: resumo, descrição, inovação, riscos, mercado, impactos, plano de trabalho, orçamento e contrapartidas — com foco em consistência e defesa.",
   },
   {
     icon: ClipboardCheck,
-    title: "Módulo 4 — Prestação de Contas e Governança",
-    description: "Boas práticas, relatórios e trilha de evidências para auditoria e acompanhamento.",
+    title: "Módulo 5 — Prestação de Contas",
+    description: "Governança, trilha de evidências e relatórios para executar com segurança, reduzir glosas e manter o projeto em trajetória até o fim.",
   },
 ];
 
@@ -27,12 +37,12 @@ const bonuses = [
   {
     icon: Calculator,
     title: "Bônus 1 — Projeções Financeiras",
-    description: "Premissas, receitas, custos, mão de obra e coerência com a narrativa do projeto.",
+    description: "Premissas, receitas, custos e cenários para construir números defensáveis e alinhar viabilidade à narrativa do projeto.",
   },
   {
     icon: Sparkles,
-    title: "Bônus 2 — IA para acelerar (sem virar texto genérico)",
-    description: "Prompt packs por seção, anti-alucinação e IA para pitch/voice-over.",
+    title: "Bônus 2 — Usando IA para Acelerar a Escrita",
+    description: "Como usar IA para ganhar velocidade sem cair no genérico: prompts por seção, controle de qualidade e apoio para pitch/roteiro.",
   },
 ];
 
