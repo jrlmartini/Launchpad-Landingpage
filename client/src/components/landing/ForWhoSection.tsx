@@ -20,6 +20,9 @@ export function ForWhoSection() {
           <h2 className="font-display font-bold text-3xl lg:text-4xl xl:text-5xl text-text mb-6">
             Para quem é (e para quem não é)
           </h2>
+          <p className="text-lg text-text-muted leading-relaxed">
+            Este curso foi desenhado para empreendedores e founders de deep tech, consultores e gestores de inovação que querem navegar melhor o ecossistema de fomento e escrever, avaliar e defender projetos consistentes, com alta competitividade e maior probabilidade de aprovação.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
