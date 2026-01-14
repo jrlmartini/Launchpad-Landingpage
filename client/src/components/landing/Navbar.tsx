@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 
 const navLinks = [
   { href: "#problema", label: "Problema" },
@@ -41,7 +41,19 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-6">
+            <a
+              href="https://membros.deeptechs.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors duration-200"
+              title="Área de Membros"
+              data-testid="link-members-desktop"
+            >
+              <User className="w-5 h-5" />
+              <span className="hidden xl:inline">Área de Membros</span>
+            </a>
+
             <a
               href="#oferta"
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-cta hover:bg-cta/90 rounded-xl transition-all duration-200 cta-glow"
@@ -76,6 +88,17 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="https://membros.deeptechs.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-2 py-2 text-base font-medium text-text-muted hover:text-cta transition-colors"
+              data-testid="link-mobile-members"
+            >
+              <User className="w-5 h-5" />
+              Área de Membros
+            </a>
             <a
               href="#oferta"
               onClick={() => setIsOpen(false)}
