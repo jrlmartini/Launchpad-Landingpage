@@ -25,6 +25,7 @@ export default function Home() {
           <ProblemSection />
           <WhatIsSection />
           <DeliverablesSection />
+          <LogoCarousel title="Aprenda um método para aumentar suas chances de aprovação em qualquer edital" />
           <MethodSection />
           <ForWhoSection />
           <ModulesSection />
