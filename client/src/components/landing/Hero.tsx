@@ -46,9 +46,11 @@ export function Hero() {
             Um treinamento prático, <strong className="text-text">passo a passo</strong>, para escrever e defender projetos de inovação com a lógica de quem avalia — com templates, checklists e um sistema replicável para operar um <strong className="text-text">pipeline de captação</strong>.
           </p>
         </div>
+      </div>
           
-        <LogoCarousel title={null} className="mb-12 animate-fade-in-up animate-delay-200" />
+      <LogoCarousel title={null} className="mb-12 animate-fade-in-up animate-delay-200" />
 
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="max-w-3xl mx-auto mb-12 animate-fade-in-up animate-delay-300">
           <p className="text-lg font-semibold text-text mb-6 text-center">Você vai aprender a:</p>
           <div className="grid gap-4">
