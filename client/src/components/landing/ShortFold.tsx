@@ -9,7 +9,7 @@ export function ShortFold() {
           <span className="text-cta">difícil de executar</span>.
         </p>
         <p className="text-lg text-text-muted">
-          O LaunchpadHub foi criado para mudar isso — com rigor, clareza e cadência de execução.
+          Uma proposta denegada pode custar meses do seu projeto e destruir sua vantagem competitiva. <br />O Fomento para Deeptechs foi criado para mudar isso — com rigor, clareza e cadência de execução.
         </p>
       </div>
     </section>
