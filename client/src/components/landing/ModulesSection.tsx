@@ -1,4 +1,4 @@
-import { BookOpen, Layers, Pencil, ClipboardCheck, Calculator, Sparkles, Compass, Target } from "lucide-react";
+import { BookOpen, Layers, Pencil, ClipboardCheck, Calculator, Sparkles, Compass, Target, FileSearch } from "lucide-react";
 
 const modules = [
   {
@@ -44,6 +44,11 @@ const bonuses = [
     title: "Bônus 2 — Usando IA para Acelerar a Escrita",
     description: "Como usar IA para ganhar velocidade sem cair no genérico: prompts por seção, controle de qualidade e apoio para pitch/roteiro.",
   },
+  {
+    icon: FileSearch,
+    title: "Bônus 3 — Editais FINEP 2026",
+    description: "Uma imersão em cada um dos editais FINEP 2026, com leitura e interpretação do regulamento, comentários de cada seção do formulário com exemplos de projetos aprovados.",
+  },
 ];
 
 export function ModulesSection() {
@@ -83,7 +88,7 @@ export function ModulesSection() {
             </span>
           </div>
           
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {bonuses.map((bonus, index) => (
               <div
                 key={index}
