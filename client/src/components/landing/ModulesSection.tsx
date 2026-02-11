@@ -80,7 +80,7 @@ export function ModulesSection() {
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-highlight bg-highlight/10 border border-highlight/20 rounded-full">
               <Sparkles className="w-4 h-4" />
