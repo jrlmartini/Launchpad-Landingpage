@@ -17,6 +17,10 @@ export function HubHero() {
   return (
     <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cta/5 via-transparent to-transparent pointer-events-none" />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-[55%] bg-planet-horizon pointer-events-none"
+      />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
           <p className="inline-flex items-center gap-2 px-5 py-2.5 mb-6 text-base font-semibold text-cta bg-cta/10 border border-cta/20 rounded-full">

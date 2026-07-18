@@ -157,6 +157,20 @@
     background-size: 650px 250px;
   }
 
+  /* Planet horizon: gradient-drawn arc with atmospheric rim light.
+     Place on an absolutely-positioned div at the bottom of a hero section. */
+  .bg-planet-horizon {
+    background:
+      radial-gradient(130% 110% at 50% 158%,
+        hsl(222 45% 10%) 62%,
+        hsl(198 95% 68% / 0.85) 63.2%,
+        hsl(207 90% 60% / 0.30) 65.5%,
+        hsl(217 90% 58% / 0.10) 70%,
+        transparent 78%),
+      radial-gradient(60% 45% at 72% 40%, hsl(255 60% 45% / 0.08), transparent),
+      radial-gradient(50% 40% at 30% 55%, hsl(190 70% 50% / 0.06), transparent);
+  }
+
   /* Depth without glow soup: hairline + soft elevation, faint blue cast */
   .card-glow {
     box-shadow:
