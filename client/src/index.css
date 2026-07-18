@@ -83,6 +83,10 @@
 
   --radius: 0.75rem;
 
+  /* Real custom properties (the @theme inline block does NOT emit these,
+     so var(--font-display) etc. would otherwise resolve to nothing) */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --font-sans: 'Inter', sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'IBM Plex Mono', Menlo, monospace;
