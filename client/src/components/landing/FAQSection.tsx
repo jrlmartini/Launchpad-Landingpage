@@ -19,8 +19,8 @@ const faqs = [
     answer: "Vale — principalmente para escolher o instrumento certo e evitar o edital errado.",
   },
   {
-    question: "Não sou bom de escrita.",
-    answer: 'Você não precisa ser "bom de texto". Precisa ser claro, objetivo e defensável. O curso te dá estrutura e templates para isso.',
+    question: "E se eu não for bom de escrita?",
+    answer: 'Você não precisa ser "bom de texto". Precisa ser claro, objetivo e defensável — e isso se constrói com estrutura, não com talento. O curso te dá a estrutura e os templates.',
   },
 ];
 
@@ -31,7 +31,7 @@ export function FAQSection() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display font-bold text-3xl lg:text-4xl xl:text-5xl text-text mb-6">
-              FAQ
+              Perguntas frequentes
             </h2>
           </div>
 

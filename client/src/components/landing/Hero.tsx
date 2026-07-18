@@ -29,7 +29,7 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="inline-flex items-center gap-2 px-5 py-2.5 mb-6 text-base font-semibold text-cta bg-cta/10 border border-cta/20 rounded-full">
             <span className="w-2 h-2 bg-cta rounded-full animate-pulse" />
-            Recursos do Governo para sua Inovação
+            Fomento público para deep techs, sem tentativa e erro
           </p>
           
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-text leading-tight tracking-tight mb-6 animate-fade-in-up">

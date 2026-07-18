@@ -37,7 +37,7 @@ export function DeliverablesSection() {
             O que você tem ao final?
           </h2>
           <p className="text-lg text-text-muted">
-            Ao final, você sai com:
+            Não é só aula. É um sistema de trabalho que fica com você:
           </p>
         </div>
 

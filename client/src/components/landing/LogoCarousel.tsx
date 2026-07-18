@@ -39,7 +39,7 @@ export function LogoCarousel({
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="h-8 lg:h-10 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity brightness-0 invert"
+                className="h-8 lg:h-10 w-auto object-contain opacity-45 hover:opacity-75 transition-opacity brightness-0"
                 style={{ transform: `scale(${logo.scale})` }}
               />
             </div>

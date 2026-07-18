@@ -31,10 +31,10 @@ export function Navbar({
             className="flex items-center"
             data-testid="link-home"
           >
-            <img 
-              src="/logo.png" 
-              alt="LaunchpadHub - Explore novos mundos" 
-              className="h-8 lg:h-10 w-auto"
+            <img
+              src="/logo.png"
+              alt="LaunchpadHub - Explore novos mundos"
+              className="h-8 lg:h-10 w-auto brightness-0 opacity-90"
             />
           </a>
 

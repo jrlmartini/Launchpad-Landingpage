@@ -41,6 +41,10 @@ export function MethodSection() {
           <h2 className="font-display font-bold text-3xl lg:text-4xl xl:text-5xl text-text mb-6">
             Nosso Método
           </h2>
+          <p className="text-lg text-text-muted leading-relaxed">
+            Cinco etapas, na ordem em que um avaliador pensa — e na ordem em que
+            um projeto deveria ser construído.
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -52,7 +56,7 @@ export function MethodSection() {
               >
                 <div className="flex flex-col items-center">
                   <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center bg-cta text-white rounded-2xl shadow-lg">
-                    <span className="font-display font-bold text-xl lg:text-2xl">{step.number}</span>
+                    <span className="font-mono font-medium text-xl lg:text-2xl">{step.number}</span>
                   </div>
                   {index < steps.length - 1 && (
                     <div className="w-0.5 flex-1 mt-3 bg-gradient-to-b from-cta/40 to-transparent" />
