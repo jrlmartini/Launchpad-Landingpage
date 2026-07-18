@@ -29,11 +29,13 @@ export function WhatIsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="font-display font-bold text-3xl lg:text-4xl xl:text-5xl text-text mb-6">
-            O que é o LaunchpadHub?
+            O que é o Fomento para Deeptechs?
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            O LaunchpadHub é um hub de inovação e empreendedorismo para lançar ideias com responsabilidade.
-            Você aprende a transformar ambição em uma missão bem-sucedida, para qualquer edital - FAPESP, FINEP, CNPq, FAPs estaduais e outros.
+            É o treinamento do LaunchpadHub que ensina a engenharia por trás de um
+            projeto aprovado: escolher o instrumento certo, escrever com a lógica
+            de quem avalia e executar com governança — para qualquer edital:
+            FAPESP, FINEP, CNPq, FAPs estaduais e outros.
           </p>
         </div>
 

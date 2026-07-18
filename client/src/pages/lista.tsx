@@ -20,7 +20,16 @@ export default function Lista() {
     <div className="min-h-screen bg-background text-foreground">
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />
       <div className="relative z-10">
-        <Navbar />
+        <Navbar
+          links={[
+            { href: "#problema", label: "Problema" },
+            { href: "#metodo", label: "Método" },
+            { href: "#modulos", label: "Módulos" },
+            { href: "#faq", label: "FAQ" },
+          ]}
+          ctaHref="#oferta"
+          ctaLabel="Entrar na lista de pré-venda"
+        />
         <main>
           <Hero />
           <ShortFold />

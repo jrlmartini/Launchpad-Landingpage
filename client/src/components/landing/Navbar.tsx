@@ -1,23 +1,33 @@
 import { useState } from "react";
 import { Menu, X, User } from "lucide-react";
 
-const navLinks = [
-  { href: "#problema", label: "Problema" },
-  { href: "#metodo", label: "Método" },
-  { href: "#modulos", label: "Módulos" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#faq", label: "FAQ" },
+const defaultLinks = [
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/curso", label: "Curso" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#contato", label: "Contato" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  links?: { href: string; label: string }[];
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+export function Navbar({
+  links = defaultLinks,
+  ctaHref = "/#contato",
+  ctaLabel = "Falar com a gente",
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const navLinks = links;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-stroke/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a 
-            href="#" 
+          <a
+            href="/"
             className="flex items-center"
             data-testid="link-home"
           >
@@ -55,11 +65,11 @@ export function Navbar() {
             </a>
 
             <a
-              href="#oferta"
+              href={ctaHref}
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-cta hover:bg-cta/90 rounded-xl transition-all duration-200 cta-glow"
               data-testid="button-cta-nav"
             >
-              Quero preparar minha missão
+              {ctaLabel}
             </a>
           </div>
 
@@ -100,12 +110,12 @@ export function Navbar() {
               Área de Membros
             </a>
             <a
-              href="#oferta"
+              href={ctaHref}
               onClick={() => setIsOpen(false)}
               className="block w-full text-center px-6 py-3 mt-4 text-sm font-semibold text-white bg-cta rounded-xl"
               data-testid="button-cta-mobile"
             >
-              Quero preparar minha missão
+              {ctaLabel}
             </a>
           </div>
         </div>

@@ -33,17 +33,16 @@ export function Hero() {
           </p>
           
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-text leading-tight tracking-tight mb-6 animate-fade-in-up">
-            {" "}
             <span className="text-gradient-accent">Fomento para Deeptechs</span>
           </h1>
-          
+
           <h2 className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-text mb-6 animate-fade-in-up animate-delay-100">
-            Captação para Deep Tech, com método:<br />
-            transforme sua tecnologia em um projeto financiável.
+            Escreva projetos com a lógica de quem avalia —<br />
+            e transforme sua tecnologia em um projeto financiável.
           </h2>
-          
+
           <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-            Um treinamento prático, <strong className="text-text">passo a passo</strong>, para escrever e defender projetos de inovação com a lógica de quem avalia — com templates, checklists e um sistema replicável para operar um <strong className="text-text">pipeline de captação</strong>.
+            Um treinamento prático, <strong className="text-text">passo a passo</strong>, com templates, checklists e um sistema replicável para operar um <strong className="text-text">pipeline de captação</strong> — FAPESP, FINEP, CNPq, FAPs estaduais e outros. Sem promessa de aprovação garantida: com método, aderência e execução.
           </p>
         </div>
       </div>
