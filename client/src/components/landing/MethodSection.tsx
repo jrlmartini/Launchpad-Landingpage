@@ -42,8 +42,7 @@ export function MethodSection() {
             Nosso Método
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            Cinco etapas, na ordem em que um avaliador pensa — e na ordem em que
-            um projeto deveria ser construído.
+            São cinco etapas, na mesma ordem em que um bom projeto nasce.
           </p>
         </div>
 

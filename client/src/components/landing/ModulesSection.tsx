@@ -55,8 +55,7 @@ export function ModulesSection() {
             O que você vai aprender?
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            Seis módulos, do mapa do ecossistema à prestação de contas — na ordem
-            em que um projeto real acontece.
+            São seis módulos, do mapa do ecossistema até a prestação de contas.
           </p>
         </div>
 

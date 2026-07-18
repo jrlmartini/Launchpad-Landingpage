@@ -32,10 +32,11 @@ export function WhatIsSection() {
             O que é o Fomento para Deeptechs?
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            É o treinamento do LaunchpadHub que ensina a engenharia por trás de um
-            projeto aprovado: escolher o instrumento certo, escrever com a lógica
-            de quem avalia e executar com governança — para qualquer edital:
-            FAPESP, FINEP, CNPq, FAPs estaduais e outros.
+            É o treinamento do LaunchpadHub sobre o que existe por trás de um
+            projeto aprovado: como escolher o edital certo para o seu estágio,
+            como escrever para a pessoa que vai avaliar, e como executar sem
+            sustos na prestação de contas. Vale para FAPESP, FINEP, CNPq, FAPs
+            estaduais e outros.
           </p>
         </div>
 
@@ -55,7 +56,8 @@ export function WhatIsSection() {
         </div>
 
         <p className="text-center text-lg font-medium text-text">
-          Sem enfeite. <span className="text-cta">Com método.</span>
+          É o curso que gostaríamos de ter feito{" "}
+          <span className="text-cta">antes do nosso primeiro edital.</span>
         </p>
       </div>
     </section>

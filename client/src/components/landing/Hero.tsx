@@ -29,7 +29,7 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="inline-flex items-center gap-2 px-5 py-2.5 mb-6 text-base font-semibold text-cta bg-cta/10 border border-cta/20 rounded-full">
             <span className="w-2 h-2 bg-cta rounded-full animate-pulse" />
-            Fomento público para deep techs, sem tentativa e erro
+            Fomento público para deep techs
           </p>
           
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-text leading-tight tracking-tight mb-6 animate-fade-in-up">
@@ -37,12 +37,12 @@ export function Hero() {
           </h1>
 
           <h2 className="font-display font-semibold text-xl sm:text-2xl lg:text-3xl text-text mb-6 animate-fade-in-up animate-delay-100">
-            Escreva projetos com a lógica de quem avalia —<br />
+            Aprenda a escrever projetos como quem vai avaliá-los —<br />
             e transforme sua tecnologia em um projeto financiável.
           </h2>
 
           <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-            Um treinamento prático, <strong className="text-text">passo a passo</strong>, com templates, checklists e um sistema replicável para operar um <strong className="text-text">pipeline de captação</strong> — FAPESP, FINEP, CNPq, FAPs estaduais e outros. Sem promessa de aprovação garantida: com método, aderência e execução.
+            Um treinamento prático, <strong className="text-text">passo a passo</strong>, com os templates, as planilhas e os checklists que usamos em projetos reais. Serve para FAPESP, FINEP, CNPq, FAPs estaduais e qualquer outro edital — porque o que muda é o formulário, não a lógica de quem aprova.
           </p>
         </div>
       </div>
@@ -77,7 +77,7 @@ export function Hero() {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <p className="mt-4 text-sm text-text-muted italic">
-            Sem promessas milagrosas. Com método, aderência e execução.
+            Não prometemos aprovação. Prometemos um projeto muito mais difícil de reprovar.
           </p>
         </div>
       </div>

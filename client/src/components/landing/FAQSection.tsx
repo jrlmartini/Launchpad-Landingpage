@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     question: "Isso garante aprovação?",
-    answer: "Não existe garantia honesta. O que existe é método para elevar sua proposta: aderência, evidências, execução e orçamento defensável.",
+    answer: "Não — e desconfie de quem garantir. O que o curso faz é subir muito o nível da sua proposta: enquadramento certo, evidências que convencem, plano que fecha e orçamento que você consegue defender.",
   },
   {
     question: "Funciona para qualquer área de deep tech?",
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Estou no começo (TRL baixo). Vale?",
-    answer: "Vale — principalmente para escolher o instrumento certo e evitar o edital errado.",
+    answer: "Vale — talvez até mais. É no começo que se perde tempo com o edital errado, e é onde escolher bem o instrumento faz mais diferença.",
   },
   {
     question: "E se eu não for bom de escrita?",
