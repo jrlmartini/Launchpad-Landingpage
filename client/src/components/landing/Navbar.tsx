@@ -34,7 +34,7 @@ export function Navbar({
             <img
               src="/logo.png"
               alt="LaunchpadHub - Explore novos mundos"
-              className="h-8 lg:h-10 w-auto brightness-0 opacity-90"
+              className="h-8 lg:h-10 w-auto"
             />
           </a>
 

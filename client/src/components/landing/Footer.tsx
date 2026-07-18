@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           <a href="/" className="block">
-            <img src="/logo.png" alt="LaunchpadHub" className="h-10 w-auto brightness-0 opacity-90" />
+            <img src="/logo.png" alt="LaunchpadHub" className="h-10 w-auto" />
           </a>
 
           <div className="flex items-center gap-6">
