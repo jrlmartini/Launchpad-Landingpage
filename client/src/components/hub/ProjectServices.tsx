@@ -12,7 +12,7 @@ const CONTACT_EMAIL = "contato@launchpadhub.com.br";
 
 export function ProjectServicesIntro() {
   return (
-    <section id="projetos" className="py-20 lg:py-28 scroll-mt-20">
+    <section id="projetos" className="py-20 lg:py-28 scroll-mt-32">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
         <p className="text-xs font-mono uppercase tracking-widest text-cta mb-4">
           Trilha 1 · Projeto de fomento
@@ -52,6 +52,7 @@ const projectServices = [
     cta: "Quero escrever meu projeto",
     subject: "Escrita do Projeto — a quatro mãos",
     featured: true,
+    id: "escrita",
   },
   {
     icon: Eye,
@@ -72,6 +73,7 @@ const projectServices = [
     cta: "Quero revisar meu projeto",
     subject: "Revisão do Projeto — mentoria",
     featured: false,
+    id: "revisao",
   },
 ];
 
@@ -83,7 +85,8 @@ export function ProjectServicesCards() {
           {projectServices.map((service, index) => (
             <div
               key={index}
-              className={`flex flex-col p-8 lg:p-10 rounded-3xl card-glow transition-all duration-200 ${
+              id={service.id}
+              className={`scroll-mt-32 flex flex-col p-8 lg:p-10 rounded-3xl card-glow transition-all duration-200 ${
                 service.featured
                   ? "bg-surface border border-cta/30 hover:border-cta/50"
                   : "bg-surface/50 border border-stroke/50 hover:border-cta/30"
@@ -261,7 +264,7 @@ export function ProjectServicesComparison() {
 
 export function TechTrackIntro() {
   return (
-    <section id="tecnologia" className="pt-20 lg:pt-28 scroll-mt-20">
+    <section id="tecnologia" className="pt-20 lg:pt-28 scroll-mt-32">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
         <p className="text-xs font-mono uppercase tracking-widest text-cta mb-4">
           Trilha 2 · Tecnologia e mercado

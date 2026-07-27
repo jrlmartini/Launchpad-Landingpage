@@ -13,12 +13,12 @@ import { OfferSection } from "@/components/landing/OfferSection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { Footer } from "@/components/landing/Footer";
 
-const courseLinks = [
-  { href: "#problema", label: "Problema" },
+const courseSections = [
+  { href: "#problema", label: "Por que projetos não decolam" },
   { href: "#metodo", label: "Método" },
   { href: "#modulos", label: "Módulos" },
-  { href: "#faq", label: "FAQ" },
-  { href: "/servicos", label: "Serviços" },
+  { href: "#oferta", label: "O que está incluso" },
+  { href: "#faq", label: "Perguntas frequentes" },
 ];
 
 export default function Home() {
@@ -27,7 +27,8 @@ export default function Home() {
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />
       <div className="relative z-10">
         <Navbar
-          links={courseLinks}
+          sections={courseSections}
+          active="curso"
           ctaHref="#oferta"
           ctaLabel="Quero preparar minha missão"
         />

@@ -20,11 +20,13 @@ import {
   TechTrackIntro,
 } from "@/components/hub/ProjectServices";
 
-const servicosLinks = [
-  { href: "/servicos#projetos", label: "Projetos" },
-  { href: "/servicos#tecnologia", label: "Tecnologia" },
-  { href: "/servicos#sobre", label: "Sobre" },
-  { href: "/", label: "Curso" },
+const servicosSections = [
+  { href: "#escrita", label: "Escrita do Projeto" },
+  { href: "#revisao", label: "Revisão do Projeto" },
+  { href: "#diagnostico", label: "Diagnóstico" },
+  { href: "#rota", label: "Rota Comercial" },
+  { href: "#parecer", label: "Parecer" },
+  { href: "#sobre", label: "Sobre" },
 ];
 
 export default function Servicos() {
@@ -33,7 +35,8 @@ export default function Servicos() {
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />
       <div className="relative z-10">
         <Navbar
-          links={servicosLinks}
+          sections={servicosSections}
+          active="servicos"
           ctaHref="#contato"
           ctaLabel="Falar comigo"
         />

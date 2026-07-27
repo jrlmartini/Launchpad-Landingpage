@@ -22,7 +22,7 @@ const features = [
 
 export function Hero() {
   return (
-    <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-32 overflow-hidden">
+    <section className="relative pt-36 lg:pt-48 pb-20 lg:pb-32 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/10 to-background" />

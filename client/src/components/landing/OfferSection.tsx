@@ -27,7 +27,7 @@ export function OfferSection() {
   }, [isCheckoutOpen]);
 
   return (
-    <section id="oferta" className="py-20 lg:py-28 bg-gradient-to-b from-cta/5 via-cta/10 to-cta/5 scroll-mt-20">
+    <section id="oferta" className="py-20 lg:py-28 bg-gradient-to-b from-cta/5 via-cta/10 to-cta/5 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">

@@ -15,7 +15,7 @@ const CONTACT_EMAIL = "contato@launchpadhub.com.br";
 
 export function HubHero() {
   return (
-    <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-28 overflow-hidden">
+    <section className="relative pt-36 lg:pt-48 pb-20 lg:pb-28 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/10 to-background" />
@@ -109,7 +109,7 @@ export function HubMethod() {
   ];
 
   return (
-    <section id="metodo" className="py-20 lg:py-28 scroll-mt-20">
+    <section id="metodo" className="py-20 lg:py-28 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-display font-bold text-3xl lg:text-4xl xl:text-5xl text-text mb-6">
@@ -165,7 +165,7 @@ export function DiagnosticoSection() {
   ];
 
   return (
-    <section id="diagnostico" className="py-20 lg:py-28 bg-gradient-to-b from-cta/5 via-cta/10 to-cta/5 scroll-mt-20">
+    <section id="diagnostico" className="py-20 lg:py-28 bg-gradient-to-b from-cta/5 via-cta/10 to-cta/5 scroll-mt-32">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-xs font-mono uppercase tracking-widest text-cta mb-3">
@@ -223,6 +223,7 @@ const otherServices = [
     description:
       "Da avaliação à execução: aplicações priorizadas, tese de primeiro cliente, desenho de piloto, parceiros e estratégia de captação integrada — com roadmap de 12 meses e acompanhamento mensal como conselheiro.",
     subject: "Assessoria de Rota Comercial",
+    id: "rota",
   },
   {
     icon: Scale,
@@ -231,6 +232,7 @@ const otherServices = [
     description:
       "Due diligence de tecnologias para decisões de investimento: viabilidade técnica, prontidão comercial e os riscos que o pitch não mostra — no prazo do deal.",
     subject: "Parecer Técnico-Comercial",
+    id: "parecer",
   },
 ];
 
@@ -247,7 +249,8 @@ export function OtherServicesSection() {
           {otherServices.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col p-8 bg-surface/50 border border-stroke/50 rounded-3xl card-glow transition-all duration-200 hover:border-cta/30"
+              id={service.id}
+              className="scroll-mt-32 flex flex-col p-8 bg-surface/50 border border-stroke/50 rounded-3xl card-glow transition-all duration-200 hover:border-cta/30"
             >
               <div className="w-14 h-14 mb-5 flex items-center justify-center bg-cta/10 rounded-2xl">
                 <service.icon className="w-7 h-7 text-cta" strokeWidth={1.5} />
@@ -366,7 +369,7 @@ export function HubFAQ() {
 
 export function ContactSection() {
   return (
-    <section id="contato" className="py-20 lg:py-28 bg-surface/30 border-t border-stroke/30 scroll-mt-20">
+    <section id="contato" className="py-20 lg:py-28 bg-surface/30 border-t border-stroke/30 scroll-mt-32">
       <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-6">
           A pergunta já está na mesa. Só falta a resposta.

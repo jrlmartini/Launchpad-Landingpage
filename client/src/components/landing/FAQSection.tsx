@@ -26,7 +26,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-20 lg:py-28 scroll-mt-20">
+    <section id="faq" className="py-20 lg:py-28 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">

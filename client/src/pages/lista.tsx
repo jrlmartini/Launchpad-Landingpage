@@ -21,14 +21,16 @@ export default function Lista() {
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />
       <div className="relative z-10">
         <Navbar
-          links={[
-            { href: "#problema", label: "Problema" },
+          sections={[
+            { href: "#problema", label: "Por que projetos não decolam" },
             { href: "#metodo", label: "Método" },
             { href: "#modulos", label: "Módulos" },
-            { href: "#faq", label: "FAQ" },
+            { href: "#oferta", label: "Lista de pré-venda" },
+            { href: "#faq", label: "Perguntas frequentes" },
           ]}
+          active="curso"
           ctaHref="#oferta"
-          ctaLabel="Entrar na lista de pré-venda"
+          ctaLabel="Entrar na lista"
         />
         <main>
           <Hero />

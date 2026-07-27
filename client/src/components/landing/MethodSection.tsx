@@ -35,7 +35,7 @@ const steps = [
 
 export function MethodSection() {
   return (
-    <section id="metodo" className="py-20 lg:py-28 bg-surface/30 border-y border-stroke/30 scroll-mt-20">
+    <section id="metodo" className="py-20 lg:py-28 bg-surface/30 border-y border-stroke/30 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="font-display font-bold text-3xl lg:text-4xl xl:text-5xl text-text mb-6">
