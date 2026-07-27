@@ -66,7 +66,7 @@ export function ForWhoSection() {
             escreveu antes da submissão — lendo com os olhos de quem avalia.
           </p>
           <a
-            href="/servicos#projetos"
+            href="/projetos"
             className="inline-flex items-center gap-2 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
             data-testid="link-servicos-from-curso"
           >

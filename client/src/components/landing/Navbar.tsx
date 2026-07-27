@@ -7,16 +7,17 @@ import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, Gra
 
 const serviceMenu = [
   {
-    group: "Projeto de fomento",
+    group: "Projetos de fomento",
+    groupHref: "/projetos",
     items: [
       {
-        href: "/servicos#escrita",
+        href: "/projetos#escrita",
         label: "Escrita do Projeto",
         description: "A quatro mãos, do enquadramento à submissão",
         icon: PenTool,
       },
       {
-        href: "/servicos#revisao",
+        href: "/projetos#revisao",
         label: "Revisão do Projeto",
         description: "Leitura com olhos de avaliador",
         icon: Eye,
@@ -25,21 +26,22 @@ const serviceMenu = [
   },
   {
     group: "Tecnologia e mercado",
+    groupHref: "/tecnologia",
     items: [
       {
-        href: "/servicos#diagnostico",
+        href: "/tecnologia#diagnostico",
         label: "Diagnóstico de Prontidão Comercial",
         description: "Sua tecnologia vira negócio? Em 30 dias",
         icon: Microscope,
       },
       {
-        href: "/servicos#rota",
+        href: "/tecnologia#rota",
         label: "Assessoria de Rota Comercial",
         description: "Do veredito à execução",
         icon: Route,
       },
       {
-        href: "/servicos#parecer",
+        href: "/tecnologia#parecer",
         label: "Parecer Técnico-Comercial",
         description: "Due diligence para investidores",
         icon: Scale,
@@ -57,7 +59,7 @@ interface NavbarProps {
   /** In-page section anchors for the current page (rendered in the sub-bar). */
   sections?: SectionLink[];
   /** Which primary item is the current page. */
-  active?: "curso" | "servicos" | null;
+  active?: "curso" | "servicos" | "projetos" | "tecnologia" | null;
   ctaHref?: string;
   ctaLabel?: string;
 }
@@ -138,7 +140,9 @@ export function Navbar({
               >
                 <a
                   href="/servicos"
-                  className={`${primaryLinkClass(active === "servicos")} inline-flex items-center gap-1.5 py-5`}
+                  className={`${primaryLinkClass(
+                    active === "servicos" || active === "projetos" || active === "tecnologia"
+                  )} inline-flex items-center gap-1.5 py-5`}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
                   data-testid="link-servicos"
@@ -162,9 +166,16 @@ export function Navbar({
                     <div className="w-[30rem] p-2 bg-surface border border-stroke rounded-2xl shadow-2xl">
                       {serviceMenu.map((group) => (
                         <div key={group.group} className="p-2">
-                          <p className="px-3 py-2 text-xs font-mono uppercase tracking-wider text-cta">
+                          <a
+                            href={group.groupHref}
+                            onClick={() => setServicesOpen(false)}
+                            className="flex items-center justify-between px-3 py-2 text-xs font-mono uppercase tracking-wider text-cta hover:text-cta/80 transition-colors"
+                          >
                             {group.group}
-                          </p>
+                            <span className="normal-case tracking-normal font-body text-[11px] text-text-muted">
+                              ver página →
+                            </span>
+                          </a>
                           {group.items.map((item) => (
                             <a
                               key={item.href}
@@ -192,10 +203,10 @@ export function Navbar({
                 )}
               </div>
 
-              <a href="/servicos#sobre" className={primaryLinkClass(false)}>
+              <a href="/projetos#sobre" className={primaryLinkClass(false)}>
                 Sobre
               </a>
-              <a href="/servicos#contato" className={primaryLinkClass(false)}>
+              <a href="/projetos#contato" className={primaryLinkClass(false)}>
                 Contato
               </a>
             </div>
@@ -333,14 +344,14 @@ export function Navbar({
             </div>
 
             <a
-              href="/servicos#sobre"
+              href="/projetos#sobre"
               onClick={() => setIsOpen(false)}
               className="block py-3 text-base font-medium text-text border-t border-stroke/40"
             >
               Sobre
             </a>
             <a
-              href="/servicos#contato"
+              href="/projetos#contato"
               onClick={() => setIsOpen(false)}
               className="block py-3 text-base font-medium text-text border-t border-stroke/40"
             >
