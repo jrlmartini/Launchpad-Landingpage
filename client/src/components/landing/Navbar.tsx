@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -71,8 +71,19 @@ export function Navbar({
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Close menus on Escape
+  /* Hover intent: opening is instant, closing waits ~180ms so the pointer can
+     travel from the trigger into the panel without the menu snapping shut. */
+  const openServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setServicesOpen(true);
+  };
+  const scheduleCloseServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 180);
+  };
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -81,7 +92,10 @@ export function Navbar({
       }
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
   }, []);
 
   const primaryLinkClass = (isActive: boolean) =>
@@ -91,8 +105,10 @@ export function Navbar({
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      {/* ---------------- Primary bar (site-wide) ---------------- */}
-      <nav className="bg-background/85 backdrop-blur-xl border-b border-stroke/50">
+      {/* ---------------- Primary bar (site-wide) ----------------
+          relative z-20 keeps this bar (and its dropdown) above the sub-bar,
+          which creates its own stacking context via backdrop-blur. */}
+      <nav className="relative z-20 bg-background/85 backdrop-blur-xl border-b border-stroke/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-[4.5rem]">
             <a href="/" className="flex items-center" data-testid="link-home">
@@ -115,12 +131,14 @@ export function Navbar({
               {/* Serviços dropdown */}
               <div
                 className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
+                onMouseEnter={openServices}
+                onMouseLeave={scheduleCloseServices}
+                onFocus={openServices}
+                onBlur={scheduleCloseServices}
               >
                 <a
                   href="/servicos"
-                  className={`${primaryLinkClass(active === "servicos")} inline-flex items-center gap-1.5`}
+                  className={`${primaryLinkClass(active === "servicos")} inline-flex items-center gap-1.5 py-5`}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
                   data-testid="link-servicos"
@@ -134,7 +152,13 @@ export function Navbar({
                 </a>
 
                 {servicesOpen && (
-                  <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4">
+                  <div
+                    className="absolute left-1/2 -translate-x-1/2 top-full z-50"
+                    onMouseEnter={openServices}
+                    onMouseLeave={scheduleCloseServices}
+                  >
+                    {/* transparent bridge: keeps hover alive across the gap */}
+                    <div className="h-3 w-full" />
                     <div className="w-[30rem] p-2 bg-surface border border-stroke rounded-2xl shadow-2xl">
                       {serviceMenu.map((group) => (
                         <div key={group.group} className="p-2">
