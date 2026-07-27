@@ -5,10 +5,11 @@ import {
   CheckCircle2,
   Clock,
   XCircle,
-  Mail,
+  MessageCircle,
+  CalendarClock,
 } from "lucide-react";
-
-const CONTACT_EMAIL = "contato@launchpadhub.com.br";
+import { ContactOptions } from "./ContactOptions";
+import { waLink, WA_MESSAGES, CALENDLY_URL } from "@/lib/contact";
 
 /* ------------------------------------------------------------------ */
 /* HERO                                                                */
@@ -156,7 +157,7 @@ const projectServices = [
     closing:
       "São mais de dez anos escrevendo e avaliando projetos de fomento, e mais de R$ 35 milhões aprovados. Essa experiência entra na sua proposta como estrutura, não como promessa.",
     cta: "Quero escrever meu projeto",
-    subject: "Escrita do Projeto — a quatro mãos",
+    waMessage: WA_MESSAGES.escrita,
     featured: true,
     id: "escrita",
   },
@@ -177,7 +178,7 @@ const projectServices = [
     closing:
       "O objetivo não é aprovar o seu texto. É encontrar, ainda dentro do prazo, tudo aquilo que faria você perder pontos.",
     cta: "Quero revisar meu projeto",
-    subject: "Revisão do Projeto — mentoria",
+    waMessage: WA_MESSAGES.revisao,
     featured: false,
     id: "revisao",
   },
@@ -251,17 +252,31 @@ export function ProjectServicesCards() {
                 {service.closing}
               </p>
 
-              <a
-                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(service.subject)}`}
-                className={`mt-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-200 group ${
-                  service.featured
-                    ? "text-white bg-cta hover:bg-cta/90 cta-glow"
-                    : "text-text border border-stroke hover:border-cta/40"
-                }`}
-              >
-                {service.cta}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <div className="mt-auto">
+                <a
+                  href={waLink(service.waMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-200 group ${
+                    service.featured
+                      ? "text-white bg-cta hover:bg-cta/90 cta-glow"
+                      : "text-text border border-stroke hover:border-cta/40"
+                  }`}
+                >
+                  <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
+                  {service.cta}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors"
+                >
+                  <CalendarClock className="w-4 h-4" strokeWidth={1.5} />
+                  ou agende 20 minutos comigo
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -361,16 +376,12 @@ export function ProjectServicesComparison() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-text-muted">
-          Na dúvida, me conte o caso —{" "}
-          <a
-            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Dúvida — escrita ou revisão de projeto")}`}
-            className="font-semibold text-cta hover:text-cta/80 transition-colors"
-          >
-            eu digo qual faz mais sentido
-          </a>
-          .
-        </p>
+        <div className="mt-10 max-w-2xl mx-auto text-center">
+          <p className="text-text-muted mb-5">
+            Na dúvida, me conte o caso — eu digo qual faz mais sentido.
+          </p>
+          <ContactOptions message={WA_MESSAGES.duvidaProjeto} />
+        </div>
       </div>
     </section>
   );
@@ -442,19 +453,12 @@ export function ProjectsContact() {
         <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-6">
           Me conte qual edital você quer disputar
         </h2>
-        <p className="text-lg text-text-muted leading-relaxed mb-8">
-          Em poucas linhas: qual chamada, qual é a tecnologia, em que estágio
-          está e qual é o prazo. Respondo em até 2 dias úteis dizendo se dá para
-          fazer um bom trabalho no tempo que existe.
+        <p className="text-lg text-text-muted leading-relaxed mb-10">
+          Qual chamada, qual é a tecnologia, em que estágio está e qual é o
+          prazo. Com isso eu já consigo dizer se dá para fazer um bom trabalho
+          no tempo que existe.
         </p>
-        <a
-          href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Projeto de fomento — quero conversar")}`}
-          className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow"
-        >
-          <Mail className="w-5 h-5" />
-          Iniciar conversa
-        </a>
-        <p className="mt-4 text-sm font-mono text-text-muted">{CONTACT_EMAIL}</p>
+        <ContactOptions message={WA_MESSAGES.geral} variant="cards" />
       </div>
     </section>
   );

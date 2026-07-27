@@ -4,14 +4,16 @@ import {
   Route,
   Scale,
   CheckCircle2,
-  Mail,
   FileText,
   Map,
   ListChecks,
   Users,
+  MessageCircle,
+  CalendarClock,
 } from "lucide-react";
 
-const CONTACT_EMAIL = "contato@launchpadhub.com.br";
+import { ContactOptions } from "./ContactOptions";
+import { waLink, WA_MESSAGES, CALENDLY_URL } from "@/lib/contact";
 
 export function HubHero() {
   return (
@@ -202,16 +204,10 @@ export function DiagnosticoSection() {
             Descobrir isso agora custa uma fração de descobrir depois do piloto.
           </p>
 
-          <div className="text-center">
-            <a
-              href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Diagnóstico de Prontidão Comercial")}`}
-              className="inline-flex items-center gap-3 px-10 py-5 text-lg font-bold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
-              data-testid="button-diagnostico-cta"
-            >
-              Solicitar Diagnóstico
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
+          <ContactOptions
+            message={WA_MESSAGES.diagnostico}
+            className="max-w-xl mx-auto"
+          />
         </div>
       </div>
     </section>
@@ -225,7 +221,7 @@ const otherServices = [
     tag: "Sprint de 6–8 semanas + acompanhamento",
     description:
       "Da avaliação à execução: aplicações priorizadas, tese de primeiro cliente, desenho de piloto, parceiros e estratégia de captação integrada — com roadmap de 12 meses e acompanhamento mensal como conselheiro.",
-    subject: "Assessoria de Rota Comercial",
+    waMessage: WA_MESSAGES.rota,
     id: "rota",
   },
   {
@@ -234,7 +230,7 @@ const otherServices = [
     tag: "Para investidores e financiadores · 1–3 semanas",
     description:
       "Due diligence de tecnologias para decisões de investimento: viabilidade técnica, prontidão comercial e os riscos que o pitch não mostra — no prazo do deal.",
-    subject: "Parecer Técnico-Comercial",
+    waMessage: WA_MESSAGES.parecer,
     id: "parecer",
   },
 ];
@@ -265,13 +261,26 @@ export function OtherServicesSection() {
                 {service.title}
               </h3>
               <p className="text-text-muted leading-relaxed mb-6">{service.description}</p>
-              <a
-                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(service.subject)}`}
-                className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
-              >
-                Conversar sobre este serviço
-                <ArrowRight className="w-4 h-4" />
-              </a>
+              <div className="mt-auto flex flex-wrap items-center gap-4">
+                <a
+                  href={waLink(service.waMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" strokeWidth={1.5} />
+                  Conversar no WhatsApp
+                </a>
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors"
+                >
+                  <CalendarClock className="w-4 h-4" strokeWidth={1.5} />
+                  Agendar 20 min
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -377,20 +386,12 @@ export function ContactSection() {
         <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-6">
           A pergunta já está na mesa. Só falta a resposta.
         </h2>
-        <p className="text-lg text-text-muted leading-relaxed mb-8">
-          Me conte em poucas linhas qual tecnologia está em jogo, em que estágio
-          está e quanto já foi investido. Respondo em até 2 dias úteis dizendo
-          se o caso é para mim — e, se não for, para quem deveria ser.
+        <p className="text-lg text-text-muted leading-relaxed mb-10">
+          Me conte qual tecnologia está em jogo, em que estágio está e quanto já
+          foi investido. Com isso eu já consigo dizer se o caso é para mim — e,
+          se não for, para quem deveria ser.
         </p>
-        <a
-          href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Tecnologia e mercado — quero conversar")}`}
-          className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
-          data-testid="button-contact"
-        >
-          <Mail className="w-5 h-5" />
-          Iniciar conversa
-        </a>
-        <p className="mt-4 text-sm font-mono text-text-muted">{CONTACT_EMAIL}</p>
+        <ContactOptions message={WA_MESSAGES.tecnologia} variant="cards" />
       </div>
     </section>
   );

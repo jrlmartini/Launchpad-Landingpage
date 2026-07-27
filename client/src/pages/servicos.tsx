@@ -1,6 +1,9 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, PenTool, Eye, Microscope, Route, Scale } from "lucide-react";
+import { ContactOptions } from "@/components/hub/ContactOptions";
+import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
+import { WA_MESSAGES } from "@/lib/contact";
 
 const tracks = [
   {
@@ -94,6 +97,14 @@ export default function Servicos() {
                 ))}
               </div>
 
+              <div className="mt-12 max-w-3xl mx-auto text-center">
+                <p className="text-lg text-text mb-6">
+                  Não sabe em qual você se encaixa? Fale comigo — dois minutos de
+                  conversa resolvem.
+                </p>
+                <ContactOptions message={WA_MESSAGES.geral} className="max-w-xl mx-auto" />
+              </div>
+
               <p className="mt-10 text-center text-text-muted">
                 Prefere aprender a fazer você mesmo?{" "}
                 <a href="/" className="font-semibold text-cta hover:text-cta/80 transition-colors">
@@ -105,6 +116,7 @@ export default function Servicos() {
           </section>
         </main>
         <Footer />
+        <FloatingWhatsApp message={WA_MESSAGES.geral} />
       </div>
     </div>
   );

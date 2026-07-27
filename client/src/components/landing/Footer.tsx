@@ -1,4 +1,5 @@
-import { Instagram, Youtube, Mail } from "lucide-react";
+import { Instagram, Youtube, Mail, MessageCircle, CalendarClock } from "lucide-react";
+import { waLink, WA_MESSAGES, CALENDLY_URL, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -9,7 +10,27 @@ export function Footer() {
             <img src="/logo.png" alt="LaunchpadHub" className="h-10 w-auto" />
           </a>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <a
+              href={waLink(WA_MESSAGES.geral)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-text-muted hover:text-cta transition-colors"
+              data-testid="link-whatsapp-footer"
+            >
+              <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
+              <span>{WHATSAPP_DISPLAY}</span>
+            </a>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-text-muted hover:text-cta transition-colors"
+              data-testid="link-calendly-footer"
+            >
+              <CalendarClock className="w-5 h-5" strokeWidth={1.5} />
+              <span>Agendar 20 min</span>
+            </a>
             <a
               href="mailto:contato@launchpadhub.com.br"
               className="flex items-center gap-2 text-text-muted hover:text-cta transition-colors"
@@ -17,7 +38,7 @@ export function Footer() {
               aria-label="Email"
             >
               <Mail className="w-5 h-5" strokeWidth={1.5} />
-              <span className="hidden sm:inline">contato@launchpadhub.com.br</span>
+              <span className="hidden lg:inline">contato@launchpadhub.com.br</span>
             </a>
           </div>
 
