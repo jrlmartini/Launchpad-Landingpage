@@ -1,4 +1,4 @@
-import { Check, X } from "lucide-react";
+import { Check, X, ArrowRight } from "lucide-react";
 
 const forYou = [
   "Tem uma tecnologia forte e quer transformar isso em projeto financiável",
@@ -55,6 +55,24 @@ export function ForWhoSection() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="mt-10 max-w-3xl mx-auto p-6 lg:p-8 bg-surface/50 border border-stroke/50 rounded-2xl text-center">
+          <p className="text-lg text-text mb-2">
+            E se você preferir não fazer sozinho?
+          </p>
+          <p className="text-text-muted leading-relaxed mb-5">
+            Também escrevo o projeto junto com você, ou reviso o que você já
+            escreveu antes da submissão — lendo com os olhos de quem avalia.
+          </p>
+          <a
+            href="/servicos#projetos"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
+            data-testid="link-servicos-from-curso"
+          >
+            Ver como funciona
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

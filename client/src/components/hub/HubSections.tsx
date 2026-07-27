@@ -24,31 +24,27 @@ export function HubHero() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="inline-flex items-center gap-2 px-5 py-2.5 mb-6 text-base font-semibold text-cta bg-cta/10 border border-cta/20 rounded-full">
             <span className="w-2 h-2 bg-cta rounded-full animate-pulse" />
-            Assessoria · Do laboratório ao mercado
+            Trabalho comigo, direto
           </p>
 
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text leading-tight tracking-tight mb-6 animate-fade-in-up">
-            Sua tecnologia funciona.
+            Quando o curso não basta —
             <br />
-            <span className="text-gradient-accent">Mas ela é um negócio?</span>
+            <span className="text-gradient-accent">e você precisa de alguém junto</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-4 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
-            Avaliamos a prontidão comercial de tecnologias industriais e
-            definimos a rota do laboratório ao mercado — com método, prazo e
-            veredito.
-          </p>
-
-          <p className="text-sm font-mono text-text-muted mb-10 animate-fade-in-up animate-delay-200">
-            Diagnóstico de Prontidão Comercial · 30 dias · escopo fechado, preço fechado
+          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
+            Escrevo e reviso projetos de fomento com você, e ajudo empresas
+            industriais a decidir o que fazer com uma tecnologia pronta.
+            Poucos clientes por vez, sempre com escopo e prazo definidos.
           </p>
 
           <a
-            href="#diagnostico"
+            href="#projetos"
             className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group animate-fade-in-up animate-delay-200"
-            data-testid="button-hub-diagnostico"
+            data-testid="button-hub-servicos"
           >
-            Solicitar um Diagnóstico
+            Ver como posso ajudar
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
@@ -320,23 +316,27 @@ export function HubFAQ() {
   const faqs = [
     {
       q: "Quanto custa?",
-      a: "O Diagnóstico tem preço fechado, definido na conversa inicial conforme a complexidade da tecnologia. Como referência: uma fração do custo de um mês do projeto de P&D que o originou.",
+      a: "Todos os trabalhos têm escopo e preço fechados, definidos na conversa inicial conforme a complexidade do caso. Não trabalho por hora: o valor está na decisão certa, não no tempo que levo para chegar nela.",
     },
     {
-      q: "E se eu precisar de mais do que o diagnóstico?",
-      a: "A maioria dos clientes segue para a estruturação completa da rota comercial. Mas o Diagnóstico é autossuficiente — você pode executar o plano internamente.",
+      q: "Você garante aprovação do projeto?",
+      a: "Não, e ninguém honesto garante. O que posso afirmar é que a proposta vai chegar muito mais consistente, mais bem enquadrada e muito mais difícil de reprovar do que chegaria sozinha.",
     },
     {
-      q: "Vocês implementam?",
-      a: "Não executamos engenharia nem operação. Definimos a rota, sequenciamos as decisões e acompanhamos a execução como conselheiros. Quem constrói é o seu time e os parceiros certos — que ajudamos a selecionar.",
+      q: "Quantos clientes você atende por vez?",
+      a: "Poucos, de propósito. Escrever e revisar projeto é trabalho autoral e exige atenção real — por isso trabalho com um número limitado de casos simultâneos e às vezes preciso recusar.",
     },
     {
-      q: "Atendem startups?",
-      a: "Seletivamente, e em geral por modelos de parceria, não honorários. O foco principal são empresas industriais estabelecidas e investidores avaliando tecnologias.",
+      q: "Você implementa a tecnologia?",
+      a: "Não executo engenharia nem operação. Defino a rota, sequencio as decisões e acompanho a execução como conselheiro. Quem constrói é o seu time e os parceiros certos — que ajudo a selecionar.",
+    },
+    {
+      q: "Atende startups?",
+      a: "Seletivamente, e em geral por modelos de parceria, não honorários. O foco principal são empresas industriais estabelecidas, deep techs financiadas e investidores avaliando tecnologias.",
     },
     {
       q: "Por que não uma consultoria de inovação?",
-      a: "Consultorias de inovação estruturam processos para a empresa inovar. Resolvemos um problema diferente: o que fazer com uma tecnologia específica que já existe.",
+      a: "Consultorias de inovação estruturam processos para a empresa inovar. Resolvo um problema diferente: o que fazer com um projeto ou uma tecnologia específica que já existe.",
     },
   ];
 
@@ -372,9 +372,10 @@ export function ContactSection() {
           A pergunta já está na mesa. Só falta a resposta.
         </h2>
         <p className="text-lg text-text-muted leading-relaxed mb-8">
-          Conte em poucas linhas qual tecnologia está em jogo, em que estágio
-          está e quanto já foi investido. Respondemos em até 2 dias úteis
-          dizendo se o caso é para nós — e, se não for, para quem deveria ser.
+          Me conte em poucas linhas qual é o caso: o edital que você quer
+          disputar, o projeto que precisa de revisão ou a tecnologia que está
+          parada. Respondo em até 2 dias úteis dizendo se posso ajudar — e, se
+          não puder, quem provavelmente pode.
         </p>
         <a
           href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Contato — Assessoria LaunchpadHub")}`}
