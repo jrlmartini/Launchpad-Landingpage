@@ -83,6 +83,19 @@ const EIXOS: Eixo[] = [
   },
 ];
 
+/** Definições oficiais da escala TRL, como usadas pelas agências de fomento. */
+const TRL_DEFINICOES: Record<number, string> = {
+  1: "Princípios básicos observados e relatados.",
+  2: "Formulação de conceitos tecnológicos e/ou de aplicação.",
+  3: "Prova de conceito analítica e experimental.",
+  4: "Validação de componentes ou protótipos em laboratório.",
+  5: "Validação de componentes em ambiente relevante.",
+  6: "Demonstração de protótipo em ambiente relevante.",
+  7: "Demonstração do sistema em ambiente operacional/real.",
+  8: "Sistema completo e qualificado por testes e demonstrações reais.",
+  9: "Sistema real provado em operação comercial plena.",
+};
+
 const TRL_BLOCOS = [
   { faixa: "1 a 3", label: "Conceito e prova de princípio" },
   { faixa: "4 a 6", label: "Validação em ambiente relevante" },
@@ -185,14 +198,23 @@ export function Autodiagnostico() {
               );
             })}
           </div>
-          <div className="grid sm:grid-cols-3 gap-3">
-            {TRL_BLOCOS.map((b) => (
-              <div key={b.faixa} className="text-sm">
-                <span className="font-mono text-cta">{b.faixa}</span>
-                <span className="text-text-muted"> · {b.label}</span>
-              </div>
-            ))}
-          </div>
+          {trl !== null ? (
+            <div className="p-4 bg-cta/10 border border-cta/30 rounded-xl">
+              <p className="text-xs font-mono uppercase tracking-wider text-cta mb-1">
+                TRL {trl}
+              </p>
+              <p className="text-text leading-relaxed">{TRL_DEFINICOES[trl]}</p>
+            </div>
+          ) : (
+            <div className="grid sm:grid-cols-3 gap-3">
+              {TRL_BLOCOS.map((b) => (
+                <div key={b.faixa} className="text-sm">
+                  <span className="font-mono text-cta">{b.faixa}</span>
+                  <span className="text-text-muted"> · {b.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Eixos do CRL */}
@@ -250,7 +272,12 @@ export function Autodiagnostico() {
                     <p className="text-xs font-mono uppercase tracking-wider text-text-muted mb-1">
                       TRL
                     </p>
-                    <p className="font-display font-bold text-3xl text-text">{trl}</p>
+                    <p
+                      className="font-display font-bold text-3xl text-text"
+                      title={TRL_DEFINICOES[trl!]}
+                    >
+                      {trl}
+                    </p>
                   </div>
                   <div>
                     <p className="text-xs font-mono uppercase tracking-wider text-text-muted mb-1">
@@ -308,7 +335,7 @@ export function Autodiagnostico() {
                 veredito ser “não avance”.
               </p>
               <ContactOptions
-                message={`Olá! Fiz o autodiagnóstico no site. Resultado: TRL ${trl}, CRL ${crl}, descompasso ${descompasso}. Eixo mais atrasado: ${eixoMaisAtrasado?.nome}. Gostaria de conversar sobre o Diagnóstico de Prontidão Comercial.`}
+                message={`Olá! Fiz o autodiagnóstico no site.\n\n*TRL ${trl}* — ${TRL_DEFINICOES[trl!]}\n*CRL ${crl}* · descompasso ${descompasso} (${v.titulo})\n*Eixo mais atrasado:* ${eixoMaisAtrasado?.nome}\n\nGostaria de conversar sobre o Diagnóstico de Prontidão Comercial.`}
                 source="autodiagnostico"
               />
               <button
