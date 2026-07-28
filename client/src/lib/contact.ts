@@ -2,13 +2,31 @@
 
 export const WHATSAPP_NUMBER = "551931952808"; // +55 19 3195-2808
 export const WHATSAPP_DISPLAY = "+55 19 3195-2808";
-export const CALENDLY_URL =
-  "https://calendly.com/mentorialaunchpad/avaliacao-mentoria";
 export const CONTACT_EMAIL = "contato@launchpadhub.com.br";
 
-/** Builds a wa.me link with a pre-filled message so the conversation starts with context. */
-export function waLink(message: string): string {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+const CALENDLY_BASE =
+  "https://calendly.com/mentorialaunchpad/avaliacao-mentoria";
+
+/** Default Calendly link (kept for imports that don't pass context). */
+export const CALENDLY_URL = `${CALENDLY_BASE}?utm_source=site&utm_medium=cta&utm_campaign=launchpadhub`;
+
+/**
+ * Calendly link carrying page/offer context as UTMs, so scheduled calls can be
+ * attributed to the page and CTA that produced them.
+ */
+export function calendlyLink(source?: string): string {
+  if (!source) return CALENDLY_URL;
+  return `${CALENDLY_BASE}?utm_source=site&utm_medium=cta&utm_campaign=launchpadhub&utm_content=${encodeURIComponent(source)}`;
+}
+
+/**
+ * Builds a wa.me link with a pre-filled message so the conversation starts with
+ * context. `source` appends a discreet origin line — WhatsApp can't carry UTMs,
+ * so this is the only reliable way to know which page produced the message.
+ */
+export function waLink(message: string, source?: string): string {
+  const body = source ? `${message}\n\n— vim pela página: ${source}` : message;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(body)}`;
 }
 
 /** Pre-filled openers per service — the visitor never faces an empty message box. */

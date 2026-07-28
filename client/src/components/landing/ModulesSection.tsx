@@ -3,7 +3,7 @@ import { BookOpen, Layers, Pencil, ClipboardCheck, Calculator, Sparkles, Compass
 const modules = [
   {
     icon: Compass,
-    title: "Módulo 0 — Introdução ao Fomento para Deep Techs",
+    title: "Módulo 0 — Introdução ao Fomento para Deeptechs",
     description: "Como o curso funciona, diagnóstico do seu ponto de partida e o caminho mais curto para transformar tecnologia em projeto financiável.",
   },
   {

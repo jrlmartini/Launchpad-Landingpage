@@ -10,7 +10,8 @@ import {
   Rocket,
 } from "lucide-react";
 import { ContactOptions } from "@/components/hub/ContactOptions";
-import { WA_MESSAGES } from "@/lib/contact";
+import { WA_MESSAGES, calendlyLink } from "@/lib/contact";
+import { trackEvent } from "@/lib/analytics";
 
 /* ------------------------------------------------------------------ */
 /* HERO                                                                */
@@ -18,7 +19,7 @@ import { WA_MESSAGES } from "@/lib/contact";
 
 export function HomeHero() {
   return (
-    <section className="relative pt-36 lg:pt-48 pb-20 lg:pb-24 overflow-hidden">
+    <section className="relative pt-28 lg:pt-32 pb-16 lg:pb-20 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/10 to-background" />
@@ -26,36 +27,99 @@ export function HomeHero() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 text-sm font-semibold text-cta bg-cta/10 border border-cta/20 rounded-full">
+          <p className="inline-flex items-center gap-2 px-5 py-2 mb-5 text-sm font-semibold text-cta bg-cta/10 border border-cta/20 rounded-full">
             <span className="w-2 h-2 bg-cta rounded-full animate-pulse" />
-            LaunchpadHub · Explore novos mundos
+            Fomento e comercialização para deep techs e empresas industriais
           </p>
 
-          <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-text leading-[1.1] tracking-tight mb-8 animate-fade-in-up">
-            Tirar tecnologia do laboratório
+          <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text leading-[1.12] tracking-tight mb-5 animate-fade-in-up">
+            Da tecnologia que funciona
             <br />
-            <span className="text-gradient-accent">é uma engenharia à parte</span>
+            <span className="text-gradient-accent">
+              ao projeto financiado — e ao primeiro mercado
+            </span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-4 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
-            A ciência resolve o "isso funciona?". Depois vem tudo o que ninguém
-            ensina: qual edital disputar, como escrever um projeto que resiste a
-            um avaliador, qual aplicação perseguir, quem é o primeiro cliente.
+          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-6 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
+            Escolher o edital certo, construir propostas que resistem a um
+            avaliador e definir a rota comercial de tecnologias complexas.{" "}
+            <strong className="text-text">
+              Mais de R$ 35 milhões aprovados desde 2012.
+            </strong>
           </p>
 
-          <p className="text-lg lg:text-xl text-text leading-relaxed mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-            É esse pedaço do caminho que eu faço com você — ou ensino você a
-            fazer sozinho.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 animate-fade-in-up animate-delay-200">
+            <a
+              href={calendlyLink("home-hero")}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("click_calendly", { source: "home-hero" })}
+              className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
+              data-testid="button-home-calendly"
+            >
+              Avaliar meu caso em 20 minutos
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="#caminhos"
+              className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-text border border-stroke hover:border-cta/40 rounded-2xl transition-all duration-200"
+              data-testid="button-home-paths"
+            >
+              Escolher entre curso, projeto ou diagnóstico
+            </a>
+          </div>
 
-          <a
-            href="#caminhos"
-            className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group animate-fade-in-up animate-delay-300"
-            data-testid="button-home-paths"
-          >
-            Ver por onde começar
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          <p className="text-sm text-text-muted animate-fade-in-up animate-delay-300">
+            Sem apresentação comercial. Se não houver encaixe, você sai com a
+            indicação do próximo passo.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* PROOF BAND — immediately below the hero                             */
+/* ------------------------------------------------------------------ */
+
+const proofItems = [
+  {
+    value: "+R$ 35 milhões",
+    label: "aprovados em fomento",
+    note: "Projetos reembolsáveis e não reembolsáveis.",
+  },
+  {
+    value: "Desde 2012",
+    label: "em inovação tecnológica",
+    note: "Da engenharia de processos à construção de negócios.",
+  },
+  {
+    value: "FINEP · FAPESP · CNPq",
+    label: "Embrapii e FAPs estaduais",
+    note: "Experiência com diferentes lógicas e formatos de avaliação.",
+  },
+  {
+    value: "Decisão antes da redação",
+    label: "Go / No-Go",
+    note: "Se o edital ou a rota não fizer sentido, o primeiro resultado é um “não”.",
+  },
+];
+
+export function ProofBand() {
+  return (
+    <section className="py-12 lg:py-16 bg-surface/40 border-y border-stroke/40">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {proofItems.map((item) => (
+            <div key={item.value} className="text-center sm:text-left">
+              <p className="font-display font-bold text-xl lg:text-2xl text-cta mb-1">
+                {item.value}
+              </p>
+              <p className="text-text font-medium mb-2">{item.label}</p>
+              <p className="text-sm text-text-muted leading-relaxed">{item.note}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -75,7 +139,7 @@ const paths = [
     description:
       "O método completo para escrever e defender projetos de fomento — com templates, planilhas e checklists. Para quem quer construir essa competência dentro de casa.",
     items: ["6 módulos + bônus", "Templates e checklists", "Acesso às lives de novos editais"],
-    cta: "Conhecer o curso",
+    cta: "Ver método, conteúdo e preço",
     featured: false,
   },
   {
@@ -86,7 +150,7 @@ const paths = [
     description:
       "Escrevo o projeto a quatro mãos com você, ou reviso o que você já escreveu lendo com os olhos de quem avalia. Para quem tem edital na mira e prazo correndo.",
     items: ["Escrita do Projeto", "Revisão do Projeto", "FINEP, FAPESP, CNPq, Embrapii, FAPs"],
-    cta: "Ver como trabalho",
+    cta: "Ver escrita e revisão",
     featured: true,
   },
   {
@@ -97,7 +161,7 @@ const paths = [
     description:
       "Sua tecnologia funciona — mas é um negócio? Diagnóstico de prontidão comercial, rota de mercado e parecer para investidores. Para quando a dúvida é maior que o edital.",
     items: ["Diagnóstico em 30 dias", "Rota comercial e pilotos", "Due diligence técnica"],
-    cta: "Ver assessoria",
+    cta: "Ver diagnóstico de 30 dias",
     featured: false,
   },
 ];
@@ -298,7 +362,7 @@ export function HomeContact() {
           edital, um projeto pela metade. Eu digo qual caminho faz sentido,
           mesmo que a resposta seja "nenhum dos meus".
         </p>
-        <ContactOptions message={WA_MESSAGES.geral} variant="cards" />
+        <ContactOptions message={WA_MESSAGES.geral} variant="cards" source="home-contato" />
       </div>
     </section>
   );

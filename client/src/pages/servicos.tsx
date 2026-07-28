@@ -38,7 +38,7 @@ export default function Servicos() {
     <div className="min-h-screen bg-background text-foreground">
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />
       <div className="relative z-10">
-        <Navbar ctaHref="/#oferta" ctaLabel="Quero o curso" />
+        <Navbar active="servicos" ctaHref="/curso" ctaLabel="Conhecer o curso" />
         <main>
           <section className="relative pt-36 lg:pt-44 pb-16 overflow-hidden">
             <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -102,7 +102,7 @@ export default function Servicos() {
                   Não sabe em qual você se encaixa? Fale comigo — dois minutos de
                   conversa resolvem.
                 </p>
-                <ContactOptions message={WA_MESSAGES.geral} className="max-w-xl mx-auto" />
+                <ContactOptions message={WA_MESSAGES.geral} source="servicos-hub" className="max-w-xl mx-auto" />
               </div>
 
               <p className="mt-10 text-center text-text-muted">

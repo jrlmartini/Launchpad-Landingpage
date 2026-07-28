@@ -3,6 +3,7 @@ import { LogoCarousel } from "@/components/landing/LogoCarousel";
 import { Footer } from "@/components/landing/Footer";
 import {
   HomeHero,
+  ProofBand,
   PathsSection,
   AboutMe,
   HomeContact,
@@ -25,10 +26,11 @@ export default function Home() {
           sections={sections}
           active="home"
           ctaHref="#caminhos"
-          ctaLabel="Começar"
+          ctaLabel="Escolher meu próximo passo"
         />
         <main>
           <HomeHero />
+          <ProofBand />
           <LogoCarousel title="Experiência com os principais instrumentos de fomento do país" />
           <PathsSection />
           <AboutMe />

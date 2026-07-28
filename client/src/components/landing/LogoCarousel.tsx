@@ -29,7 +29,7 @@ export function LogoCarousel({
         </div>
       )}
       
-      <div className="relative w-full">
+      <div className="relative w-full" aria-label="Instrumentos de fomento com os quais há experiência">
         <div className="flex animate-marquee-continuous">
           {allLogos.map((logo, index) => (
             <div
@@ -46,6 +46,17 @@ export function LogoCarousel({
           ))}
         </div>
       </div>
+
+      {title && (
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 mt-6">
+          <p className="text-xs text-text-muted/80 text-center leading-relaxed">
+            Experiência em propostas e projetos submetidos a instrumentos da
+            FINEP, CNPq, FAPESP, FAPEMIG, FAPERJ, SENAI e Centelha. As marcas
+            pertencem às respectivas instituições e não indicam parceria,
+            certificação ou endosso.
+          </p>
+        </div>
+      )}
     </section>
   );
 }

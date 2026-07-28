@@ -8,6 +8,16 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-M5CQKM4M');</script>
     <!-- End Google Tag Manager -->
+
+    <!--
+      ATENÇÃO — possível dupla contagem de pageview.
+      Este gtag carrega o GA4 (G-1E1VYKXH59) diretamente. Se o contêiner GTM
+      acima TAMBÉM tiver uma tag de configuração GA4 para a mesma propriedade,
+      cada visita é contada duas vezes e todas as taxas de conversão do
+      relatório ficam subestimadas.
+      Verificar no Tag Assistant e manter apenas UMA das duas fontes.
+      (Mantido aqui por segurança: remover sem checar o GTM pode zerar a coleta.)
+    -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1E1VYKXH59"></script>
     <script>
@@ -19,17 +29,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     
-    <title>LaunchpadHub — Captação para Deep Tech com Método</title>
-    <meta name="description" content="Transforme sua tecnologia em um projeto financiável. Treinamento prático para escrever e defender projetos de inovação com templates, checklists e um sistema replicável — e assessoria de comercialização de tecnologias." />
+    <!-- Título, descrição, OG e canonical são reescritos por rota em script/prerender.ts -->
+    <title>LaunchpadHub | Fomento e Mercado para Deep Techs</title>
+    <meta name="description" content="Projetos FINEP, FAPESP e CNPq, curso de fomento e diagnóstico de prontidão comercial para tecnologias complexas. Mais de R$ 35 milhões aprovados desde 2012." />
 
-    <meta property="og:title" content="LaunchpadHub — Captação para Deep Tech com Método" />
-    <meta property="og:description" content="Transforme sua tecnologia em um projeto financiável, com a lógica de quem avalia: templates, checklists e um sistema replicável." />
+    <meta property="og:site_name" content="LaunchpadHub" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="LaunchpadHub | Fomento e Mercado para Deep Techs" />
+    <meta property="og:description" content="Projetos FINEP, FAPESP e CNPq, curso de fomento e diagnóstico de prontidão comercial para tecnologias complexas." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://deeptechs.com.br/" />
     <meta property="og:image" content="https://deeptechs.com.br/opengraph.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="LaunchpadHub — Do laboratório ao mercado" />
-    <meta name="twitter:description" content="Sua tecnologia funciona. Mas ela é um negócio? Prontidão comercial, rota de mercado e captação — com método." />
+    <meta name="twitter:title" content="LaunchpadHub | Fomento e Mercado para Deep Techs" />
+    <meta name="twitter:description" content="Projetos FINEP, FAPESP e CNPq, curso de fomento e diagnóstico de prontidão comercial para tecnologias complexas." />
     <meta name="twitter:image" content="https://deeptechs.com.br/opengraph.jpg" />
 
     <link rel="icon" type="image/png" href="/favicon.png" />

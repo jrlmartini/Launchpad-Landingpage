@@ -9,7 +9,8 @@ import {
   CalendarClock,
 } from "lucide-react";
 import { ContactOptions } from "./ContactOptions";
-import { waLink, WA_MESSAGES, CALENDLY_URL } from "@/lib/contact";
+import { waLink, calendlyLink, WA_MESSAGES } from "@/lib/contact";
+import { trackEvent } from "@/lib/analytics";
 
 /* ------------------------------------------------------------------ */
 /* HERO                                                                */
@@ -254,7 +255,7 @@ export function ProjectServicesCards() {
 
               <div className="mt-auto">
                 <a
-                  href={waLink(service.waMessage)}
+                  href={waLink(service.waMessage, service.id)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-200 group ${
@@ -268,7 +269,7 @@ export function ProjectServicesCards() {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
-                  href={CALENDLY_URL}
+                  href={calendlyLink(service.id)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3 w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors"
@@ -380,7 +381,7 @@ export function ProjectServicesComparison() {
           <p className="text-text-muted mb-5">
             Na dúvida, me conte o caso — eu digo qual faz mais sentido.
           </p>
-          <ContactOptions message={WA_MESSAGES.duvidaProjeto} />
+          <ContactOptions message={WA_MESSAGES.duvidaProjeto} source="projetos-comparacao" />
         </div>
       </div>
     </section>
@@ -458,7 +459,7 @@ export function ProjectsContact() {
           prazo. Com isso eu já consigo dizer se dá para fazer um bom trabalho
           no tempo que existe.
         </p>
-        <ContactOptions message={WA_MESSAGES.geral} variant="cards" />
+        <ContactOptions message={WA_MESSAGES.geral} variant="cards" source="projetos-contato" />
       </div>
     </section>
   );

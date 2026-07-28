@@ -13,7 +13,8 @@ import {
 } from "lucide-react";
 
 import { ContactOptions } from "./ContactOptions";
-import { waLink, WA_MESSAGES, CALENDLY_URL } from "@/lib/contact";
+import { waLink, calendlyLink, WA_MESSAGES } from "@/lib/contact";
+import { trackEvent } from "@/lib/analytics";
 
 export function HubHero() {
   return (
@@ -49,7 +50,7 @@ export function HubHero() {
             className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group animate-fade-in-up animate-delay-200"
             data-testid="button-hub-diagnostico"
           >
-            Solicitar um Diagnóstico
+            Avaliar se meu caso se encaixa
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
@@ -206,6 +207,7 @@ export function DiagnosticoSection() {
 
           <ContactOptions
             message={WA_MESSAGES.diagnostico}
+            source="tecnologia-diagnostico"
             className="max-w-xl mx-auto"
           />
         </div>
@@ -263,7 +265,7 @@ export function OtherServicesSection() {
               <p className="text-text-muted leading-relaxed mb-6">{service.description}</p>
               <div className="mt-auto flex flex-wrap items-center gap-4">
                 <a
-                  href={waLink(service.waMessage)}
+                  href={waLink(service.waMessage, service.id)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
@@ -272,7 +274,7 @@ export function OtherServicesSection() {
                   Conversar no WhatsApp
                 </a>
                 <a
-                  href={CALENDLY_URL}
+                  href={calendlyLink(service.id)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors"
@@ -391,7 +393,7 @@ export function ContactSection() {
           foi investido. Com isso eu já consigo dizer se o caso é para mim — e,
           se não for, para quem deveria ser.
         </p>
-        <ContactOptions message={WA_MESSAGES.tecnologia} variant="cards" />
+        <ContactOptions message={WA_MESSAGES.tecnologia} variant="cards" source="tecnologia-contato" />
       </div>
     </section>
   );

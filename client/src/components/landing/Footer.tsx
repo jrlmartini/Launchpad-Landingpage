@@ -66,8 +66,47 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-stroke/30 text-center">
-          <p className="text-sm text-text-muted">
+        <div className="mt-8 pt-8 border-t border-stroke/30">
+          <p className="text-sm text-text-muted text-center max-w-3xl mx-auto leading-relaxed mb-4">
+            <strong className="text-text">Fomento para Deeptechs</strong> é um
+            produto do LaunchpadHub. O site também pode ser acessado por
+            deeptechs.com.br — mesmo time, mesma empresa.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-4">
+            <a
+              href="/"
+              className="text-sm text-text-muted hover:text-cta transition-colors"
+            >
+              Início
+            </a>
+            <a
+              href="/curso"
+              className="text-sm text-text-muted hover:text-cta transition-colors"
+            >
+              Curso
+            </a>
+            <a
+              href="/projetos"
+              className="text-sm text-text-muted hover:text-cta transition-colors"
+            >
+              Projetos de fomento
+            </a>
+            <a
+              href="/tecnologia"
+              className="text-sm text-text-muted hover:text-cta transition-colors"
+            >
+              Tecnologia e mercado
+            </a>
+            <a
+              href="/privacidade"
+              className="text-sm text-text-muted hover:text-cta transition-colors"
+            >
+              Política de Privacidade
+            </a>
+          </div>
+
+          <p className="text-sm text-text-muted text-center">
             © {new Date().getFullYear()} LaunchpadHub. Todos os direitos reservados.
           </p>
         </div>

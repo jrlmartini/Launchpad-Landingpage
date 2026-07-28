@@ -54,7 +54,7 @@ export function OfferSection() {
                 className="inline-flex items-center gap-3 px-10 py-5 text-lg font-bold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group cursor-pointer"
                 data-testid="button-cta-offer"
               >
-                Quero entrar no LaunchpadHub
+                Inscrever-me no curso
                 {isCheckoutOpen ? (
                   <ChevronUp className="w-5 h-5 transition-transform" />
                 ) : (
