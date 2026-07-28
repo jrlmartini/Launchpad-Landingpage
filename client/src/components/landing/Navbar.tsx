@@ -59,7 +59,7 @@ interface NavbarProps {
   /** In-page section anchors for the current page (rendered in the sub-bar). */
   sections?: SectionLink[];
   /** Which primary item is the current page. */
-  active?: "curso" | "servicos" | "projetos" | "tecnologia" | null;
+  active?: "home" | "curso" | "servicos" | "projetos" | "tecnologia" | null;
   ctaHref?: string;
   ctaLabel?: string;
 }
@@ -67,7 +67,7 @@ interface NavbarProps {
 export function Navbar({
   sections = [],
   active = null,
-  ctaHref = "/#oferta",
+  ctaHref = "/curso#oferta",
   ctaLabel = "Quero o curso",
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -121,9 +121,16 @@ export function Navbar({
               />
             </a>
 
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-7">
               <a
                 href="/"
+                className={primaryLinkClass(active === "home")}
+                data-testid="link-inicio"
+              >
+                Início
+              </a>
+              <a
+                href="/curso"
                 className={primaryLinkClass(active === "curso")}
                 data-testid="link-curso"
               >
@@ -203,10 +210,10 @@ export function Navbar({
                 )}
               </div>
 
-              <a href="/projetos#sobre" className={primaryLinkClass(false)}>
+              <a href="/#sobre" className={primaryLinkClass(false)}>
                 Sobre
               </a>
-              <a href="/projetos#contato" className={primaryLinkClass(false)}>
+              <a href="/#contato" className={primaryLinkClass(false)}>
                 Contato
               </a>
             </div>
@@ -286,6 +293,15 @@ export function Navbar({
               href="/"
               onClick={() => setIsOpen(false)}
               className={`block py-3 text-base font-medium ${
+                active === "home" ? "text-cta" : "text-text"
+              }`}
+            >
+              Início
+            </a>
+            <a
+              href="/curso"
+              onClick={() => setIsOpen(false)}
+              className={`block py-3 text-base font-medium border-t border-stroke/40 ${
                 active === "curso" ? "text-cta" : "text-text"
               }`}
             >
@@ -344,14 +360,14 @@ export function Navbar({
             </div>
 
             <a
-              href="/projetos#sobre"
+              href="/#sobre"
               onClick={() => setIsOpen(false)}
               className="block py-3 text-base font-medium text-text border-t border-stroke/40"
             >
               Sobre
             </a>
             <a
-              href="/projetos#contato"
+              href="/#contato"
               onClick={() => setIsOpen(false)}
               className="block py-3 text-base font-medium text-text border-t border-stroke/40"
             >

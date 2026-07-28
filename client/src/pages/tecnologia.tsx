@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { LogoCarousel } from "@/components/landing/LogoCarousel";
-import { AboutSection } from "@/components/landing/AboutSection";
 import { Footer } from "@/components/landing/Footer";
 import {
   HubHero,
@@ -21,7 +20,7 @@ const sections = [
   { href: "#diagnostico", label: "Diagnóstico" },
   { href: "#rota", label: "Rota Comercial" },
   { href: "#parecer", label: "Parecer" },
-  { href: "#sobre", label: "Sobre" },
+  
 ];
 
 export default function Tecnologia() {
@@ -43,7 +42,6 @@ export default function Tecnologia() {
           <OtherServicesSection />
           <HubForWho />
           <LogoCarousel title="Experiência com os principais instrumentos de fomento do país" />
-          <AboutSection />
           <HubFAQ />
           <ProjectsCrossLink />
           <ContactSection />

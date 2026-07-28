@@ -1,24 +1,19 @@
 import { Navbar } from "@/components/landing/Navbar";
-import { Hero } from "@/components/landing/Hero";
-import { ShortFold } from "@/components/landing/ShortFold";
-import { ProblemSection } from "@/components/landing/ProblemSection";
-import { WhatIsSection } from "@/components/landing/WhatIsSection";
-import { DeliverablesSection } from "@/components/landing/DeliverablesSection";
-import { MethodSection } from "@/components/landing/MethodSection";
-import { ForWhoSection } from "@/components/landing/ForWhoSection";
-import { ModulesSection } from "@/components/landing/ModulesSection";
 import { LogoCarousel } from "@/components/landing/LogoCarousel";
-import { AboutSection } from "@/components/landing/AboutSection";
-import { OfferSection } from "@/components/landing/OfferSection";
-import { FAQSection } from "@/components/landing/FAQSection";
 import { Footer } from "@/components/landing/Footer";
+import {
+  HomeHero,
+  PathsSection,
+  AboutMe,
+  HomeContact,
+} from "@/components/home/HomeSections";
+import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
+import { WA_MESSAGES } from "@/lib/contact";
 
-const courseSections = [
-  { href: "#problema", label: "Por que projetos não decolam" },
-  { href: "#metodo", label: "Método" },
-  { href: "#modulos", label: "Módulos" },
-  { href: "#oferta", label: "O que está incluso" },
-  { href: "#faq", label: "Perguntas frequentes" },
+const sections = [
+  { href: "#caminhos", label: "Como trabalho" },
+  { href: "#sobre", label: "Sobre mim" },
+  { href: "#contato", label: "Contato" },
 ];
 
 export default function Home() {
@@ -27,27 +22,20 @@ export default function Home() {
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />
       <div className="relative z-10">
         <Navbar
-          sections={courseSections}
-          active="curso"
-          ctaHref="#oferta"
-          ctaLabel="Quero preparar minha missão"
+          sections={sections}
+          active="home"
+          ctaHref="#caminhos"
+          ctaLabel="Começar"
         />
         <main>
-          <Hero />
-          <ShortFold />
-          <ProblemSection />
-          <WhatIsSection />
-          <DeliverablesSection />
-          <LogoCarousel title="Aprenda um método para aumentar suas chances de aprovação em qualquer edital" />
-          <MethodSection />
-          <ForWhoSection />
-          <ModulesSection />
-          <LogoCarousel />
-          <AboutSection />
-          <OfferSection />
-          <FAQSection />
+          <HomeHero />
+          <LogoCarousel title="Experiência com os principais instrumentos de fomento do país" />
+          <PathsSection />
+          <AboutMe />
+          <HomeContact />
         </main>
         <Footer />
+        <FloatingWhatsApp message={WA_MESSAGES.geral} />
       </div>
     </div>
   );

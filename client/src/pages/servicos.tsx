@@ -107,7 +107,7 @@ export default function Servicos() {
 
               <p className="mt-10 text-center text-text-muted">
                 Prefere aprender a fazer você mesmo?{" "}
-                <a href="/" className="font-semibold text-cta hover:text-cta/80 transition-colors">
+                <a href="/curso" className="font-semibold text-cta hover:text-cta/80 transition-colors">
                   Conheça o curso Fomento para Deeptechs
                 </a>
                 .

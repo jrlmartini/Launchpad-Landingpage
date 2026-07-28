@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { LogoCarousel } from "@/components/landing/LogoCarousel";
-import { AboutSection } from "@/components/landing/AboutSection";
 import { Footer } from "@/components/landing/Footer";
 import {
   ProjectsHero,
@@ -17,7 +16,7 @@ import { WA_MESSAGES } from "@/lib/contact";
 const sections = [
   { href: "#escrita", label: "Escrita do Projeto" },
   { href: "#revisao", label: "Revisão do Projeto" },
-  { href: "#sobre", label: "Sobre" },
+  
   { href: "#faq", label: "Perguntas frequentes" },
 ];
 
@@ -38,7 +37,6 @@ export default function Projetos() {
           <ProjectServicesCards />
           <ProjectServicesComparison />
           <LogoCarousel title="Experiência com os principais instrumentos de fomento do país" />
-          <AboutSection />
           <ProjectsFAQ />
           <TechCrossLink />
           <ProjectsContact />
