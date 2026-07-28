@@ -8,11 +8,12 @@ import {
   Map,
   ListChecks,
   Users,
-  MessageCircle,
+  
   CalendarClock,
 } from "lucide-react";
 
 import { ContactOptions } from "./ContactOptions";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, calendlyLink, WA_MESSAGES } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 
@@ -270,7 +271,7 @@ export function OtherServicesSection() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4" strokeWidth={1.5} />
+                  <WhatsAppIcon className="w-4 h-4" />
                   Conversar no WhatsApp
                 </a>
                 <a

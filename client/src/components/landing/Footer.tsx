@@ -1,4 +1,5 @@
-import { Instagram, Youtube, Mail, MessageCircle, CalendarClock } from "lucide-react";
+import { Instagram, Youtube, Mail, CalendarClock } from "lucide-react";
+import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
 import { waLink, WA_MESSAGES, CALENDLY_URL, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 export function Footer() {
@@ -18,7 +19,7 @@ export function Footer() {
               className="flex items-center gap-2 text-text-muted hover:text-cta transition-colors"
               data-testid="link-whatsapp-footer"
             >
-              <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
+              <WhatsAppIcon className="w-5 h-5" />
               <span>{WHATSAPP_DISPLAY}</span>
             </a>
             <a

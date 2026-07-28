@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   ArrowRight,
-  MessageCircle,
+  
   CalendarClock,
   CheckCircle2,
   GraduationCap,
@@ -11,6 +11,7 @@ import {
   Scale,
 } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
+import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
 import { Footer } from "@/components/landing/Footer";
 import { waLink, calendlyLink } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
@@ -295,7 +296,7 @@ export default function Triagem() {
                   className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 text-base font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
                   data-testid="triagem-whatsapp"
                 >
-                  <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
+                  <WhatsAppIcon className="w-5 h-5" />
                   Enviar pelo WhatsApp
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>

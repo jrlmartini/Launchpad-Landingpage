@@ -5,10 +5,11 @@ import {
   CheckCircle2,
   Clock,
   XCircle,
-  MessageCircle,
+  
   CalendarClock,
 } from "lucide-react";
 import { ContactOptions } from "./ContactOptions";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, calendlyLink, WA_MESSAGES } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 
@@ -264,7 +265,7 @@ export function ProjectServicesCards() {
                       : "text-text border border-stroke hover:border-cta/40"
                   }`}
                 >
-                  <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
+                  <WhatsAppIcon className="w-5 h-5" />
                   {service.cta}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>

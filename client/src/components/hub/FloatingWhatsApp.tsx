@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, WA_MESSAGES } from "@/lib/contact";
 
 /**
@@ -15,7 +15,7 @@ export function FloatingWhatsApp({ message = WA_MESSAGES.geral }: { message?: st
       aria-label="Falar no WhatsApp"
       data-testid="floating-whatsapp"
     >
-      <MessageCircle className="w-6 h-6" strokeWidth={1.5} />
+      <WhatsAppIcon className="w-6 h-6" />
       <span className="hidden sm:inline max-w-0 group-hover:max-w-xs overflow-hidden whitespace-nowrap transition-all duration-300">
         Falar no WhatsApp
       </span>
