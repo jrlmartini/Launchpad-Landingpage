@@ -298,7 +298,7 @@ export function AboutMe() {
             <p>
               Comecei em 2012 do lado técnico: química industrial, processos,
               tratamento de água, tecnologias ambientais. Com o tempo fui parar no
-              lugar que quase ninguém quer ocupar, o meio de campo entre quem
+              lugar que quase ninguém quer ocupar: o meio de campo entre quem
               desenvolve a tecnologia, quem financia e quem compra.
             </p>
             <p>

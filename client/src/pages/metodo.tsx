@@ -18,7 +18,7 @@ const eixos = [
   {
     icon: Users,
     nome: "Cliente e problema",
-    desc: "Quem sente a dor, e se ela está entre as prioridades reais dessa pessoa, com orçamento associado. Dor confirmada por entrevista vale mais que persona bem desenhada.",
+    desc: "Quem sente a dor e se ela está entre as prioridades reais dessa pessoa, com orçamento associado. Dor confirmada por entrevista vale mais que persona bem desenhada.",
   },
   {
     icon: Banknote,
@@ -28,7 +28,7 @@ const eixos = [
   {
     icon: ShieldCheck,
     nome: "Rota regulatória",
-    desc: "ANVISA, INMETRO, CONAMA, ANP, registro de fertilizante, normas de potabilidade. Em tecnologia industrial é aqui que cronogramas comerciais morrem, e quase nenhum framework de inovação olha para isso.",
+    desc: "ANVISA, INMETRO, CONAMA, ANP, registro de fertilizante, normas de potabilidade. Em tecnologia industrial é aqui que cronogramas comerciais morrem e quase nenhum framework de inovação olha para isso.",
   },
   {
     icon: Network,
@@ -97,7 +97,7 @@ export default function Metodo() {
               </h1>
               <p className="text-lg lg:text-xl text-text-muted leading-relaxed">
                 As agências de fomento exigem a maturidade técnica (TRL) há décadas. A
-                maturidade comercial (CRL) quase ninguém mede, e é ela que explica
+                maturidade comercial (CRL) quase ninguém mede e é ela que explica
                 por que tecnologias prontas ficam paradas.
               </p>
             </div>
@@ -122,8 +122,8 @@ export default function Metodo() {
                     </p>
                     <p>
                       <strong className="text-text">Descompasso = TRL − CRL.</strong> Quanto
-                      maior o descompasso, mais valor fica parado, e menos
-                      adianta continuar investindo no eixo técnico.
+                      maior o descompasso, mais valor fica parado e menos adianta
+                      continuar investindo no eixo técnico.
                     </p>
                   </div>
 
@@ -173,7 +173,7 @@ export default function Metodo() {
                 </h2>
                 <p className="text-lg text-text-muted leading-relaxed">
                   Cada um recebe um nível de 1 a 9. O CRL da tecnologia é a leitura
-                  conjunta dos cinco, e o eixo mais atrasado costuma definir o
+                  conjunta dos cinco e o eixo mais atrasado costuma definir o
                   próximo passo.
                 </p>
               </div>
@@ -263,7 +263,7 @@ export default function Metodo() {
               <p className="text-lg text-text-muted leading-relaxed mb-8">
                 O autodiagnóstico trabalha com a sua percepção. O Diagnóstico de
                 Prontidão Comercial trabalha com evidência verificada, aplicação
-                por aplicação, e termina com os próximos 3 a 5 experimentos, cada
+                por aplicação e termina com os próximos 3 a 5 experimentos. Cada
                 um com custo e critério de decisão.
               </p>
               <a

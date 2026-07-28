@@ -40,8 +40,8 @@ export function ProjectsHero() {
 
           <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
             Escrevo o projeto junto com você, ou reviso o que você já escreveu
-            antes da submissão. Nos dois casos, com a mesma pergunta na cabeça:
-            o que faria um avaliador tirar pontos daqui?
+            antes da submissão. Nos dois casos com a mesma pergunta na cabeça: o que
+            faria um avaliador tirar pontos daqui?
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animate-delay-200">
@@ -104,8 +104,8 @@ export function ProjectsProblem() {
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
             O avaliador não conhece a sua tecnologia, tem dezenas de propostas para
-            ler e decide pelo que está no papel. Quase sempre, o que derruba um
-            bom projeto é uma destas quatro coisas.
+            ler e decide pelo que está no papel. Quase sempre o que derruba um bom
+            projeto é uma destas quatro coisas.
           </p>
         </div>
 
@@ -168,7 +168,7 @@ const projectServices = [
     lead:
       "Você já escreveu. Antes de submeter, alguém precisa ler como quem vai julgar.",
     body:
-      "Leio a sua proposta do jeito que um avaliador lê: procurando lacunas, promessas sem evidência, inconsistências entre plano e orçamento e tudo aquilo que faz um parecerista hesitar. Você recebe o documento comentado ponto a ponto e uma sessão de trabalho para discutirmos o que muda, em ordem de prioridade. Nem toda correção cabe no prazo, e algumas valem muito mais que outras.",
+      "Leio a sua proposta do jeito que um avaliador lê: procurando lacunas, promessas sem evidência, inconsistências entre plano e orçamento e tudo aquilo que faz um parecerista hesitar. Você recebe o documento comentado ponto a ponto e uma sessão de trabalho para discutirmos o que muda, em ordem de prioridade. Nem toda correção cabe no prazo e algumas valem muito mais que outras.",
     bullets: [
       "Proposta comentada campo a campo, com o motivo de cada apontamento",
       "Correções priorizadas: o que é crítico, o que melhora, o que é opcional",
@@ -286,7 +286,7 @@ export function ProjectServicesCards() {
             <Clock className="w-6 h-6 text-cta flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <p className="text-text-muted leading-relaxed">
               <strong className="text-text">Sobre prazo:</strong> trabalho com poucos
-              projetos por vez, e editais têm data. Procure com a maior antecedência
+              projetos por vez e editais têm data. Procure com a maior antecedência
               possível. Quanto mais cedo entramos, mais decisões estruturais ainda
               estão em aberto. Revisões de última hora eu aceito, mas aí o que dá
               para corrigir é sempre menos.
@@ -407,7 +407,7 @@ export function ProjectsFAQ() {
     },
     {
       q: "Preciso ter a tecnologia pronta?",
-      a: "Não, mas precisa ter algo real: resultados, protótipo, prova de conceito, dados. Se a tecnologia ainda está só no papel, edital nenhum resolve, e eu digo isso na primeira conversa.",
+      a: "Não, mas precisa ter algo real: resultados, protótipo, prova de conceito, dados. Se a tecnologia ainda está só no papel, edital nenhum resolve e eu digo isso na primeira conversa.",
     },
     {
       q: "E se o edital fecha em duas semanas?",
@@ -481,8 +481,7 @@ export function TechCrossLink() {
           </h2>
           <p className="text-text-muted leading-relaxed mb-5">
             Se a pergunta não é "como capto recurso para desenvolver isso", e sim
-            "isso aqui vira negócio, e por qual caminho" — esse é outro tipo de
-            trabalho.
+            "isso aqui vira negócio e por qual caminho", o trabalho é outro.
           </p>
           <a
             href="/tecnologia"

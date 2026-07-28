@@ -29,7 +29,7 @@ export function AboutSection() {
                   <h3 className="font-display font-bold text-xl text-text mb-4">José Renato Lanzi Martini</h3>
                   <p className="text-text-muted leading-relaxed mb-4">Engenheiro de produção (UNESP/OTH-Regensburg), com pós-graduação em Administração de Empresas (FGV/HEC Paris) e especialização em Empreendedorismo e Inovação (MIT). Desde 2012, atuo diretamente em inovação tecnológica, com experiência em gestão de projetos, captação de recursos, planejamento estratégico e mapeamento tecnológico.</p>
                   <p className="text-text-muted leading-relaxed mb-6">
-                    Ao longo desse caminho, já aprovei <strong className="text-text">mais de R$ 35 milhões</strong> em projetos de fomento reembolsáveis e não reembolsáveis para empresas dos segmentos automotivo, químico, alimentício, agrícola, saúde e tecnologia da informação. O LaunchpadHub nasceu dessa vivência: tirar a inovação do <span className="text-cta font-semibold">modo tentativa</span>.
+                    Ao longo desse caminho já aprovei <strong className="text-text">mais de R$ 35 milhões</strong> em projetos de fomento reembolsáveis e não reembolsáveis para empresas dos segmentos automotivo, químico, alimentício, agrícola, saúde e tecnologia da informação. O LaunchpadHub nasceu dessa vivência: tirar a inovação do <span className="text-cta font-semibold">modo tentativa</span>.
                   </p>
                   
                   <div className="flex flex-wrap gap-4">

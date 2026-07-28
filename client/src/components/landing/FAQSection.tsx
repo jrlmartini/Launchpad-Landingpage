@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Estou no começo (TRL baixo). Vale?",
-    answer: "Vale, e talvez até mais. É no começo que se perde tempo com o edital errado, e é quando escolher bem o instrumento faz mais diferença.",
+    answer: "Vale, e talvez até mais. É no começo que se perde tempo com o edital errado e é quando escolher bem o instrumento faz mais diferença.",
   },
   {
     question: "E se eu não for bom de escrita?",

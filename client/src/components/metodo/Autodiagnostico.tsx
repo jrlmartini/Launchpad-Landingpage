@@ -107,7 +107,7 @@ function veredito(descompasso: number) {
     return {
       titulo: "Ritmo equilibrado",
       texto:
-        "Técnica e comercial estão andando juntas, então o plano atual provavelmente faz sentido. O cuidado aqui é manter a cadência e não deixar o CRL ficar para trás no próximo ciclo de desenvolvimento.",
+        "Técnica e comercial estão andando juntas e o plano atual provavelmente faz sentido. O cuidado aqui é manter a cadência e não deixar o CRL ficar para trás no próximo ciclo de desenvolvimento.",
       tom: "ok" as const,
     };
   if (descompasso <= 3)
@@ -120,7 +120,7 @@ function veredito(descompasso: number) {
   return {
     titulo: "Tecnologia órfã",
     texto:
-      "Tecnicamente pronta e comercialmente não comprovada. Nesse cenário, cada real investido em desenvolvimento técnico aumenta o valor parado em vez de reduzir risco. A prioridade passa a ser provar mercado.",
+      "Tecnicamente pronta e comercialmente não comprovada. Nesse cenário cada real investido em desenvolvimento técnico aumenta o valor parado em vez de reduzir risco. A prioridade passa a ser provar mercado.",
     tom: "critico" as const,
   };
 }
@@ -163,7 +163,7 @@ export function Autodiagnostico() {
             Onde a sua tecnologia está na matriz?
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            Uma pergunta por eixo. O resultado é uma estimativa, suficiente para você
+            Uma pergunta por eixo. O resultado é uma estimativa suficiente para você
             enxergar o descompasso e decidir o próximo passo.
           </p>
         </div>
@@ -327,9 +327,9 @@ export function Autodiagnostico() {
 
             <div className="pt-6 border-t border-stroke/50">
               <p className="text-text-muted leading-relaxed mb-5">
-                Esta é uma leitura rápida, baseada na sua percepção. O Diagnóstico de
-                Prontidão Comercial faz o mesmo exercício com evidências
-                verificadas, aplicação por aplicação, e termina com um plano de
+                Esta é uma leitura rápida, baseada na sua percepção. O Diagnóstico
+                de Prontidão Comercial faz o mesmo exercício com evidências
+                verificadas, aplicação por aplicação, terminando com um plano de
                 experimentos. O veredito pode ser “não avance”.
               </p>
               <ContactOptions
