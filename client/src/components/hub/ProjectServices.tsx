@@ -127,8 +127,8 @@ export function ProjectsProblem() {
         </div>
 
         <p className="mt-10 text-center text-lg text-text max-w-2xl mx-auto">
-          Todas são falhas de construção de projeto, e todas se resolvem com método
-          e com quem já viu o processo dos dois lados do balcão.
+          Todas essas falhas se resolvem do mesmo jeito: com método e com quem
+          já viu o processo dos dois lados do balcão.
         </p>
       </div>
     </section>
@@ -155,7 +155,7 @@ const projectServices = [
       "Preparação para a defesa e para os questionamentos mais prováveis",
     ],
     closing:
-      "São mais de dez anos escrevendo e avaliando projetos de fomento, e mais de R$ 35 milhões aprovados. Essa experiência entra na sua proposta como estrutura, não como promessa.",
+      "São mais de dez anos escrevendo e avaliando projetos de fomento, com mais de R$ 35 milhões aprovados. Essa experiência entra na sua proposta como estrutura, não como promessa.",
     cta: "Quero escrever meu projeto",
     waMessage: WA_MESSAGES.escrita,
     featured: true,
@@ -168,7 +168,7 @@ const projectServices = [
     lead:
       "Você já escreveu. Antes de submeter, alguém precisa ler como quem vai julgar.",
     body:
-      "Leio a sua proposta do jeito que um avaliador lê: procurando lacunas, promessas sem evidência, inconsistências entre plano e orçamento, e tudo aquilo que faz um parecerista hesitar. Você recebe o documento comentado ponto a ponto e uma sessão de trabalho para discutirmos o que muda, em ordem de prioridade. Nem toda correção cabe no prazo, e algumas valem muito mais que outras.",
+      "Leio a sua proposta do jeito que um avaliador lê: procurando lacunas, promessas sem evidência, inconsistências entre plano e orçamento e tudo aquilo que faz um parecerista hesitar. Você recebe o documento comentado ponto a ponto e uma sessão de trabalho para discutirmos o que muda, em ordem de prioridade. Nem toda correção cabe no prazo, e algumas valem muito mais que outras.",
     bullets: [
       "Proposta comentada campo a campo, com o motivo de cada apontamento",
       "Correções priorizadas: o que é crítico, o que melhora, o que é opcional",
