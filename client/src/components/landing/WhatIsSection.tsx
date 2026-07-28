@@ -32,11 +32,10 @@ export function WhatIsSection() {
             O que é o Fomento para Deeptechs?
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            É o treinamento do LaunchpadHub sobre o que existe por trás de um
-            projeto aprovado: como escolher o edital certo para o seu estágio,
-            como escrever para a pessoa que vai avaliar, e como executar sem
-            sustos na prestação de contas. Vale para FAPESP, FINEP, CNPq, FAPs
-            estaduais e outros.
+            É o treinamento do LaunchpadHub sobre o que sustenta um projeto aprovado:
+            escolher o edital certo para o seu estágio, escrever para a pessoa que
+            vai avaliar e executar sem sustos na prestação de contas. Vale para
+            FAPESP, FINEP, CNPq, FAPs estaduais e outros.
           </p>
         </div>
 

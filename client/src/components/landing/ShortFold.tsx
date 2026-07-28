@@ -9,7 +9,7 @@ export function ShortFold() {
           <span className="text-cta">difícil de executar</span>.
         </p>
         <p className="text-lg text-text-muted">
-          Uma proposta reprovada custa meses de projeto — e às vezes a janela de mercado inteira. <br />O Fomento para Deeptechs existe para você não passar por isso de novo.
+          Uma proposta reprovada custa meses de projeto, às vezes a janela de mercado inteira. <br />O Fomento para Deeptechs existe para você não passar por isso de novo.
         </p>
       </div>
     </section>

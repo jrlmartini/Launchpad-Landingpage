@@ -108,9 +108,8 @@ export function ContactOptions({
         <p className="text-sm font-mono text-cta mb-3">Calendly · 20 minutos</p>
 
         <p className="text-text-muted leading-relaxed mb-6">
-          Uma call rápida para eu entender o seu caso e dizer se é curso,
-          escrita, revisão, diagnóstico — ou outro caminho. Sem apresentação
-          comercial.
+          Uma call rápida para eu entender o seu caso e dizer se é curso, escrita,
+          revisão, diagnóstico ou outro caminho. Sem apresentação comercial.
         </p>
 
         <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-cta">

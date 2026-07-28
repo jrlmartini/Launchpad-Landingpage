@@ -103,10 +103,9 @@ export function ProjectsProblem() {
             Boas tecnologias perdem para propostas melhor escritas
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            É desconfortável, mas é assim que funciona: o avaliador não conhece
-            a sua tecnologia, tem dezenas de propostas para ler e vai decidir
-            pelo que está no papel. Quase sempre, o que derruba um bom projeto é
-            uma destas quatro coisas.
+            O avaliador não conhece a sua tecnologia, tem dezenas de propostas para
+            ler e decide pelo que está no papel. Quase sempre, o que derruba um
+            bom projeto é uma destas quatro coisas.
           </p>
         </div>
 
@@ -128,9 +127,8 @@ export function ProjectsProblem() {
         </div>
 
         <p className="mt-10 text-center text-lg text-text max-w-2xl mx-auto">
-          Nenhuma delas é sobre ciência. Todas são sobre construção de projeto —
-          e isso se resolve com método e com quem já viu o processo dos dois
-          lados.
+          Todas são falhas de construção de projeto, e todas se resolvem com método
+          e com quem já viu o processo dos dois lados do balcão.
         </p>
       </div>
     </section>
@@ -149,7 +147,7 @@ const projectServices = [
     lead:
       "Eu assumo a caneta. Você traz a tecnologia, o time e os dados; eu estruturo, escrevo e defendo o projeto no papel.",
     body:
-      "É o mais próximo que existe de ter um especialista dentro do seu time durante toda a construção da proposta. Começamos pelo enquadramento — edital, linha, TRL, contrapartida — porque proposta boa no edital errado é proposta reprovada. Depois construímos a narrativa técnica na ordem em que o avaliador lê: qual é o problema, por que a sua solução é diferente, que evidências você já tem, como vai executar e com que orçamento.",
+      "É o mais próximo que existe de ter um especialista dentro do seu time durante toda a construção da proposta. Começamos pelo enquadramento (edital, linha, TRL, contrapartida), porque proposta boa no edital errado é proposta reprovada. Depois construímos a narrativa técnica na ordem em que o avaliador lê: qual é o problema, por que a sua solução é diferente, que evidências você já tem, como vai executar e com que orçamento.",
     bullets: [
       "Enquadramento e decisão Go/No-Go antes de escrever a primeira linha",
       "Redação completa da proposta, campo a campo, com você revisando a cada etapa",
@@ -170,7 +168,7 @@ const projectServices = [
     lead:
       "Você já escreveu. Antes de submeter, alguém precisa ler como quem vai julgar.",
     body:
-      "Leio a sua proposta do jeito que um avaliador lê: procurando lacunas, promessas sem evidência, inconsistências entre plano e orçamento, e tudo aquilo que faz um parecerista hesitar. Você recebe o documento comentado ponto a ponto e uma sessão de trabalho para discutirmos o que muda, em ordem de prioridade — porque nem toda correção cabe no prazo, e algumas valem muito mais que outras.",
+      "Leio a sua proposta do jeito que um avaliador lê: procurando lacunas, promessas sem evidência, inconsistências entre plano e orçamento, e tudo aquilo que faz um parecerista hesitar. Você recebe o documento comentado ponto a ponto e uma sessão de trabalho para discutirmos o que muda, em ordem de prioridade. Nem toda correção cabe no prazo, e algumas valem muito mais que outras.",
     bullets: [
       "Proposta comentada campo a campo, com o motivo de cada apontamento",
       "Correções priorizadas: o que é crítico, o que melhora, o que é opcional",
@@ -178,7 +176,7 @@ const projectServices = [
       "Checklist final de consistência antes do envio",
     ],
     closing:
-      "O objetivo não é aprovar o seu texto. É encontrar, ainda dentro do prazo, tudo aquilo que faria você perder pontos.",
+      "A ideia é encontrar, ainda dentro do prazo, tudo aquilo que faria você perder pontos.",
     cta: "Quero revisar meu projeto",
     waMessage: WA_MESSAGES.revisao,
     featured: false,
@@ -289,9 +287,9 @@ export function ProjectServicesCards() {
             <p className="text-text-muted leading-relaxed">
               <strong className="text-text">Sobre prazo:</strong> trabalho com poucos
               projetos por vez, e editais têm data. Procure com a maior antecedência
-              possível — quanto mais cedo entramos, mais decisões estruturais ainda
-              estão em aberto. Revisões de última hora eu aceito, mas o que dá para
-              corrigir é sempre menos.
+              possível. Quanto mais cedo entramos, mais decisões estruturais ainda
+              estão em aberto. Revisões de última hora eu aceito, mas aí o que dá
+              para corrigir é sempre menos.
             </p>
           </div>
         </div>
@@ -397,7 +395,7 @@ export function ProjectsFAQ() {
   const faqs = [
     {
       q: "Você garante que o projeto será aprovado?",
-      a: "Não, e ninguém honesto garante — a decisão é de um comitê, com critérios e concorrência que ninguém controla. O que posso afirmar é que a proposta vai chegar muito mais consistente, mais bem enquadrada e muito mais difícil de reprovar do que chegaria sozinha.",
+      a: "Não, e desconfie de quem garantir. A decisão é de um comitê, com critérios e concorrência que ninguém controla. O que posso afirmar é que a proposta chega mais consistente, mais bem enquadrada e bem mais difícil de reprovar do que chegaria sozinha.",
     },
     {
       q: "Funciona para qual edital?",
@@ -409,7 +407,7 @@ export function ProjectsFAQ() {
     },
     {
       q: "Preciso ter a tecnologia pronta?",
-      a: "Não. Precisa ter algo real: resultados, protótipo, prova de conceito, dados. Se a tecnologia ainda é uma ideia no papel, o problema não é o edital — e nesse caso eu digo isso na primeira conversa.",
+      a: "Não, mas precisa ter algo real: resultados, protótipo, prova de conceito, dados. Se a tecnologia ainda está só no papel, edital nenhum resolve, e eu digo isso na primeira conversa.",
     },
     {
       q: "E se o edital fecha em duas semanas?",

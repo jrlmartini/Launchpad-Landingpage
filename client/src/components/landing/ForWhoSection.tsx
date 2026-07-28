@@ -21,7 +21,7 @@ export function ForWhoSection() {
             Para quem é (e para quem não é)
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            Este curso foi desenhado para empreendedores e founders de deep tech, consultores e gestores de inovação que querem navegar melhor o ecossistema de fomento e escrever, avaliar e defender projetos consistentes, com alta competitividade e maior probabilidade de aprovação.
+            Este curso foi desenhado para founders de deep tech, consultores e gestores de inovação que precisam escrever, avaliar e defender projetos de fomento com consistência e chance real de aprovação.
           </p>
         </div>
 

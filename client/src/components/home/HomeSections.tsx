@@ -41,8 +41,8 @@ export function HomeHero() {
           </h1>
 
           <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-6 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
-            Escolher o edital certo, construir propostas que resistem a um
-            avaliador e definir a rota comercial de tecnologias complexas.{" "}
+            Escolho o edital certo com você, construo propostas que resistem a um
+            avaliador e defino a rota comercial de tecnologias complexas.{" "}
             <strong className="text-text">
               Mais de R$ 35 milhões aprovados desde 2012.
             </strong>
@@ -102,7 +102,7 @@ const proofItems = [
   {
     value: "Decisão antes da redação",
     label: "Go / No-Go",
-    note: "Se o edital ou a rota não fizer sentido, o primeiro resultado é um “não”.",
+    note: "Quando o edital ou a rota não fecham, o primeiro resultado é um “não”.",
   },
 ];
 
@@ -137,7 +137,7 @@ const paths = [
     eyebrow: "Aprender a fazer",
     title: "Curso: Fomento para Deeptechs",
     description:
-      "O método completo para escrever e defender projetos de fomento — com templates, planilhas e checklists. Para quem quer construir essa competência dentro de casa.",
+      "O método completo para escrever e defender projetos de fomento, com templates, planilhas e checklists. Para quem quer construir essa competência dentro de casa.",
     items: ["6 módulos + bônus", "Templates e checklists", "Acesso às lives de novos editais"],
     cta: "Ver método, conteúdo e preço",
     featured: false,
@@ -159,7 +159,7 @@ const paths = [
     eyebrow: "Decidir a rota",
     title: "Tecnologia e mercado",
     description:
-      "Sua tecnologia funciona — mas é um negócio? Diagnóstico de prontidão comercial, rota de mercado e parecer para investidores. Para quando a dúvida é maior que o edital.",
+      "Sua tecnologia funciona, mas é um negócio? Diagnóstico de prontidão comercial, rota de mercado e parecer para investidores. Para quando a dúvida é maior que o edital.",
     items: ["Diagnóstico em 30 dias", "Rota comercial e pilotos", "Due diligence técnica"],
     cta: "Ver diagnóstico de 30 dias",
     featured: false,
@@ -175,8 +175,8 @@ export function PathsSection() {
             Três formas de trabalhar comigo
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            Do curso que você faz no seu ritmo à assessoria em que eu entro no
-            seu projeto. Escolha pelo momento em que você está.
+            Do curso que você faz no seu ritmo à assessoria em que eu entro no seu
+            projeto. Escolha pelo momento em que você está.
           </p>
         </div>
 
@@ -297,8 +297,8 @@ export function AboutMe() {
           <div className="space-y-5 text-lg text-text-muted leading-relaxed">
             <p>
               Comecei em 2012 do lado técnico: química industrial, processos,
-              tratamento de água, tecnologias ambientais. Com o tempo fui parar
-              no lado que quase ninguém quer ocupar — o meio de campo entre quem
+              tratamento de água, tecnologias ambientais. Com o tempo fui parar no
+              lugar que quase ninguém quer ocupar, o meio de campo entre quem
               desenvolve a tecnologia, quem financia e quem compra.
             </p>
             <p>
@@ -307,24 +307,23 @@ export function AboutMe() {
               <strong className="text-text">
                 aprovei mais de R$ 35 milhões em recursos de fomento
               </strong>{" "}
-              — reembolsáveis e não reembolsáveis — para empresas dos setores
+              em recursos reembolsáveis e não reembolsáveis, para empresas dos setores
               automotivo, químico, alimentício, agrícola, saúde e tecnologia da
               informação.
             </p>
             <p>
-              Nesse caminho eu também escrevi projetos que foram reprovados, e
-              avaliei projetos bons que perderam para propostas piores, porém
-              mais bem construídas. Foi isso que me ensinou o que realmente
-              separa um bom projeto de um projeto aprovado — e é isso que eu
-              ensino no curso e aplico quando trabalho junto com uma empresa.
+              Também escrevi projetos que foram reprovados e avaliei projetos bons que
+              perderam para propostas piores, porém mais bem construídas. Foi isso
+              que me ensinou o que separa um bom projeto de um projeto aprovado. É
+              o que eu ensino no curso e aplico quando trabalho junto com uma
+              empresa.
             </p>
 
             <div className="p-6 bg-background/50 border-l-2 border-cta rounded-r-2xl">
               <Quote className="w-6 h-6 text-cta mb-3" strokeWidth={1.5} />
               <p className="text-text italic">
-                O que me interessa não é preencher formulário de edital. É ver
-                uma tecnologia que funciona chegar até onde ela deveria ter
-                chegado.
+                Formulário de edital é o meio. O que me interessa é ver uma tecnologia
+                que funciona chegar até onde ela deveria ter chegado.
               </p>
             </div>
 
@@ -358,9 +357,9 @@ export function HomeContact() {
           Não sabe por onde começar?
         </h2>
         <p className="text-lg text-text-muted leading-relaxed mb-8">
-          Me conte em duas linhas o que você tem em mãos — uma tecnologia, um
-          edital, um projeto pela metade. Eu digo qual caminho faz sentido,
-          mesmo que a resposta seja "nenhum dos meus".
+          Me conte em duas linhas o que você tem em mãos: uma tecnologia, um
+          edital, um projeto pela metade. Eu digo qual caminho faz sentido, mesmo
+          quando a resposta é "nenhum dos meus".
         </p>
 
         <a

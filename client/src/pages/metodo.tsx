@@ -18,17 +18,17 @@ const eixos = [
   {
     icon: Users,
     nome: "Cliente e problema",
-    desc: "Quem sente a dor — e ela está entre as prioridades reais dessa pessoa, com orçamento associado? Dor confirmada por entrevista vale mais que persona bem desenhada.",
+    desc: "Quem sente a dor, e se ela está entre as prioridades reais dessa pessoa, com orçamento associado. Dor confirmada por entrevista vale mais que persona bem desenhada.",
   },
   {
     icon: Banknote,
     nome: "Disposição a pagar",
-    desc: "Evidência de pagamento, não de interesse. Carta de intenção é um sinal; piloto pago por quem não é sócio nem investidor é outro patamar.",
+    desc: "Vale a evidência de pagamento. Carta de intenção é um sinal fraco; piloto pago por quem não é sócio nem investidor é outro patamar.",
   },
   {
     icon: ShieldCheck,
     nome: "Rota regulatória",
-    desc: "ANVISA, INMETRO, CONAMA, ANP, registro de fertilizante, normas de potabilidade. Em tecnologia industrial, é aqui que cronogramas comerciais morrem — e quase nenhum framework de inovação olha para isso.",
+    desc: "ANVISA, INMETRO, CONAMA, ANP, registro de fertilizante, normas de potabilidade. Em tecnologia industrial é aqui que cronogramas comerciais morrem, e quase nenhum framework de inovação olha para isso.",
   },
   {
     icon: Network,
@@ -38,7 +38,7 @@ const eixos = [
   {
     icon: Factory,
     nome: "Capacidade de escala",
-    desc: "Rota de scale-up, custo em escala, parceiro industrial, CAPEX e fornecimento do insumo crítico. Funcionar em bancada não diz nada sobre funcionar em tonelada.",
+    desc: "Rota de scale-up, custo em escala, parceiro industrial, CAPEX e fornecimento do insumo crítico. Funcionar em bancada diz muito pouco sobre funcionar em tonelada.",
   },
 ];
 
@@ -96,9 +96,9 @@ export default function Metodo() {
                 <span className="text-gradient-accent">Você provavelmente só mediu uma.</span>
               </h1>
               <p className="text-lg lg:text-xl text-text-muted leading-relaxed">
-                A maturidade técnica (TRL) as agências de fomento exigem há
-                décadas. A maturidade comercial (CRL) quase ninguém mede — e é
-                ela que explica por que tecnologias prontas ficam paradas.
+                As agências de fomento exigem a maturidade técnica (TRL) há décadas. A
+                maturidade comercial (CRL) quase ninguém mede, e é ela que explica
+                por que tecnologias prontas ficam paradas.
               </p>
             </div>
           </section>
@@ -111,20 +111,19 @@ export default function Metodo() {
 
                 <div>
                   <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-6">
-                    O diagnóstico não é o nível. É a distância.
+                    O que importa é a distância entre os dois.
                   </h2>
                   <div className="space-y-4 text-lg text-text-muted leading-relaxed mb-8">
                     <p>
-                      Saber que uma tecnologia está em TRL 6 não gera decisão
-                      nenhuma — o time técnico já sabe disso. O que gera decisão
-                      é cruzar esse número com a maturidade comercial e olhar o
-                      espaço entre os dois.
+                      Saber que uma tecnologia está em TRL 6 não gera decisão nenhuma. O
+                      time técnico já sabe disso. A decisão aparece quando você
+                      cruza esse número com a maturidade comercial e olha o espaço
+                      entre os dois.
                     </p>
                     <p>
                       <strong className="text-text">Descompasso = TRL − CRL.</strong> Quanto
-                      maior, mais valor parado. E o pior: quanto maior o
-                      descompasso, menos adianta continuar investindo no eixo
-                      técnico.
+                      maior o descompasso, mais valor fica parado, e menos
+                      adianta continuar investindo no eixo técnico.
                     </p>
                   </div>
 
@@ -156,10 +155,10 @@ export default function Metodo() {
               <div className="mt-14 max-w-3xl mx-auto p-6 lg:p-8 bg-background/50 border-l-2 border-cta rounded-r-2xl">
                 <p className="text-lg text-text leading-relaxed">
                   <strong>A regra que orienta tudo:</strong> invista sempre no eixo
-                  mais atrasado — não no mais confortável. Times técnicos investem
-                  em TRL porque é o que sabem fazer e o que dá prazer fazer. Cada
-                  rodada assim aumenta o descompasso e o custo de descobrir a
-                  verdade depois.
+                  mais atrasado, mesmo quando ele é o mais desconfortável. Times
+                  técnicos costumam investir em TRL porque é o que sabem fazer e o
+                  que dá prazer fazer. Cada rodada assim aumenta o descompasso e o
+                  custo de descobrir a verdade depois.
                 </p>
               </div>
             </div>
@@ -173,9 +172,9 @@ export default function Metodo() {
                   O CRL é composto por cinco eixos
                 </h2>
                 <p className="text-lg text-text-muted leading-relaxed">
-                  Cada um recebe um nível de 1 a 9. O CRL da tecnologia é a
-                  leitura conjunta — e o eixo mais atrasado costuma ser o que
-                  define o próximo passo.
+                  Cada um recebe um nível de 1 a 9. O CRL da tecnologia é a leitura
+                  conjunta dos cinco, e o eixo mais atrasado costuma definir o
+                  próximo passo.
                 </p>
               </div>
 
@@ -211,9 +210,9 @@ export default function Metodo() {
                   Os nove níveis de prontidão comercial
                 </h2>
                 <p className="text-lg text-text-muted leading-relaxed">
-                  Nove níveis para espelhar a escala de TRL que você já usa —
-                  agrupados em três blocos, na ordem em que a evidência comercial
-                  realmente aparece.
+                  Nove níveis para espelhar a escala de TRL que você já usa, agrupados em
+                  três blocos, na ordem em que a evidência comercial aparece na
+                  prática.
                 </p>
               </div>
 
@@ -245,8 +244,8 @@ export default function Metodo() {
                   agências brasileiras. O CRL não é — existem versões
                   concorrentes, com números de níveis diferentes. A escala acima
                   é a que eu uso, construída para tecnologias industriais
-                  brasileiras. Não é norma; é método, e está aberto para você
-                  usar.
+                  brasileiras. Trate como método de trabalho, não como norma. Está aberto
+                  para você usar.
                 </p>
               </div>
             </div>
@@ -262,10 +261,10 @@ export default function Metodo() {
                 Da estimativa ao veredito
               </h2>
               <p className="text-lg text-text-muted leading-relaxed mb-8">
-                O autodiagnóstico usa a sua percepção. O Diagnóstico de Prontidão
-                Comercial usa evidência verificada, aplicação por aplicação, e
-                termina com os próximos 3 a 5 experimentos — com custo e critério
-                de decisão de cada um.
+                O autodiagnóstico trabalha com a sua percepção. O Diagnóstico de
+                Prontidão Comercial trabalha com evidência verificada, aplicação
+                por aplicação, e termina com os próximos 3 a 5 experimentos, cada
+                um com custo e critério de decisão.
               </p>
               <a
                 href="/tecnologia#diagnostico"

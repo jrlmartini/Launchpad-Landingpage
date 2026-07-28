@@ -48,7 +48,7 @@ const situacoes: {
     icon: PenTool,
     recomendacao: "Escrita do Projeto",
     porque:
-      "Como o projeto ainda não existe no papel, dá tempo de acertar o enquadramento antes de escrever — que é onde a maioria das propostas se perde.",
+      "Como o projeto ainda não existe no papel, dá tempo de acertar o enquadramento antes de escrever, que é onde a maioria das propostas se perde.",
     href: "/projetos#escrita",
   },
   {
@@ -58,7 +58,7 @@ const situacoes: {
     icon: Eye,
     recomendacao: "Revisão do Projeto",
     porque:
-      "Com o texto pronto, o maior ganho vem de uma leitura com olhos de avaliador e de correções priorizadas pelo que realmente tira pontos.",
+      "Com o texto pronto, o maior ganho vem de uma leitura com olhos de avaliador e de correções priorizadas pelo que tira pontos de verdade.",
     href: "/projetos#revisao",
   },
   {
@@ -78,7 +78,7 @@ const situacoes: {
     icon: Scale,
     recomendacao: "Parecer Técnico-Comercial",
     porque:
-      "É uma due diligence independente, no prazo do deal, sobre viabilidade técnica, prontidão comercial e os riscos que o pitch não mostra.",
+      "Due diligence independente, no prazo do deal, sobre viabilidade técnica, prontidão comercial e os riscos que o pitch não mostra.",
     href: "/tecnologia#parecer",
   },
   {
@@ -138,9 +138,9 @@ export default function Triagem() {
                 Qual é o seu próximo passo?
               </h1>
               <p className="text-lg text-text-muted leading-relaxed">
-                Responda o que fizer sentido e eu digo qual caminho se encaixa —
-                curso, escrita, revisão, diagnóstico ou parecer. Se nenhum
-                servir, eu falo isso também.
+                Responda o que fizer sentido e eu digo qual caminho se encaixa: curso,
+                escrita, revisão, diagnóstico ou parecer. Se nenhum servir, eu
+                falo isso também.
               </p>
             </header>
 

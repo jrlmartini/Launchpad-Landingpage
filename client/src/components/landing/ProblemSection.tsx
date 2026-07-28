@@ -36,8 +36,9 @@ export function ProblemSection() {
             Por que projetos bons não decolam?
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            O sistema de fomento é um ambiente competitivo: regras, critérios, elegibilidade e riscos.
-            O que derruba a maioria dos projetos não é "falta de potencial". É:
+            O sistema de fomento é competitivo e cheio de regras, critérios e
+            elegibilidade. O que derruba a maioria dos projetos raramente é falta
+            de potencial. É uma destas seis coisas:
           </p>
         </div>
 
@@ -58,7 +59,7 @@ export function ProblemSection() {
 
         <div className="max-w-2xl mx-auto p-6 bg-destructive/5 border border-destructive/20 rounded-2xl text-center">
           <p className="text-lg text-text">
-            <strong>Resultado:</strong> a ideia nunca sai da torre de lançamento. E o recurso vai
+            <strong>Resultado:</strong> a ideia nunca sai da torre de lançamento, e o recurso vai
             para quem apresentou melhor{" "}
             <span className="font-semibold text-destructive">missão e rota</span>.
           </p>

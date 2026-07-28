@@ -11,7 +11,7 @@ const tracks = [
     eyebrow: "Projetos de fomento",
     title: "Preciso de um projeto aprovado",
     description:
-      "Você tem um edital na mira — FINEP, FAPESP, CNPq, Embrapii, FAPs — e precisa de uma proposta que resista à leitura de um avaliador.",
+      "Você tem um edital na mira (FINEP, FAPESP, CNPq, Embrapii, FAPs) e precisa de uma proposta que resista à leitura de um avaliador.",
     items: [
       { icon: PenTool, label: "Escrita do Projeto", note: "a quatro mãos, até a submissão" },
       { icon: Eye, label: "Revisão do Projeto", note: "leitura com olhos de avaliador" },
@@ -47,11 +47,11 @@ export default function Servicos() {
             </div>
             <div className="max-w-3xl mx-auto px-6 lg:px-8 relative text-center">
               <h1 className="font-display font-bold text-4xl sm:text-5xl text-text leading-tight mb-6">
-                Como posso ajudar?
+                Dois gargalos travam uma deep tech
               </h1>
               <p className="text-lg lg:text-xl text-text-muted leading-relaxed">
-                Trabalho com dois tipos de problema bem diferentes. Escolha o que
-                se parece com o seu momento.
+                Financiar o desenvolvimento e provar o mercado. Escolha o que você
+                precisa resolver agora.
               </p>
             </div>
           </section>

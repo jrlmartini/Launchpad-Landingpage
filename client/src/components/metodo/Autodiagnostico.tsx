@@ -25,7 +25,7 @@ const EIXOS: Eixo[] = [
     nome: "Cliente e problema",
     pergunta: "Quão confirmada está a dor que a sua tecnologia resolve?",
     opcoes: [
-      { label: "É uma hipótese nossa — ainda não conversamos com o mercado", nivel: 1 },
+      { label: "É uma hipótese nossa, ainda não conversamos com o mercado", nivel: 1 },
       { label: "Temos o perfil de cliente definido, mas a dor é presumida", nivel: 3 },
       { label: "Entrevistamos clientes reais e a dor se confirmou", nivel: 5 },
       { label: "A dor é prioridade declarada do cliente, com orçamento associado", nivel: 7 },
@@ -54,7 +54,7 @@ const EIXOS: Eixo[] = [
       { label: "Mapeado, mas sem plano nem prazo", nivel: 3 },
       { label: "Plano definido, com prazo e custo estimados", nivel: 5 },
       { label: "Processo iniciado junto ao órgão", nivel: 7 },
-      { label: "Aprovado — ou não aplicável ao nosso caso", nivel: 9 },
+      { label: "Aprovado, ou não aplicável ao nosso caso", nivel: 9 },
     ],
   },
   {
@@ -105,22 +105,22 @@ const TRL_BLOCOS = [
 function veredito(descompasso: number) {
   if (descompasso <= 1)
     return {
-      titulo: "Trajetória equilibrada",
+      titulo: "Ritmo equilibrado",
       texto:
-        "Técnica e comercial estão andando juntas. O plano atual provavelmente faz sentido — o que muda o jogo aqui é manter a cadência e não deixar o CRL ficar para trás no próximo ciclo de desenvolvimento.",
+        "Técnica e comercial estão andando juntas, então o plano atual provavelmente faz sentido. O cuidado aqui é manter a cadência e não deixar o CRL ficar para trás no próximo ciclo de desenvolvimento.",
       tom: "ok" as const,
     };
   if (descompasso <= 3)
     return {
       titulo: "Descompasso em formação",
       texto:
-        "A tecnologia começou a correr na frente do negócio. Este é o momento mais barato para corrigir: antes de subir mais um nível técnico, vale gastar as próximas semanas fechando as lacunas comerciais que apareceram acima.",
+        "A tecnologia começou a correr na frente do negócio. Este é o momento mais barato para corrigir: antes de subir mais um nível técnico, vale usar as próximas semanas para fechar as lacunas comerciais que apareceram acima.",
       tom: "atencao" as const,
     };
   return {
     titulo: "Tecnologia órfã",
     texto:
-      "O padrão clássico: tecnicamente pronta, comercialmente não comprovada. Nesse cenário, cada real investido em desenvolvimento técnico aumenta o valor parado em vez de reduzir risco. A prioridade deixa de ser desenvolver e passa a ser provar mercado.",
+      "Tecnicamente pronta e comercialmente não comprovada. Nesse cenário, cada real investido em desenvolvimento técnico aumenta o valor parado em vez de reduzir risco. A prioridade passa a ser provar mercado.",
     tom: "critico" as const,
   };
 }
@@ -163,9 +163,8 @@ export function Autodiagnostico() {
             Onde a sua tecnologia está na matriz?
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            Uma pergunta por eixo. O resultado é uma estimativa — suficiente para
-            você enxergar o descompasso, não para substituir uma avaliação com
-            evidências.
+            Uma pergunta por eixo. O resultado é uma estimativa, suficiente para você
+            enxergar o descompasso e decidir o próximo passo.
           </p>
         </div>
 
@@ -317,9 +316,9 @@ export function Autodiagnostico() {
                       {eixoMaisAtrasado.nome}
                     </p>
                     <p className="text-sm text-text-muted mt-2">
-                      É aqui que o próximo investimento reduz mais incerteza por
-                      real gasto — mesmo que não seja o que o time tem mais
-                      vontade de fazer.
+                      É aqui que o próximo investimento reduz mais incerteza por real
+                      gasto, mesmo quando não é o que o time tem mais vontade de
+                      fazer.
                     </p>
                   </div>
                 )}
@@ -328,11 +327,10 @@ export function Autodiagnostico() {
 
             <div className="pt-6 border-t border-stroke/50">
               <p className="text-text-muted leading-relaxed mb-5">
-                Esta é uma leitura rápida, baseada na sua própria percepção. O
-                Diagnóstico de Prontidão Comercial faz o mesmo exercício com
-                evidências verificadas, aplicação por aplicação, e termina com um
-                plano de experimentos — inclusive com a possibilidade de o
-                veredito ser “não avance”.
+                Esta é uma leitura rápida, baseada na sua percepção. O Diagnóstico de
+                Prontidão Comercial faz o mesmo exercício com evidências
+                verificadas, aplicação por aplicação, e termina com um plano de
+                experimentos. O veredito pode ser “não avance”.
               </p>
               <ContactOptions
                 message={`Olá! Fiz o autodiagnóstico no site.\n\n*TRL ${trl}* — ${TRL_DEFINICOES[trl!]}\n*CRL ${crl}* · descompasso ${descompasso} (${v.titulo})\n*Eixo mais atrasado:* ${eixoMaisAtrasado?.nome}\n\nGostaria de conversar sobre o Diagnóstico de Prontidão Comercial.`}

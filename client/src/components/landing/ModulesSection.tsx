@@ -9,7 +9,7 @@ const modules = [
   {
     icon: BookOpen,
     title: "Módulo 1 — O Sistema Nacional de Fomento à Inovação",
-    description: "Instrumentos, políticas e programas (FAPESP, FINEP, CNPq e outros) para navegar o ecossistema com clareza e escolher o recurso certo.",
+    description: "Instrumentos, políticas e programas (FAPESP, FINEP, CNPq e outros) para você saber onde procurar recurso e escolher o certo para o seu caso.",
   },
   {
     icon: Target,
@@ -19,17 +19,17 @@ const modules = [
   {
     icon: Layers,
     title: "Módulo 3 — Arquitetura de um Bom Projeto",
-    description: "Os pilares que sustentam aprovação: aderência, evidências e execução — com TRL na prática e storytelling técnico que gera confiança.",
+    description: "Os pilares que sustentam aprovação: aderência, evidências e execução, com TRL na prática e narrativa técnica que gera confiança.",
   },
   {
     icon: Pencil,
     title: "Módulo 4 — Desenvolvendo o Projeto",
-    description: "Campo a campo: resumo, descrição, inovação, riscos, mercado, impactos, plano de trabalho, orçamento e contrapartidas — com foco em consistência e defesa.",
+    description: "Campo a campo: resumo, descrição, inovação, riscos, mercado, impactos, plano de trabalho, orçamento e contrapartidas, sempre com foco em consistência e defesa.",
   },
   {
     icon: ClipboardCheck,
     title: "Módulo 5 — Prestação de Contas",
-    description: "Governança, trilha de evidências e relatórios para executar com segurança, reduzir glosas e manter o projeto em trajetória até o fim.",
+    description: "Governança, trilha de evidências e relatórios para executar com segurança, reduzir glosas e chegar ao fim do projeto sem passivo.",
   },
 ];
 
@@ -55,7 +55,7 @@ export function ModulesSection() {
             O que você vai aprender?
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            São seis módulos, do mapa do ecossistema até a prestação de contas.
+            São seis módulos, do mapa do fomento até a prestação de contas.
           </p>
         </div>
 

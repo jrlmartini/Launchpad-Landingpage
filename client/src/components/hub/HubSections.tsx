@@ -38,8 +38,8 @@ export function HubHero() {
           </h1>
 
           <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-4 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
-            Avalio a prontidão comercial de tecnologias industriais e defino a
-            rota do laboratório ao mercado — com método, prazo e veredito.
+            Avalio a prontidão comercial de tecnologias industriais e defino a rota
+            do laboratório ao mercado, com método, prazo e veredito por escrito.
           </p>
 
           <p className="text-sm font-mono text-text-muted mb-10 animate-fade-in-up animate-delay-200">
@@ -68,23 +68,21 @@ export function HubProblem() {
           A tecnologia ficou pronta. E agora ninguém sabe o próximo passo.
         </h2>
         <div className="text-lg text-text-muted leading-relaxed space-y-5 max-w-3xl mx-auto">
-          <p>Você conhece essa história porque está dentro dela:</p>
           <p>
-            Anos de desenvolvimento. Resultados de bancada consistentes. Talvez
-            um piloto que funcionou, um projeto FINEP ou Embrapii concluído, uma
-            patente depositada.
+            Depois de anos de desenvolvimento, os resultados de bancada estão
+            consistentes. Talvez exista um piloto que funcionou, um projeto FINEP
+            ou Embrapii concluído, uma patente depositada.
           </p>
           <p>
-            E então — nada. O projeto não morre, mas não anda. A diretoria
-            pergunta quando aquilo vira receita. O time técnico responde com
-            mais testes. <strong className="text-text">A resposta certa não é técnica.</strong>
+            E o projeto não morre, mas também não anda. A diretoria pergunta
+            quando aquilo vira receita, o time técnico responde com mais testes,
+            e a conversa trava aí.
           </p>
           <p>
-            A pergunta que destrava não é <em>"a tecnologia funciona?"</em> —
-            essa você já respondeu. É:{" "}
+            Trava porque a pergunta que falta responder é comercial:{" "}
             <strong className="text-text">
-              "em qual aplicação, para qual cliente, com qual modelo de negócio,
-              e qual é o experimento mais barato que prova isso?"
+              em qual aplicação, para qual cliente, com qual modelo de negócio, e
+              qual é o experimento mais barato que prova isso.
             </strong>
           </p>
           <p>Responder essa pergunta é o nosso trabalho.</p>
@@ -231,7 +229,7 @@ const otherServices = [
     title: "Assessoria de Rota Comercial",
     tag: "Sprint de 6–8 semanas + acompanhamento",
     description:
-      "Da avaliação à execução: aplicações priorizadas, tese de primeiro cliente, desenho de piloto, parceiros e estratégia de captação integrada — com roadmap de 12 meses e acompanhamento mensal como conselheiro.",
+      "Da avaliação à execução: aplicações priorizadas, tese de primeiro cliente, desenho de piloto, parceiros e estratégia de captação, com roadmap de 12 meses e acompanhamento mensal como conselheiro.",
     waMessage: WA_MESSAGES.rota,
     id: "rota",
   },
@@ -240,7 +238,7 @@ const otherServices = [
     title: "Parecer Técnico-Comercial",
     tag: "Para investidores e financiadores · 1–3 semanas",
     description:
-      "Due diligence de tecnologias para decisões de investimento: viabilidade técnica, prontidão comercial e os riscos que o pitch não mostra — no prazo do deal.",
+      "Due diligence de tecnologias para decisões de investimento, no prazo do deal: viabilidade técnica, prontidão comercial e os riscos que o pitch não mostra.",
     waMessage: WA_MESSAGES.parecer,
     id: "parecer",
   },
@@ -346,7 +344,7 @@ export function HubFAQ() {
     },
     {
       q: "E se o veredito for negativo?",
-      a: "Ele vem escrito assim mesmo. Um \"não vá\" fundamentado, descoberto agora, é o resultado mais barato que esse trabalho pode entregar — evita anos de investimento numa rota que não fecha.",
+      a: "Ele vem escrito assim mesmo. Um \"não vá\" fundamentado, descoberto agora, evita anos de investimento numa rota que não fecha. É o resultado mais barato que esse trabalho pode entregar.",
     },
     {
       q: "E se eu precisar de mais do que o diagnóstico?",
@@ -354,7 +352,7 @@ export function HubFAQ() {
     },
     {
       q: "Você implementa a tecnologia?",
-      a: "Não executo engenharia nem operação. Defino a rota, sequencio as decisões e acompanho a execução como conselheiro. Quem constrói é o seu time e os parceiros certos — que ajudo a selecionar.",
+      a: "Não executo engenharia nem operação. Defino a rota, sequencio as decisões e acompanho a execução como conselheiro. Quem constrói é o seu time, com os parceiros certos, que ajudo a selecionar.",
     },
     {
       q: "Atende startups?",

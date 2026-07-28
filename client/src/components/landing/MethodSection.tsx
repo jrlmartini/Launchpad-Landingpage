@@ -5,7 +5,7 @@ const steps = [
     number: "1",
     icon: Map,
     title: "Mapa do jogo",
-    description: "Navegue o ecossistema de fomento com clareza: FAPESP, FINEP, CNPq, FAPs estaduais — entendendo instrumentos, regras e o melhor encaixe por TRL.",
+    description: "Entenda como funcionam FAPESP, FINEP, CNPq e as FAPs estaduais: quais instrumentos existem, que regras cada um impõe e qual deles encaixa no seu TRL.",
   },
   {
     number: "2",
@@ -29,7 +29,7 @@ const steps = [
     number: "5",
     icon: Shield,
     title: "Governança e prestação de contas",
-    description: "Prepare a operação para manter a missão em trajetória até o fim — sem sustos.",
+    description: "Prepare a operação para executar o projeto até o fim sem glosa e sem sustos na prestação de contas.",
   },
 ];
 

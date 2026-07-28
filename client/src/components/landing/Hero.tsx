@@ -16,7 +16,7 @@ const features = [
   },
   {
     icon: Shield,
-    text: "Preparar governança e prestação de contas para manter a missão em trajetória",
+    text: "Preparar governança e prestação de contas para executar o projeto sem sustos até o fim",
   },
 ];
 
@@ -45,7 +45,7 @@ export function Hero() {
           </h2>
 
           <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
-            Um treinamento prático, <strong className="text-text">passo a passo</strong>, com os templates, as planilhas e os checklists que usamos em projetos reais. Serve para FAPESP, FINEP, CNPq, FAPs estaduais e qualquer outro edital — porque o que muda é o formulário, não a lógica de quem aprova.
+            Um treinamento prático, <strong className="text-text">passo a passo</strong>, com os templates, as planilhas e os checklists que usamos em projetos reais. Serve para FAPESP, FINEP, CNPq, FAPs estaduais e qualquer outro edital, porque o formulário muda de um para o outro, mas a lógica de quem aprova permanece a mesma.
           </p>
         </div>
       </div>
@@ -80,7 +80,8 @@ export function Hero() {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <p className="mt-4 text-sm text-text-muted italic">
-            Não prometemos aprovação. Prometemos um projeto muito mais difícil de reprovar.
+            Aprovação nenhum curso garante. O que você leva daqui é uma proposta
+            muito mais difícil de reprovar.
           </p>
         </div>
       </div>

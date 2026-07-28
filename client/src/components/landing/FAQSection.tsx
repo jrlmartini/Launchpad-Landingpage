@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     question: "Isso garante aprovação?",
-    answer: "Não — e desconfie de quem garantir. O que o curso faz é subir muito o nível da sua proposta: enquadramento certo, evidências que convencem, plano que fecha e orçamento que você consegue defender.",
+    answer: "Não, e desconfie de quem garantir. O que o curso faz é subir muito o nível da sua proposta: enquadramento certo, evidências que convencem, plano que fecha e orçamento que você consegue defender.",
   },
   {
     question: "Funciona para qualquer área de deep tech?",
@@ -16,11 +16,11 @@ const faqs = [
   },
   {
     question: "Estou no começo (TRL baixo). Vale?",
-    answer: "Vale — talvez até mais. É no começo que se perde tempo com o edital errado, e é onde escolher bem o instrumento faz mais diferença.",
+    answer: "Vale, e talvez até mais. É no começo que se perde tempo com o edital errado, e é quando escolher bem o instrumento faz mais diferença.",
   },
   {
     question: "E se eu não for bom de escrita?",
-    answer: 'Você não precisa ser "bom de texto". Precisa ser claro, objetivo e defensável — e isso se constrói com estrutura, não com talento. O curso te dá a estrutura e os templates.',
+    answer: 'Você não precisa ser "bom de texto". Precisa ser claro, objetivo e defensável, e isso se constrói com estrutura. O curso te dá a estrutura e os templates.',
   },
 ];
 
