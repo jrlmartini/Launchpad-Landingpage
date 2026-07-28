@@ -13,7 +13,14 @@
 
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
-import { ROUTES, SITE_URL } from "./routes-meta";
+import {
+  ROUTES,
+  SITE_URL,
+  ORG_NAME,
+  organizationSchema,
+  personSchema,
+  type RouteMeta,
+} from "./routes-meta";
 
 const DIST = path.resolve(import.meta.dirname, "..", "dist", "public");
 
@@ -23,6 +30,58 @@ function escapeHtml(value: string): string {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+/**
+ * Builds the JSON-LD @graph for a route: site + organization + person are
+ * present everywhere (so any entry page can establish entity identity),
+ * plus breadcrumbs and any route-specific nodes.
+ */
+function buildSchema(route: RouteMeta): string {
+  const url = `${SITE_URL}${route.path === "/" ? "/" : route.path}`;
+
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: ORG_NAME,
+      inLanguage: "pt-BR",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    organizationSchema(SITE_URL),
+    personSchema(SITE_URL),
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: route.title,
+      description: route.description,
+      inLanguage: "pt-BR",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#organization` },
+    },
+  ];
+
+  if (route.crumb) {
+    graph.push({
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Início",
+          item: `${SITE_URL}/`,
+        },
+        { "@type": "ListItem", position: 2, name: route.crumb, item: url },
+      ],
+    });
+  }
+
+  if (route.schema) graph.push(...route.schema(SITE_URL));
+
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
 }
 
 async function run() {
@@ -66,10 +125,12 @@ async function run() {
       `<meta name="twitter:description" content="${description}" />`,
     );
 
-    // Canonical — inserted before </head>
+    // Canonical + JSON-LD — inserted before </head> so crawlers see them in raw HTML
+    const jsonLd = buildSchema(route).replace(/</g, "\\u003c");
     html = html.replace(
       "</head>",
-      `  <link rel="canonical" href="${url}" />\n  </head>`,
+      `  <link rel="canonical" href="${url}" />\n` +
+        `    <script type="application/ld+json">${jsonLd}</script>\n  </head>`,
     );
 
     const outDir =

@@ -12,12 +12,91 @@
 
 export const SITE_URL = "https://deeptechs.com.br";
 
+export const ORG_NAME = "LaunchpadHub";
+export const PERSON_NAME = "José Renato Lanzi Martini";
+export const WHATSAPP_E164 = "+55-19-3195-2808";
+export const EMAIL = "contato@launchpadhub.com.br";
+
 export interface RouteMeta {
   path: string;
   title: string;
   description: string;
   /** Sitemap priority 0..1 */
   priority: number;
+  /** Breadcrumb label (omitted on home) */
+  crumb?: string;
+  /** Extra JSON-LD nodes specific to this route */
+  schema?: (siteUrl: string) => Record<string, unknown>[];
+}
+
+/* ---------------- Shared JSON-LD nodes ---------------- */
+
+export function organizationSchema(siteUrl: string) {
+  return {
+    "@type": "ProfessionalService",
+    "@id": `${siteUrl}/#organization`,
+    name: ORG_NAME,
+    url: `${siteUrl}/`,
+    description:
+      "Consultoria e educação em fomento à inovação e comercialização de tecnologias para deep techs e empresas industriais.",
+    email: EMAIL,
+    telephone: WHATSAPP_E164,
+    areaServed: { "@type": "Country", name: "Brasil" },
+    availableLanguage: "pt-BR",
+    founder: { "@id": `${siteUrl}/#person` },
+    knowsAbout: [
+      "Fomento à inovação",
+      "FINEP",
+      "FAPESP PIPE",
+      "CNPq",
+      "Embrapii",
+      "Comercialização de tecnologia",
+      "Technology Readiness Level",
+      "Commercial Readiness Level",
+      "Deep tech",
+    ],
+  };
+}
+
+export function personSchema(siteUrl: string) {
+  return {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: PERSON_NAME,
+    jobTitle: "Engenheiro e consultor em fomento e comercialização de tecnologia",
+    worksFor: { "@id": `${siteUrl}/#organization` },
+    alumniOf: [
+      { "@type": "CollegeOrUniversity", name: "UNESP" },
+      { "@type": "CollegeOrUniversity", name: "OTH Regensburg" },
+      { "@type": "CollegeOrUniversity", name: "FGV" },
+      { "@type": "CollegeOrUniversity", name: "HEC Paris" },
+      { "@type": "CollegeOrUniversity", name: "MIT" },
+    ],
+    knowsAbout: [
+      "Projetos de fomento à inovação",
+      "Prontidão comercial de tecnologias",
+      "Química industrial",
+      "Tratamento de água",
+      "Tecnologias ambientais",
+    ],
+  };
+}
+
+function service(
+  siteUrl: string,
+  id: string,
+  name: string,
+  description: string,
+) {
+  return {
+    "@type": "Service",
+    "@id": `${siteUrl}${id}`,
+    name,
+    description,
+    serviceType: name,
+    provider: { "@id": `${siteUrl}/#organization` },
+    areaServed: { "@type": "Country", name: "Brasil" },
+  };
 }
 
 export const ROUTES: RouteMeta[] = [
@@ -34,6 +113,34 @@ export const ROUTES: RouteMeta[] = [
     description:
       "Aprenda a escolher editais e escrever projetos defensáveis com templates, checklists e método aplicado a FINEP, FAPESP, CNPq e FAPs estaduais.",
     priority: 0.9,
+    crumb: "Curso",
+    schema: (siteUrl) => [
+      {
+        "@type": "Course",
+        "@id": `${siteUrl}/curso#course`,
+        name: "Fomento para Deeptechs",
+        description:
+          "Treinamento prático para escolher editais, escrever e defender projetos de fomento à inovação, com templates, planilhas e checklists aplicáveis a FINEP, FAPESP, CNPq, Embrapii e FAPs estaduais.",
+        inLanguage: "pt-BR",
+        provider: { "@id": `${siteUrl}/#organization` },
+        educationalLevel: "Profissional",
+        teaches: [
+          "Escolha e enquadramento de editais de fomento",
+          "Decisão Go/No-Go de aderência",
+          "Narrativa técnica e evidências",
+          "Plano de trabalho, cronograma e entregáveis",
+          "Orçamento defensável e contrapartidas",
+          "Governança e prestação de contas",
+        ],
+        hasCourseInstance: {
+          "@type": "CourseInstance",
+          courseMode: "online",
+          courseWorkload: "PT10H",
+          inLanguage: "pt-BR",
+          instructor: { "@id": `${siteUrl}/#person` },
+        },
+      },
+    ],
   },
   {
     path: "/servicos",
@@ -41,6 +148,7 @@ export const ROUTES: RouteMeta[] = [
     description:
       "Escrita e revisão de projetos de fomento, diagnóstico de prontidão comercial e due diligence técnico-comercial para deep techs e empresas industriais.",
     priority: 0.8,
+    crumb: "Serviços",
   },
   {
     path: "/projetos",
@@ -48,6 +156,21 @@ export const ROUTES: RouteMeta[] = [
     description:
       "Estruturação e revisão de projetos de fomento com decisão Go/No-Go, evidências, plano de trabalho, orçamento defensável e leitura com olhos de avaliador.",
     priority: 0.9,
+    crumb: "Projetos de fomento",
+    schema: (siteUrl) => [
+      service(
+        siteUrl,
+        "/projetos#escrita",
+        "Escrita de Projeto de Fomento",
+        "Escrita completa da proposta a quatro mãos, do enquadramento e da decisão Go/No-Go ao plano de trabalho, orçamento defensável e preparação para a defesa. Aplicável a FINEP, FAPESP, CNPq, Embrapii e FAPs estaduais.",
+      ),
+      service(
+        siteUrl,
+        "/projetos#revisao",
+        "Revisão de Projeto de Fomento",
+        "Revisão crítica da proposta com leitura de avaliador: lacunas, afirmações sem evidência, inconsistências entre plano e orçamento, com correções priorizadas por impacto e sessão de mentoria.",
+      ),
+    ],
   },
   {
     path: "/tecnologia",
@@ -55,6 +178,27 @@ export const ROUTES: RouteMeta[] = [
     description:
       "Em 30 dias, avalie TRL × CRL, priorize aplicações e defina os próximos experimentos para levar uma tecnologia industrial ao mercado.",
     priority: 0.9,
+    crumb: "Tecnologia e mercado",
+    schema: (siteUrl) => [
+      service(
+        siteUrl,
+        "/tecnologia#diagnostico",
+        "Diagnóstico de Prontidão Comercial",
+        "Avaliação em 30 dias que cruza maturidade técnica (TRL) e comercial (CRL) de uma tecnologia industrial, com riscos ranqueados, aplicações priorizadas, tese de primeiro cliente e plano de experimentos de redução de incerteza.",
+      ),
+      service(
+        siteUrl,
+        "/tecnologia#rota",
+        "Assessoria de Rota Comercial",
+        "Estruturação da rota do laboratório ao mercado: aplicações priorizadas, desenho de piloto, mapa de parceiros, estratégia de fomento e roadmap de 12 meses com acompanhamento como conselheiro.",
+      ),
+      service(
+        siteUrl,
+        "/tecnologia#parecer",
+        "Parecer Técnico-Comercial",
+        "Due diligence de tecnologias para decisões de investimento: viabilidade técnica, prontidão comercial e riscos priorizados para investidores, CVCs e financiadores.",
+      ),
+    ],
   },
   {
     path: "/lista",
@@ -62,5 +206,22 @@ export const ROUTES: RouteMeta[] = [
     description:
       "Entre na lista de pré-venda do curso Fomento para Deeptechs e receba em primeira mão as condições de abertura.",
     priority: 0.5,
+    crumb: "Lista de pré-venda",
+  },
+  {
+    path: "/triagem",
+    title: "Triagem gratuita: qual é o seu próximo passo? | LaunchpadHub",
+    description:
+      "Responda cinco perguntas rápidas e descubra se o seu caso é curso, escrita de projeto, revisão, diagnóstico de prontidão comercial ou parecer técnico-comercial.",
+    priority: 0.7,
+    crumb: "Triagem",
+  },
+  {
+    path: "/privacidade",
+    title: "Política de Privacidade | LaunchpadHub",
+    description:
+      "Como o LaunchpadHub coleta, usa e protege dados pessoais, em conformidade com a LGPD.",
+    priority: 0.3,
+    crumb: "Política de Privacidade",
   },
 ];

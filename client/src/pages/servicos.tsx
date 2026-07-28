@@ -98,10 +98,16 @@ export default function Servicos() {
               </div>
 
               <div className="mt-12 max-w-3xl mx-auto text-center">
-                <p className="text-lg text-text mb-6">
-                  Não sabe em qual você se encaixa? Fale comigo — dois minutos de
-                  conversa resolvem.
+                <p className="text-lg text-text mb-4">
+                  Não sabe em qual você se encaixa?
                 </p>
+                <a
+                  href="/triagem"
+                  className="inline-flex items-center gap-2 mb-6 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
+                >
+                  Fazer a triagem de 2 minutos
+                  <ArrowRight className="w-4 h-4" />
+                </a>
                 <ContactOptions message={WA_MESSAGES.geral} source="servicos-hub" className="max-w-xl mx-auto" />
               </div>
 

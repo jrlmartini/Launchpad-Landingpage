@@ -11,6 +11,7 @@ import Projetos from "@/pages/projetos";
 import Tecnologia from "@/pages/tecnologia";
 import Lista from "@/pages/lista";
 import Privacidade from "@/pages/privacidade";
+import Triagem from "@/pages/triagem";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/tecnologia" component={Tecnologia} />
       <Route path="/lista" component={Lista} />
       <Route path="/privacidade" component={Privacidade} />
+      <Route path="/triagem" component={Triagem} />
       <Route component={NotFound} />
     </Switch>
   );

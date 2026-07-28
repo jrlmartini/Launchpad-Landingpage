@@ -210,6 +210,9 @@ export function Navbar({
                 )}
               </div>
 
+              <a href="/triagem" className={primaryLinkClass(false)}>
+                Triagem
+              </a>
               <a href="/#sobre" className={primaryLinkClass(false)}>
                 Sobre
               </a>

@@ -357,11 +357,21 @@ export function HomeContact() {
         <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-6">
           Não sabe por onde começar?
         </h2>
-        <p className="text-lg text-text-muted leading-relaxed mb-10">
+        <p className="text-lg text-text-muted leading-relaxed mb-8">
           Me conte em duas linhas o que você tem em mãos — uma tecnologia, um
           edital, um projeto pela metade. Eu digo qual caminho faz sentido,
           mesmo que a resposta seja "nenhum dos meus".
         </p>
+
+        <a
+          href="/triagem"
+          className="inline-flex items-center gap-2 mb-10 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
+          data-testid="link-triagem-home"
+        >
+          Ou faça a triagem de 2 minutos primeiro
+          <ArrowRight className="w-4 h-4" />
+        </a>
+
         <ContactOptions message={WA_MESSAGES.geral} variant="cards" source="home-contato" />
       </div>
     </section>
