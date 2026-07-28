@@ -100,6 +100,12 @@ export function Footer() {
               Tecnologia e mercado
             </a>
             <a
+              href="/metodo"
+              className="text-sm text-text-muted hover:text-cta transition-colors"
+            >
+              Método TRL × CRL
+            </a>
+            <a
               href="/privacidade"
               className="text-sm text-text-muted hover:text-cta transition-colors"
             >

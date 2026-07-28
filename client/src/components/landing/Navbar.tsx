@@ -210,6 +210,9 @@ export function Navbar({
                 )}
               </div>
 
+              <a href="/metodo" className={primaryLinkClass(false)}>
+                Método
+              </a>
               <a href="/triagem" className={primaryLinkClass(false)}>
                 Triagem
               </a>

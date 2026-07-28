@@ -140,6 +140,14 @@ export function HubMethod() {
               prontas, comercialmente não comprovadas.
             </p>
           </div>
+
+          <a
+            href="/metodo"
+            className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-cta hover:text-cta/80 transition-colors"
+          >
+            Ver o método completo e fazer o autodiagnóstico
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">

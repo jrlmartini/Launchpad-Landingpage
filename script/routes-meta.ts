@@ -209,6 +209,32 @@ export const ROUTES: RouteMeta[] = [
     crumb: "Lista de pré-venda",
   },
   {
+    path: "/metodo",
+    title: "Prontidão Comercial: a matriz TRL × CRL | LaunchpadHub",
+    description:
+      "O método para medir a maturidade comercial (CRL) de uma tecnologia e cruzá-la com o TRL. Cinco eixos, nove níveis e um autodiagnóstico gratuito para descobrir o descompasso da sua tecnologia.",
+    priority: 0.9,
+    crumb: "Método",
+    schema: (siteUrl) => [
+      {
+        "@type": "Article",
+        "@id": `${siteUrl}/metodo#article`,
+        headline: "Prontidão Comercial: a matriz TRL × CRL",
+        description:
+          "Framework para avaliar maturidade comercial (Commercial Readiness Level) de tecnologias industriais em cinco eixos e nove níveis, cruzando com o TRL para identificar o descompasso entre desenvolvimento técnico e prova de mercado.",
+        inLanguage: "pt-BR",
+        author: { "@id": `${siteUrl}/#person` },
+        publisher: { "@id": `${siteUrl}/#organization` },
+        about: [
+          "Commercial Readiness Level",
+          "Technology Readiness Level",
+          "Comercialização de tecnologia",
+          "Deep tech",
+        ],
+      },
+    ],
+  },
+  {
     path: "/triagem",
     title: "Triagem gratuita: qual é o seu próximo passo? | LaunchpadHub",
     description:
