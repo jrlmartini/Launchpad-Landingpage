@@ -215,6 +215,12 @@ export const ROUTES: RouteMeta[] = [
     schema: (siteUrl) => [
       service(
         siteUrl,
+        "/inteligencia#mapeamento",
+        "Mapeamento Tecnológico",
+        "Levantamento das rotas técnicas que competem para resolver um problema industrial, com maturidade estimada, mapa de players, startups, grupos de pesquisa e patentes indicativas, dataset estruturado para reuso interno e shortlist justificada dos candidatos que seguem para avaliação profunda.",
+      ),
+      service(
+        siteUrl,
         "/inteligencia#sprint",
         "Technology Decision Sprint",
         "Avaliação técnica e comercial independente, concluída em dez dias úteis, para decidir se uma tecnologia, startup, fornecedor ou rota deve avançar, ser aprofundada, aguardar ou parar. Entrega decision memo, evidence pack com rastreabilidade de fontes, dataset estruturado, sessão de revisão e action brief.",

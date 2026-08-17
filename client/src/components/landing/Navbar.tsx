@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap, Radar } from "lucide-react";
+import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap, Radar, Telescope } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /* Site-wide structure — identical on every page, never swapped out.    */
@@ -10,6 +10,12 @@ const serviceMenu = [
     group: "Inteligência técnica",
     groupHref: "/inteligencia",
     items: [
+      {
+        href: "/inteligencia#mapeamento",
+        label: "Mapeamento Tecnológico",
+        description: "Quais rotas existem para o seu problema",
+        icon: Telescope,
+      },
       {
         href: "/inteligencia#sprint",
         label: "Technology Decision Sprint",

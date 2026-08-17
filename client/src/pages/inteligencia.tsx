@@ -5,6 +5,7 @@ import { WA_MESSAGES } from "@/lib/contact";
 import {
   IntelligenceHero,
   IntelligenceProblem,
+  MapeamentoSection,
   SprintSection,
   TriggersSection,
   MethodSection,
@@ -16,6 +17,7 @@ import {
 } from "@/components/inteligencia/IntelligenceSections";
 
 const sections = [
+  { href: "#mapeamento", label: "Mapeamento" },
   { href: "#sprint", label: "O Sprint" },
   { href: "#metodo-sprint", label: "Como é feito" },
   { href: "#parecer", label: "Parecer" },
@@ -36,6 +38,7 @@ export default function Inteligencia() {
         <main>
           <IntelligenceHero />
           <IntelligenceProblem />
+          <MapeamentoSection />
           <SprintSection />
           <TriggersSection />
           <MethodSection />

@@ -51,4 +51,6 @@ export const WA_MESSAGES = {
     "Olá! Vim pelo site e quero avaliar se um *Technology Decision Sprint* faz sentido no meu caso. A tecnologia, startup ou fornecedor em avaliação é:",
   inteligencia:
     "Olá! Vim pelo site e preciso de uma avaliação independente sobre uma tecnologia de terceiros. O contexto é:",
+  mapeamento:
+    "Olá! Vim pelo site e quero conversar sobre um *Mapeamento Tecnológico*. O problema que preciso mapear é:",
 } as const;

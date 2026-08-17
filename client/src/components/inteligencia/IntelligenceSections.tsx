@@ -13,6 +13,8 @@ import {
   Bot,
   UserCheck,
   Clock,
+  Telescope,
+  Network,
 } from "lucide-react";
 import { ContactOptions } from "@/components/hub/ContactOptions";
 import { WA_MESSAGES } from "@/lib/contact";
@@ -99,6 +101,105 @@ export function IntelligenceProblem() {
             seu time técnico, que é o recurso mais escasso da casa, e a janela em
             que outra empresa resolveu o mesmo problema antes.
           </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* MAPEAMENTO (oferta de entrada)                                      */
+/* ------------------------------------------------------------------ */
+
+const mapeamentoEntregaveis = [
+  {
+    icon: Layers,
+    nome: "Panorama de rotas",
+    desc: "As rotas técnicas que competem para o mesmo problema, com maturidade estimada e o que separa uma da outra.",
+  },
+  {
+    icon: Network,
+    nome: "Mapa de players",
+    desc: "Empresas, startups e grupos de pesquisa ativos, com patentes indicativas e desde quando cada um está no assunto.",
+  },
+  {
+    icon: Database,
+    nome: "Dataset estruturado",
+    desc: "Entidades e sinais organizados para consulta interna, sem depender de mim na próxima pergunta.",
+  },
+  {
+    icon: ClipboardList,
+    nome: "Shortlist com critério",
+    desc: "Quais candidatos seguem para avaliação profunda, e por que os outros ficaram de fora.",
+  },
+];
+
+export function MapeamentoSection() {
+  return (
+    <section id="mapeamento" className="py-20 lg:py-28 scroll-mt-32">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <p className="text-xs font-mono uppercase tracking-widest text-cta mb-3">
+            Primeiro passo · escopo reduzido
+          </p>
+          <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-5">
+            Mapeamento Tecnológico
+          </h2>
+          <p className="text-lg text-text-muted leading-relaxed mb-4">
+            Para quando ainda não existe um candidato na mesa. Existe um
+            problema e a suspeita de que alguém no mundo já está resolvendo.
+          </p>
+          <p className="text-lg text-text-muted leading-relaxed">
+            <strong className="text-text">
+              Quais rotas técnicas existem para este problema e quais merecem
+              avaliação profunda?
+            </strong>
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-5 mb-10">
+          {mapeamentoEntregaveis.map((e) => (
+            <div
+              key={e.nome}
+              className="flex items-start gap-4 p-6 bg-surface/50 border border-stroke/50 rounded-2xl"
+            >
+              <div className="flex-shrink-0 w-11 h-11 grid place-items-center bg-cta/10 rounded-xl">
+                <e.icon className="w-5 h-5 text-cta" strokeWidth={1.5} />
+              </div>
+              <div>
+                <p className="font-display font-semibold text-text mb-1">
+                  {e.nome}
+                </p>
+                <p className="text-sm text-text-muted leading-relaxed">
+                  {e.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="max-w-3xl mx-auto p-7 bg-surface/40 border border-stroke/50 rounded-3xl">
+          <div className="flex items-start gap-4 mb-5">
+            <div className="flex-shrink-0 w-11 h-11 grid place-items-center bg-cta/10 rounded-xl">
+              <Telescope className="w-5 h-5 text-cta" strokeWidth={1.5} />
+            </div>
+            <p className="text-text-muted leading-relaxed">
+              O mapeamento serve para reduzir quarenta opções a três. Quando já
+              existe um candidato definido e a próxima assinatura compromete
+              piloto, time técnico ou capital, o trabalho passa a ser o{" "}
+              <a
+                href="#sprint"
+                className="font-semibold text-cta hover:text-cta/80 transition-colors"
+              >
+                Technology Decision Sprint
+              </a>
+              .
+            </p>
+          </div>
+          <ContactOptions
+            message={WA_MESSAGES.mapeamento}
+            source="inteligencia-mapeamento"
+          />
         </div>
       </div>
     </section>

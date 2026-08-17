@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
-import { ArrowRight, PenTool, Eye, Microscope, Route, Scale, Radar } from "lucide-react";
+import { ArrowRight, PenTool, Eye, Microscope, Route, Scale, Radar, Telescope } from "lucide-react";
 import { ContactOptions } from "@/components/hub/ContactOptions";
 import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { WA_MESSAGES } from "@/lib/contact";
@@ -13,6 +13,7 @@ const tracks = [
     description:
       "Uma startup, fornecedor ou rota técnica chegou até você e existe um piloto, um orçamento ou uma alocação de time pela frente.",
     items: [
+      { icon: Telescope, label: "Mapeamento Tecnológico", note: "quais rotas existem para o problema" },
       { icon: Radar, label: "Technology Decision Sprint", note: "10 dias úteis, com recomendação" },
       { icon: Scale, label: "Parecer Técnico-Comercial", note: "due diligence para investidores" },
     ],
