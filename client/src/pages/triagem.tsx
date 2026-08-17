@@ -79,7 +79,7 @@ const situacoes: {
     recomendacao: "Parecer Técnico-Comercial",
     porque:
       "Due diligence independente, no prazo do deal, sobre viabilidade técnica, prontidão comercial e os riscos que o pitch não mostra.",
-    href: "/tecnologia#parecer",
+    href: "/inteligencia#parecer",
   },
   {
     id: "aprender",

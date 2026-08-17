@@ -233,15 +233,6 @@ const otherServices = [
     waMessage: WA_MESSAGES.rota,
     id: "rota",
   },
-  {
-    icon: Scale,
-    title: "Parecer Técnico-Comercial",
-    tag: "Para investidores e financiadores · 1–3 semanas",
-    description:
-      "Due diligence de tecnologias para decisões de investimento, no prazo do deal: viabilidade técnica, prontidão comercial e os riscos que o pitch não mostra.",
-    waMessage: WA_MESSAGES.parecer,
-    id: "parecer",
-  },
 ];
 
 export function OtherServicesSection() {
@@ -250,10 +241,10 @@ export function OtherServicesSection() {
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-4">
-            Depois do diagnóstico — ou além dele
+            Quando o diagnóstico indica avançar
           </h2>
         </div>
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid gap-6 max-w-2xl mx-auto">
           {otherServices.map((service, index) => (
             <div
               key={index}

@@ -94,6 +94,12 @@ export function Footer() {
               Projetos de fomento
             </a>
             <a
+              href="/inteligencia"
+              className="text-sm text-text-muted hover:text-cta transition-colors"
+            >
+              Inteligência técnica
+            </a>
+            <a
               href="/tecnologia"
               className="text-sm text-text-muted hover:text-cta transition-colors"
             >

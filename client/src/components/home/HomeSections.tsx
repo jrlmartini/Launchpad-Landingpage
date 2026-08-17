@@ -3,6 +3,7 @@ import {
   GraduationCap,
   PenTool,
   Microscope,
+  Radar,
   Quote,
   TrendingUp,
   Building2,
@@ -29,22 +30,21 @@ export function HomeHero() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="inline-flex items-center gap-2 px-5 py-2 mb-5 text-sm font-semibold text-cta bg-cta/10 border border-cta/20 rounded-full">
             <span className="w-2 h-2 bg-cta rounded-full animate-pulse" />
-            Fomento e comercialização para deep techs e empresas industriais
+            Inteligência técnica e comercialização para empresas industriais
           </p>
 
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text leading-[1.12] tracking-tight mb-5 animate-fade-in-up">
-            Da tecnologia que funciona
+            Decisões técnicas difíceis,
             <br />
-            <span className="text-gradient-accent">
-              ao projeto financiado — e ao primeiro mercado
-            </span>
+            <span className="text-gradient-accent">tomadas com evidência</span>
           </h1>
 
           <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-6 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
-            Escolho o edital certo com você, construo propostas que resistem a um
-            avaliador e defino a rota comercial de tecnologias complexas.{" "}
+            Avalio tecnologias de terceiros antes do próximo compromisso, defino
+            a rota comercial da sua própria tecnologia e estruturo os projetos que
+            financiam o desenvolvimento.{" "}
             <strong className="text-text">
-              Mais de R$ 35 milhões aprovados desde 2012.
+              Química, água, saneamento, sustentabilidade e infraestrutura.
             </strong>
           </p>
 
@@ -65,7 +65,7 @@ export function HomeHero() {
               className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-text border border-stroke hover:border-cta/40 rounded-2xl transition-all duration-200"
               data-testid="button-home-paths"
             >
-              Escolher entre curso, projeto ou diagnóstico
+              Ver as quatro frentes de trabalho
             </a>
           </div>
 
@@ -132,36 +132,55 @@ export function ProofBand() {
 
 const paths = [
   {
-    href: "/curso",
-    icon: GraduationCap,
-    eyebrow: "Aprender a fazer",
-    title: "Curso: Fomento para Deeptechs",
+    href: "/inteligencia",
+    icon: Radar,
+    eyebrow: "Decidir sobre tecnologia de terceiros",
+    title: "Inteligência técnica",
     description:
-      "O método completo para escrever e defender projetos de fomento, com templates, planilhas e checklists. Para quem quer construir essa competência dentro de casa.",
-    items: ["6 módulos + bônus", "Templates e checklists", "Acesso às lives de novos editais"],
-    cta: "Ver método, conteúdo e preço",
-    featured: false,
-  },
-  {
-    href: "/projetos",
-    icon: PenTool,
-    eyebrow: "Fazer junto",
-    title: "Projetos de fomento",
-    description:
-      "Escrevo o projeto a quatro mãos com você, ou reviso o que você já escreveu lendo com os olhos de quem avalia. Para quem tem edital na mira e prazo correndo.",
-    items: ["Escrita do Projeto", "Revisão do Projeto", "FINEP, FAPESP, CNPq, Embrapii, FAPs"],
-    cta: "Ver escrita e revisão",
+      "Uma startup, fornecedor ou rota chegou até você e é preciso decidir se merece NDA, piloto ou capital. Avaliação independente com evidências rastreáveis.",
+    items: [
+      "Technology Decision Sprint · 10 dias úteis",
+      "Parecer técnico-comercial para investidores",
+      "Recomendação com os próximos testes",
+    ],
+    cta: "Ver o Sprint",
     featured: true,
   },
   {
     href: "/tecnologia",
     icon: Microscope,
-    eyebrow: "Decidir a rota",
+    eyebrow: "Comercializar a sua tecnologia",
     title: "Tecnologia e mercado",
     description:
-      "Sua tecnologia funciona, mas é um negócio? Diagnóstico de prontidão comercial, rota de mercado e parecer para investidores. Para quando a dúvida é maior que o edital.",
-    items: ["Diagnóstico em 30 dias", "Rota comercial e pilotos", "Due diligence técnica"],
+      "A tecnologia é da sua empresa, funciona, e a dúvida é onde ela vira negócio. Prontidão comercial, aplicações priorizadas e rota até o primeiro cliente.",
+    items: [
+      "Diagnóstico de Prontidão Comercial",
+      "Assessoria de Rota Comercial",
+      "Matriz TRL × CRL",
+    ],
     cta: "Ver diagnóstico de 30 dias",
+    featured: false,
+  },
+  {
+    href: "/projetos",
+    icon: PenTool,
+    eyebrow: "Financiar o desenvolvimento",
+    title: "Projetos de fomento",
+    description:
+      "Escrevo o projeto a quatro mãos com você, ou reviso o que você já escreveu lendo com os olhos de quem avalia. Para quem tem edital na mira e prazo correndo.",
+    items: ["Escrita do Projeto", "Revisão do Projeto", "FINEP, FAPESP, CNPq, Embrapii, FAPs"],
+    cta: "Ver escrita e revisão",
+    featured: false,
+  },
+  {
+    href: "/curso",
+    icon: GraduationCap,
+    eyebrow: "Aprender a fazer internamente",
+    title: "Curso: Fomento para Deeptechs",
+    description:
+      "O método completo para escrever e defender projetos de fomento, com templates, planilhas e checklists. Para quem quer construir essa competência dentro de casa.",
+    items: ["6 módulos + bônus", "Templates e checklists", "Acesso às lives de novos editais"],
+    cta: "Ver método, conteúdo e preço",
     featured: false,
   },
 ];
@@ -172,15 +191,15 @@ export function PathsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-14">
           <h2 className="font-display font-bold text-3xl lg:text-4xl xl:text-5xl text-text mb-6">
-            Três formas de trabalhar comigo
+            Quatro formas de trabalhar comigo
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            Do curso que você faz no seu ritmo à assessoria em que eu entro no seu
-            projeto. Escolha pelo momento em que você está.
+            Entre pela decisão que você precisa tomar. Se duas parecerem certas, a
+            triagem de dois minutos resolve.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {paths.map((path) => (
             <a
               key={path.href}

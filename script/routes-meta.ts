@@ -104,7 +104,7 @@ export const ROUTES: RouteMeta[] = [
     path: "/",
     title: "LaunchpadHub | Fomento e Mercado para Deep Techs",
     description:
-      "Projetos FINEP, FAPESP e CNPq, curso de fomento e diagnóstico de prontidão comercial para tecnologias complexas. Mais de R$ 35 milhões aprovados desde 2012.",
+      "Avaliação independente de tecnologias e startups, diagnóstico de prontidão comercial e projetos FINEP, FAPESP e CNPq para empresas industriais e deep techs.",
     priority: 1.0,
   },
   {
@@ -146,7 +146,7 @@ export const ROUTES: RouteMeta[] = [
     path: "/servicos",
     title: "Consultoria para Deep Techs: Fomento e Mercado | LaunchpadHub",
     description:
-      "Escrita e revisão de projetos de fomento, diagnóstico de prontidão comercial e due diligence técnico-comercial para deep techs e empresas industriais.",
+      "Inteligência técnica sobre tecnologias de terceiros, prontidão comercial da sua tecnologia e projetos de fomento. Escolha pela decisão que precisa tomar.",
     priority: 0.8,
     crumb: "Serviços",
   },
@@ -192,12 +192,6 @@ export const ROUTES: RouteMeta[] = [
         "Assessoria de Rota Comercial",
         "Estruturação da rota do laboratório ao mercado: aplicações priorizadas, desenho de piloto, mapa de parceiros, estratégia de fomento e roadmap de 12 meses com acompanhamento como conselheiro.",
       ),
-      service(
-        siteUrl,
-        "/tecnologia#parecer",
-        "Parecer Técnico-Comercial",
-        "Due diligence de tecnologias para decisões de investimento: viabilidade técnica, prontidão comercial e riscos priorizados para investidores, CVCs e financiadores.",
-      ),
     ],
   },
   {
@@ -207,6 +201,28 @@ export const ROUTES: RouteMeta[] = [
       "Entre na lista de pré-venda do curso Fomento para Deeptechs e receba em primeira mão as condições de abertura.",
     priority: 0.5,
     crumb: "Lista de pré-venda",
+  },
+  {
+    path: "/inteligencia",
+    title: "Avaliação Independente de Tecnologias e Startups | LaunchpadHub",
+    description:
+      "Technology Decision Sprint: avaliação independente em 10 dias úteis para decidir se uma tecnologia, startup, fornecedor ou rota merece o próximo compromisso de tempo, confidencialidade ou capital.",
+    priority: 0.95,
+    crumb: "Inteligência técnica",
+    schema: (siteUrl) => [
+      service(
+        siteUrl,
+        "/inteligencia#sprint",
+        "Technology Decision Sprint",
+        "Avaliação técnica e comercial independente, concluída em dez dias úteis, para decidir se uma tecnologia, startup, fornecedor ou rota deve avançar, ser aprofundada, aguardar ou parar. Entrega decision memo, evidence pack com rastreabilidade de fontes, dataset estruturado, sessão de revisão e action brief.",
+      ),
+      service(
+        siteUrl,
+        "/inteligencia#parecer",
+        "Parecer Técnico-Comercial",
+        "Due diligence de tecnologias para decisões de investimento: viabilidade técnica, prontidão comercial e riscos priorizados para fundos, CVCs e financiadores.",
+      ),
+    ],
   },
   {
     path: "/metodo",

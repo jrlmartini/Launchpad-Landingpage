@@ -1,35 +1,46 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
-import { ArrowRight, PenTool, Eye, Microscope, Route, Scale } from "lucide-react";
+import { ArrowRight, PenTool, Eye, Microscope, Route, Scale, Radar } from "lucide-react";
 import { ContactOptions } from "@/components/hub/ContactOptions";
 import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { WA_MESSAGES } from "@/lib/contact";
 
 const tracks = [
   {
+    href: "/inteligencia",
+    eyebrow: "Tecnologia de terceiros",
+    title: "Preciso decidir se avanço com esta tecnologia",
+    description:
+      "Uma startup, fornecedor ou rota técnica chegou até você e existe um compromisso de tempo, confidencialidade ou capital à frente.",
+    items: [
+      { icon: Radar, label: "Technology Decision Sprint", note: "10 dias úteis, com recomendação" },
+      { icon: Scale, label: "Parecer Técnico-Comercial", note: "due diligence para investidores" },
+    ],
+    cta: "Ver inteligência técnica",
+  },
+  {
+    href: "/tecnologia",
+    eyebrow: "Tecnologia própria",
+    title: "Preciso saber se a minha tecnologia vira negócio",
+    description:
+      "A tecnologia é da sua empresa, já funciona, e a decisão é qual aplicação perseguir e o que validar primeiro.",
+    items: [
+      { icon: Microscope, label: "Diagnóstico de Prontidão Comercial", note: "30 dias, com veredito" },
+      { icon: Route, label: "Assessoria de Rota Comercial", note: "do veredito à execução" },
+    ],
+    cta: "Ver tecnologia e mercado",
+  },
+  {
     href: "/projetos",
     eyebrow: "Projetos de fomento",
-    title: "Preciso de um projeto aprovado",
+    title: "Preciso de um projeto que resista ao avaliador",
     description:
-      "Você tem um edital na mira (FINEP, FAPESP, CNPq, Embrapii, FAPs) e precisa de uma proposta que resista à leitura de um avaliador.",
+      "Você tem um edital na mira (FINEP, FAPESP, CNPq, Embrapii, FAPs) e precisa de uma proposta defensável.",
     items: [
       { icon: PenTool, label: "Escrita do Projeto", note: "a quatro mãos, até a submissão" },
       { icon: Eye, label: "Revisão do Projeto", note: "leitura com olhos de avaliador" },
     ],
     cta: "Ver projetos de fomento",
-  },
-  {
-    href: "/tecnologia",
-    eyebrow: "Tecnologia e mercado",
-    title: "Preciso saber se isso vira negócio",
-    description:
-      "Você tem uma tecnologia que funciona e uma decisão pela frente: qual aplicação perseguir, quem é o primeiro cliente, o que validar primeiro.",
-    items: [
-      { icon: Microscope, label: "Diagnóstico de Prontidão Comercial", note: "30 dias, com veredito" },
-      { icon: Route, label: "Assessoria de Rota Comercial", note: "do veredito à execução" },
-      { icon: Scale, label: "Parecer Técnico-Comercial", note: "due diligence para investidores" },
-    ],
-    cta: "Ver tecnologia e mercado",
   },
 ];
 
@@ -47,18 +58,17 @@ export default function Servicos() {
             </div>
             <div className="max-w-3xl mx-auto px-6 lg:px-8 relative text-center">
               <h1 className="font-display font-bold text-4xl sm:text-5xl text-text leading-tight mb-6">
-                Dois gargalos travam uma deep tech
+                Três decisões, três tipos de trabalho
               </h1>
               <p className="text-lg lg:text-xl text-text-muted leading-relaxed">
-                Financiar o desenvolvimento e provar o mercado. Escolha o que você
-                precisa resolver agora.
+                Entre pela decisão que você precisa tomar agora.
               </p>
             </div>
           </section>
 
           <section className="pb-24">
             <div className="max-w-6xl mx-auto px-6 lg:px-8">
-              <div className="grid lg:grid-cols-2 gap-6">
+              <div className="grid lg:grid-cols-3 gap-6">
                 {tracks.map((track) => (
                   <a
                     key={track.href}

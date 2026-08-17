@@ -19,7 +19,6 @@ const sections = [
   { href: "#metodo", label: "Método" },
   { href: "#diagnostico", label: "Diagnóstico" },
   { href: "#rota", label: "Rota Comercial" },
-  { href: "#parecer", label: "Parecer" },
   
 ];
 

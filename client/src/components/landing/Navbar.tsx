@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap } from "lucide-react";
+import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap, Radar } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /* Site-wide structure — identical on every page, never swapped out.    */
@@ -7,20 +7,20 @@ import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, Gra
 
 const serviceMenu = [
   {
-    group: "Projetos de fomento",
-    groupHref: "/projetos",
+    group: "Inteligência técnica",
+    groupHref: "/inteligencia",
     items: [
       {
-        href: "/projetos#escrita",
-        label: "Escrita do Projeto",
-        description: "A quatro mãos, do enquadramento à submissão",
-        icon: PenTool,
+        href: "/inteligencia#sprint",
+        label: "Technology Decision Sprint",
+        description: "Avançar, aprofundar, aguardar ou parar. Em 10 dias úteis",
+        icon: Radar,
       },
       {
-        href: "/projetos#revisao",
-        label: "Revisão do Projeto",
-        description: "Leitura com olhos de avaliador",
-        icon: Eye,
+        href: "/inteligencia#parecer",
+        label: "Parecer Técnico-Comercial",
+        description: "Due diligence para investidores e financiadores",
+        icon: Scale,
       },
     ],
   },
@@ -40,11 +40,23 @@ const serviceMenu = [
         description: "Do veredito à execução",
         icon: Route,
       },
+    ],
+  },
+  {
+    group: "Projetos de fomento",
+    groupHref: "/projetos",
+    items: [
       {
-        href: "/tecnologia#parecer",
-        label: "Parecer Técnico-Comercial",
-        description: "Due diligence para investidores",
-        icon: Scale,
+        href: "/projetos#escrita",
+        label: "Escrita do Projeto",
+        description: "A quatro mãos, do enquadramento à submissão",
+        icon: PenTool,
+      },
+      {
+        href: "/projetos#revisao",
+        label: "Revisão do Projeto",
+        description: "Leitura com olhos de avaliador",
+        icon: Eye,
       },
     ],
   },
@@ -59,7 +71,7 @@ interface NavbarProps {
   /** In-page section anchors for the current page (rendered in the sub-bar). */
   sections?: SectionLink[];
   /** Which primary item is the current page. */
-  active?: "home" | "curso" | "servicos" | "projetos" | "tecnologia" | null;
+  active?: "home" | "curso" | "servicos" | "projetos" | "tecnologia" | "inteligencia" | null;
   ctaHref?: string;
   ctaLabel?: string;
 }
@@ -148,7 +160,10 @@ export function Navbar({
                 <a
                   href="/servicos"
                   className={`${primaryLinkClass(
-                    active === "servicos" || active === "projetos" || active === "tecnologia"
+                    active === "servicos" ||
+                    active === "projetos" ||
+                    active === "tecnologia" ||
+                    active === "inteligencia"
                   )} inline-flex items-center gap-1.5 py-5`}
                   aria-expanded={servicesOpen}
                   aria-haspopup="true"
