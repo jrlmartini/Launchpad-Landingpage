@@ -17,11 +17,14 @@ interface Testimonial {
   empresa: string;
   texto: string;
   tags: TestimonialTag[];
+  /** Caminho do logo em /public/logos-clientes/. Cai para as iniciais se ausente. */
+  logo?: string;
 }
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     nome: "Ana Paula",
+    papel: "Diretora Executiva",
     empresa: "Legalbot",
     texto:
       "A consultoria do Launchpad foi conduzida de forma objetiva, assertiva e altamente profissional, sendo fundamental durante o processo de elaboração do projeto e nos esclarecimentos junto aos órgãos governamentais financiadores. O José Renato esteve sempre disponível, prestativo e ágil, oferecendo orientações claras que trouxeram segurança e facilitaram a condução de todo o processo. Recomendamos seu trabalho pela competência, comprometimento e qualidade da consultoria.",
@@ -95,14 +98,23 @@ export function Testimonials({
               </blockquote>
 
               <figcaption className="mt-auto flex items-center gap-4 pt-6 border-t border-stroke/50">
-                <div
-                  className="flex-shrink-0 w-11 h-11 grid place-items-center bg-cta/10 rounded-full"
-                  aria-hidden
-                >
-                  <span className="font-display font-semibold text-sm text-cta">
-                    {initials(t.nome)}
-                  </span>
-                </div>
+                {t.logo ? (
+                  <img
+                    src={t.logo}
+                    alt={t.empresa}
+                    className="flex-shrink-0 h-10 w-auto max-w-[120px] object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div
+                    className="flex-shrink-0 w-11 h-11 grid place-items-center bg-cta/10 rounded-full"
+                    aria-hidden
+                  >
+                    <span className="font-display font-semibold text-sm text-cta">
+                      {initials(t.nome)}
+                    </span>
+                  </div>
+                )}
                 <div>
                   <p className="text-text font-medium leading-tight">{t.nome}</p>
                   <p className="text-sm text-text-muted">
