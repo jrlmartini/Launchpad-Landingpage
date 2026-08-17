@@ -8,6 +8,7 @@ import {
   AboutMe,
   HomeContact,
 } from "@/components/home/HomeSections";
+import { Testimonials } from "@/components/shared/Testimonials";
 import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { WA_MESSAGES } from "@/lib/contact";
 
@@ -33,6 +34,11 @@ export default function Home() {
           <ProofBand />
           <LogoCarousel title="Experiência com os principais instrumentos de fomento do país" />
           <PathsSection />
+          <Testimonials
+            tag="fomento"
+            titulo="Quem já trabalhou comigo"
+            className="bg-surface/30 border-y border-stroke/30"
+          />
           <AboutMe />
           <HomeContact />
         </main>

@@ -10,6 +10,7 @@ import {
   ProjectsContact,
   TechCrossLink,
 } from "@/components/hub/ProjectServices";
+import { Testimonials } from "@/components/shared/Testimonials";
 import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { WA_MESSAGES } from "@/lib/contact";
 
@@ -36,6 +37,12 @@ export default function Projetos() {
           <ProjectsProblem />
           <ProjectServicesCards />
           <ProjectServicesComparison />
+          <Testimonials
+            tag="fomento"
+            titulo="Quem já passou por isso"
+            subtitulo="Empresas e pesquisadores que estruturaram projetos de fomento comigo."
+            className="bg-surface/30 border-y border-stroke/30"
+          />
           <LogoCarousel title="Experiência com os principais instrumentos de fomento do país" />
           <ProjectsFAQ />
           <TechCrossLink />

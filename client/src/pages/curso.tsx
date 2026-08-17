@@ -11,6 +11,7 @@ import { LogoCarousel } from "@/components/landing/LogoCarousel";
 import { AboutSection } from "@/components/landing/AboutSection";
 import { OfferSection } from "@/components/landing/OfferSection";
 import { FAQSection } from "@/components/landing/FAQSection";
+import { Testimonials } from "@/components/shared/Testimonials";
 import { Footer } from "@/components/landing/Footer";
 
 const sections = [
@@ -44,6 +45,11 @@ export default function Curso() {
           <ModulesSection />
           <LogoCarousel />
           <AboutSection />
+          <Testimonials
+            tag="curso"
+            titulo="Quem aprendeu o método"
+            className="bg-surface/30 border-y border-stroke/30"
+          />
           <OfferSection />
           <FAQSection />
         </main>
