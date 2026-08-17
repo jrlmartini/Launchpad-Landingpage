@@ -9,6 +9,7 @@ import {
   Building2,
   FlaskConical,
   Rocket,
+  Leaf,
 } from "lucide-react";
 import { ContactOptions } from "@/components/hub/ContactOptions";
 import { WA_MESSAGES, calendlyLink } from "@/lib/contact";
@@ -258,8 +259,9 @@ export function PathsSection() {
 /* ------------------------------------------------------------------ */
 
 const domains = [
-  { icon: FlaskConical, label: "Química industrial e processos" },
-  { icon: Building2, label: "Indústria, energia e saneamento" },
+  { icon: Leaf, label: "Tecnologias sustentáveis e ambientais" },
+  { icon: FlaskConical, label: "Química industrial, água e processos" },
+  { icon: Building2, label: "Saneamento, energia e infraestrutura" },
   { icon: Rocket, label: "Deep techs e startups de base científica" },
 ];
 
@@ -278,15 +280,21 @@ export function AboutMe() {
             José Renato Lanzi Martini
           </h2>
           <p className="text-lg text-cta">
-            Engenheiro. Passei a última década entre o laboratório e o mercado.
+            Tecnologista. Avalio tecnologias e ajudo a decidir o que fazer com
+            elas.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 items-start">
           <div className="p-8 bg-background/50 border border-stroke/50 rounded-3xl card-glow">
-            <div className="w-20 h-20 mb-6 bg-cta/10 rounded-2xl flex items-center justify-center">
-              <span className="font-display font-bold text-2xl text-cta">JRLM</span>
-            </div>
+            <img
+              src="/jose-martini.webp"
+              alt="José Renato Lanzi Martini"
+              width={560}
+              height={560}
+              loading="lazy"
+              className="w-full max-w-[280px] aspect-square object-cover rounded-2xl mb-6"
+            />
 
             <div className="space-y-4 mb-8">
               <div>
@@ -315,14 +323,22 @@ export function AboutMe() {
 
           <div className="space-y-5 text-lg text-text-muted leading-relaxed">
             <p>
-              Comecei em 2012 do lado técnico: química industrial, processos,
-              tratamento de água, tecnologias ambientais. Com o tempo fui parar no
+              Comecei em 2012 do lado técnico, em química industrial, processos,
+              tratamento de água e tecnologias ambientais. Com o tempo fui parar no
               lugar que quase ninguém quer ocupar: o meio de campo entre quem
               desenvolve a tecnologia, quem financia e quem compra.
             </p>
             <p>
-              Desde então fundei e ajudei a construir empresas de tecnologia,
-              estruturei dezenas de projetos de inovação e{" "}
+              É desse lugar que trabalho hoje. Estudo tecnologias, comparo rotas
+              concorrentes, confronto o que o fornecedor promete com o que a
+              evidência sustenta e escrevo o parecer que a empresa usa para
+              decidir. Boa parte disso em sustentabilidade, tratamento de
+              efluentes, valorização de resíduos e transição energética, onde a
+              regulação costuma pesar tanto quanto a engenharia.
+            </p>
+            <p>
+              No caminho até aqui fundei e ajudei a construir empresas de
+              tecnologia, estruturei dezenas de projetos de inovação e{" "}
               <strong className="text-text">
                 aprovei mais de R$ 35 milhões em recursos de fomento
               </strong>{" "}
@@ -341,8 +357,9 @@ export function AboutMe() {
             <div className="p-6 bg-background/50 border-l-2 border-cta rounded-r-2xl">
               <Quote className="w-6 h-6 text-cta mb-3" strokeWidth={1.5} />
               <p className="text-text italic">
-                Formulário de edital é o meio. O que me interessa é ver uma tecnologia
-                que funciona chegar até onde ela deveria ter chegado.
+                Gosto de tecnologia que resolve problema real e chega ao mercado.
+                Parte do trabalho é dizer, com evidência, quando ela não vai
+                chegar.
               </p>
             </div>
 

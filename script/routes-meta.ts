@@ -63,7 +63,8 @@ export function personSchema(siteUrl: string) {
     "@type": "Person",
     "@id": `${siteUrl}/#person`,
     name: PERSON_NAME,
-    jobTitle: "Engenheiro e consultor em fomento e comercialização de tecnologia",
+    jobTitle: "Tecnologista: avaliação de tecnologias, prontidão comercial e fomento à inovação",
+    image: `${siteUrl}/jose-martini.webp`,
     worksFor: { "@id": `${siteUrl}/#organization` },
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "UNESP" },
@@ -77,7 +78,9 @@ export function personSchema(siteUrl: string) {
       "Prontidão comercial de tecnologias",
       "Química industrial",
       "Tratamento de água",
-      "Tecnologias ambientais",
+      "Tecnologias sustentáveis e ambientais",
+      "Avaliação de maturidade tecnológica",
+      "Transição energética",
     ],
   };
 }

@@ -21,13 +21,18 @@ export function AboutSection() {
 
             <div className="border-t border-stroke/50 pt-8">
               <div className="flex flex-col lg:flex-row gap-8 items-start">
-                <div className="flex-shrink-0 w-24 h-24 bg-cta/10 rounded-2xl flex items-center justify-center">
-                  <span className="font-display font-bold text-3xl text-cta">JRLM</span>
-                </div>
+                <img
+                  src="/jose-martini.webp"
+                  alt="José Renato Lanzi Martini"
+                  width={560}
+                  height={560}
+                  loading="lazy"
+                  className="flex-shrink-0 w-28 h-28 object-cover rounded-2xl"
+                />
                 
                 <div>
                   <h3 className="font-display font-bold text-xl text-text mb-4">José Renato Lanzi Martini</h3>
-                  <p className="text-text-muted leading-relaxed mb-4">Engenheiro de produção (UNESP/OTH-Regensburg), com pós-graduação em Administração de Empresas (FGV/HEC Paris) e especialização em Empreendedorismo e Inovação (MIT). Desde 2012, atuo diretamente em inovação tecnológica, com experiência em gestão de projetos, captação de recursos, planejamento estratégico e mapeamento tecnológico.</p>
+                  <p className="text-text-muted leading-relaxed mb-4">Sou tecnologista: avalio tecnologias, estudo rotas concorrentes e ajudo empresas a decidir o que fazer com elas. Engenheiro de produção (UNESP/OTH-Regensburg), com pós-graduação em Administração de Empresas (FGV/HEC Paris) e especialização em Empreendedorismo e Inovação (MIT). Desde 2012 atuo em inovação tecnológica, com foco em tecnologias sustentáveis, tratamento de água, química industrial e captação de recursos.</p>
                   <p className="text-text-muted leading-relaxed mb-6">
                     Ao longo desse caminho já aprovei <strong className="text-text">mais de R$ 35 milhões</strong> em projetos de fomento reembolsáveis e não reembolsáveis para empresas dos segmentos automotivo, químico, alimentício, agrícola, saúde e tecnologia da informação. O LaunchpadHub nasceu dessa vivência: tirar a inovação do <span className="text-cta font-semibold">modo tentativa</span>.
                   </p>
