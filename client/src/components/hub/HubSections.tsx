@@ -227,7 +227,7 @@ const otherServices = [
   {
     icon: Route,
     title: "Assessoria de Rota Comercial",
-    tag: "Sprint de 6–8 semanas + acompanhamento",
+    tag: "Programa de 6 a 8 semanas + acompanhamento",
     description:
       "Da avaliação à execução: aplicações priorizadas, tese de primeiro cliente, desenho de piloto, parceiros e estratégia de captação, com roadmap de 12 meses e acompanhamento mensal como conselheiro.",
     waMessage: WA_MESSAGES.rota,

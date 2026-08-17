@@ -143,7 +143,7 @@ const paths = [
       "Parecer técnico-comercial para investidores",
       "Recomendação com os próximos testes",
     ],
-    cta: "Ver o Sprint",
+    cta: "Ver o Decision Sprint",
     featured: true,
   },
   {
