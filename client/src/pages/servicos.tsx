@@ -54,13 +54,14 @@ export default function Servicos() {
           <section className="relative pt-36 lg:pt-44 pb-16 overflow-hidden">
             <div aria-hidden className="absolute inset-0 pointer-events-none">
               <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
-              <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/10 to-background" />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/25 to-background" />
+        <div className="absolute inset-0 hero-scrim" />
             </div>
             <div className="max-w-3xl mx-auto px-6 lg:px-8 relative text-center">
               <h1 className="font-display font-bold text-4xl sm:text-5xl text-text leading-tight mb-6">
                 Três decisões, três tipos de trabalho
               </h1>
-              <p className="text-lg lg:text-xl text-text-muted leading-relaxed">
+              <p className="text-lg lg:text-xl text-text/85 leading-relaxed">
                 Entre pela decisão que você precisa tomar agora.
               </p>
             </div>

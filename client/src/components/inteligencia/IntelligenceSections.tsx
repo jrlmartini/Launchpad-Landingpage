@@ -26,7 +26,8 @@ export function IntelligenceHero() {
     <section className="relative pt-32 lg:pt-40 pb-16 lg:pb-20 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/10 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/25 to-background" />
+        <div className="absolute inset-0 hero-scrim" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
@@ -42,14 +43,14 @@ export function IntelligenceHero() {
             <span className="text-gradient-accent">Vale o próximo passo?</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-4 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
+          <p className="text-lg lg:text-xl text-text/85 leading-relaxed mb-4 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
             Avaliação independente de tecnologias, startups, fornecedores e rotas
             técnicas para empresas industriais. Confrontamos os claims com
             evidências, comparamos alternativas e entregamos uma recomendação
             com os testes que ainda precisam ser feitos.
           </p>
 
-          <p className="text-sm font-mono text-text-muted mb-9 animate-fade-in-up animate-delay-200">
+          <p className="text-sm font-mono text-text/70 mb-9 animate-fade-in-up animate-delay-200">
             Technology Decision Sprint · 10 dias úteis · escopo fechado
           </p>
 

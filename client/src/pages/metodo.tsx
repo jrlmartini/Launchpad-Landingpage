@@ -84,7 +84,8 @@ export default function Metodo() {
           <section className="relative pt-36 lg:pt-44 pb-16 overflow-hidden">
             <div aria-hidden className="absolute inset-0 pointer-events-none">
               <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
-              <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/10 to-background" />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/25 to-background" />
+        <div className="absolute inset-0 hero-scrim" />
             </div>
             <div className="max-w-4xl mx-auto px-6 lg:px-8 relative text-center">
               <p className="text-xs font-mono uppercase tracking-widest text-cta mb-4">
@@ -95,7 +96,7 @@ export default function Metodo() {
                 <br />
                 <span className="text-gradient-accent">Você provavelmente só mediu uma.</span>
               </h1>
-              <p className="text-lg lg:text-xl text-text-muted leading-relaxed">
+              <p className="text-lg lg:text-xl text-text/85 leading-relaxed">
                 As agências de fomento exigem a maturidade técnica (TRL) há décadas. A
                 maturidade comercial (CRL) quase ninguém mede e é ela que explica
                 por que tecnologias prontas ficam paradas.

@@ -25,7 +25,8 @@ export function Hero() {
     <section className="relative pt-36 lg:pt-48 pb-20 lg:pb-32 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/10 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/25 to-background" />
+        <div className="absolute inset-0 hero-scrim" />
       </div>
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
@@ -44,7 +45,7 @@ export function Hero() {
             e transforme sua tecnologia em um projeto financiável.
           </h2>
 
-          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
+          <p className="text-lg lg:text-xl text-text/85 leading-relaxed mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
             Um treinamento prático, <strong className="text-text">passo a passo</strong>, com os templates, as planilhas e os checklists que usamos em projetos reais. Serve para FAPESP, FINEP, CNPq, FAPs estaduais e qualquer outro edital, porque o formulário muda de um para o outro, mas a lógica de quem aprova permanece a mesma.
           </p>
         </div>

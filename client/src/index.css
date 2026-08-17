@@ -175,6 +175,20 @@
       radial-gradient(50% 40% at 30% 55%, hsl(190 70% 50% / 0.06), transparent);
   }
 
+  /* Scrim de leitura do hero.
+     A foto de fundo tem um arco de horizonte muito claro que passa justamente
+     na altura do texto. Este gradiente radial escurece só o miolo, onde o
+     conteúdo vive, e mantém o brilho intacto nas bordas. */
+  .hero-scrim {
+    background: radial-gradient(
+      62% 58% at 50% 46%,
+      hsl(var(--background) / 0.86) 0%,
+      hsl(var(--background) / 0.68) 40%,
+      hsl(var(--background) / 0.3) 68%,
+      transparent 82%
+    );
+  }
+
   /* Depth without glow soup: hairline + soft elevation, faint blue cast */
   .card-glow {
     box-shadow:

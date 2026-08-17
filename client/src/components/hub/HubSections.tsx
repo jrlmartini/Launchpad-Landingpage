@@ -22,7 +22,8 @@ export function HubHero() {
     <section className="relative pt-36 lg:pt-48 pb-20 lg:pb-28 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/10 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/25 to-background" />
+        <div className="absolute inset-0 hero-scrim" />
       </div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
@@ -37,12 +38,12 @@ export function HubHero() {
             <span className="text-gradient-accent">Mas ela é um negócio?</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-4 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
+          <p className="text-lg lg:text-xl text-text/85 leading-relaxed mb-4 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
             Avalio a prontidão comercial de tecnologias industriais e defino a rota
             do laboratório ao mercado, com método, prazo e veredito por escrito.
           </p>
 
-          <p className="text-sm font-mono text-text-muted mb-10 animate-fade-in-up animate-delay-200">
+          <p className="text-sm font-mono text-text/70 mb-10 animate-fade-in-up animate-delay-200">
             Diagnóstico de Prontidão Comercial · 30 dias · escopo fechado, preço fechado
           </p>
 

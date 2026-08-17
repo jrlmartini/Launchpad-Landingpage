@@ -24,7 +24,8 @@ export function HomeHero() {
     <section className="relative pt-28 lg:pt-32 pb-16 lg:pb-20 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-cover bg-bottom" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/10 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/25 to-background" />
+        <div className="absolute inset-0 hero-scrim" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
@@ -40,7 +41,7 @@ export function HomeHero() {
             <span className="text-gradient-accent">tomadas com evidência</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-text-muted leading-relaxed mb-6 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
+          <p className="text-lg lg:text-xl text-text/85 leading-relaxed mb-6 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
             Avalio tecnologias de terceiros antes do próximo compromisso, defino
             a rota comercial da sua própria tecnologia e estruturo os projetos que
             financiam o desenvolvimento.{" "}
@@ -70,7 +71,7 @@ export function HomeHero() {
             </a>
           </div>
 
-          <p className="text-sm text-text-muted animate-fade-in-up animate-delay-300">
+          <p className="text-sm text-text/70 animate-fade-in-up animate-delay-300">
             Sem apresentação comercial. Se não houver encaixe, você sai com a
             indicação do próximo passo.
           </p>
