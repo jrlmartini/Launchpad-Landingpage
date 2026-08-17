@@ -139,7 +139,7 @@ const paths = [
     eyebrow: "Decidir sobre tecnologia de terceiros",
     title: "Inteligência técnica",
     description:
-      "Uma startup, fornecedor ou rota chegou até você e é preciso decidir se merece NDA, piloto ou capital. Avaliação independente com evidências rastreáveis.",
+      "Uma startup, fornecedor ou rota chegou até você e é preciso decidir se merece piloto, time técnico ou capital. Avaliação independente com evidências rastreáveis.",
     items: [
       "Technology Decision Sprint · 10 dias úteis",
       "Parecer técnico-comercial para investidores",

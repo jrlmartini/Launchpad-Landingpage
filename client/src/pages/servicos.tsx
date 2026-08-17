@@ -11,7 +11,7 @@ const tracks = [
     eyebrow: "Tecnologia de terceiros",
     title: "Preciso decidir se avanço com esta tecnologia",
     description:
-      "Uma startup, fornecedor ou rota técnica chegou até você e existe um compromisso de tempo, confidencialidade ou capital à frente.",
+      "Uma startup, fornecedor ou rota técnica chegou até você e existe um piloto, um orçamento ou uma alocação de time pela frente.",
     items: [
       { icon: Radar, label: "Technology Decision Sprint", note: "10 dias úteis, com recomendação" },
       { icon: Scale, label: "Parecer Técnico-Comercial", note: "due diligence para investidores" },

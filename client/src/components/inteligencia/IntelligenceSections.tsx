@@ -81,10 +81,9 @@ export function IntelligenceProblem() {
         </h2>
         <div className="text-lg text-text-muted leading-relaxed space-y-5 max-w-3xl mx-auto">
           <p>
-            Um fornecedor apresenta uma rota nova. Uma startup pede NDA e reunião
-            técnica. O scouting devolveu quarenta opções e alguém precisa cortar
-            para cinco. Um concorrente anuncia uma parceria que ninguém tinha
-            mapeado.
+            Um fornecedor apresenta uma rota nova e quer um piloto. O scouting
+            devolveu quarenta opções e alguém precisa cortar para cinco. Um
+            concorrente anuncia uma parceria que ninguém tinha mapeado.
           </p>
           <p>
             As evidências existem, mas estão espalhadas entre papers, patentes,
@@ -94,11 +93,11 @@ export function IntelligenceProblem() {
           </p>
           <p>
             <strong className="text-text">
-              O risco de errar não está só no piloto que não funciona.
+              Errar aqui não custa uma reunião.
             </strong>{" "}
-            Está no NDA assinado cedo demais, no orçamento de teste comprometido,
-            no tempo de especialista consumido e na credibilidade interna gasta
-            defendendo uma rota que não se sustentava.
+            Custa um piloto de seis meses que não deveria ter começado, o tempo do
+            seu time técnico, que é o recurso mais escasso da casa, e a janela em
+            que outra empresa resolveu o mesmo problema antes.
           </p>
         </div>
       </div>
@@ -159,9 +158,8 @@ export function SprintSection() {
           <p className="text-lg text-text-muted leading-relaxed">
             Dez dias úteis para responder uma pergunta só:{" "}
             <strong className="text-text">
-              esta tecnologia merece o próximo compromisso de tempo,
-              confidencialidade ou capital, e o que ainda precisa ser verdade
-              antes disso?
+              esta tecnologia merece o próximo compromisso de piloto, time
+              técnico ou capital, e o que ainda precisa ser verdade antes disso?
             </strong>
           </p>
         </div>
@@ -227,7 +225,7 @@ export function SprintSection() {
 /* ------------------------------------------------------------------ */
 
 const gatilhos = [
-  "Uma startup ou fornecedor pediu NDA, reunião técnica, amostra ou piloto.",
+  "Um fornecedor ou startup pediu piloto, amostra ou acesso ao seu processo.",
   "O scouting gerou opções demais e a shortlist precisa ser reduzida com critério.",
   "Um concorrente anunciou solução, parceria ou investimento que ninguém tinha mapeado.",
   "Existe um gate de P&D, CAPEX, sustentabilidade ou corporate venture chegando.",
