@@ -285,15 +285,15 @@ export function AboutMe() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 items-start">
-          <div className="p-8 bg-background/50 border border-stroke/50 rounded-3xl card-glow">
+        <div className="grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)] gap-8 lg:gap-12 items-start">
+          <div className="p-7 lg:p-8 bg-background/50 border border-stroke/50 rounded-3xl card-glow lg:sticky lg:top-32">
             <img
               src="/jose-martini.webp"
               alt="José Renato Lanzi Martini"
               width={560}
               height={560}
               loading="lazy"
-              className="w-full max-w-[280px] aspect-square object-cover rounded-2xl mb-6"
+              className="w-full aspect-square object-cover rounded-2xl mb-6"
             />
 
             <div className="space-y-4 mb-8">
@@ -354,26 +354,44 @@ export function AboutMe() {
               empresa.
             </p>
 
-            <div className="p-6 bg-background/50 border-l-2 border-cta rounded-r-2xl">
-              <Quote className="w-6 h-6 text-cta mb-3" strokeWidth={1.5} />
-              <p className="text-text italic">
-                Gosto de tecnologia que resolve problema real e chega ao mercado.
-                Parte do trabalho é dizer, com evidência, quando ela não vai
-                chegar.
-              </p>
-            </div>
+          </div>
+        </div>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <div className="flex items-center gap-2 px-4 py-2 bg-cta/10 rounded-xl">
-                <TrendingUp className="w-5 h-5 text-cta" strokeWidth={1.5} />
-                <span className="text-text font-semibold">+R$ 35 milhões</span>
-                <span className="text-text-muted text-sm">aprovados</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-background/60 border border-stroke/50 rounded-xl">
-                <span className="text-text font-semibold">Desde 2012</span>
-                <span className="text-text-muted text-sm">em inovação</span>
-              </div>
-            </div>
+        {/* Citação atravessando as duas colunas */}
+        <figure className="mt-14 lg:mt-16">
+          <div className="relative px-6 py-10 lg:px-16 lg:py-14 bg-background/40 border-y border-cta/25 rounded-3xl text-center">
+            <Quote
+              className="w-9 h-9 text-cta/40 mx-auto mb-5"
+              strokeWidth={1.5}
+              aria-hidden
+            />
+            <blockquote className="font-display text-xl lg:text-3xl text-text leading-snug max-w-4xl mx-auto text-balance">
+              Gosto de tecnologia que resolve problema real e chega ao mercado.
+              Parte do trabalho é dizer, com evidência, quando ela não vai
+              chegar.
+            </blockquote>
+            <figcaption className="mt-6 text-sm font-mono uppercase tracking-widest text-text-muted">
+              José Renato Lanzi Martini
+            </figcaption>
+          </div>
+        </figure>
+
+        {/* Credenciais */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="flex items-center gap-2 px-5 py-2.5 bg-cta/10 border border-cta/20 rounded-xl">
+            <TrendingUp className="w-5 h-5 text-cta" strokeWidth={1.5} />
+            <span className="text-text font-semibold">+R$ 35 milhões</span>
+            <span className="text-text-muted text-sm">aprovados em fomento</span>
+          </div>
+          <div className="flex items-center gap-2 px-5 py-2.5 bg-background/60 border border-stroke/50 rounded-xl">
+            <span className="text-text font-semibold">Desde 2012</span>
+            <span className="text-text-muted text-sm">em inovação tecnológica</span>
+          </div>
+          <div className="flex items-center gap-2 px-5 py-2.5 bg-background/60 border border-stroke/50 rounded-xl">
+            <Leaf className="w-5 h-5 text-cta" strokeWidth={1.5} />
+            <span className="text-text-muted text-sm">
+              Foco em tecnologias sustentáveis
+            </span>
           </div>
         </div>
       </div>
