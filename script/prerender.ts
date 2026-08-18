@@ -12,6 +12,7 @@
  */
 
 import { readFile, writeFile, mkdir } from "fs/promises";
+import { pathToFileURL } from "url";
 import path from "path";
 import {
   ROUTES,
@@ -87,6 +88,22 @@ function buildSchema(route: RouteMeta): string {
 async function run() {
   const template = await readFile(path.join(DIST, "index.html"), "utf-8");
 
+  // O molde precisa vir limpo do `vite build`. Este script sobrescreve o
+  // próprio index.html com a home renderizada, então rodá-lo duas vezes sem
+  // rebuild faria todas as rotas herdarem o conteúdo da home. Falhar aqui é
+  // melhor do que publicar dez páginas com o texto errado.
+  if (!template.includes('<div id="root"></div>')) {
+    throw new Error(
+      "dist/public/index.html já contém markup em #root. Rode `vite build` antes de `prerender`.",
+    );
+  }
+
+  // Renderizador estático produzido por `vite build --ssr`. Importado em tempo
+  // de execução porque só existe depois do build do bundle de servidor.
+  const { render } = (await import(
+    pathToFileURL(path.resolve(import.meta.dirname, "..", "dist", "server", "entry-server.js")).href
+  )) as { render: (url: string) => string };
+
   for (const route of ROUTES) {
     const url = `${SITE_URL}${route.path === "/" ? "/" : route.path}`;
     const title = escapeHtml(route.title);
@@ -133,12 +150,43 @@ async function run() {
         `    <script type="application/ld+json">${jsonLd}</script>\n  </head>`,
     );
 
+    // Conteúdo renderizado no build. Sem isto o <body> entregue ao crawler
+    // fica vazio e só o Google, que executa JS, consegue ler a página.
+    const appHtml = render(route.path);
+    html = html.replace(
+      '<div id="root"></div>',
+      `<div id="root">${appHtml}</div>`,
+    );
+
     const outDir =
       route.path === "/" ? DIST : path.join(DIST, route.path.replace(/^\//, ""));
     await mkdir(outDir, { recursive: true });
     await writeFile(path.join(outDir, "index.html"), html, "utf-8");
     console.log(`  prerendered ${route.path} → ${path.relative(DIST, path.join(outDir, "index.html"))}`);
   }
+
+  // 404.html — servido pelo Vercel em qualquer rota inexistente, preservando o
+  // status 404. Sem ele o visitante cai na tela de erro padrão, sem marca e sem
+  // caminho de volta. `noindex` porque a página não deve entrar no índice.
+  let notFound = template;
+  notFound = notFound.replace(
+    /<title>[\s\S]*?<\/title>/,
+    "<title>Página não encontrada | LaunchpadHub</title>",
+  );
+  notFound = notFound.replace(
+    /<meta name="description" content="[\s\S]*?"\s*\/?>/,
+    '<meta name="description" content="A página que você procura não existe. Veja os caminhos disponíveis no site do LaunchpadHub." />',
+  );
+  notFound = notFound.replace(
+    "</head>",
+    '  <meta name="robots" content="noindex, follow" />\n  </head>',
+  );
+  notFound = notFound.replace(
+    '<div id="root"></div>',
+    `<div id="root">${render("/404-nao-existe")}</div>`,
+  );
+  await writeFile(path.join(DIST, "404.html"), notFound, "utf-8");
+  console.log("  prerendered 404 → 404.html");
 }
 
 run().catch((err) => {

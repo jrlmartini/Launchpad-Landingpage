@@ -127,7 +127,7 @@ function service(
 export const ROUTES: RouteMeta[] = [
   {
     path: "/",
-    title: "LaunchpadHub | Fomento e Mercado para Deep Techs",
+    title: "Avaliação Independente de Tecnologias | LaunchpadHub",
     description:
       "Avaliação independente de tecnologias e startups, diagnóstico de prontidão comercial e projetos FINEP, FAPESP e CNPq para empresas industriais e deep techs.",
     priority: 1.0,
@@ -231,7 +231,7 @@ export const ROUTES: RouteMeta[] = [
     path: "/inteligencia",
     title: "Avaliação Independente de Tecnologias e Startups | LaunchpadHub",
     description:
-      "Technology Decision Sprint: avaliação independente em 10 dias úteis para decidir se uma tecnologia, startup, fornecedor ou rota merece o próximo compromisso de tempo, confidencialidade ou capital.",
+      "Technology Decision Sprint: avaliação independente em 10 dias úteis para decidir se uma tecnologia, startup, fornecedor ou rota merece o próximo compromisso de piloto, time técnico ou capital.",
     priority: 0.95,
     crumb: "Inteligência técnica",
     schema: (siteUrl) => [

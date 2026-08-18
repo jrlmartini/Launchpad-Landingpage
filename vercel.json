@@ -1,7 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "vite build && tsx script/prerender.ts && tsx script/sitemap.ts",
+  "buildCommand": "vite build && vite build --ssr src/entry-server.tsx --outDir ../dist/server && tsx script/prerender.ts && tsx script/sitemap.ts",
   "outputDirectory": "dist/public",
   "cleanUrls": true,
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

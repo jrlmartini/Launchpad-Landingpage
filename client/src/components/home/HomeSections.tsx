@@ -341,9 +341,9 @@ export function AboutMe() {
               No caminho até aqui fundei e ajudei a construir empresas de
               tecnologia, estruturei dezenas de projetos de inovação e{" "}
               <strong className="text-text">
-                aprovei mais de R$ 35 milhões em recursos de fomento
+                aprovei mais de R$ 35 milhões em fomento
               </strong>{" "}
-              em recursos reembolsáveis e não reembolsáveis, para empresas dos setores
+              entre recursos reembolsáveis e não reembolsáveis, para empresas dos setores
               automotivo, químico, alimentício, agrícola, saúde e tecnologia da
               informação.
             </p>
