@@ -1,11 +1,11 @@
 const logos = [
-  { src: "/logos/finep.png", alt: "Finep", scale: 1 },
-  { src: "/logos/cnpq.png", alt: "CNPq", scale: 1 },
-  { src: "/logos/fapesp.png", alt: "FAPESP", scale: 1 },
-  { src: "/logos/fapemig.png", alt: "FAPEMIG", scale: 1.8 },
-  { src: "/logos/faperj.png", alt: "FAPERJ", scale: 1 },
-  { src: "/logos/senai.png", alt: "SENAI", scale: 1 },
-  { src: "/logos/centelha.png", alt: "Centelha", scale: 1 },
+  { src: "/logos/finep.webp", alt: "Finep", scale: 1, w: 346 },
+  { src: "/logos/cnpq.webp", alt: "CNPq", scale: 1, w: 533 },
+  { src: "/logos/fapesp.webp", alt: "FAPESP", scale: 1, w: 582 },
+  { src: "/logos/fapemig.webp", alt: "FAPEMIG", scale: 1.8, w: 160 },
+  { src: "/logos/faperj.webp", alt: "FAPERJ", scale: 1, w: 324 },
+  { src: "/logos/senai.webp", alt: "SENAI", scale: 1, w: 634 },
+  { src: "/logos/centelha.webp", alt: "Centelha", scale: 1, w: 400 },
 ];
 
 interface LogoCarouselProps {
@@ -39,6 +39,10 @@ export function LogoCarousel({
               <img
                 src={logo.src}
                 alt={logo.alt}
+                width={logo.w}
+                height={160}
+                loading="lazy"
+                decoding="async"
                 className="h-8 lg:h-10 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity brightness-0 invert"
                 style={{ transform: `scale(${logo.scale})` }}
               />

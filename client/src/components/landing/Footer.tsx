@@ -8,7 +8,15 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           <a href="/" className="block">
-            <img src="/logo.png" alt="LaunchpadHub" className="h-10 w-auto" />
+            <img
+              src="/logo.webp"
+              alt="LaunchpadHub"
+              width={680}
+              height={120}
+              loading="lazy"
+              decoding="async"
+              className="h-10 w-auto"
+            />
           </a>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">

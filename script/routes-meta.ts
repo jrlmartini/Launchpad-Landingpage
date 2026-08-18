@@ -10,12 +10,22 @@
  * never point at a domain that isn't serving yet.
  */
 
-export const SITE_URL = "https://deeptechs.com.br";
+export const SITE_URL = "https://www.deeptechs.com.br";
 
 export const ORG_NAME = "LaunchpadHub";
 export const PERSON_NAME = "José Renato Lanzi Martini";
 export const WHATSAPP_E164 = "+55-19-3195-2808";
 export const EMAIL = "contato@launchpadhub.com.br";
+
+/**
+ * Perfis públicos usados em `sameAs`. Servem para o buscador desambiguar a
+ * entidade e ligar o site ao histórico profissional. Só entram aqui URLs
+ * verificadas: um `sameAs` apontando para 404 é sinal negativo.
+ */
+export const PROFILES = {
+  instagram: "https://www.instagram.com/launchpadhub/",
+  youtube: "https://www.youtube.com/channel/UCIkisP_perLLXFTIL0RRUhg",
+} as const;
 
 export interface RouteMeta {
   path: string;
@@ -44,6 +54,9 @@ export function organizationSchema(siteUrl: string) {
     areaServed: { "@type": "Country", name: "Brasil" },
     availableLanguage: "pt-BR",
     founder: { "@id": `${siteUrl}/#person` },
+    logo: `${siteUrl}/logo.webp`,
+    image: `${siteUrl}/opengraph.jpg`,
+    sameAs: [PROFILES.instagram, PROFILES.youtube],
     knowsAbout: [
       "Fomento à inovação",
       "FINEP",
@@ -66,6 +79,7 @@ export function personSchema(siteUrl: string) {
     jobTitle: "Tecnologista: avaliação de tecnologias, prontidão comercial e fomento à inovação",
     image: `${siteUrl}/jose-martini.webp`,
     worksFor: { "@id": `${siteUrl}/#organization` },
+    sameAs: [PROFILES.instagram],
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "UNESP" },
       { "@type": "CollegeOrUniversity", name: "OTH Regensburg" },

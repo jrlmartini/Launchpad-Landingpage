@@ -133,8 +133,10 @@ export function Navbar({
           <div className="flex items-center justify-between h-16 lg:h-[4.5rem]">
             <a href="/" className="flex items-center" data-testid="link-home">
               <img
-                src="/logo.png"
+                src="/logo.webp"
                 alt="LaunchpadHub"
+                width={680}
+                height={120}
                 className="h-8 lg:h-9 w-auto"
               />
             </a>

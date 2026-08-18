@@ -17,7 +17,7 @@ interface Testimonial {
   empresa: string;
   texto: string;
   tags: TestimonialTag[];
-  /** Caminho do logo em /public/logos-clientes/. Cai para as iniciais se ausente. */
+  /** Caminho do logo em /public/logos-clientes/ (webp). Cai para as iniciais se ausente. */
   logo?: string;
 }
 
@@ -26,7 +26,7 @@ export const TESTIMONIALS: Testimonial[] = [
     nome: "Ana Paula",
     papel: "Diretora Executiva",
     empresa: "Legalbot",
-    logo: "/logos-clientes/legalbot.png",
+    logo: "/logos-clientes/legalbot.webp",
     texto:
       "A consultoria do Launchpad foi conduzida de forma objetiva, assertiva e altamente profissional, sendo fundamental durante o processo de elaboração do projeto e nos esclarecimentos junto aos órgãos governamentais financiadores. O José Renato esteve sempre disponível, prestativo e ágil, oferecendo orientações claras que trouxeram segurança e facilitaram a condução de todo o processo. Recomendamos seu trabalho pela competência, comprometimento e qualidade da consultoria.",
     tags: ["fomento"],
@@ -35,7 +35,7 @@ export const TESTIMONIALS: Testimonial[] = [
     nome: "Natália Naddeo",
     papel: "Pesquisadora e empreendedora",
     empresa: "Small Nanotechnology",
-    logo: "/logos-clientes/small-nanotechnology.png",
+    logo: "/logos-clientes/small-nanotechnology.webp",
     texto:
       "A Launchpad teve um papel fundamental na minha transição da academia para o ecossistema de inovação. Com o suporte da equipe, consegui adaptar a linguagem dos projetos para uma abordagem mais estratégica, voltada aos desafios tecnológicos e às demandas do mercado. Foi uma experiência de grande aprendizado, que contribuiu significativamente para minha evolução como pesquisadora e empreendedora.",
     tags: ["fomento", "curso"],
@@ -104,8 +104,11 @@ export function Testimonials({
                   <img
                     src={t.logo}
                     alt={t.empresa}
+                    width={160}
+                    height={160}
                     className="flex-shrink-0 h-12 w-auto max-w-[140px] object-contain"
                     loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <div
