@@ -23,7 +23,15 @@ export const EMAIL = "contato@launchpadhub.com.br";
  * verificadas: um `sameAs` apontando para 404 é sinal negativo.
  */
 export const PROFILES = {
+  /** Perfil pessoal. Peso alto para desambiguar a entidade em contexto B2B. */
+  linkedin:
+    "https://www.linkedin.com/in/jos%C3%A9-renato-lanzi-martini/",
   instagram: "https://www.instagram.com/launchpadhub/",
+  /**
+   * URL por ID do canal, e nao por @handle. O @handle pode ser trocado e o
+   * proprio YouTube declara a URL de canal como canonica, entao apontar para
+   * ela evita o mesmo descasamento de canonical que corrigimos no dominio.
+   */
   youtube: "https://www.youtube.com/channel/UCIkisP_perLLXFTIL0RRUhg",
 } as const;
 
@@ -56,7 +64,7 @@ export function organizationSchema(siteUrl: string) {
     founder: { "@id": `${siteUrl}/#person` },
     logo: `${siteUrl}/logo.webp`,
     image: `${siteUrl}/opengraph.jpg`,
-    sameAs: [PROFILES.instagram, PROFILES.youtube],
+    sameAs: [PROFILES.linkedin, PROFILES.instagram, PROFILES.youtube],
     knowsAbout: [
       "Fomento à inovação",
       "FINEP",
@@ -79,7 +87,7 @@ export function personSchema(siteUrl: string) {
     jobTitle: "Tecnologista: avaliação de tecnologias, prontidão comercial e fomento à inovação",
     image: `${siteUrl}/jose-martini.webp`,
     worksFor: { "@id": `${siteUrl}/#organization` },
-    sameAs: [PROFILES.instagram],
+    sameAs: [PROFILES.linkedin, PROFILES.instagram],
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "UNESP" },
       { "@type": "CollegeOrUniversity", name: "OTH Regensburg" },

@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Mail, CalendarClock } from "lucide-react";
+import { Instagram, Youtube, Linkedin, Mail, CalendarClock } from "lucide-react";
 import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
 import { waLink, WA_MESSAGES, CALENDLY_URL, WHATSAPP_DISPLAY } from "@/lib/contact";
 
@@ -53,9 +53,19 @@ export function Footer() {
 
           <div className="flex items-center gap-4">
             <a
+              href="https://www.linkedin.com/in/jos%C3%A9-renato-lanzi-martini/"
+              target="_blank"
+              rel="noopener noreferrer me"
+              className="w-10 h-10 flex items-center justify-center bg-stroke/30 hover:bg-cta/20 rounded-xl transition-colors"
+              data-testid="link-linkedin"
+              aria-label="LinkedIn de José Renato Lanzi Martini"
+            >
+              <Linkedin className="w-5 h-5 text-text-muted" strokeWidth={1.5} />
+            </a>
+            <a
               href="https://instagram.com/launchpadhub"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
               className="w-10 h-10 flex items-center justify-center bg-stroke/30 hover:bg-cta/20 rounded-xl transition-colors"
               data-testid="link-instagram"
               aria-label="Instagram"
@@ -65,7 +75,7 @@ export function Footer() {
             <a
               href="https://youtube.com/@launchpadhub"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
               className="w-10 h-10 flex items-center justify-center bg-stroke/30 hover:bg-cta/20 rounded-xl transition-colors"
               data-testid="link-youtube"
               aria-label="YouTube"
