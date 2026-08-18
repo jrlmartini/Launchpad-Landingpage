@@ -2,7 +2,7 @@
 
 export const WHATSAPP_NUMBER = "551931952808"; // +55 19 3195-2808
 export const WHATSAPP_DISPLAY = "+55 19 3195-2808";
-export const CONTACT_EMAIL = "contato@launchpadhub.com.br";
+export const CONTACT_EMAIL = "contato@launchpad.tec.br";
 
 const CALENDLY_BASE =
   "https://calendly.com/mentorialaunchpad/avaliacao-mentoria";

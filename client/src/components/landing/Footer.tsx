@@ -1,6 +1,6 @@
 import { Instagram, Youtube, Linkedin, Mail, CalendarClock } from "lucide-react";
 import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
-import { waLink, WA_MESSAGES, CALENDLY_URL, WHATSAPP_DISPLAY } from "@/lib/contact";
+import { waLink, WA_MESSAGES, CALENDLY_URL, WHATSAPP_DISPLAY, CONTACT_EMAIL } from "@/lib/contact";
 
 export function Footer() {
   return (
@@ -41,13 +41,13 @@ export function Footer() {
               <span>Agendar 20 min</span>
             </a>
             <a
-              href="mailto:contato@launchpadhub.com.br"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="flex items-center gap-2 text-text-muted hover:text-cta transition-colors"
               data-testid="link-email"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" strokeWidth={1.5} />
-              <span className="hidden lg:inline">contato@launchpadhub.com.br</span>
+              <span className="hidden lg:inline">{CONTACT_EMAIL}</span>
             </a>
           </div>
 

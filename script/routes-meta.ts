@@ -15,7 +15,7 @@ export const SITE_URL = "https://www.deeptechs.com.br";
 export const ORG_NAME = "LaunchpadHub";
 export const PERSON_NAME = "José Renato Lanzi Martini";
 export const WHATSAPP_E164 = "+55-19-3195-2808";
-export const EMAIL = "contato@launchpadhub.com.br";
+export const EMAIL = "contato@launchpad.tec.br";
 
 /**
  * Perfis públicos usados em `sameAs`. Servem para o buscador desambiguar a
