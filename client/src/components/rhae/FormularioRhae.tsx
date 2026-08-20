@@ -17,36 +17,55 @@ import { trackEvent } from "@/lib/analytics";
  * congelar a query no HTML estático gravaria todo visitante com a origem de
  * quem gerou a página.
  *
- * ALTURA — `dynamicHeight=1` faz o Tally *emitir* a altura por postMessage,
- * mas quem redimensiona o iframe é a página que embute. Sem escutar essa
- * mensagem, o formulário ganha barra de rolagem própria.
+ * ALTURA — o Tally não manda a altura nos eventos `Tally.*`. Ele fala o
+ * protocolo do iframe-resizer (a primeira mensagem é `[iFrameResizerChild]
+ * Ready`), e quem responde é o script oficial de embed deles. Sem carregar
+ * esse script o iframe fica com altura fixa e barra de rolagem própria.
+ *
+ * Por isso o iframe usa `data-tally-src` em vez de `src`: é assim que o
+ * embed.js encontra e inicializa. Se o script não carregar, o efeito colateral
+ * é o `src` ser aplicado direto, com altura generosa e rolagem interna.
  *
  * Analytics recebe apenas eventos de fluxo. Nome, e-mail, WhatsApp, empresa e
  * respostas ficam no Tally e nunca viram propriedade de evento.
  */
 
-const ALTURA_INICIAL = 720;
+const ALTURA_INICIAL = 760;
+const EMBED_JS = "https://tally.so/widgets/embed.js";
 
-/** As mensagens do Tally chegam como string JSON ou objeto, conforme a versão. */
-function extrair(data: unknown): { event?: string; payload?: { height?: number } } | null {
-  try {
-    if (typeof data === "string") {
-      if (!data.includes("Tally.")) return null;
-      return JSON.parse(data);
-    }
-    if (data && typeof data === "object") {
-      return data as { event?: string; payload?: { height?: number } };
-    }
-  } catch {
-    /* mensagem de terceiro sem relação com o formulário */
+declare global {
+  interface Window {
+    Tally?: { loadEmbeds: () => void };
   }
-  return null;
+}
+
+/** Carrega o embed.js uma única vez e inicializa os iframes da página. */
+function carregarTally(aoFalhar: () => void) {
+  if (window.Tally) {
+    window.Tally.loadEmbeds();
+    return;
+  }
+
+  const existente = document.querySelector<HTMLScriptElement>(
+    `script[src="${EMBED_JS}"]`,
+  );
+  if (existente) {
+    existente.addEventListener("load", () => window.Tally?.loadEmbeds());
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = EMBED_JS;
+  script.async = true;
+  script.onload = () => window.Tally?.loadEmbeds();
+  script.onerror = aoFalhar;
+  document.body.appendChild(script);
 }
 
 export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
   const [src, setSrc] = useState<string | null>(null);
-  const [altura, setAltura] = useState(ALTURA_INICIAL);
   const containerRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const jaContou = useRef(false);
 
   const base = useMemo(
@@ -65,25 +84,27 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
     setSrc(`${base}&${params.toString()}`);
   }, [base]);
 
-  /* Altura dinâmica e conclusão da inscrição. */
+  /* Redimensionamento pelo embed oficial, com plano B se o script falhar. */
+  useEffect(() => {
+    if (!src) return;
+    carregarTally(() => {
+      const el = iframeRef.current;
+      if (el && !el.src) {
+        el.src = src;
+        el.setAttribute("scrolling", "auto");
+      }
+    });
+  }, [src]);
+
+  /* Conclusão da inscrição. */
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
       if (typeof e.origin === "string" && !e.origin.includes("tally.so")) return;
+      const dado = typeof e.data === "string" ? e.data : "";
+      if (!dado.includes("Tally.FormSubmitted")) return;
 
-      const msg = extrair(e.data);
-      if (!msg) return;
-
-      const h = msg.payload?.height;
-      if (typeof h === "number" && h > 200) {
-        // Margem pequena evita rolagem por arredondamento de subpixel.
-        setAltura(Math.ceil(h) + 8);
-      }
-
-      const raw = typeof e.data === "string" ? e.data : msg.event ?? "";
-      if (raw.includes("Tally.FormSubmitted")) {
-        trackEvent("form_submit_success", { form: "rhae-ia-2026" });
-        window.location.assign(RHAE.confirmacao);
-      }
+      trackEvent("form_submit_success", { form: "rhae-ia-2026" });
+      window.location.assign(RHAE.confirmacao);
     };
 
     window.addEventListener("message", onMessage);
@@ -131,12 +152,13 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
 
         {src ? (
           <iframe
-            src={src}
+            ref={iframeRef}
+            data-tally-src={src}
             title="Formulário de inscrição na live RHAE IA 2026"
             loading="lazy"
             scrolling="no"
-            style={{ height: altura }}
-            className="w-full border-0 block overflow-hidden transition-[height] duration-200"
+            height={ALTURA_INICIAL}
+            className="w-full border-0 block"
             data-testid="iframe-form-rhae"
           />
         ) : (
