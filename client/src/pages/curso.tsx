@@ -31,7 +31,7 @@ export default function Curso() {
           sections={sections}
           active="curso"
           ctaHref="#oferta"
-          ctaLabel="Quero preparar minha missão"
+          ctaLabel="Entrar na lista de espera"
         />
         <main>
           <Hero />

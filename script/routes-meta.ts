@@ -140,12 +140,35 @@ const PAGINAS_FIXAS: RouteMeta[] = [
     priority: 1.0,
   },
   {
+    path: "/treinamentos",
+    title: "Treinamentos em fomento e inovação | LaunchpadHub",
+    description:
+      "Programas para internalizar a competência de captar recursos e levar tecnologia ao mercado. Método aplicado, com os templates usados nos projetos que conduzo.",
+    priority: 0.9,
+    crumb: "Treinamentos",
+    schema: (siteUrl) => [
+      {
+        "@type": "ItemList",
+        "@id": `${siteUrl}/treinamentos#lista`,
+        name: "Treinamentos LaunchpadHub",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            item: { "@id": `${siteUrl}/curso#course` },
+          },
+        ],
+      },
+    ],
+  },
+  {
     path: "/curso",
     title: "Curso de Fomento para Deeptechs | LaunchpadHub",
     description:
-      "Aprenda a escolher editais e escrever projetos defensáveis com templates, checklists e método aplicado a FINEP, FAPESP, CNPq e FAPs estaduais.",
-    priority: 0.9,
-    crumb: "Curso",
+      "Método para escolher editais e escrever projetos defensáveis, com templates e checklists aplicados a FINEP, FAPESP, CNPq e FAPs. Em pré-lançamento: entre na lista de espera.",
+    priority: 0.8,
+    crumb: "Fomento para Deeptechs",
+    crumbParent: { name: "Treinamentos", path: "/treinamentos" },
     schema: (siteUrl) => [
       {
         "@type": "Course",
@@ -170,6 +193,14 @@ const PAGINAS_FIXAS: RouteMeta[] = [
           courseWorkload: "PT10H",
           inLanguage: "pt-BR",
           instructor: { "@id": `${siteUrl}/#person` },
+        },
+        // Pré-lançamento: sem turma aberta. Declarar PreOrder evita prometer
+        // matrícula que ainda não existe. Trocar para InStock no lançamento.
+        offers: {
+          "@type": "Offer",
+          availability: "https://schema.org/PreOrder",
+          url: `${siteUrl}/lista`,
+          category: "Pré-lançamento",
         },
       },
     ],

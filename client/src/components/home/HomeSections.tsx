@@ -175,7 +175,7 @@ const paths = [
     featured: false,
   },
   {
-    href: "/curso",
+    href: "/treinamentos",
     icon: GraduationCap,
     eyebrow: "Aprender a fazer internamente",
     title: "Curso: Fomento para Deeptechs",

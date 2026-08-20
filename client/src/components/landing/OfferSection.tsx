@@ -1,6 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import { Play, FileSpreadsheet, Sparkles, Target, Radio, ArrowRight, ChevronUp, X } from "lucide-react";
 import { CHECKOUT_CONFIG } from "@/lib/checkout-widget";
+import { TREINAMENTOS } from "@/lib/treinamentos";
+
+/**
+ * O bloco de oferta segue o status declarado no catálogo de treinamentos.
+ * Em pré-lançamento mostra a lista de espera; quando o curso abrir, basta
+ * mudar `status` para "ativo" em lib/treinamentos.ts e o checkout volta.
+ * Assim não existe a possibilidade de o menu dizer "em breve" e a página
+ * vender ao mesmo tempo.
+ */
+const CURSO = TREINAMENTOS.find((t) => t.slug === "fomento-para-deeptechs");
+const EM_PRE_LANCAMENTO = CURSO?.status !== "ativo";
 
 const features = [
   { icon: Play, text: "Aulas gravadas + materiais" },
@@ -48,6 +59,25 @@ export function OfferSection() {
               ))}
             </ul>
 
+            {EM_PRE_LANCAMENTO ? (
+              <div className="text-center">
+                <span className="inline-block px-3 py-1 mb-5 text-[11px] font-mono uppercase tracking-wider text-highlight bg-highlight/10 border border-highlight/25 rounded-full">
+                  Em breve
+                </span>
+                <a
+                  href="/lista"
+                  className="flex sm:inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-5 text-lg font-bold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
+                  data-testid="button-cta-lista"
+                >
+                  Entrar na lista de espera
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <p className="mt-4 text-sm text-text-muted">
+                  Você recebe em primeira mão a data de abertura e as condições
+                  de lançamento.
+                </p>
+              </div>
+            ) : (
             <div className="text-center">
               <button
                 onClick={handleToggleCheckout}
@@ -62,11 +92,13 @@ export function OfferSection() {
                 )}
               </button>
               <p className="mt-4 text-sm text-text-muted italic">
-                Explore novos mundos — com uma missão que para em pé.
+                Explore novos mundos, com uma missão que para em pé.
               </p>
             </div>
+            )}
           </div>
 
+          {!EM_PRE_LANCAMENTO && (
           <div
             ref={checkoutRef}
             className={`grid transition-all duration-500 ease-out ${
@@ -103,6 +135,7 @@ export function OfferSection() {
               </p>
             </div>
           </div>
+          )}
         </div>
       </div>
     </section>

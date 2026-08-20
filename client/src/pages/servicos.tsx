@@ -50,7 +50,7 @@ export default function Servicos() {
     <div className="min-h-screen bg-background text-foreground">
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />
       <div className="relative z-10">
-        <Navbar active="servicos" ctaHref="/curso" ctaLabel="Conhecer o curso" />
+        <Navbar active="servicos" ctaHref="/treinamentos" ctaLabel="Ver treinamentos" />
         <main>
           <section className="relative pt-36 lg:pt-44 pb-16 overflow-hidden">
             <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -125,7 +125,7 @@ export default function Servicos() {
 
               <p className="mt-10 text-center text-text-muted">
                 Prefere aprender a fazer você mesmo?{" "}
-                <a href="/curso" className="font-semibold text-cta hover:text-cta/80 transition-colors">
+                <a href="/treinamentos" className="font-semibold text-cta hover:text-cta/80 transition-colors">
                   Conheça o curso Fomento para Deeptechs
                 </a>
                 .

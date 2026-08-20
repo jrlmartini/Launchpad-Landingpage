@@ -100,7 +100,7 @@ export function Footer() {
               Início
             </a>
             <a
-              href="/curso"
+              href="/treinamentos"
               className="text-sm text-text-muted hover:text-cta transition-colors"
             >
               Curso

@@ -30,7 +30,7 @@ const caminhos = [
     desc: "Escrita e revisão de projetos para FINEP, FAPESP, CNPq e Embrapii.",
   },
   {
-    href: "/curso",
+    href: "/treinamentos",
     icon: GraduationCap,
     titulo: "Aprender a fazer internamente",
     desc: "O método completo para escrever e defender projetos de fomento.",

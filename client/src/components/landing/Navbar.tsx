@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { temArtigos } from "@/lib/artigos";
+import { TREINAMENTOS } from "@/lib/treinamentos";
 import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap, Radar, Telescope } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -78,7 +79,7 @@ interface NavbarProps {
   /** In-page section anchors for the current page (rendered in the sub-bar). */
   sections?: SectionLink[];
   /** Which primary item is the current page. */
-  active?: "home" | "curso" | "servicos" | "projetos" | "tecnologia" | "inteligencia" | "artigos" | null;
+  active?: "home" | "curso" | "servicos" | "projetos" | "tecnologia" | "inteligencia" | "artigos" | "treinamentos" | null;
   ctaHref?: string;
   ctaLabel?: string;
 }
@@ -86,11 +87,12 @@ interface NavbarProps {
 export function Navbar({
   sections = [],
   active = null,
-  ctaHref = "/curso#oferta",
-  ctaLabel = "Quero o curso",
+  ctaHref = "/treinamentos",
+  ctaLabel = "Ver treinamentos",
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [trainingOpen, setTrainingOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -100,6 +102,16 @@ export function Navbar({
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setServicesOpen(true);
   };
+  const trainingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const openTraining = () => {
+    if (trainingTimer.current) clearTimeout(trainingTimer.current);
+    setTrainingOpen(true);
+  };
+  const scheduleCloseTraining = () => {
+    if (trainingTimer.current) clearTimeout(trainingTimer.current);
+    trainingTimer.current = setTimeout(() => setTrainingOpen(false), 180);
+  };
+
   const scheduleCloseServices = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     closeTimer.current = setTimeout(() => setServicesOpen(false), 180);
@@ -150,13 +162,101 @@ export function Navbar({
               >
                 Início
               </a>
-              <a
-                href="/curso"
-                className={primaryLinkClass(active === "curso")}
-                data-testid="link-curso"
+              {/* Treinamentos: mesma mecânica de hover do dropdown de Serviços */}
+              <div
+                className="relative"
+                onMouseEnter={openTraining}
+                onMouseLeave={scheduleCloseTraining}
+                onFocus={openTraining}
+                onBlur={scheduleCloseTraining}
               >
-                Curso
-              </a>
+                <a
+                  href="/treinamentos"
+                  className={`${primaryLinkClass(
+                    active === "treinamentos" || active === "curso",
+                  )} inline-flex items-center gap-1.5 py-5`}
+                  aria-expanded={trainingOpen}
+                  aria-haspopup="true"
+                  data-testid="link-treinamentos"
+                >
+                  Treinamentos
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      trainingOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </a>
+
+                {trainingOpen && (
+                  <div
+                    className="absolute left-1/2 -translate-x-1/2 top-full z-50"
+                    onMouseEnter={openTraining}
+                    onMouseLeave={scheduleCloseTraining}
+                  >
+                    <div className="h-3 w-full" />
+                    <div className="w-[26rem] p-2 bg-surface border border-stroke rounded-2xl shadow-2xl">
+                      <a
+                        href="/treinamentos"
+                        onClick={() => setTrainingOpen(false)}
+                        className="flex items-center justify-between px-3 py-2 text-xs font-mono uppercase tracking-wider text-cta hover:text-cta/80 transition-colors"
+                      >
+                        Todos os treinamentos
+                        <span className="normal-case tracking-normal font-body text-[11px] text-text-muted">
+                          ver página →
+                        </span>
+                      </a>
+                      {TREINAMENTOS.map((t) => {
+                        const emBreve = t.status === "em-breve";
+                        return (
+                          <a
+                            key={t.slug}
+                            href={t.href}
+                            onClick={() => setTrainingOpen(false)}
+                            className="flex items-start gap-3 p-3 rounded-xl hover:bg-background/60 transition-colors group"
+                            data-testid={`link-treinamento-${t.slug}`}
+                          >
+                            <div
+                              className={`flex-shrink-0 w-9 h-9 grid place-items-center rounded-lg ${
+                                emBreve ? "bg-stroke/40" : "bg-cta/10"
+                              }`}
+                            >
+                              <t.icon
+                                className={`w-4 h-4 ${
+                                  emBreve ? "text-text-muted" : "text-cta"
+                                }`}
+                                strokeWidth={1.5}
+                              />
+                            </div>
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2">
+                                <span
+                                  className={`font-medium ${
+                                    emBreve
+                                      ? "text-text-muted"
+                                      : "text-text group-hover:text-cta"
+                                  } transition-colors`}
+                                >
+                                  {t.nome}
+                                </span>
+                                {emBreve && (
+                                  <span className="px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-highlight bg-highlight/10 border border-highlight/25 rounded">
+                                    Em breve
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-xs text-text-muted mt-0.5 leading-snug">
+                                {emBreve
+                                  ? "Entre na lista de espera"
+                                  : t.chamada}
+                              </p>
+                            </div>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
 
               {/* Serviços dropdown */}
               <div
@@ -338,14 +438,33 @@ export function Navbar({
               Início
             </a>
             <a
-              href="/curso"
+              href="/treinamentos"
               onClick={() => setIsOpen(false)}
               className={`block py-3 text-base font-medium border-t border-stroke/40 ${
-                active === "curso" ? "text-cta" : "text-text"
+                active === "treinamentos" || active === "curso"
+                  ? "text-cta"
+                  : "text-text"
               }`}
             >
-              Curso
+              Treinamentos
             </a>
+            <div className="pl-4 pb-2 space-y-1">
+              {TREINAMENTOS.map((t) => (
+                <a
+                  key={t.slug}
+                  href={t.href}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 py-2 text-sm text-text-muted"
+                >
+                  {t.nome}
+                  {t.status === "em-breve" && (
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-highlight bg-highlight/10 border border-highlight/25 rounded">
+                      Em breve
+                    </span>
+                  )}
+                </a>
+              ))}
+            </div>
 
             <div className="border-t border-stroke/40">
               <button

@@ -144,6 +144,7 @@ const PAGE_FILE: Record<string, string> = {
   "/triagem": "triagem.tsx",
   "/privacidade": "privacidade.tsx",
   "/artigos": "artigos.tsx",
+  "/treinamentos": "treinamentos.tsx",
 };
 
 async function run() {

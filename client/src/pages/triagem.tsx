@@ -89,7 +89,7 @@ const situacoes: {
     recomendacao: "Curso Fomento para Deeptechs",
     porque:
       "Se a necessidade é recorrente, faz mais sentido internalizar o método do que contratar escrita a cada edital.",
-    href: "/curso",
+    href: "/treinamentos",
   },
 ];
 
