@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { temArtigos } from "@/lib/artigos";
 import { TREINAMENTOS } from "@/lib/treinamentos";
-import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap, Radar, Telescope } from "lucide-react";
+import { RHAE, destaqueExpirado, linhaEvento } from "@/lib/rhae";
+import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap, Radar, Telescope, Radio } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /* Site-wide structure — identical on every page, never swapped out.    */
@@ -93,6 +94,15 @@ export function Navbar({
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [trainingOpen, setTrainingOpen] = useState(false);
+  /* Começa visível para bater com o HTML do build; some depois da live. */
+  const [liveNoMenu, setLiveNoMenu] = useState<boolean>(
+    RHAE.PUBLICADA && RHAE.DESTACAR_NO_MENU,
+  );
+  useEffect(() => {
+    if (RHAE.PUBLICADA && RHAE.DESTACAR_NO_MENU && destaqueExpirado()) {
+      setLiveNoMenu(false);
+    }
+  }, []);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -205,6 +215,32 @@ export function Navbar({
                           ver página →
                         </span>
                       </a>
+                      {liveNoMenu && (
+                        <a
+                          href={RHAE.slug}
+                          onClick={() => setTrainingOpen(false)}
+                          className="flex items-start gap-3 p-3 mb-1 rounded-xl bg-cta/5 border border-cta/20 hover:bg-cta/10 transition-colors group"
+                          data-testid="link-live-rhae"
+                        >
+                          <div className="flex-shrink-0 w-9 h-9 grid place-items-center bg-cta/15 rounded-lg">
+                            <Radio className="w-4 h-4 text-cta" strokeWidth={1.5} />
+                          </div>
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-2">
+                              <span className="font-medium text-text group-hover:text-cta transition-colors">
+                                Live RHAE IA 2026
+                              </span>
+                              <span className="px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-cta bg-cta/15 border border-cta/25 rounded">
+                                Gratuita
+                              </span>
+                            </div>
+                            <p className="text-xs text-text-muted mt-0.5 leading-snug">
+                              {linhaEvento(false)} · inscrição aberta
+                            </p>
+                          </div>
+                        </a>
+                      )}
+
                       {TREINAMENTOS.map((t) => {
                         const emBreve = t.status === "em-breve";
                         return (
@@ -449,6 +485,18 @@ export function Navbar({
               Treinamentos
             </a>
             <div className="pl-4 pb-2 space-y-1">
+              {liveNoMenu && (
+                <a
+                  href={RHAE.slug}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 py-2 text-sm text-cta font-medium"
+                >
+                  Live RHAE IA 2026
+                  <span className="px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-cta bg-cta/15 border border-cta/25 rounded">
+                    Gratuita
+                  </span>
+                </a>
+              )}
               {TREINAMENTOS.map((t) => (
                 <a
                   key={t.slug}

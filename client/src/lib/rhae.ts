@@ -16,6 +16,14 @@ export const RHAE = {
   /** Versão da página, enviada ao formulário para rastreabilidade. */
   VERSAO: "rhae-ia-2026-v1",
 
+  /**
+   * Destaque no menu de Treinamentos. Some sozinho depois do dia da live,
+   * sem precisar de deploy: a verificação de data roda no cliente.
+   */
+  DESTACAR_NO_MENU: true,
+  /** Fim do dia da live, em Brasília. */
+  fimDoDestaqueISO: "2026-08-24T23:59:59-03:00",
+
   slug: "/treinamentos/rhae-ia-2026",
   confirmacao: "/treinamentos/rhae-ia-2026/confirmacao",
 
@@ -128,4 +136,16 @@ export function linhaEvento(comFormato = true): string {
   ]
     .filter(Boolean)
     .join(" · ");
+}
+
+
+/**
+ * O destaque no menu já passou?
+ *
+ * Chamar apenas depois da montagem, nunca durante a renderização. O HTML é
+ * gerado no build e sempre inclui o item; se o cliente decidisse na primeira
+ * renderização, haveria divergência de hidratação no dia seguinte à live.
+ */
+export function destaqueExpirado(): boolean {
+  return Date.now() > new Date(RHAE.fimDoDestaqueISO).getTime();
 }
