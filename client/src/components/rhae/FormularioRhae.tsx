@@ -6,22 +6,46 @@ import { trackEvent } from "@/lib/analytics";
 /**
  * Formulário de inscrição (Tally embutido).
  *
- * Os campos ocultos vão como query string no src do iframe. Para chegarem à
- * resposta, precisam existir como *hidden fields* com exatamente estes nomes
- * dentro do formulário no Tally:
+ * Campos ocultos vão como query string no src do iframe. Para chegarem à
+ * resposta, precisam existir como *hidden fields* no formulário do Tally com
+ * exatamente estes nomes:
  *
  *   utm_source, utm_medium, utm_campaign, utm_content, utm_term,
  *   landing_page_version, origin_page
  *
  * O src só é montado no cliente: no build não existe window.location, e
- * congelar a query no HTML estático faria todo visitante ser gravado com a
- * origem de quem gerou a página.
+ * congelar a query no HTML estático gravaria todo visitante com a origem de
+ * quem gerou a página.
+ *
+ * ALTURA — `dynamicHeight=1` faz o Tally *emitir* a altura por postMessage,
+ * mas quem redimensiona o iframe é a página que embute. Sem escutar essa
+ * mensagem, o formulário ganha barra de rolagem própria.
  *
  * Analytics recebe apenas eventos de fluxo. Nome, e-mail, WhatsApp, empresa e
- * descrição do projeto ficam no Tally e não são enviados como propriedades.
+ * respostas ficam no Tally e nunca viram propriedade de evento.
  */
+
+const ALTURA_INICIAL = 720;
+
+/** As mensagens do Tally chegam como string JSON ou objeto, conforme a versão. */
+function extrair(data: unknown): { event?: string; payload?: { height?: number } } | null {
+  try {
+    if (typeof data === "string") {
+      if (!data.includes("Tally.")) return null;
+      return JSON.parse(data);
+    }
+    if (data && typeof data === "object") {
+      return data as { event?: string; payload?: { height?: number } };
+    }
+  } catch {
+    /* mensagem de terceiro sem relação com o formulário */
+  }
+  return null;
+}
+
 export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
   const [src, setSrc] = useState<string | null>(null);
+  const [altura, setAltura] = useState(ALTURA_INICIAL);
   const containerRef = useRef<HTMLDivElement>(null);
   const jaContou = useRef(false);
 
@@ -41,23 +65,32 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
     setSrc(`${base}&${params.toString()}`);
   }, [base]);
 
-  /* Conclusão da inscrição, sinalizada pelo Tally via postMessage. */
+  /* Altura dinâmica e conclusão da inscrição. */
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
       if (typeof e.origin === "string" && !e.origin.includes("tally.so")) return;
 
-      const dado = typeof e.data === "string" ? e.data : "";
-      if (!dado.includes("Tally.FormSubmitted")) return;
+      const msg = extrair(e.data);
+      if (!msg) return;
 
-      trackEvent("form_submit_success", { form: "rhae-ia-2026" });
-      window.location.assign(RHAE.confirmacao);
+      const h = msg.payload?.height;
+      if (typeof h === "number" && h > 200) {
+        // Margem pequena evita rolagem por arredondamento de subpixel.
+        setAltura(Math.ceil(h) + 8);
+      }
+
+      const raw = typeof e.data === "string" ? e.data : msg.event ?? "";
+      if (raw.includes("Tally.FormSubmitted")) {
+        trackEvent("form_submit_success", { form: "rhae-ia-2026" });
+        window.location.assign(RHAE.confirmacao);
+      }
     };
 
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);
   }, []);
 
-  /* form_start: primeira vez que o formulário entra em foco na tela. */
+  /* form_start: primeira vez que o formulário aparece na tela. */
   useEffect(() => {
     const el = containerRef.current;
     if (!el || typeof IntersectionObserver === "undefined") return;
@@ -72,7 +105,7 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
           }
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.35 },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -101,12 +134,15 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
             src={src}
             title="Formulário de inscrição na live RHAE IA 2026"
             loading="lazy"
-            className="w-full min-h-[560px] border-0"
+            scrolling="no"
+            style={{ height: altura }}
+            className="w-full border-0 block overflow-hidden transition-[height] duration-200"
             data-testid="iframe-form-rhae"
           />
         ) : (
           <div
-            className="min-h-[560px] grid place-items-center text-text-muted"
+            className="grid place-items-center text-text-muted"
+            style={{ height: ALTURA_INICIAL }}
             aria-live="polite"
           >
             Carregando formulário…
