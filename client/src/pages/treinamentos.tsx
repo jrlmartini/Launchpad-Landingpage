@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Wrench, Users, Repeat } from "lucide-react";
+import { ArrowRight, Check, Wrench, Users, Repeat, Radio } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ContactOptions } from "@/components/hub/ContactOptions";
@@ -6,6 +6,7 @@ import { LogoCarousel } from "@/components/landing/LogoCarousel";
 import { Testimonials } from "@/components/shared/Testimonials";
 import { WA_MESSAGES } from "@/lib/contact";
 import { TREINAMENTOS } from "@/lib/treinamentos";
+import { RHAE, linhaEvento } from "@/lib/rhae";
 
 const principios = [
   {
@@ -79,6 +80,40 @@ export default function Treinamentos() {
           </section>
 
           <LogoCarousel title="Experiência com os principais instrumentos de fomento do país" />
+
+          {/* Próxima live. Some sozinha quando RHAE.PUBLICADA volta a false,
+              e some da página inteira depois do evento sem deixar rastro. */}
+          {RHAE.PUBLICADA && (
+            <section className="pb-4">
+              <div className="max-w-4xl mx-auto px-6 lg:px-8">
+                <a
+                  href={RHAE.slug}
+                  className="group flex flex-col sm:flex-row sm:items-center gap-5 p-6 lg:p-7 bg-surface/60 border border-cta/30 rounded-3xl card-glow transition-all hover:border-cta/50"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 grid place-items-center bg-cta/10 rounded-2xl">
+                    <Radio className="w-6 h-6 text-cta" strokeWidth={1.5} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-mono uppercase tracking-widest text-cta mb-2">
+                      Próxima live gratuita · {linhaEvento(false)}
+                    </p>
+                    <h2 className="font-display font-bold text-xl lg:text-2xl text-text mb-1.5 leading-snug">
+                      RHAE IA 2026: requisitos, enquadramento e avaliação da
+                      proposta
+                    </h2>
+                    <p className="text-text-muted leading-relaxed">
+                      Quem pode participar da Chamada CNPq nº 29/2026, quais
+                      projetos se enquadram e como as propostas serão avaliadas.
+                    </p>
+                  </div>
+                  <span className="flex-shrink-0 inline-flex items-center gap-2 font-semibold text-cta">
+                    Ver
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </a>
+              </div>
+            </section>
+          )}
 
           {/* Catálogo */}
           <section id="catalogo" className="py-16 lg:py-24 scroll-mt-32">

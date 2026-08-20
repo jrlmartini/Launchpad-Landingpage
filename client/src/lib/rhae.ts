@@ -10,8 +10,8 @@
  */
 
 export const RHAE = {
-  /** Trocar para true só depois do QA dos itens marcados como PENDENTE. */
-  PUBLICADA: false,
+  /** Aprovada no Founder QA em 20/08/2026. */
+  PUBLICADA: true,
 
   /** Versão da página, enviada ao formulário para rastreabilidade. */
   VERSAO: "rhae-ia-2026-v1",

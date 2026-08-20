@@ -465,7 +465,7 @@ const ROTAS_ARTIGOS: RouteMeta[] = ARTIGOS_META.length
  *
  * Espelha `PUBLICADA` em client/src/lib/rhae.ts. Trocar os dois juntos.
  */
-const RHAE_PUBLICADA = false;
+const RHAE_PUBLICADA = true;
 
 const ROTAS_CAMPANHA: RouteMeta[] = [
   {
