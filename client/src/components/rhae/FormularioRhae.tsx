@@ -17,76 +17,23 @@ import { trackEvent } from "@/lib/analytics";
  * congelar a query no HTML estático gravaria todo visitante com a origem de
  * quem gerou a página.
  *
- * ALTURA — o Tally não manda a altura nos eventos `Tally.*`. Ele fala o
- * protocolo do iframe-resizer (a primeira mensagem é `[iFrameResizerChild]
- * Ready`), e quem responde é o script oficial de embed deles. Sem carregar
- * esse script o iframe fica com altura fixa e barra de rolagem própria.
+ * ALTURA — o Tally não envia a altura nos eventos `Tally.*`: ele fala o
+ * protocolo do iframe-resizer, que precisa do parent correspondente. Tentei
+ * usar o embed.js oficial com `data-tally-src`, mas o `loadEmbeds()` não
+ * inicializou o iframe aqui e o formulário ficava em branco.
  *
- * Por isso o iframe usa `data-tally-src` em vez de `src`: é assim que o
- * embed.js encontra e inicializa. Se o script não carregar, o efeito colateral
- * é o `src` ser aplicado direto, com altura generosa e rolagem interna.
+ * Optei pelo caminho determinístico: `src` direto, altura folgada e
+ * `scrolling="auto"`. Com isso o formulário sempre carrega e a barra de
+ * rolagem só apareceria se o conteúdo passasse da altura reservada. O custo é
+ * um espaço vazio embaixo em formulários curtos, que é bem menos ruim do que
+ * rolagem dentro da página ou iframe vazio.
  *
  * Analytics recebe apenas eventos de fluxo. Nome, e-mail, WhatsApp, empresa e
  * respostas ficam no Tally e nunca viram propriedade de evento.
  */
 
-const ALTURA_INICIAL = 760;
-const EMBED_JS = "https://tally.so/widgets/embed.js";
-
-declare global {
-  interface Window {
-    Tally?: { loadEmbeds: () => void };
-  }
-}
-
-/**
- * Plano B do próprio Tally: copiar data-tally-src para src. O formulário
- * carrega sem redimensionamento automático, o que é muito melhor do que
- * iframe em branco.
- */
-function carregarDireto() {
-  document
-    .querySelectorAll<HTMLIFrameElement>("iframe[data-tally-src]:not([src])")
-    .forEach((el) => {
-      el.src = el.dataset.tallySrc ?? "";
-      el.setAttribute("scrolling", "auto");
-    });
-}
-
-/** Carrega o embed.js uma única vez e inicializa os iframes da página. */
-function carregarTally() {
-  const iniciar = () => {
-    try {
-      window.Tally?.loadEmbeds();
-    } catch {
-      /* cai no temporizador abaixo */
-    }
-    // Rede de segurança: se em 2s o iframe continuar sem src, força o
-    // carregamento. Sem isso, qualquer mudança no embed.js do Tally deixaria
-    // a página com um formulário invisível, que é a pior falha possível aqui.
-    window.setTimeout(carregarDireto, 2000);
-  };
-
-  if (window.Tally) return iniciar();
-
-  const existente = document.querySelector<HTMLScriptElement>(
-    `script[src="${EMBED_JS}"]`,
-  );
-  if (existente) {
-    existente.addEventListener("load", iniciar);
-    window.setTimeout(carregarDireto, 2500);
-    return;
-  }
-
-  const script = document.createElement("script");
-  script.src = EMBED_JS;
-  script.async = true;
-  script.onload = iniciar;
-  script.onerror = carregarDireto;
-  document.body.appendChild(script);
-  // Bloqueador de terceiros pode impedir o onerror de disparar.
-  window.setTimeout(carregarDireto, 3000);
-}
+/** Folga suficiente para o formulário completo, evitando rolagem interna. */
+const ALTURA = 1180;
 
 export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
   const [src, setSrc] = useState<string | null>(null);
@@ -109,12 +56,6 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
 
     setSrc(`${base}&${params.toString()}`);
   }, [base]);
-
-  /* Redimensionamento pelo embed oficial, com plano B se o script falhar. */
-  useEffect(() => {
-    if (!src) return;
-    carregarTally();
-  }, [src]);
 
   /* Conclusão da inscrição. */
   useEffect(() => {
@@ -173,17 +114,16 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
         {src ? (
           <iframe
             ref={iframeRef}
-            data-tally-src={src}
+            src={src}
             title="Formulário de inscrição na live RHAE IA 2026"
-            scrolling="no"
-            height={ALTURA_INICIAL}
+            height={ALTURA}
             className="w-full border-0 block"
             data-testid="iframe-form-rhae"
           />
         ) : (
           <div
             className="grid place-items-center text-text-muted"
-            style={{ height: ALTURA_INICIAL }}
+            style={{ height: ALTURA }}
             aria-live="polite"
           >
             Carregando formulário…
