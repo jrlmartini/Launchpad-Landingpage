@@ -23,8 +23,9 @@ export const RHAE = {
     nome: "RHAE IA 2026: requisitos, enquadramento e avaliação da proposta",
     dataISO: "2026-08-24",
     dataExtenso: "24 de agosto de 2026",
-    /** PENDENTE — fundador. Ex.: "19h (Brasília)". Vazio some da tela. */
-    horario: "",
+    horario: "19h (Brasília)",
+    /** Usado no schema Event. Brasília em agosto é UTC-3, sem horário de verão. */
+    inicioISO: "2026-08-24T19:00:00-03:00",
     formato: "Online",
     preco: "Gratuita",
   },
@@ -116,7 +117,7 @@ export function linhaEvento(comFormato = true): string {
   const { dataExtenso, horario, formato, preco } = RHAE.evento;
   return [
     dataExtenso.toUpperCase(),
-    horario || null,
+    horario ? horario.toUpperCase() : null,
     comFormato ? formato.toUpperCase() : null,
     comFormato ? preco.toUpperCase() : null,
   ]

@@ -487,7 +487,7 @@ const ROTAS_CAMPANHA: RouteMeta[] = [
         name: "RHAE IA 2026: requisitos, enquadramento e avaliação da proposta",
         description:
           "Live gratuita sobre a Chamada Pública CNPq nº 29/2026: elegibilidade, enquadramento do projeto, bolsas, contrapartida e critérios de julgamento.",
-        startDate: "2026-08-24",
+        startDate: "2026-08-24T19:00:00-03:00",
         eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
         eventStatus: "https://schema.org/EventScheduled",
         inLanguage: "pt-BR",
