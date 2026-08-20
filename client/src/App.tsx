@@ -7,6 +7,8 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Curso from "@/pages/curso";
 import Treinamentos from "@/pages/treinamentos";
+import RhaeIa2026 from "@/pages/rhae";
+import RhaeConfirmacao from "@/pages/rhae-confirmacao";
 import Servicos from "@/pages/servicos";
 import Projetos from "@/pages/projetos";
 import Tecnologia from "@/pages/tecnologia";
@@ -24,6 +26,11 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/curso" component={Curso} />
       <Route path="/treinamentos" component={Treinamentos} />
+      <Route path="/treinamentos/rhae-ia-2026" component={RhaeIa2026} />
+      <Route
+        path="/treinamentos/rhae-ia-2026/confirmacao"
+        component={RhaeConfirmacao}
+      />
       <Route path="/servicos" component={Servicos} />
       <Route path="/projetos" component={Projetos} />
       <Route path="/tecnologia" component={Tecnologia} />

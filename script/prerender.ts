@@ -131,13 +131,15 @@ async function run() {
     );
 
     // Open Graph + Twitter
+    const ogTitle = escapeHtml(route.ogTitle ?? route.title);
+    const ogDescription = escapeHtml(route.ogDescription ?? route.description);
     html = html.replace(
       /<meta property="og:title" content="[\s\S]*?"\s*\/?>/,
-      `<meta property="og:title" content="${title}" />`,
+      `<meta property="og:title" content="${ogTitle}" />`,
     );
     html = html.replace(
       /<meta property="og:description" content="[\s\S]*?"\s*\/?>/,
-      `<meta property="og:description" content="${description}" />`,
+      `<meta property="og:description" content="${ogDescription}" />`,
     );
     html = html.replace(
       /<meta property="og:url" content="[\s\S]*?"\s*\/?>/,
@@ -153,6 +155,13 @@ async function run() {
     );
 
     // Canonical + JSON-LD — inserted before </head> so crawlers see them in raw HTML
+    if (route.noindex) {
+      html = html.replace(
+        "</head>",
+        '  <meta name="robots" content="noindex, follow" />\n  </head>',
+      );
+    }
+
     const jsonLd = buildSchema(route).replace(/</g, "\\u003c");
     html = html.replace(
       "</head>",

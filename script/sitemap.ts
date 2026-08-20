@@ -151,7 +151,9 @@ async function run() {
   let semData = 0;
   const historico = hasUsableHistory();
 
-  const urls = ROUTES.map((r) => {
+  // noindex não entra no sitemap: seria pedir rastreio de algo que pedimos
+  // para não indexar.
+  const urls = ROUTES.filter((r) => !r.noindex).map((r) => {
     const pageFile = PAGE_FILE[r.path];
     const entry = pageFile ? path.join(SRC, "pages", pageFile) : null;
     // Artigos trazem a data no front-matter, escrita à mão. É mais confiável

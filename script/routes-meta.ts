@@ -48,6 +48,12 @@ export interface RouteMeta {
   crumb?: string;
   /** Nível intermediário da migalha, ex.: Artigos > Título do post */
   crumbParent?: { name: string; path: string };
+  /** Título de Open Graph, quando precisa diferir do title. */
+  ogTitle?: string;
+  /** Descrição de Open Graph, quando precisa diferir da description. */
+  ogDescription?: string;
+  /** Fora do índice e do sitemap. Usado em páginas em Founder QA. */
+  noindex?: boolean;
   /** Data de referência para o sitemap (artigos trazem do front-matter) */
   lastmod?: string;
   /** Extra JSON-LD nodes specific to this route */
@@ -448,4 +454,74 @@ const ROTAS_ARTIGOS: RouteMeta[] = ARTIGOS_META.length
     ]
   : [];
 
-export const ROUTES: RouteMeta[] = [...PAGINAS_FIXAS, ...ROTAS_ARTIGOS];
+/* ------------------------------------------------------------------ */
+/* Campanhas                                                           */
+/* ------------------------------------------------------------------ */
+
+/**
+ * A landing da live existe na URL desde já, para Founder QA, mas sai com
+ * noindex e fora do sitemap enquanto `RHAE_PUBLICADA` for false. Isso mantém
+ * a página fora de busca sem impedir a revisão no ambiente real.
+ *
+ * Espelha `PUBLICADA` em client/src/lib/rhae.ts. Trocar os dois juntos.
+ */
+const RHAE_PUBLICADA = false;
+
+const ROTAS_CAMPANHA: RouteMeta[] = [
+  {
+    path: "/treinamentos/rhae-ia-2026",
+    title: "Live gratuita RHAE IA 2026 | Launchpad",
+    description:
+      "Entenda quem pode participar do RHAE IA 2026, quais projetos se enquadram e como o CNPq avaliará as propostas. Live gratuita em 24 de agosto.",
+    priority: 0.8,
+    crumb: "RHAE IA 2026",
+    crumbParent: { name: "Treinamentos", path: "/treinamentos" },
+    noindex: !RHAE_PUBLICADA,
+    ogTitle: "RHAE IA 2026: live gratuita sobre a chamada do CNPq",
+    ogDescription:
+      "Requisitos, enquadramento, bolsas e critérios de avaliação para empresas que estudam submeter um projeto de IA.",
+    schema: (siteUrl) => [
+      {
+        "@type": "Event",
+        "@id": `${siteUrl}/treinamentos/rhae-ia-2026#event`,
+        name: "RHAE IA 2026: requisitos, enquadramento e avaliação da proposta",
+        description:
+          "Live gratuita sobre a Chamada Pública CNPq nº 29/2026: elegibilidade, enquadramento do projeto, bolsas, contrapartida e critérios de julgamento.",
+        startDate: "2026-08-24",
+        eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+        eventStatus: "https://schema.org/EventScheduled",
+        inLanguage: "pt-BR",
+        location: {
+          "@type": "VirtualLocation",
+          url: `${siteUrl}/treinamentos/rhae-ia-2026`,
+        },
+        organizer: { "@id": `${siteUrl}/#organization` },
+        performer: { "@id": `${siteUrl}/#person` },
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "BRL",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/treinamentos/rhae-ia-2026`,
+        },
+      },
+    ],
+  },
+  {
+    path: "/treinamentos/rhae-ia-2026/confirmacao",
+    title: "Inscrição confirmada | Launchpad",
+    description:
+      "Sua inscrição na live RHAE IA 2026 foi confirmada. As informações de acesso serão enviadas pelos contatos informados.",
+    priority: 0.1,
+    crumb: "Inscrição confirmada",
+    crumbParent: { name: "RHAE IA 2026", path: "/treinamentos/rhae-ia-2026" },
+    // Página de confirmação nunca entra no índice: só faz sentido depois do envio.
+    noindex: true,
+  },
+];
+
+export const ROUTES: RouteMeta[] = [
+  ...PAGINAS_FIXAS,
+  ...ROTAS_ARTIGOS,
+  ...ROTAS_CAMPANHA,
+];
