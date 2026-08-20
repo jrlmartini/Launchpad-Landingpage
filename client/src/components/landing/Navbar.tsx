@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { temArtigos } from "@/lib/artigos";
 import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap, Radar, Telescope } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -77,7 +78,7 @@ interface NavbarProps {
   /** In-page section anchors for the current page (rendered in the sub-bar). */
   sections?: SectionLink[];
   /** Which primary item is the current page. */
-  active?: "home" | "curso" | "servicos" | "projetos" | "tecnologia" | "inteligencia" | null;
+  active?: "home" | "curso" | "servicos" | "projetos" | "tecnologia" | "inteligencia" | "artigos" | null;
   ctaHref?: string;
   ctaLabel?: string;
 }
@@ -239,6 +240,15 @@ export function Navbar({
               <a href="/triagem" className={primaryLinkClass(false)}>
                 Triagem
               </a>
+              {/* Só aparece quando existe artigo publicado. */}
+              {temArtigos && (
+                <a
+                  href="/artigos"
+                  className={primaryLinkClass(active === "artigos")}
+                >
+                  Artigos
+                </a>
+              )}
               <a href="/#sobre" className={primaryLinkClass(false)}>
                 Sobre
               </a>

@@ -14,6 +14,8 @@ import Privacidade from "@/pages/privacidade";
 import Triagem from "@/pages/triagem";
 import Metodo from "@/pages/metodo";
 import Inteligencia from "@/pages/inteligencia";
+import Artigos from "@/pages/artigos";
+import Artigo from "@/pages/artigo";
 
 function Router() {
   return (
@@ -28,6 +30,8 @@ function Router() {
       <Route path="/triagem" component={Triagem} />
       <Route path="/metodo" component={Metodo} />
       <Route path="/inteligencia" component={Inteligencia} />
+      <Route path="/artigos" component={Artigos} />
+      <Route path="/artigos/:slug" component={Artigo} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -143,6 +143,7 @@ const PAGE_FILE: Record<string, string> = {
   "/metodo": "metodo.tsx",
   "/triagem": "triagem.tsx",
   "/privacidade": "privacidade.tsx",
+  "/artigos": "artigos.tsx",
 };
 
 async function run() {
@@ -152,10 +153,13 @@ async function run() {
   const urls = ROUTES.map((r) => {
     const pageFile = PAGE_FILE[r.path];
     const entry = pageFile ? path.join(SRC, "pages", pageFile) : null;
+    // Artigos trazem a data no front-matter, escrita à mão. É mais confiável
+    // que o git e continua correta em clone raso.
     const lastmod =
-      historico && entry && existsSync(entry)
+      r.lastmod ??
+      (historico && entry && existsSync(entry)
         ? lastModified(filesForPage(entry))
-        : null;
+        : null);
     if (!lastmod) semData++;
 
     return `  <url>

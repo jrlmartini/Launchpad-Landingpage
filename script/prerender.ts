@@ -65,18 +65,28 @@ function buildSchema(route: RouteMeta): string {
   ];
 
   if (route.crumb) {
+    const trilha: Record<string, unknown>[] = [
+      { "@type": "ListItem", position: 1, name: "Início", item: `${SITE_URL}/` },
+    ];
+    if (route.crumbParent) {
+      trilha.push({
+        "@type": "ListItem",
+        position: 2,
+        name: route.crumbParent.name,
+        item: `${SITE_URL}${route.crumbParent.path}`,
+      });
+    }
+    trilha.push({
+      "@type": "ListItem",
+      position: trilha.length + 1,
+      name: route.crumb,
+      item: url,
+    });
+
     graph.push({
       "@type": "BreadcrumbList",
       "@id": `${url}#breadcrumb`,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Início",
-          item: `${SITE_URL}/`,
-        },
-        { "@type": "ListItem", position: 2, name: route.crumb, item: url },
-      ],
+      itemListElement: trilha,
     });
   }
 

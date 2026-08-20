@@ -1,3 +1,6 @@
+import { readdirSync, readFileSync, existsSync } from "fs";
+import path from "path";
+
 /**
  * Per-route SEO metadata — single source of truth.
  *
@@ -43,6 +46,10 @@ export interface RouteMeta {
   priority: number;
   /** Breadcrumb label (omitted on home) */
   crumb?: string;
+  /** Nível intermediário da migalha, ex.: Artigos > Título do post */
+  crumbParent?: { name: string; path: string };
+  /** Data de referência para o sitemap (artigos trazem do front-matter) */
+  lastmod?: string;
   /** Extra JSON-LD nodes specific to this route */
   schema?: (siteUrl: string) => Record<string, unknown>[];
 }
@@ -124,7 +131,7 @@ function service(
   };
 }
 
-export const ROUTES: RouteMeta[] = [
+const PAGINAS_FIXAS: RouteMeta[] = [
   {
     path: "/",
     title: "Avaliação Independente de Tecnologias | LaunchpadHub",
@@ -298,3 +305,116 @@ export const ROUTES: RouteMeta[] = [
     crumb: "Política de Privacidade",
   },
 ];
+
+
+/* ------------------------------------------------------------------ */
+/* Artigos                                                             */
+/* ------------------------------------------------------------------ */
+
+/**
+ * As rotas dos artigos são derivadas de content/artigos/*.md no build, para
+ * que prerender e sitemap não precisem de uma lista mantida à mão. Um arquivo
+ * novo já nasce com HTML renderizado, schema e entrada no sitemap.
+ */
+interface ArtigoMeta {
+  slug: string;
+  titulo: string;
+  resumo: string;
+  publicado: string;
+  atualizado?: string;
+  tags: string[];
+  imagem?: string;
+}
+
+function lerArtigos(): ArtigoMeta[] {
+  const dir = path.resolve(import.meta.dirname, "..", "content", "artigos");
+  if (!existsSync(dir)) return [];
+
+  return readdirSync(dir)
+    // `_` prefixa arquivos de trabalho e README.md é documentação da pasta:
+    // nenhum dos dois é artigo.
+    .filter((f) => f.endsWith(".md") && !f.startsWith("_") && f !== "README.md")
+    .map((f) => {
+      const raw = readFileSync(path.join(dir, f), "utf-8");
+      const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+      const front: Record<string, string> = {};
+      if (m) {
+        for (const linha of m[1].split(/\r?\n/)) {
+          const i = linha.indexOf(":");
+          if (i > 0) {
+            front[linha.slice(0, i).trim()] = linha
+              .slice(i + 1)
+              .trim()
+              .replace(/^["']|["']$/g, "");
+          }
+        }
+      }
+      return {
+        slug: front.slug || f.replace(/\.md$/, ""),
+        titulo: front.titulo || f,
+        resumo: front.resumo || "",
+        publicado: front.publicado || "",
+        atualizado: front.atualizado || undefined,
+        tags: (front.tags || "")
+          .replace(/^\[|\]$/g, "")
+          .split(",")
+          .map((t) => t.trim().replace(/^["']|["']$/g, ""))
+          .filter(Boolean),
+        imagem: front.imagem || undefined,
+        rascunho: front.rascunho === "true",
+      } as ArtigoMeta & { rascunho: boolean };
+    })
+    .filter((a) => !(a as ArtigoMeta & { rascunho: boolean }).rascunho)
+    .sort((a, b) => b.publicado.localeCompare(a.publicado));
+}
+
+export const ARTIGOS_META = lerArtigos();
+
+function artigoRoute(a: ArtigoMeta): RouteMeta {
+  const url = `/artigos/${a.slug}`;
+  return {
+    path: url,
+    title: `${a.titulo} | LaunchpadHub`,
+    description: a.resumo,
+    priority: 0.7,
+    crumb: a.titulo,
+    crumbParent: { name: "Artigos", path: "/artigos" },
+    lastmod: a.atualizado || a.publicado,
+    schema: (siteUrl) => [
+      {
+        "@type": "TechArticle",
+        "@id": `${siteUrl}${url}#article`,
+        headline: a.titulo,
+        description: a.resumo,
+        datePublished: a.publicado,
+        dateModified: a.atualizado || a.publicado,
+        inLanguage: "pt-BR",
+        image: `${siteUrl}${a.imagem ?? "/opengraph.jpg"}`,
+        author: { "@id": `${siteUrl}/#person` },
+        publisher: { "@id": `${siteUrl}/#organization` },
+        mainEntityOfPage: { "@id": `${siteUrl}${url}#webpage` },
+        ...(a.tags.length ? { keywords: a.tags.join(", ") } : {}),
+      },
+    ],
+  };
+}
+
+/**
+ * O índice de artigos só entra no site quando existe pelo menos um publicado.
+ * Página de listagem vazia é conteúdo fino: atrapalha em vez de ajudar.
+ */
+const ROTAS_ARTIGOS: RouteMeta[] = ARTIGOS_META.length
+  ? [
+      {
+        path: "/artigos",
+        title: "Artigos: rotas técnicas avaliadas | LaunchpadHub",
+        description:
+          "Análises de rotas tecnológicas com evidência rastreada até a fonte, alternativas comparadas e lacunas declaradas. O mesmo método das avaliações contratadas.",
+        priority: 0.8,
+        crumb: "Artigos",
+      },
+      ...ARTIGOS_META.map(artigoRoute),
+    ]
+  : [];
+
+export const ROUTES: RouteMeta[] = [...PAGINAS_FIXAS, ...ROTAS_ARTIGOS];

@@ -44,6 +44,8 @@ export default defineConfig({
     allowedHosts: true,
     fs: {
       strict: true,
+      // content/ fica fora de client/, que é a raiz do Vite
+      allow: [path.resolve(import.meta.dirname)],
       deny: ["**/.*"],
     },
   },
