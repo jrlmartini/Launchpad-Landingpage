@@ -143,6 +143,7 @@ const PAGE_FILE: Record<string, string> = {
   "/metodo": "metodo.tsx",
   "/triagem": "triagem.tsx",
   "/privacidade": "privacidade.tsx",
+  "/termos": "termos.tsx",
   "/artigos": "artigos.tsx",
   "/treinamentos": "treinamentos.tsx",
 };

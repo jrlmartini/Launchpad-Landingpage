@@ -1,6 +1,7 @@
 import { Instagram, Youtube, Linkedin, Mail, CalendarClock } from "lucide-react";
 import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
 import { waLink, WA_MESSAGES, CALENDLY_URL, WHATSAPP_DISPLAY, CONTACT_EMAIL } from "@/lib/contact";
+import { CONTROLADORA } from "@/lib/legal";
 
 export function Footer() {
   return (
@@ -133,9 +134,22 @@ export function Footer() {
               href="/privacidade"
               className="text-sm text-text-muted hover:text-cta transition-colors"
             >
-              Política de Privacidade
+              Privacidade
+            </a>
+            <a
+              href="/termos"
+              className="text-sm text-text-muted hover:text-cta transition-colors"
+              data-testid="link-termos"
+            >
+              Termos
             </a>
           </div>
+
+          {/* Identificação da controladora. Exigida para que o titular saiba a
+              quem dirigir uma solicitação sem precisar abrir o aviso inteiro. */}
+          <p className="text-xs text-text-muted/80 text-center leading-relaxed mb-3">
+            {CONTROLADORA.razaoSocial} · CNPJ {CONTROLADORA.cnpj}
+          </p>
 
           <p className="text-sm text-text-muted text-center">
             © {new Date().getFullYear()} LaunchpadHub. Todos os direitos reservados.

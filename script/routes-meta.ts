@@ -335,11 +335,19 @@ const PAGINAS_FIXAS: RouteMeta[] = [
   },
   {
     path: "/privacidade",
-    title: "Política de Privacidade | LaunchpadHub",
+    title: "Aviso de Privacidade | LaunchpadHub",
     description:
-      "Como o LaunchpadHub coleta, usa e protege dados pessoais, em conformidade com a LGPD.",
+      "Quais dados pessoais a Launchpad trata, para quais finalidades, com quem compartilha, por quanto tempo mantém e como exercer seus direitos sob a LGPD.",
     priority: 0.3,
-    crumb: "Política de Privacidade",
+    crumb: "Aviso de Privacidade",
+  },
+  {
+    path: "/termos",
+    title: "Termos de Uso | LaunchpadHub",
+    description:
+      "Condições de acesso e uso dos sites da Launchpad: natureza informativa do conteúdo, inscrições em eventos, propriedade intelectual e serviços de terceiros.",
+    priority: 0.3,
+    crumb: "Termos de Uso",
   },
 ];
 

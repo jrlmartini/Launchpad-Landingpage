@@ -2,6 +2,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { RHAE } from "@/lib/rhae";
 import { lerUtms, lerOrigem, UTM_KEYS } from "@/lib/utm";
 import { trackEvent } from "@/lib/analytics";
+import {
+  PRIVACY_NOTICE_VERSION,
+  MARKETING_CONSENT_VERSION,
+  AVISO_FORMULARIO,
+} from "@/lib/legal";
 
 /**
  * Formulário de inscrição (Tally embutido).
@@ -11,7 +16,8 @@ import { trackEvent } from "@/lib/analytics";
  * exatamente estes nomes:
  *
  *   utm_source, utm_medium, utm_campaign, utm_content, utm_term,
- *   landing_page_version, origin_page
+ *   landing_page_version, origin_page, privacy_notice_version,
+ *   marketing_consent_version
  *
  * O src só é montado no cliente: no build não existe window.location, e
  * congelar a query no HTML estático gravaria todo visitante com a origem de
@@ -51,6 +57,10 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
     const utms = lerUtms();
     for (const k of UTM_KEYS) if (utms[k]) params.set(k, utms[k]!);
     params.set("landing_page_version", RHAE.VERSAO);
+    // Registra qual texto a pessoa viu no momento do envio. Sem isso não há
+    // como demonstrar, depois, sob quais condições o dado foi coletado.
+    params.set("privacy_notice_version", PRIVACY_NOTICE_VERSION);
+    params.set("marketing_consent_version", MARKETING_CONSENT_VERSION);
     const origem = lerOrigem();
     if (origem) params.set("origin_page", origem);
 
@@ -107,13 +117,12 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
           Inscrição para a live
         </h2>
         <p className="text-text-muted leading-relaxed mb-6">
-          Inscrição gratuita para participação ao vivo. Usamos seus dados para
-          administrar a inscrição e enviar as informações de acesso.{" "}
+          {AVISO_FORMULARIO} Saiba como tratamos seus dados no{" "}
           <a
             href={RHAE.privacidadeUrl}
             className="font-medium text-cta hover:text-cta/80 underline underline-offset-2 transition-colors"
           >
-            Política de privacidade
+            Aviso de Privacidade
           </a>
           .
         </p>
