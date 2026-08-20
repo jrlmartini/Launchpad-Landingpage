@@ -1,18 +1,21 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 /**
- * Redirecionamento para o grupo da live.
+ * Redirecionamento para o grupo Fomento para Deep Techs.
  *
  * O link do grupo NÃO entra no repositório: este projeto é público, e o que
  * vai para o código fica no histórico de commits para sempre. Ele vive apenas
  * como variável de ambiente no Vercel (WHATSAPP_GROUP_URL) e nunca é entregue
  * ao navegador como texto — só como destino de um 302.
  *
+ * É um grupo permanente, não um grupo de evento: o convite não será
+ * rotacionado depois da live, o que torna a aprovação manual de participantes
+ * no WhatsApp a única barreira duradoura.
+ *
  * Isso resolve as duas formas baratas de coleta: rastreador que lê HTML e
  * raspagem do bundle JavaScript. Não resolve alguém que abra a página de
  * confirmação e siga o redirecionamento. Para isso existe o controle do lado
- * do WhatsApp: exigir aprovação de novos participantes e trocar o convite
- * depois do evento.
+ * do WhatsApp: exigir aprovação de novos participantes.
  */
 export default function handler(req: VercelRequest, res: VercelResponse) {
   const destino = process.env.WHATSAPP_GROUP_URL;

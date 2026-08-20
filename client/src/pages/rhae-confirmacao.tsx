@@ -81,7 +81,7 @@ export default function RhaeConfirmacao() {
                   data-testid="cta-grupo"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  Entrar no grupo da live
+                  Entrar no grupo Fomento para Deep Techs
                 </a>
               )}
             </div>
