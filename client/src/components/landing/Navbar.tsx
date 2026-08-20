@@ -373,9 +373,6 @@ export function Navbar({
               <a href="/metodo" className={primaryLinkClass(false)}>
                 Método
               </a>
-              <a href="/triagem" className={primaryLinkClass(false)}>
-                Triagem
-              </a>
               {/* Só aparece quando existe artigo publicado. */}
               {temArtigos && (
                 <a

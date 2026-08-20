@@ -5,13 +5,14 @@ import { Autodiagnostico } from "@/components/metodo/Autodiagnostico";
 import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { ContactOptions } from "@/components/hub/ContactOptions";
 import { WA_MESSAGES } from "@/lib/contact";
-import { ArrowRight, Users, Banknote, ShieldCheck, Network, Factory } from "lucide-react";
+import { ArrowRight, Users, Banknote, ShieldCheck, Network, Factory, Gauge, ListChecks } from "lucide-react";
 
 const sections = [
   { href: "#matriz", label: "A matriz" },
   { href: "#eixos", label: "Os 5 eixos" },
   { href: "#niveis", label: "Os 9 níveis" },
   { href: "#autodiagnostico", label: "Autodiagnóstico" },
+  { href: "#triagem", label: "Qual caminho seguir" },
 ];
 
 const eixos = [
@@ -254,6 +255,71 @@ export default function Metodo() {
 
           {/* Autodiagnóstico */}
           <Autodiagnostico />
+
+          {/* Triagem. Saiu da barra primária para deixá-la mais limpa: é uma
+              ferramenta de orientação, não uma seção do site. Aqui fica ao lado
+              do autodiagnóstico, que é a outra ferramenta de autoavaliação. */}
+          <section id="triagem" className="py-20 lg:py-28 scroll-mt-32">
+            <div className="max-w-4xl mx-auto px-6 lg:px-8">
+              <div className="max-w-2xl mb-10">
+                <p className="text-xs font-mono uppercase tracking-widest text-cta mb-3">
+                  Duas ferramentas, duas perguntas
+                </p>
+                <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-5">
+                  Sabe onde a tecnologia está. E agora?
+                </h2>
+                <p className="text-lg text-text-muted leading-relaxed">
+                  O autodiagnóstico acima responde onde a sua tecnologia está.
+                  A triagem responde outra coisa: qual trabalho faz sentido a
+                  partir daí.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className="p-7 bg-surface/40 border border-stroke/50 rounded-3xl">
+                  <div className="w-11 h-11 grid place-items-center bg-stroke/40 rounded-xl mb-5">
+                    <Gauge className="w-5 h-5 text-text-muted" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-display font-semibold text-lg text-text mb-2">
+                    Autodiagnóstico
+                  </h3>
+                  <p className="text-text-muted leading-relaxed mb-4">
+                    Onde a tecnologia está, em TRL e CRL, e qual o descompasso
+                    entre as duas maturidades.
+                  </p>
+                  <a
+                    href="#autodiagnostico"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-text-muted hover:text-cta transition-colors"
+                  >
+                    Voltar ao autodiagnóstico
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+
+                <a
+                  href="/triagem"
+                  className="group p-7 bg-surface/60 border border-cta/30 rounded-3xl card-glow transition-all hover:border-cta/50"
+                  data-testid="link-triagem-metodo"
+                >
+                  <div className="w-11 h-11 grid place-items-center bg-cta/10 rounded-xl mb-5">
+                    <ListChecks className="w-5 h-5 text-cta" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-display font-semibold text-lg text-text mb-2">
+                    Triagem de 2 minutos
+                  </h3>
+                  <p className="text-text-muted leading-relaxed mb-4">
+                    Cinco perguntas e eu digo qual caminho se encaixa: curso,
+                    escrita, revisão, diagnóstico ou parecer. Se nenhum servir,
+                    eu falo isso também.
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-cta">
+                    Fazer a triagem
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </a>
+              </div>
+            </div>
+          </section>
 
           {/* CTA final */}
           <section className="py-20 lg:py-28 bg-surface/30 border-t border-stroke/30">
