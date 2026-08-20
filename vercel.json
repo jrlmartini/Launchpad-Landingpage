@@ -5,6 +5,10 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/treinamentos/rhae-ia-2026/ao-vivo",
+      "destination": "/api/ao-vivo"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

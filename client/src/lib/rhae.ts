@@ -24,6 +24,7 @@ export const RHAE = {
     dataISO: "2026-08-24",
     dataExtenso: "24 de agosto de 2026",
     horario: "19h (Brasília)",
+    duracao: "1h30",
     /** Usado no schema Event. Brasília em agosto é UTC-3, sem horário de verão. */
     inicioISO: "2026-08-24T19:00:00-03:00",
     formato: "Online",
@@ -36,8 +37,8 @@ export const RHAE = {
     params: "alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
   },
 
-  /** PENDENTE — fundador. Sem isso o CTA da confirmação não aparece. */
-  calendarioUrl: "",
+  /** Convite .ics gerado por api/calendario.ts. Serve Google, Apple e Outlook. */
+  calendarioUrl: "/api/calendario",
   /**
    * Caminho interno, não o convite. O link real fica na variável de ambiente
    * WHATSAPP_GROUP_URL no Vercel e nunca chega ao navegador como texto.
