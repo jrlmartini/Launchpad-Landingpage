@@ -348,8 +348,8 @@ export function AboutMe() {
               informação.
             </p>
             <p>
-              Também escrevi projetos que foram reprovados e avaliei projetos bons que
-              perderam para propostas piores, porém mais bem construídas. Foi isso
+              Também escrevi projetos que foram reprovados, e vi projetos bons
+              perderem para propostas piores, porém mais bem construídas. Foi isso
               que me ensinou o que separa um bom projeto de um projeto aprovado. É
               o que eu ensino no curso e aplico quando trabalho junto com uma
               empresa.

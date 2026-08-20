@@ -15,8 +15,10 @@ const principios = [
   },
   {
     icon: Users,
-    titulo: "Escrito por quem avalia e por quem submete",
-    desc: "Já escrevi projetos aprovados e reprovados, e já avaliei projetos bons que perderam para propostas piores porém melhor construídas. É essa diferença que o treinamento ensina.",
+    // Ele não é avaliador de agência. A credencial real é ter escrito dos dois
+    // lados do resultado e conhecer o critério, não ocupar a cadeira de quem julga.
+    titulo: "A leitura de quem julga a proposta",
+    desc: "Já escrevi projetos aprovados e reprovados. O que separa os dois raramente é o mérito técnico: é a forma como a proposta responde aos critérios que o avaliador tem na mão. É isso que o treinamento ensina.",
   },
   {
     icon: Repeat,
