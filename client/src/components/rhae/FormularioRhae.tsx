@@ -39,27 +39,53 @@ declare global {
   }
 }
 
+/**
+ * Plano B do próprio Tally: copiar data-tally-src para src. O formulário
+ * carrega sem redimensionamento automático, o que é muito melhor do que
+ * iframe em branco.
+ */
+function carregarDireto() {
+  document
+    .querySelectorAll<HTMLIFrameElement>("iframe[data-tally-src]:not([src])")
+    .forEach((el) => {
+      el.src = el.dataset.tallySrc ?? "";
+      el.setAttribute("scrolling", "auto");
+    });
+}
+
 /** Carrega o embed.js uma única vez e inicializa os iframes da página. */
-function carregarTally(aoFalhar: () => void) {
-  if (window.Tally) {
-    window.Tally.loadEmbeds();
-    return;
-  }
+function carregarTally() {
+  const iniciar = () => {
+    try {
+      window.Tally?.loadEmbeds();
+    } catch {
+      /* cai no temporizador abaixo */
+    }
+    // Rede de segurança: se em 2s o iframe continuar sem src, força o
+    // carregamento. Sem isso, qualquer mudança no embed.js do Tally deixaria
+    // a página com um formulário invisível, que é a pior falha possível aqui.
+    window.setTimeout(carregarDireto, 2000);
+  };
+
+  if (window.Tally) return iniciar();
 
   const existente = document.querySelector<HTMLScriptElement>(
     `script[src="${EMBED_JS}"]`,
   );
   if (existente) {
-    existente.addEventListener("load", () => window.Tally?.loadEmbeds());
+    existente.addEventListener("load", iniciar);
+    window.setTimeout(carregarDireto, 2500);
     return;
   }
 
   const script = document.createElement("script");
   script.src = EMBED_JS;
   script.async = true;
-  script.onload = () => window.Tally?.loadEmbeds();
-  script.onerror = aoFalhar;
+  script.onload = iniciar;
+  script.onerror = carregarDireto;
   document.body.appendChild(script);
+  // Bloqueador de terceiros pode impedir o onerror de disparar.
+  window.setTimeout(carregarDireto, 3000);
 }
 
 export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
@@ -87,13 +113,7 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
   /* Redimensionamento pelo embed oficial, com plano B se o script falhar. */
   useEffect(() => {
     if (!src) return;
-    carregarTally(() => {
-      const el = iframeRef.current;
-      if (el && !el.src) {
-        el.src = src;
-        el.setAttribute("scrolling", "auto");
-      }
-    });
+    carregarTally();
   }, [src]);
 
   /* Conclusão da inscrição. */
@@ -155,7 +175,6 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
             ref={iframeRef}
             data-tally-src={src}
             title="Formulário de inscrição na live RHAE IA 2026"
-            loading="lazy"
             scrolling="no"
             height={ALTURA_INICIAL}
             className="w-full border-0 block"
