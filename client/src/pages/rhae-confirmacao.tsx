@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { CalendarPlus, CheckCircle2 } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
@@ -13,6 +14,18 @@ import { RHAE, linhaEvento } from "@/lib/rhae";
  * Não prometemos acesso à gravação aqui.
  */
 export default function RhaeConfirmacao() {
+  const [inscrito, setInscrito] = useState(false);
+
+  // Só no cliente: o HTML é gerado no build e não pode conter o CTA, senão o
+  // caminho do grupo apareceria para qualquer rastreador.
+  useEffect(() => {
+    try {
+      setInscrito(window.sessionStorage.getItem("rhae_inscrito") === "1");
+    } catch {
+      setInscrito(false);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />
@@ -58,11 +71,11 @@ export default function RhaeConfirmacao() {
                 </a>
               )}
 
-              {RHAE.grupoWhatsappUrl && (
+              {inscrito && RHAE.grupoWhatsappUrl && (
                 <a
                   href={RHAE.grupoWhatsappUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   onClick={() => trackEvent("whatsapp_group_click", { page: "rhae-confirmacao" })}
                   className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 text-base font-semibold text-text bg-surface border border-stroke hover:border-cta/40 rounded-2xl transition-all"
                   data-testid="cta-grupo"

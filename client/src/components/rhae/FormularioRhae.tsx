@@ -65,6 +65,13 @@ export function FormularioRhae({ id = "inscricao" }: { id?: string }) {
       if (!dado.includes("Tally.FormSubmitted")) return;
 
       trackEvent("form_submit_success", { form: "rhae-ia-2026" });
+      try {
+        // Marca a inscrição para a confirmação liberar o convite do grupo.
+        // Não é segurança, é higiene: evita expor o CTA a quem só abriu a URL.
+        window.sessionStorage.setItem("rhae_inscrito", "1");
+      } catch {
+        /* storage bloqueado: a confirmação some com o CTA, e tudo bem */
+      }
       window.location.assign(RHAE.confirmacao);
     };
 

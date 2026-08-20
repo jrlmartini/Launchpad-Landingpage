@@ -38,8 +38,12 @@ export const RHAE = {
 
   /** PENDENTE — fundador. Sem isso o CTA da confirmação não aparece. */
   calendarioUrl: "",
-  /** PENDENTE — fundador. Opcional; o CTA só existe se preenchido. */
-  grupoWhatsappUrl: "",
+  /**
+   * Caminho interno, não o convite. O link real fica na variável de ambiente
+   * WHATSAPP_GROUP_URL no Vercel e nunca chega ao navegador como texto.
+   * Vazio desliga o CTA.
+   */
+  grupoWhatsappUrl: "/api/grupo",
 
   privacidadeUrl: "/privacidade",
 
