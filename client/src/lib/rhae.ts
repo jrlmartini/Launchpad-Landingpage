@@ -48,8 +48,8 @@ export const RHAE = {
 
   privacidadeUrl: "/privacidade",
 
-  /** PENDENTE — fundador. Entre 45 e 70 palavras, sem currículo extenso. */
-  bio: "",
+  /** Aprovada pelo fundador. 57 palavras. */
+  bio: "José Renato Martini é engenheiro de produção, pós-graduado em Administração e especializado em Empreendedorismo e Inovação. Atua no desenvolvimento tecnológico e na estruturação de projetos nos setores químico, farmacêutico, de saúde, tecnologia, alimentos e automotivo, com experiência no Brasil e no exterior. Participou da aprovação de mais de R$ 35 milhões em projetos de fomento à inovação.",
 
   edital: {
     chamada: "Chamada Pública CNPq nº 29/2026",

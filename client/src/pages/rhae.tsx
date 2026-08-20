@@ -372,7 +372,7 @@ export default function RhaeIa2026() {
               <div className="flex flex-col sm:flex-row gap-6 items-start">
                 <img
                   src="/jose-martini.webp"
-                  alt="José Martini, apresentador da live"
+                  alt="José Renato Martini, apresentador da live"
                   width={560}
                   height={560}
                   loading="lazy"
@@ -381,7 +381,7 @@ export default function RhaeIa2026() {
                 />
                 <div>
                   <p className="font-display font-semibold text-xl text-text mb-2">
-                    José Martini
+                    José Renato Martini
                   </p>
                   {RHAE.bio ? (
                     <p className="text-text-muted leading-relaxed">{RHAE.bio}</p>
