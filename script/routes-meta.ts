@@ -474,6 +474,8 @@ const ROTAS_ARTIGOS: RouteMeta[] = ARTIGOS_META.length
  * Espelha `PUBLICADA` em client/src/lib/rhae.ts. Trocar os dois juntos.
  */
 const RHAE_PUBLICADA = true;
+/** Espelha `PUBLICADA` em client/src/lib/launch-lab.ts. Ativar somente no Founder QA da live. */
+const LAUNCH_LAB_PUBLICADA = false;
 
 const ROTAS_CAMPANHA: RouteMeta[] = [
   {
@@ -525,6 +527,20 @@ const ROTAS_CAMPANHA: RouteMeta[] = [
     crumbParent: { name: "RHAE IA 2026", path: "/treinamentos/rhae-ia-2026" },
     // Página de confirmação nunca entra no índice: só faz sentido depois do envio.
     noindex: true,
+  },
+  {
+    path: "/treinamentos/launch-lab-rhae-ia-2026",
+    title: "Launch Lab RHAE IA 2026 | Launchpad",
+    description:
+      "Quatro semanas e oito encontros ao vivo para estruturar, avaliar e melhorar uma proposta para o RHAE IA 2026.",
+    priority: 0.1,
+    crumb: "Launch Lab RHAE IA 2026",
+    crumbParent: { name: "Treinamentos", path: "/treinamentos" },
+    // Stealth mode: não entra no sitemap nem em resultados de busca antes da live.
+    noindex: !LAUNCH_LAB_PUBLICADA,
+    ogTitle: "Launch Lab | RHAE IA 2026",
+    ogDescription:
+      "Construa seu projeto em quatro semanas e receba uma pré-avaliação estruturada antes da submissão.",
   },
 ];
 

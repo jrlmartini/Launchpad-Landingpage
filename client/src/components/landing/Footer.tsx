@@ -3,7 +3,7 @@ import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
 import { waLink, WA_MESSAGES, CALENDLY_URL, WHATSAPP_DISPLAY, CONTACT_EMAIL } from "@/lib/contact";
 import { CONTROLADORA } from "@/lib/legal";
 
-export function Footer() {
+export function Footer({ productName = "Fomento para Deeptechs" }: { productName?: string }) {
   return (
     <footer className="py-12 lg:py-16 bg-surface/50 border-t border-stroke/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -88,7 +88,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-stroke/30">
           <p className="text-sm text-text-muted text-center max-w-3xl mx-auto leading-relaxed mb-4">
-            <strong className="text-text">Fomento para Deeptechs</strong> é um
+            <strong className="text-text">{productName}</strong> é um
             produto do LaunchpadHub. O site também pode ser acessado por
             deeptechs.com.br — mesmo time, mesma empresa.
           </p>

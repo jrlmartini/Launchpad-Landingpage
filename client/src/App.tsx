@@ -20,6 +20,7 @@ import Metodo from "@/pages/metodo";
 import Inteligencia from "@/pages/inteligencia";
 import Artigos from "@/pages/artigos";
 import Artigo from "@/pages/artigo";
+import LaunchLabRhae from "@/pages/launch-lab-rhae";
 
 function Router() {
   return (
@@ -31,6 +32,10 @@ function Router() {
       <Route
         path="/treinamentos/rhae-ia-2026/confirmacao"
         component={RhaeConfirmacao}
+      />
+      <Route
+        path="/treinamentos/launch-lab-rhae-ia-2026"
+        component={LaunchLabRhae}
       />
       <Route path="/servicos" component={Servicos} />
       <Route path="/projetos" component={Projetos} />
