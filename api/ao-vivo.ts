@@ -8,23 +8,22 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
  * se a transmissão fosse gravada direto no .ics, definir a plataforma depois
  * ou trocá-la na véspera deixaria todo mundo com um link morto.
  *
- * O destino vem de LIVE_STREAM_URL no Vercel. Enquanto não estiver definido,
- * manda para a página do evento, que sempre tem a informação mais recente.
+ * O destino padrão é a transmissão oficial desta edição. LIVE_STREAM_URL pode
+ * substituí-lo no Vercel se o endereço precisar mudar sem novo deploy.
  */
 
-const PAGINA_EVENTO =
-  "https://www.deeptechs.com.br/treinamentos/rhae-ia-2026";
+const TRANSMISSAO_OFICIAL = "https://www.youtube.com/live/a9JAFSIXFuQ";
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
-  const destino = process.env.LIVE_STREAM_URL;
+  const destino = process.env.LIVE_STREAM_URL || TRANSMISSAO_OFICIAL;
 
   // Sem cache: o link pode ser definido ou trocado a qualquer momento, e um
   // 302 guardado pelo CDN continuaria mandando para o lugar antigo.
   res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
   res.setHeader("X-Robots-Tag", "noindex, nofollow");
 
-  if (!destino || !/^https:\/\//.test(destino)) {
-    res.redirect(302, PAGINA_EVENTO);
+  if (!/^https:\/\//.test(destino)) {
+    res.redirect(302, TRANSMISSAO_OFICIAL);
     return;
   }
 
