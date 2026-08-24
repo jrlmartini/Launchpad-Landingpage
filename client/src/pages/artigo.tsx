@@ -72,8 +72,8 @@ export default function Artigo() {
                   Trabalho relacionado
                 </p>
                 <p className="text-lg text-text leading-relaxed mb-6">
-                  Se a decisão descrita aqui está na sua mesa, este é o trabalho
-                  que a endereça.
+                  {artigo.ofertaTexto ??
+                    "Se a decisão descrita aqui está na sua mesa, este é o trabalho que a endereça."}
                 </p>
                 <a
                   href={artigo.ofertaHref}
@@ -85,14 +85,16 @@ export default function Artigo() {
               </div>
             )}
 
-            <div className="mt-12 pt-10 border-t border-stroke/50">
-              <p className="text-text mb-5">
-                Tem uma decisão parecida em mãos? Me conte em duas linhas.
-              </p>
-              <ContactOptions message={WA_MESSAGES.geral} source={`artigo-${artigo.slug}`} />
-            </div>
+            {!artigo.ctaExclusivo && (
+              <div className="mt-12 pt-10 border-t border-stroke/50">
+                <p className="text-text mb-5">
+                  Tem uma decisão parecida em mãos? Me conte em duas linhas.
+                </p>
+                <ContactOptions message={WA_MESSAGES.geral} source={`artigo-${artigo.slug}`} />
+              </div>
+            )}
 
-            {relacionados.length > 0 && (
+            {!artigo.ctaExclusivo && relacionados.length > 0 && (
               <div className="mt-14 pt-10 border-t border-stroke/50">
                 <h2 className="font-display font-semibold text-xl text-text mb-5">
                   Relacionados

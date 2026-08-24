@@ -41,6 +41,8 @@ O texto começa aqui.
 | `imagem` | não | Caminho em `/public`. Cai para a OG padrão se ausente |
 | `ofertaHref` | não | Rota do serviço que o artigo endereça |
 | `ofertaLabel` | não | Texto do link da oferta |
+| `ofertaTexto` | não | Texto específico do bloco de oferta |
+| `ctaExclusivo` | não | `true` remove contato e relacionados, mantendo apenas a oferta do artigo |
 | `rascunho` | não | `true` mantém fora do site inteiro |
 
 ## Regras que valem a pena seguir

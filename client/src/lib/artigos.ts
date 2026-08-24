@@ -27,6 +27,10 @@ export interface Artigo {
   /** Rota da oferta para onde o artigo aponta no fim. */
   ofertaHref?: string;
   ofertaLabel?: string;
+  /** Texto específico exibido no bloco da oferta. */
+  ofertaTexto?: string;
+  /** Quando ativo, remove contato e relacionados para preservar uma única ação. */
+  ctaExclusivo?: boolean;
   /** Rascunhos não entram no índice, no sitemap nem no menu. */
   rascunho?: boolean;
   html: string;
@@ -100,6 +104,8 @@ const todos: Artigo[] = Object.entries(arquivos)
       imagem: str(front.imagem) || undefined,
       ofertaHref: str(front.ofertaHref) || undefined,
       ofertaLabel: str(front.ofertaLabel) || undefined,
+      ofertaTexto: str(front.ofertaTexto) || undefined,
+      ctaExclusivo: str(front.ctaExclusivo) === "true",
       rascunho: str(front.rascunho) === "true",
       html: marked.parse(corpo) as string,
       minutos: tempoLeitura(corpo),
