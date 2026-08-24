@@ -217,7 +217,7 @@ export function Navbar({
                       </a>
                       {liveNoMenu && (
                         <a
-                          href={RHAE.slug}
+                          href={RHAE.aoVivoUrl}
                           onClick={() => setTrainingOpen(false)}
                           className="flex items-start gap-3 p-3 mb-1 rounded-xl bg-cta/5 border border-cta/20 hover:bg-cta/10 transition-colors group"
                           data-testid="link-live-rhae"
@@ -235,7 +235,7 @@ export function Navbar({
                               </span>
                             </div>
                             <p className="text-xs text-text-muted mt-0.5 leading-snug">
-                              {linhaEvento(false)} · inscrição aberta
+                              {linhaEvento(false)} · acessar transmissão
                             </p>
                           </div>
                         </a>
@@ -484,7 +484,7 @@ export function Navbar({
             <div className="pl-4 pb-2 space-y-1">
               {liveNoMenu && (
                 <a
-                  href={RHAE.slug}
+                  href={RHAE.aoVivoUrl}
                   onClick={() => setIsOpen(false)}
                   className="flex items-center gap-2 py-2 text-sm text-cta font-medium"
                 >

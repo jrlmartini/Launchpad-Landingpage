@@ -26,6 +26,8 @@ export const RHAE = {
 
   slug: "/treinamentos/rhae-ia-2026",
   confirmacao: "/treinamentos/rhae-ia-2026/confirmacao",
+  /** Endereço estável que redireciona para a transmissão vigente. */
+  aoVivoUrl: "/treinamentos/rhae-ia-2026/ao-vivo",
 
   evento: {
     nome: "RHAE IA 2026: requisitos, enquadramento e avaliação da proposta",

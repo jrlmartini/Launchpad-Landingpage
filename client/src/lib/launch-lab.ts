@@ -1,14 +1,14 @@
 /**
  * Launch Lab RHAE IA 2026
  *
- * A rota permanece fora do catálogo, da navegação e do sitemap até o Founder
- * QA. O checkout usa o produto Hotmart específico desta edição; nunca
- * reutilizar a configuração de outro treinamento.
+ * O checkout usa o produto Hotmart específico desta edição; nunca reutilizar
+ * a configuração de outro treinamento.
  */
 
 export const LAUNCH_LAB = {
-  VERSAO: "launch-lab-rhae-ia-2026-v01",
-  PUBLICADA: false,
+  VERSAO: "launch-lab-rhae-ia-2026-v02",
+  /** Publicação no catálogo aprovada pelo fundador em 24/08/2026. */
+  PUBLICADA: true,
   slug: "/treinamentos/launch-lab-rhae-ia-2026",
   nome: "Launch Lab | RHAE IA 2026",
   formato: {

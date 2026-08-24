@@ -161,6 +161,13 @@ const PAGINAS_FIXAS: RouteMeta[] = [
           {
             "@type": "ListItem",
             position: 1,
+            item: {
+              "@id": `${siteUrl}/treinamentos/launch-lab-rhae-ia-2026#course`,
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
             item: { "@id": `${siteUrl}/curso#course` },
           },
         ],
@@ -474,8 +481,8 @@ const ROTAS_ARTIGOS: RouteMeta[] = ARTIGOS_META.length
  * Espelha `PUBLICADA` em client/src/lib/rhae.ts. Trocar os dois juntos.
  */
 const RHAE_PUBLICADA = true;
-/** Espelha `PUBLICADA` em client/src/lib/launch-lab.ts. Ativar somente no Founder QA da live. */
-const LAUNCH_LAB_PUBLICADA = false;
+/** Espelha `PUBLICADA` em client/src/lib/launch-lab.ts. */
+const LAUNCH_LAB_PUBLICADA = true;
 
 const ROTAS_CAMPANHA: RouteMeta[] = [
   {
@@ -533,14 +540,44 @@ const ROTAS_CAMPANHA: RouteMeta[] = [
     title: "Launch Lab RHAE IA 2026 | Launchpad",
     description:
       "Quatro semanas e oito encontros ao vivo para estruturar, avaliar e melhorar uma proposta para o RHAE IA 2026.",
-    priority: 0.1,
+    priority: 0.9,
     crumb: "Launch Lab RHAE IA 2026",
     crumbParent: { name: "Treinamentos", path: "/treinamentos" },
-    // Stealth mode: não entra no sitemap nem em resultados de busca antes da live.
     noindex: !LAUNCH_LAB_PUBLICADA,
     ogTitle: "Launch Lab | RHAE IA 2026",
     ogDescription:
       "Construa seu projeto em quatro semanas e receba uma pré-avaliação estruturada antes da submissão.",
+    schema: (siteUrl) => [
+      {
+        "@type": "Course",
+        "@id": `${siteUrl}/treinamentos/launch-lab-rhae-ia-2026#course`,
+        name: "Launch Lab | RHAE IA 2026",
+        description:
+          "Laboratório de quatro semanas e oito encontros ao vivo para estruturar e revisar uma proposta para o RHAE IA 2026.",
+        inLanguage: "pt-BR",
+        provider: { "@id": `${siteUrl}/#organization` },
+        educationalLevel: "Profissional",
+        teaches: [
+          "Tese e enquadramento estratégico do projeto",
+          "Arquitetura, metodologia e plano de execução",
+          "Equipe, bolsas e governança",
+          "Revisão da proposta e diagnóstico de prontidão",
+        ],
+        hasCourseInstance: {
+          "@type": "CourseInstance",
+          courseMode: "online",
+          inLanguage: "pt-BR",
+          instructor: { "@id": `${siteUrl}/#person` },
+        },
+        offers: {
+          "@type": "Offer",
+          price: "497",
+          priceCurrency: "BRL",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/treinamentos/launch-lab-rhae-ia-2026`,
+        },
+      },
+    ],
   },
 ];
 

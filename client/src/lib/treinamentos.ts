@@ -1,4 +1,4 @@
-import { GraduationCap, type LucideIcon } from "lucide-react";
+import { FlaskConical, GraduationCap, type LucideIcon } from "lucide-react";
 
 /**
  * Catálogo de treinamentos.
@@ -30,6 +30,24 @@ export interface Treinamento {
 }
 
 export const TREINAMENTOS: Treinamento[] = [
+  {
+    slug: "launch-lab-rhae-ia-2026",
+    nome: "Launch Lab | RHAE IA 2026",
+    chamada: "Quatro semanas para construir e revisar a proposta",
+    descricao:
+      "Laboratório aplicado para transformar uma oportunidade de IA em uma proposta estruturada para o RHAE IA 2026, com oito encontros ao vivo e uma rodada individual do LaunchScore.",
+    publico:
+      "Para fundadores, gestores de inovação e P&D, líderes técnicos e responsáveis pela submissão de projetos.",
+    status: "ativo",
+    href: "/treinamentos/launch-lab-rhae-ia-2026",
+    icon: FlaskConical,
+    topicos: [
+      "Tese e enquadramento estratégico",
+      "Arquitetura, metodologia e execução",
+      "Equipe, bolsas e governança",
+      "Checklist e LaunchScore Report",
+    ],
+  },
   {
     slug: "fomento-para-deeptechs",
     nome: "Fomento para Deeptechs",
