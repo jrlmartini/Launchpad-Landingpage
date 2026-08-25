@@ -261,7 +261,7 @@ export function ProjectServicesCards() {
                       <p className="mt-2 text-sm leading-relaxed text-text-muted">
                         Diagnóstico e relatório com os alertas, scores e melhorias prioritárias.
                       </p>
-                      <p className="mt-5 font-display text-3xl font-bold text-text">R$ 297,00</p>
+                      <p className="mt-5 font-display text-3xl font-bold text-text">R$ 329,00</p>
                     </div>
                     <div className="rounded-2xl border border-cta/35 bg-cta/[0.06] p-5">
                       <div className="flex items-center gap-2 text-cta">
@@ -274,7 +274,7 @@ export function ProjectServicesCards() {
                       <p className="mt-2 text-sm leading-relaxed text-text-muted">
                         Inclui o diagnóstico e uma sessão individual para dúvidas e feedback sobre os ajustes.
                       </p>
-                      <p className="mt-5 font-display text-3xl font-bold text-text">R$ 597,00</p>
+                      <p className="mt-5 font-display text-3xl font-bold text-text">R$ 697,00</p>
                     </div>
                     <p className="text-center text-sm text-text-muted">
                       Os links de compra serão disponibilizados em breve.
@@ -429,7 +429,7 @@ export function ProjectsFAQ() {
     },
     {
       q: "Quanto custa?",
-      a: "O LaunchScore custa R$ 297,00. A modalidade com o diagnóstico e uma hora de mentoria para dúvidas e feedback custa R$ 597,00. A escrita completa do projeto tem escopo e preço definidos depois da avaliação do edital e do estágio da proposta.",
+      a: "O LaunchScore custa R$ 329,00. A modalidade com o diagnóstico e uma hora de mentoria para dúvidas e feedback custa R$ 697,00. A escrita completa do projeto tem escopo e preço definidos depois da avaliação do edital e do estágio da proposta.",
     },
     {
       q: "Preciso ter a tecnologia pronta?",
