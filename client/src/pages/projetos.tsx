@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navbar } from "@/components/landing/Navbar";
 import { LogoCarousel } from "@/components/landing/LogoCarousel";
 import { Footer } from "@/components/landing/Footer";
@@ -16,12 +17,22 @@ import { WA_MESSAGES } from "@/lib/contact";
 
 const sections = [
   { href: "#escrita", label: "Escrita do Projeto" },
-  { href: "#revisao", label: "Revisão do Projeto" },
-  
+  { href: "#launchscore", label: "LaunchScore" },
   { href: "#faq", label: "Perguntas frequentes" },
 ];
 
 export default function Projetos() {
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+
+    const scrollToSection = () => document.getElementById(id)?.scrollIntoView();
+    window.requestAnimationFrame(scrollToSection);
+    const retry = window.setTimeout(scrollToSection, 200);
+
+    return () => window.clearTimeout(retry);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="fixed inset-0 bg-starfield opacity-40 pointer-events-none" />

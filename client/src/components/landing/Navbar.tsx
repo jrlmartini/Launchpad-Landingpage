@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { temArtigos } from "@/lib/artigos";
 import { TREINAMENTOS } from "@/lib/treinamentos";
 import { RHAE, destaqueExpirado, linhaEvento } from "@/lib/rhae";
-import { Menu, X, User, ChevronDown, PenTool, Eye, Microscope, Route, Scale, GraduationCap, Radar, Telescope, Radio } from "lucide-react";
+import { Menu, X, User, ChevronDown, PenTool, ClipboardCheck, Microscope, Route, Scale, GraduationCap, Radar, Telescope, Radio } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /* Site-wide structure — identical on every page, never swapped out.    */
@@ -62,10 +62,10 @@ const serviceMenu = [
         icon: PenTool,
       },
       {
-        href: "/projetos#revisao",
-        label: "Revisão do Projeto",
-        description: "Leitura com olhos de avaliador",
-        icon: Eye,
+        href: "/projetos#launchscore",
+        label: "LaunchScore",
+        description: "Diagnóstico antes da submissão",
+        icon: ClipboardCheck,
       },
     ],
   },

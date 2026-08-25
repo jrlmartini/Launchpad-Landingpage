@@ -169,9 +169,9 @@ const paths = [
     eyebrow: "Financiar o desenvolvimento",
     title: "Projetos de fomento",
     description:
-      "Escrevo o projeto a quatro mãos com você, ou reviso o que você já escreveu lendo com os olhos de quem avalia. Para quem tem edital na mira e prazo correndo.",
-    items: ["Escrita do Projeto", "Revisão do Projeto", "FINEP, FAPESP, CNPq, Embrapii, FAPs"],
-    cta: "Ver escrita e revisão",
+      "Escrevo o projeto a quatro mãos com você ou aplico o LaunchScore à proposta que já está em versão avançada. Para quem tem edital na mira e prazo para melhorar antes da submissão.",
+    items: ["Escrita do Projeto", "LaunchScore", "FINEP, FAPESP, CNPq, Embrapii, FAPs"],
+    cta: "Ver escrita e LaunchScore",
     featured: false,
   },
   {

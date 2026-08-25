@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
-import { ArrowRight, PenTool, Eye, Microscope, Route, Scale, Radar, Telescope } from "lucide-react";
+import { ArrowRight, PenTool, ClipboardCheck, Microscope, Route, Scale, Radar, Telescope } from "lucide-react";
 import { ContactOptions } from "@/components/hub/ContactOptions";
 import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { WA_MESSAGES } from "@/lib/contact";
@@ -39,7 +39,7 @@ const tracks = [
       "Você tem um edital na mira (FINEP, FAPESP, CNPq, Embrapii, FAPs) e precisa de uma proposta defensável.",
     items: [
       { icon: PenTool, label: "Escrita do Projeto", note: "a quatro mãos, até a submissão" },
-      { icon: Eye, label: "Revisão do Projeto", note: "leitura com olhos de avaliador" },
+      { icon: ClipboardCheck, label: "LaunchScore", note: "diagnóstico da proposta antes da submissão" },
     ],
     cta: "Ver projetos de fomento",
   },

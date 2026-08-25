@@ -36,9 +36,9 @@ export const WA_MESSAGES = {
   escrita:
     "Olá! Vim pelo site e quero conversar sobre a *Escrita do Projeto* (a quatro mãos). Meu edital de interesse é:",
   revisao:
-    "Olá! Vim pelo site e quero conversar sobre a *Revisão do Projeto*. Já tenho uma proposta escrita para o edital:",
+    "Olá! Vim pelo site e quero conversar sobre o *LaunchScore*. Já tenho uma proposta escrita para o edital:",
   duvidaProjeto:
-    "Olá! Vim pelo site e estou em dúvida entre a escrita e a revisão do projeto. Minha situação é:",
+    "Olá! Vim pelo site e estou em dúvida entre a escrita do projeto e o LaunchScore. Minha situação é:",
   diagnostico:
     "Olá! Vim pelo site e quero conversar sobre o *Diagnóstico de Prontidão Comercial*. A tecnologia é:",
   rota:

@@ -228,9 +228,9 @@ const PAGINAS_FIXAS: RouteMeta[] = [
   },
   {
     path: "/projetos",
-    title: "Projetos FINEP, FAPESP e CNPq: Escrita e Revisão | LaunchpadHub",
+    title: "Projetos FINEP, FAPESP e CNPq: Escrita e LaunchScore | LaunchpadHub",
     description:
-      "Estruturação e revisão de projetos de fomento com decisão Go/No-Go, evidências, plano de trabalho, orçamento defensável e leitura com olhos de avaliador.",
+      "Escrita de projetos de fomento e LaunchScore para avaliar critérios, coerência, fragilidades e melhorias prioritárias antes da submissão.",
     priority: 0.9,
     crumb: "Projetos de fomento",
     schema: (siteUrl) => [
@@ -242,9 +242,9 @@ const PAGINAS_FIXAS: RouteMeta[] = [
       ),
       service(
         siteUrl,
-        "/projetos#revisao",
-        "Revisão de Projeto de Fomento",
-        "Revisão crítica da proposta com leitura de avaliador: lacunas, afirmações sem evidência, inconsistências entre plano e orçamento, com correções priorizadas por impacto e sessão de mentoria.",
+        "/projetos#launchscore",
+        "LaunchScore para Projeto de Fomento",
+        "Diagnóstico da proposta com alertas de elegibilidade e completude, score estimado por critério, fragilidades, inconsistências e cinco melhorias prioritárias. Disponível sozinho ou com uma hora de mentoria.",
       ),
     ],
   },

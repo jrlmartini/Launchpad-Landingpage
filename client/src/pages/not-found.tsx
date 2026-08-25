@@ -27,7 +27,7 @@ const caminhos = [
     href: "/projetos",
     icon: PenTool,
     titulo: "Financiar o desenvolvimento",
-    desc: "Escrita e revisão de projetos para FINEP, FAPESP, CNPq e Embrapii.",
+    desc: "Escrita de projetos e LaunchScore para FINEP, FAPESP, CNPq e Embrapii.",
   },
   {
     href: "/treinamentos",

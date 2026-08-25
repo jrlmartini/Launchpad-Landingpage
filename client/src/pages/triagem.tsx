@@ -6,7 +6,7 @@ import {
   CheckCircle2,
   GraduationCap,
   PenTool,
-  Eye,
+  ClipboardCheck,
   Microscope,
   Scale,
 } from "lucide-react";
@@ -55,11 +55,11 @@ const situacoes: {
     id: "proposta-escrita",
     label: "Já escrevi a proposta e quero saber onde ela é frágil",
     hint: "Rascunho avançado, antes da submissão",
-    icon: Eye,
-    recomendacao: "Revisão do Projeto",
+    icon: ClipboardCheck,
+    recomendacao: "LaunchScore",
     porque:
-      "Com o texto pronto, o maior ganho vem de uma leitura com olhos de avaliador e de correções priorizadas pelo que tira pontos de verdade.",
-    href: "/projetos#revisao",
+      "Com o texto pronto, o LaunchScore identifica fragilidades, inconsistências e melhorias prioritárias antes da submissão.",
+    href: "/projetos#launchscore",
   },
   {
     id: "tecnologia-parada",

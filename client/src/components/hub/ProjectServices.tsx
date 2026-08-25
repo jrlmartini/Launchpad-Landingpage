@@ -1,12 +1,12 @@
 import {
   ArrowRight,
   PenTool,
-  Eye,
+  ClipboardCheck,
   CheckCircle2,
   Clock,
   XCircle,
-  
   CalendarClock,
+  MessageSquareText,
 } from "lucide-react";
 import { ContactOptions } from "./ContactOptions";
 import { WhatsAppIcon } from "./WhatsAppIcon";
@@ -40,9 +40,9 @@ export function ProjectsHero() {
           </h1>
 
           <p className="text-lg lg:text-xl text-text/85 leading-relaxed mb-10 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
-            Escrevo o projeto junto com você, ou reviso o que você já escreveu
-            antes da submissão. Nos dois casos com a mesma pergunta na cabeça: o que
-            faria um avaliador tirar pontos daqui?
+            Escrevo o projeto junto com você ou aplico o LaunchScore ao que você já
+            escreveu. Nos dois casos, o trabalho identifica o que pode reduzir a
+            avaliação da proposta antes da submissão.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animate-delay-200">
@@ -55,11 +55,11 @@ export function ProjectsHero() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#revisao"
+              href="#launchscore"
               className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-text border border-stroke hover:border-cta/40 rounded-2xl transition-all duration-200"
-              data-testid="button-projetos-revisao"
+              data-testid="button-projetos-launchscore"
             >
-              Revisar o que já escrevi
+              Avaliar com o LaunchScore
             </a>
           </div>
         </div>
@@ -163,25 +163,25 @@ const projectServices = [
     id: "escrita",
   },
   {
-    icon: Eye,
-    tag: "Mentoria · leitura com olhos de avaliador",
-    title: "Revisão do Projeto",
+    icon: ClipboardCheck,
+    tag: "Diagnóstico estruturado · antes da submissão",
+    title: "LaunchScore",
     lead:
-      "Você já escreveu. Antes de submeter, alguém precisa ler como quem vai julgar.",
+      "Você envia uma versão da proposta e recebe um diagnóstico das fragilidades e melhorias prioritárias.",
     body:
-      "Leio a sua proposta do jeito que um avaliador lê: procurando lacunas, promessas sem evidência, inconsistências entre plano e orçamento e tudo aquilo que faz um parecerista hesitar. Você recebe o documento comentado ponto a ponto e uma sessão de trabalho para discutirmos o que muda, em ordem de prioridade. Nem toda correção cabe no prazo e algumas valem muito mais que outras.",
+      "O LaunchScore analisa a proposta com base nos critérios e pesos do edital, nos requisitos formais, na coerência interna e em padrões observados na base histórica de projetos aprovados disponível à Launchpad.",
     bullets: [
-      "Proposta comentada campo a campo, com o motivo de cada apontamento",
-      "Correções priorizadas: o que é crítico, o que melhora, o que é opcional",
-      "Sessão de mentoria para discutir os pontos e decidir os ajustes",
-      "Checklist final de consistência antes do envio",
+      "Alertas de elegibilidade e completude",
+      "Score estimado por critério",
+      "Evidências, fragilidades e inconsistências",
+      "Cinco melhorias prioritárias antes da submissão",
     ],
     closing:
-      "A ideia é encontrar, ainda dentro do prazo, tudo aquilo que faria você perder pontos.",
-    cta: "Quero revisar meu projeto",
-    waMessage: WA_MESSAGES.revisao,
+      "O LaunchScore é um diagnóstico da Launchpad. Não corresponde à nota da agência, não estima probabilidade de aprovação e não substitui a decisão do comitê julgador.",
+    cta: "",
+    waMessage: "",
     featured: false,
-    id: "revisao",
+    id: "launchscore",
   },
 ];
 
@@ -194,8 +194,8 @@ export function ProjectServicesCards() {
             Duas formas de trabalhar
           </h2>
           <p className="text-lg text-text-muted leading-relaxed">
-            A diferença entre elas é simples: em uma eu escrevo com você, na
-            outra eu leio o que você escreveu.
+            A diferença é o ponto de partida: a escrita estrutura a proposta;
+            o LaunchScore avalia uma versão já preparada por você.
           </p>
         </div>
 
@@ -254,29 +254,55 @@ export function ProjectServicesCards() {
               </p>
 
               <div className="mt-auto">
-                <a
-                  href={waLink(service.waMessage, service.id)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-200 group ${
-                    service.featured
-                      ? "text-white bg-cta hover:bg-cta/90 cta-glow"
-                      : "text-text border border-stroke hover:border-cta/40"
-                  }`}
-                >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  {service.cta}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
-                  href={calendlyLink(service.id)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors"
-                >
-                  <CalendarClock className="w-4 h-4" strokeWidth={1.5} />
-                  ou agende 20 minutos comigo
-                </a>
+                {service.id === "launchscore" ? (
+                  <div className="grid gap-4">
+                    <div className="rounded-2xl border border-stroke/60 bg-background/45 p-5">
+                      <p className="font-display text-lg font-semibold text-text">LaunchScore</p>
+                      <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                        Diagnóstico e relatório com os alertas, scores e melhorias prioritárias.
+                      </p>
+                      <p className="mt-5 font-display text-3xl font-bold text-text">R$ 297,00</p>
+                    </div>
+                    <div className="rounded-2xl border border-cta/35 bg-cta/[0.06] p-5">
+                      <div className="flex items-center gap-2 text-cta">
+                        <MessageSquareText className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+                        <p className="font-mono text-[11px] uppercase tracking-wider">Com mentoria</p>
+                      </div>
+                      <p className="mt-3 font-display text-lg font-semibold text-text">
+                        LaunchScore + 1 hora de mentoria
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                        Inclui o diagnóstico e uma sessão individual para dúvidas e feedback sobre os ajustes.
+                      </p>
+                      <p className="mt-5 font-display text-3xl font-bold text-text">R$ 597,00</p>
+                    </div>
+                    <p className="text-center text-sm text-text-muted">
+                      Os links de compra serão disponibilizados em breve.
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <a
+                      href={waLink(service.waMessage, service.id)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-200 group text-white bg-cta hover:bg-cta/90 cta-glow"
+                    >
+                      <WhatsAppIcon className="w-5 h-5" />
+                      {service.cta}
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                    <a
+                      href={calendlyLink(service.id)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors"
+                    >
+                      <CalendarClock className="w-4 h-4" strokeWidth={1.5} />
+                      ou agende 20 minutos comigo
+                    </a>
+                  </>
+                )}
               </div>
             </div>
           ))}
@@ -287,10 +313,9 @@ export function ProjectServicesCards() {
             <Clock className="w-6 h-6 text-cta flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <p className="text-text-muted leading-relaxed">
               <strong className="text-text">Sobre prazo:</strong> trabalho com poucos
-              projetos por vez e editais têm data. Procure com a maior antecedência
-              possível. Quanto mais cedo entramos, mais decisões estruturais ainda
-              estão em aberto. Revisões de última hora eu aceito, mas aí o que dá
-              para corrigir é sempre menos.
+              projetos de escrita por vez e editais têm data. Procure com a maior
+              antecedência possível. Para o LaunchScore, envie uma versão suficientemente
+              completa para que critérios, coerência e lacunas possam ser avaliados.
             </p>
           </div>
         </div>
@@ -308,22 +333,22 @@ export function ProjectServicesComparison() {
     {
       label: "Onde você está",
       writing: "Tem a tecnologia e o edital, mas o projeto ainda não existe no papel",
-      review: "Já escreveu a proposta e quer saber onde ela é frágil",
+      review: "Já escreveu a proposta e quer identificar onde ela é frágil",
     },
     {
       label: "Meu papel",
       writing: "Escrevo com você, do enquadramento à versão final",
-      review: "Leio como avaliador e aponto o que precisa mudar",
+      review: "O LaunchScore aplica critérios, identifica lacunas e prioriza melhorias",
     },
     {
       label: "O que você recebe",
       writing: "Projeto completo, estruturado e pronto para submissão",
-      review: "Proposta comentada, correções priorizadas e sessão de mentoria",
+      review: "Relatório LaunchScore; opcionalmente, uma hora de mentoria",
     },
     {
       label: "Quando procurar",
       writing: "Assim que o edital sair — ou antes, se já sabe que vai concorrer",
-      review: "Com a proposta em rascunho avançado e prazo ainda confortável",
+      review: "Com a proposta em versão avançada e tempo para realizar os ajustes",
     },
   ];
 
@@ -351,9 +376,9 @@ export function ProjectServicesComparison() {
             </div>
             <div className="p-5 border-l border-stroke/40">
               <div className="flex items-center gap-2">
-                <Eye className="w-5 h-5 text-cta" strokeWidth={1.5} />
+                <ClipboardCheck className="w-5 h-5 text-cta" strokeWidth={1.5} />
                 <span className="font-display font-semibold text-text">
-                  Revisão do Projeto
+                  LaunchScore
                 </span>
               </div>
             </div>
@@ -396,7 +421,7 @@ export function ProjectsFAQ() {
   const faqs = [
     {
       q: "Você garante que o projeto será aprovado?",
-      a: "Não, e desconfie de quem garantir. A decisão é de um comitê, com critérios e concorrência que ninguém controla. O que posso afirmar é que a proposta chega mais consistente, mais bem enquadrada e bem mais difícil de reprovar do que chegaria sozinha.",
+      a: "Não. A decisão é de um comitê, com critérios e concorrência que ninguém controla. A escrita e o LaunchScore ajudam a identificar problemas de enquadramento, coerência, evidência e execução antes da submissão, sem prever nota ou aprovação.",
     },
     {
       q: "Funciona para qual edital?",
@@ -404,7 +429,7 @@ export function ProjectsFAQ() {
     },
     {
       q: "Quanto custa?",
-      a: "Escopo e preço fechados, definidos depois de eu entender o edital e o estágio do projeto. Não cobro por hora e não trabalho com percentual sobre o valor aprovado — o incentivo ficaria errado.",
+      a: "O LaunchScore custa R$ 297,00. A modalidade com o diagnóstico e uma hora de mentoria para dúvidas e feedback custa R$ 597,00. A escrita completa do projeto tem escopo e preço definidos depois da avaliação do edital e do estágio da proposta.",
     },
     {
       q: "Preciso ter a tecnologia pronta?",
@@ -412,7 +437,7 @@ export function ProjectsFAQ() {
     },
     {
       q: "E se o edital fecha em duas semanas?",
-      a: "Me escreva mesmo assim. Dependendo do estágio do seu rascunho, uma revisão focada ainda muda muito o resultado. Se eu achar que não dá para fazer um bom trabalho no prazo, eu falo.",
+      a: "Uma proposta em versão avançada ainda pode passar pelo LaunchScore, desde que exista tempo para aplicar as melhorias. Se o material estiver incompleto demais para uma avaliação útil, isso precisa ser resolvido antes do diagnóstico.",
     },
     {
       q: "Meu projeto vira propriedade sua?",
