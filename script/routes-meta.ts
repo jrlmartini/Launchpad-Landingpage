@@ -571,7 +571,7 @@ const ROTAS_CAMPANHA: RouteMeta[] = [
         },
         offers: {
           "@type": "Offer",
-          price: "497",
+          price: "697",
           priceCurrency: "BRL",
           availability: "https://schema.org/InStock",
           url: `${siteUrl}/treinamentos/launch-lab-rhae-ia-2026`,

@@ -6,8 +6,8 @@
  */
 
 export const LAUNCH_LAB = {
-  VERSAO: "launch-lab-rhae-ia-2026-v02",
-  /** Publicação no catálogo aprovada pelo fundador em 24/08/2026. */
+  VERSAO: "launch-lab-rhae-ia-2026-v03",
+  /** Oferta vigente e publicação aprovadas pelo fundador em 26/08/2026. */
   PUBLICADA: true,
   slug: "/treinamentos/launch-lab-rhae-ia-2026",
   nome: "Launch Lab | RHAE IA 2026",
@@ -18,9 +18,10 @@ export const LAUNCH_LAB = {
     dinamica: "Workshop + clínica + construção",
   },
   oferta: {
-    precoLive: 497,
-    precoRegular: 697,
+    precoAtual: 697,
     moeda: "BRL",
+    inscricoesAte: "31 de agosto",
+    inicio: "31 de agosto",
   },
   hotmart: {
     checkoutUrl: "https://pay.hotmart.com/J107289464X?checkoutMode=2",
@@ -140,8 +141,8 @@ export const FAQ_LAUNCH_LAB = [
       "Sim. O trabalho inclui aplicações de IA em produtos físicos, processos, experimentação, visão computacional, otimização, manufatura e outros contextos compatíveis com a chamada.",
   },
   {
-    pergunta: "Qual é a condição apresentada na live?",
+    pergunta: "Qual é o investimento no Launch Lab?",
     resposta:
-      "A condição de lançamento é R$ 497. Depois da live, o valor passa a R$ 697.",
+      "O investimento é R$ 697. As inscrições ficam abertas até 31 de agosto, quando começa o curso.",
   },
 ] as const;

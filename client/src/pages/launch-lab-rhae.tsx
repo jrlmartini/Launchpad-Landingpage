@@ -109,7 +109,7 @@ function Checkout() {
     trackEvent("launch_lab_checkout_click", {
       page: "launch-lab-rhae-ia-2026",
       provider: "hotmart",
-      price: LAUNCH_LAB.oferta.precoLive,
+      price: LAUNCH_LAB.oferta.precoAtual,
     });
   };
 
@@ -141,7 +141,7 @@ function Checkout() {
           className="mt-7 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-cta px-7 py-4 text-base font-semibold text-white transition-colors hover:bg-cta/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-background cta-glow group"
           data-testid="button-hotmart-launch-lab"
         >
-          Comprar por R$ 497
+          Comprar por R$ {LAUNCH_LAB.oferta.precoAtual}
           <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden />
         </button>
         <p className="mt-4 text-xs leading-relaxed text-text-muted">
@@ -257,7 +257,7 @@ export default function LaunchLabRhae() {
         <Navbar
           active="treinamentos"
           ctaHref="#inscricao"
-          ctaLabel="Ver condição da live"
+          ctaLabel="Ver inscrição"
         />
 
         <main>
@@ -298,7 +298,7 @@ export default function LaunchLabRhae() {
               <div ref={heroCtaRef} className="mt-10">
                 <Cta origem="hero" className="w-full sm:w-auto" />
                 <p className="mt-4 text-sm text-text-muted">
-                  Condição da live: R$ 497. Depois, R$ 697.
+                  Inscrições até {LAUNCH_LAB.oferta.inscricoesAte}. O curso começa na mesma data.
                 </p>
               </div>
             </div>
@@ -494,15 +494,17 @@ export default function LaunchLabRhae() {
             <div className="mx-auto max-w-5xl px-6 lg:px-8">
               <div className="grid items-start gap-10 lg:grid-cols-[0.85fr_1.15fr]">
                 <div>
-                  <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cta">Condição de lançamento</p>
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cta">Inscrições abertas</p>
                   <h2 className="mt-4 font-display text-3xl font-bold text-text lg:text-4xl">Launch Lab | RHAE IA 2026</h2>
                   <p className="mt-5 leading-relaxed text-text-muted">
                     Oito encontros ao vivo, materiais de construção, comunidade da turma e LaunchScore Report.
                   </p>
                   <div className="mt-8 border-y border-stroke/50 py-7">
-                    <p className="font-mono text-[11px] uppercase tracking-wider text-text-muted">Valor apresentado na live</p>
-                    <p className="mt-2 font-display text-5xl font-bold text-text">R$ 497</p>
-                    <p className="mt-3 text-sm text-text-muted">Depois da live, o valor será R$ 697.</p>
+                    <p className="font-mono text-[11px] uppercase tracking-wider text-text-muted">Investimento</p>
+                    <p className="mt-2 font-display text-5xl font-bold text-text">R$ {LAUNCH_LAB.oferta.precoAtual}</p>
+                    <p className="mt-3 text-sm text-text-muted">
+                      Inscrições até {LAUNCH_LAB.oferta.inscricoesAte}. O curso começa em {LAUNCH_LAB.oferta.inicio}.
+                    </p>
                   </div>
                   <p className="mt-6 text-sm leading-relaxed text-text-muted">
                     A compra será processada pela Hotmart. Condições de pagamento, termos e dados do produto serão apresentados no checkout.
