@@ -6,12 +6,14 @@ import {
   Clock,
   XCircle,
   CalendarClock,
-  MessageSquareText,
+  CreditCard,
+  QrCode,
 } from "lucide-react";
 import { ContactOptions } from "./ContactOptions";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { waLink, calendlyLink, WA_MESSAGES } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
+import { LAUNCHSCORE } from "@/lib/launchscore";
 
 /* ------------------------------------------------------------------ */
 /* HERO                                                                */
@@ -256,28 +258,90 @@ export function ProjectServicesCards() {
               <div className="mt-auto">
                 {service.id === "launchscore" ? (
                   <div className="grid gap-4">
-                    <div className="rounded-2xl border border-stroke/60 bg-background/45 p-5">
-                      <p className="font-display text-lg font-semibold text-text">LaunchScore</p>
+                    <div className="rounded-2xl border border-cta/35 bg-cta/[0.06] p-5">
+                      <div className="flex flex-wrap items-end justify-between gap-3">
+                        <div>
+                          <p className="font-mono text-[11px] uppercase tracking-wider text-cta">
+                            Diagnóstico completo
+                          </p>
+                          <p className="mt-2 font-display text-xl font-semibold text-text">
+                            {LAUNCHSCORE.nome}
+                          </p>
+                        </div>
+                        <p className="font-display text-3xl font-bold text-text">R$ 329,00</p>
+                      </div>
                       <p className="mt-2 text-sm leading-relaxed text-text-muted">
                         Diagnóstico e relatório com os alertas, scores e melhorias prioritárias.
                       </p>
-                      <p className="mt-5 font-display text-3xl font-bold text-text">R$ 329,00</p>
                     </div>
-                    <div className="rounded-2xl border border-cta/35 bg-cta/[0.06] p-5">
-                      <div className="flex items-center gap-2 text-cta">
-                        <MessageSquareText className="h-5 w-5" strokeWidth={1.5} aria-hidden />
-                        <p className="font-mono text-[11px] uppercase tracking-wider">Com mentoria</p>
+
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <div className="flex flex-col rounded-2xl border border-stroke/60 bg-background/45 p-5">
+                        <div className="flex items-center gap-2 text-cta">
+                          <QrCode className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+                          <p className="font-mono text-[11px] uppercase tracking-wider">Pix</p>
+                        </div>
+                        <p className="mt-3 font-display text-lg font-semibold text-text">
+                          {LAUNCHSCORE.pagamentos.pix.label}
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-text-muted sm:min-h-10">
+                          {LAUNCHSCORE.pagamentos.pix.detalhe}
+                        </p>
+                        <a
+                          href={LAUNCHSCORE.pagamentos.pix.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() =>
+                            trackEvent("launchscore_checkout_click", {
+                              page: "projetos",
+                              provider: "asaas",
+                              payment_method: "pix",
+                              price: LAUNCHSCORE.preco,
+                            })
+                          }
+                          className="mt-5 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-cta px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-cta/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta"
+                          data-testid="button-launchscore-pix"
+                        >
+                          Pagar com Pix
+                          <ArrowRight className="h-4 w-4" aria-hidden />
+                        </a>
                       </div>
-                      <p className="mt-3 font-display text-lg font-semibold text-text">
-                        LaunchScore + 1 hora de mentoria
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                        Inclui o diagnóstico e uma sessão individual para dúvidas e feedback sobre os ajustes.
-                      </p>
-                      <p className="mt-5 font-display text-3xl font-bold text-text">R$ 697,00</p>
+
+                      <div className="flex flex-col rounded-2xl border border-stroke/60 bg-background/45 p-5">
+                        <div className="flex items-center gap-2 text-cta">
+                          <CreditCard className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+                          <p className="font-mono text-[11px] uppercase tracking-wider">Cartão</p>
+                        </div>
+                        <p className="mt-3 font-display text-lg font-semibold text-text">
+                          {LAUNCHSCORE.pagamentos.cartao.label}
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-text-muted sm:min-h-10">
+                          {LAUNCHSCORE.pagamentos.cartao.detalhe}
+                        </p>
+                        <a
+                          href={LAUNCHSCORE.pagamentos.cartao.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() =>
+                            trackEvent("launchscore_checkout_click", {
+                              page: "projetos",
+                              provider: "asaas",
+                              payment_method: "credit_card",
+                              price: LAUNCHSCORE.preco,
+                              installments: LAUNCHSCORE.pagamentos.cartao.parcelas,
+                            })
+                          }
+                          className="mt-5 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-cta/45 px-3 py-3 text-sm font-semibold text-text transition-colors hover:border-cta hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta"
+                          data-testid="button-launchscore-cartao"
+                        >
+                          Pagar com cartão
+                          <ArrowRight className="h-4 w-4" aria-hidden />
+                        </a>
+                      </div>
                     </div>
-                    <p className="text-center text-sm text-text-muted">
-                      Os links de compra serão disponibilizados em breve.
+
+                    <p className="text-center text-xs leading-relaxed text-text-muted">
+                      Pagamento processado no ambiente seguro do Asaas. O checkout abrirá em uma nova aba.
                     </p>
                   </div>
                 ) : (
@@ -343,7 +407,7 @@ export function ProjectServicesComparison() {
     {
       label: "O que você recebe",
       writing: "Projeto completo, estruturado e pronto para submissão",
-      review: "Relatório LaunchScore; opcionalmente, uma hora de mentoria",
+      review: "Relatório LaunchScore com alertas, scores e melhorias prioritárias",
     },
     {
       label: "Quando procurar",
@@ -429,7 +493,7 @@ export function ProjectsFAQ() {
     },
     {
       q: "Quanto custa?",
-      a: "O LaunchScore custa R$ 329,00. A modalidade com o diagnóstico e uma hora de mentoria para dúvidas e feedback custa R$ 697,00. A escrita completa do projeto tem escopo e preço definidos depois da avaliação do edital e do estágio da proposta.",
+      a: "O LaunchScore custa R$ 329,00. O pagamento pode ser feito por Pix à vista ou no cartão de crédito em até 10 parcelas de R$ 32,90 sem juros. A escrita completa do projeto tem escopo e preço definidos depois da avaliação do edital e do estágio da proposta.",
     },
     {
       q: "Preciso ter a tecnologia pronta?",

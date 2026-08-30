@@ -240,12 +240,21 @@ const PAGINAS_FIXAS: RouteMeta[] = [
         "Escrita de Projeto de Fomento",
         "Escrita completa da proposta a quatro mãos, do enquadramento e da decisão Go/No-Go ao plano de trabalho, orçamento defensável e preparação para a defesa. Aplicável a FINEP, FAPESP, CNPq, Embrapii e FAPs estaduais.",
       ),
-      service(
-        siteUrl,
-        "/projetos#launchscore",
-        "LaunchScore para Projeto de Fomento",
-        "Diagnóstico da proposta com alertas de elegibilidade e completude, score estimado por critério, fragilidades, inconsistências e cinco melhorias prioritárias. Disponível sozinho ou com uma hora de mentoria.",
-      ),
+      {
+        ...service(
+          siteUrl,
+          "/projetos#launchscore",
+          "LaunchScore para Projeto de Fomento",
+          "Diagnóstico da proposta com alertas de elegibilidade e completude, score estimado por critério, fragilidades, inconsistências e cinco melhorias prioritárias.",
+        ),
+        offers: {
+          "@type": "Offer",
+          price: "329",
+          priceCurrency: "BRL",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/projetos#launchscore`,
+        },
+      },
     ],
   },
   {
