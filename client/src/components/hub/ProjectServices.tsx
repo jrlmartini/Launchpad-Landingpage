@@ -5,15 +5,9 @@ import {
   CheckCircle2,
   Clock,
   XCircle,
-  CalendarClock,
-  CreditCard,
-  QrCode,
 } from "lucide-react";
 import { ContactOptions } from "./ContactOptions";
-import { WhatsAppIcon } from "./WhatsAppIcon";
-import { waLink, calendlyLink, WA_MESSAGES } from "@/lib/contact";
-import { trackEvent } from "@/lib/analytics";
-import { LAUNCHSCORE } from "@/lib/launchscore";
+import { WA_MESSAGES } from "@/lib/contact";
 
 /* ------------------------------------------------------------------ */
 /* HERO                                                                */
@@ -163,6 +157,7 @@ const projectServices = [
     waMessage: WA_MESSAGES.escrita,
     featured: true,
     id: "escrita",
+    learnHref: "/projetos/escrita-de-projetos",
   },
   {
     icon: ClipboardCheck,
@@ -184,6 +179,7 @@ const projectServices = [
     waMessage: "",
     featured: false,
     id: "launchscore",
+    learnHref: "/projetos/launchscore",
   },
 ];
 
@@ -256,117 +252,18 @@ export function ProjectServicesCards() {
               </p>
 
               <div className="mt-auto">
-                {service.id === "launchscore" ? (
-                  <div className="grid gap-4">
-                    <div className="rounded-2xl border border-cta/35 bg-cta/[0.06] p-5">
-                      <div className="flex flex-wrap items-end justify-between gap-3">
-                        <div>
-                          <p className="font-mono text-[11px] uppercase tracking-wider text-cta">
-                            Diagnóstico completo
-                          </p>
-                          <p className="mt-2 font-display text-xl font-semibold text-text">
-                            {LAUNCHSCORE.nome}
-                          </p>
-                        </div>
-                        <p className="font-display text-3xl font-bold text-text">R$ 329,00</p>
-                      </div>
-                      <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                        Diagnóstico e relatório com os alertas, scores e melhorias prioritárias.
-                      </p>
-                    </div>
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="flex flex-col rounded-2xl border border-stroke/60 bg-background/45 p-5">
-                        <div className="flex items-center gap-2 text-cta">
-                          <QrCode className="h-5 w-5" strokeWidth={1.5} aria-hidden />
-                          <p className="font-mono text-[11px] uppercase tracking-wider">Pix</p>
-                        </div>
-                        <p className="mt-3 font-display text-lg font-semibold text-text">
-                          {LAUNCHSCORE.pagamentos.pix.label}
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-text-muted sm:min-h-10">
-                          {LAUNCHSCORE.pagamentos.pix.detalhe}
-                        </p>
-                        <a
-                          href={LAUNCHSCORE.pagamentos.pix.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() =>
-                            trackEvent("launchscore_checkout_click", {
-                              page: "projetos",
-                              provider: "asaas",
-                              payment_method: "pix",
-                              price: LAUNCHSCORE.preco,
-                            })
-                          }
-                          className="mt-5 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-cta px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-cta/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta"
-                          data-testid="button-launchscore-pix"
-                        >
-                          Pagar com Pix
-                          <ArrowRight className="h-4 w-4" aria-hidden />
-                        </a>
-                      </div>
-
-                      <div className="flex flex-col rounded-2xl border border-stroke/60 bg-background/45 p-5">
-                        <div className="flex items-center gap-2 text-cta">
-                          <CreditCard className="h-5 w-5" strokeWidth={1.5} aria-hidden />
-                          <p className="font-mono text-[11px] uppercase tracking-wider">Cartão</p>
-                        </div>
-                        <p className="mt-3 font-display text-lg font-semibold text-text">
-                          {LAUNCHSCORE.pagamentos.cartao.label}
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-text-muted sm:min-h-10">
-                          {LAUNCHSCORE.pagamentos.cartao.detalhe}
-                        </p>
-                        <a
-                          href={LAUNCHSCORE.pagamentos.cartao.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() =>
-                            trackEvent("launchscore_checkout_click", {
-                              page: "projetos",
-                              provider: "asaas",
-                              payment_method: "credit_card",
-                              price: LAUNCHSCORE.preco,
-                              installments: LAUNCHSCORE.pagamentos.cartao.parcelas,
-                            })
-                          }
-                          className="mt-5 inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-cta/45 px-3 py-3 text-sm font-semibold text-text transition-colors hover:border-cta hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta"
-                          data-testid="button-launchscore-cartao"
-                        >
-                          Pagar com cartão
-                          <ArrowRight className="h-4 w-4" aria-hidden />
-                        </a>
-                      </div>
-                    </div>
-
-                    <p className="text-center text-xs leading-relaxed text-text-muted">
-                      Pagamento processado no ambiente seguro do Asaas. O checkout abrirá em uma nova aba.
-                    </p>
-                  </div>
-                ) : (
-                  <>
-                    <a
-                      href={waLink(service.waMessage, service.id)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-200 group text-white bg-cta hover:bg-cta/90 cta-glow"
-                    >
-                      <WhatsAppIcon className="w-5 h-5" />
-                      {service.cta}
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
-                      href={calendlyLink(service.id)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 w-full inline-flex items-center justify-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors"
-                    >
-                      <CalendarClock className="w-4 h-4" strokeWidth={1.5} />
-                      ou agende 20 minutos comigo
-                    </a>
-                  </>
-                )}
+                <a
+                  href={service.learnHref}
+                  className={`w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-semibold rounded-2xl transition-all duration-200 group ${
+                    service.featured
+                      ? "text-white bg-cta hover:bg-cta/90 cta-glow"
+                      : "text-text border border-cta/45 hover:border-cta"
+                  }`}
+                  data-testid={`button-saiba-mais-${service.id}`}
+                >
+                  Saiba mais sobre {service.title}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </div>
           ))}

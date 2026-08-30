@@ -56,13 +56,13 @@ const serviceMenu = [
     groupHref: "/projetos",
     items: [
       {
-        href: "/projetos#escrita",
+        href: "/projetos/escrita-de-projetos",
         label: "Escrita do Projeto",
         description: "A quatro mãos, do enquadramento à submissão",
         icon: PenTool,
       },
       {
-        href: "/projetos#launchscore",
+        href: "/projetos/launchscore",
         label: "LaunchScore",
         description: "Diagnóstico antes da submissão",
         icon: ClipboardCheck,

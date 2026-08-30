@@ -412,7 +412,7 @@ export default function LaunchLabRhae() {
                   O LaunchScore é um diagnóstico da Launchpad. Não corresponde à nota do CNPq, não estima probabilidade de aprovação e não substitui a decisão do comitê julgador.
                 </p>
                 <a
-                  href="/projetos#launchscore"
+                  href="/projetos/launchscore"
                   onClick={() =>
                     trackEvent("launch_lab_launchscore_learn_more", {
                       page: "launch-lab-rhae-ia-2026",

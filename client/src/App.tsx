@@ -11,6 +11,8 @@ import RhaeIa2026 from "@/pages/rhae";
 import RhaeConfirmacao from "@/pages/rhae-confirmacao";
 import Servicos from "@/pages/servicos";
 import Projetos from "@/pages/projetos";
+import EscritaDeProjetos from "@/pages/escrita-de-projetos";
+import LaunchScore from "@/pages/launchscore";
 import Tecnologia from "@/pages/tecnologia";
 import Lista from "@/pages/lista";
 import Privacidade from "@/pages/privacidade";
@@ -38,6 +40,8 @@ function Router() {
         component={LaunchLabRhae}
       />
       <Route path="/servicos" component={Servicos} />
+      <Route path="/projetos/escrita-de-projetos" component={EscritaDeProjetos} />
+      <Route path="/projetos/launchscore" component={LaunchScore} />
       <Route path="/projetos" component={Projetos} />
       <Route path="/tecnologia" component={Tecnologia} />
       <Route path="/lista" component={Lista} />

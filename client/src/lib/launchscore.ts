@@ -22,4 +22,11 @@ export const LAUNCHSCORE = {
       parcelas: 10,
     },
   },
+  mentoria: {
+    nome: "LaunchScore + 1h de mentoria",
+    preco: 697,
+    status: "em breve",
+    descricao:
+      "Relatório LaunchScore e uma sessão individual de uma hora para discutir os ajustes prioritários da proposta.",
+  },
 } as const;

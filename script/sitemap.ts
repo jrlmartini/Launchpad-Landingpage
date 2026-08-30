@@ -137,6 +137,8 @@ const PAGE_FILE: Record<string, string> = {
   "/curso": "curso.tsx",
   "/servicos": "servicos.tsx",
   "/projetos": "projetos.tsx",
+  "/projetos/escrita-de-projetos": "escrita-de-projetos.tsx",
+  "/projetos/launchscore": "launchscore.tsx",
   "/tecnologia": "tecnologia.tsx",
   "/lista": "lista.tsx",
   "/inteligencia": "inteligencia.tsx",

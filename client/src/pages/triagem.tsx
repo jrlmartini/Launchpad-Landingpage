@@ -49,7 +49,7 @@ const situacoes: {
     recomendacao: "Escrita do Projeto",
     porque:
       "Como o projeto ainda não existe no papel, dá tempo de acertar o enquadramento antes de escrever, que é onde a maioria das propostas se perde.",
-    href: "/projetos#escrita",
+    href: "/projetos/escrita-de-projetos",
   },
   {
     id: "proposta-escrita",
@@ -59,7 +59,7 @@ const situacoes: {
     recomendacao: "LaunchScore",
     porque:
       "Com o texto pronto, o LaunchScore identifica fragilidades, inconsistências e melhorias prioritárias antes da submissão.",
-    href: "/projetos#launchscore",
+    href: "/projetos/launchscore",
   },
   {
     id: "tecnologia-parada",

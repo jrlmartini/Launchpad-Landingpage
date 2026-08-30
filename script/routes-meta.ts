@@ -236,14 +236,14 @@ const PAGINAS_FIXAS: RouteMeta[] = [
     schema: (siteUrl) => [
       service(
         siteUrl,
-        "/projetos#escrita",
+        "/projetos/escrita-de-projetos",
         "Escrita de Projeto de Fomento",
         "Escrita completa da proposta a quatro mãos, do enquadramento e da decisão Go/No-Go ao plano de trabalho, orçamento defensável e preparação para a defesa. Aplicável a FINEP, FAPESP, CNPq, Embrapii e FAPs estaduais.",
       ),
       {
         ...service(
           siteUrl,
-          "/projetos#launchscore",
+          "/projetos/launchscore",
           "LaunchScore para Projeto de Fomento",
           "Diagnóstico da proposta com alertas de elegibilidade e completude, score estimado por critério, fragilidades, inconsistências e cinco melhorias prioritárias.",
         ),
@@ -252,7 +252,56 @@ const PAGINAS_FIXAS: RouteMeta[] = [
           price: "329",
           priceCurrency: "BRL",
           availability: "https://schema.org/InStock",
-          url: `${siteUrl}/projetos#launchscore`,
+          url: `${siteUrl}/projetos/launchscore`,
+        },
+      },
+    ],
+  },
+  {
+    path: "/projetos/escrita-de-projetos",
+    title: "Escrita de Projetos FINEP, FAPESP e CNPq | Launchpad",
+    description:
+      "Escrita completa de projetos de fomento, do enquadramento e decisão Go/No-Go à proposta final, plano de trabalho, orçamento e preparação para a defesa.",
+    priority: 0.9,
+    crumb: "Escrita de Projetos",
+    crumbParent: { name: "Projetos de fomento", path: "/projetos" },
+    ogTitle: "Escrita de Projetos de Fomento | Launchpad",
+    ogDescription:
+      "Construa sua proposta com a Launchpad, do enquadramento do edital à versão final para submissão.",
+    schema: (siteUrl) => [
+      service(
+        siteUrl,
+        "/projetos/escrita-de-projetos",
+        "Escrita de Projetos de Fomento",
+        "Escrita completa da proposta a quatro mãos, com enquadramento, decisão Go/No-Go, redação campo a campo, plano de trabalho, cronograma, orçamento, revisão final e preparação para a defesa.",
+      ),
+    ],
+  },
+  {
+    path: "/projetos/launchscore",
+    title: "LaunchScore: Revisão de Projetos de Fomento | Launchpad",
+    description:
+      "Relatório completo de revisão da proposta por R$ 329, com alertas, score estimado por critério, fragilidades e cinco melhorias prioritárias.",
+    priority: 0.9,
+    crumb: "LaunchScore",
+    crumbParent: { name: "Projetos de fomento", path: "/projetos" },
+    ogTitle: "LaunchScore: revisão completa da sua proposta",
+    ogDescription:
+      "Avalie critérios, coerência, fragilidades e prioridades antes da submissão. Pix à vista ou cartão em até 10x sem juros.",
+    schema: (siteUrl) => [
+      {
+        ...service(
+          siteUrl,
+          "/projetos/launchscore",
+          "LaunchScore para Projeto de Fomento",
+          "Diagnóstico da proposta com alertas de elegibilidade e completude, score estimado por critério, fragilidades, inconsistências e cinco melhorias prioritárias.",
+        ),
+        offers: {
+          "@type": "Offer",
+          price: "329",
+          priceCurrency: "BRL",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/projetos/launchscore`,
         },
       },
     ],
