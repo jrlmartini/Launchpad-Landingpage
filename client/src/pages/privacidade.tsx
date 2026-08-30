@@ -1,5 +1,5 @@
 import { DocumentoLegal, type SecaoLegal } from "@/components/legal/DocumentoLegal";
-import { CONTROLADORA, PRIVACY_NOTICE_VERSION, LEGAL_DATA } from "@/lib/legal";
+import { CONTROLADORA, PRIVACY_NOTICE_VERSION, PRIVACY_NOTICE_DATE } from "@/lib/legal";
 import { CONTACT_EMAIL } from "@/lib/contact";
 
 /**
@@ -7,7 +7,7 @@ import { CONTACT_EMAIL } from "@/lib/contact";
  *
  * Texto canônico de AVISO-DE-PRIVACIDADE-V1.md, com uma diferença deliberada:
  * as seções 6 e 12 descrevem também os fornecedores realmente em uso no site
- * (Google Analytics e Tag Manager, Hotmart, Calendly, WhatsApp), que a minuta
+ * (Google Analytics e Tag Manager, Hotmart, Google Calendar, WhatsApp), que a minuta
  * não previa por assumir uma configuração sem analytics.
  *
  * Publicar o texto sem essa correção colocaria no ar um aviso menos preciso do
@@ -99,6 +99,10 @@ const secoes: SecaoLegal[] = [
           <li>
             <strong>dados relacionados a eventos</strong>, como estágio de um
             projeto, dúvidas, respostas e participação;
+          </li>
+          <li>
+            <strong>dados de agendamento</strong>, como nome, sobrenome, e-mail,
+            data e horário escolhidos e respostas fornecidas na página de reserva;
           </li>
           <li>
             <strong>informações fornecidas voluntariamente</strong>, como uma
@@ -295,7 +299,19 @@ const secoes: SecaoLegal[] = [
             <strong>Vercel</strong>, para hospedagem e entrega das páginas;
           </li>
           <li>
-            <strong>Calendly</strong>, quando você opta por agendar uma conversa;
+            <strong>Google Calendar</strong>, quando você opta por agendar uma
+            conversa. A página de reserva é externa ao site e pode tratar nome,
+            sobrenome, e-mail, horário escolhido e respostas aos campos
+            configurados para criar o evento e enviar confirmações ou lembretes.
+            Consulte a{" "}
+            <a
+              href="https://policies.google.com/privacy?hl=pt-BR"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Política de Privacidade do Google
+            </a>
+            ;
           </li>
           <li>
             <strong>Hotmart</strong>, quando houver compra de curso, hipótese em
@@ -357,6 +373,11 @@ const secoes: SecaoLegal[] = [
       <>
         <p>Adotamos os seguintes critérios de retenção:</p>
         <ul>
+          <li>
+            <strong>dados de agendamento e reuniões:</strong> pelo período
+            necessário para organizar, realizar e acompanhar a conversa, manter
+            o histórico comercial pertinente ou exercer direitos;
+          </li>
           <li>
             <strong>inscrições e informações relacionadas a eventos:</strong> até
             12 meses após a realização da atividade;
@@ -539,7 +560,7 @@ export default function Privacidade() {
     <DocumentoLegal
       titulo="Aviso de Privacidade"
       versao={PRIVACY_NOTICE_VERSION.split("-")[0]}
-      data={LEGAL_DATA}
+      data={PRIVACY_NOTICE_DATE}
       intro={
         <p>
           A Launchpad respeita a privacidade de quem acessa seus sites, entra em

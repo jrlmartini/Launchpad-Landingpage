@@ -4,19 +4,16 @@ export const WHATSAPP_NUMBER = "551931952808"; // +55 19 3195-2808
 export const WHATSAPP_DISPLAY = "+55 19 3195-2808";
 export const CONTACT_EMAIL = "contato@launchpad.tec.br";
 
-const CALENDLY_BASE =
-  "https://calendly.com/mentorialaunchpad/avaliacao-mentoria";
-
-/** Default Calendly link (kept for imports that don't pass context). */
-export const CALENDLY_URL = `${CALENDLY_BASE}?utm_source=site&utm_medium=cta&utm_campaign=launchpadhub`;
+/** Public 30-minute booking page managed in Google Calendar. */
+export const SCHEDULING_URL =
+  "https://calendar.app.google/4gFPNcHxsrvFGdhL9";
 
 /**
- * Calendly link carrying page/offer context as UTMs, so scheduled calls can be
- * attributed to the page and CTA that produced them.
+ * Central scheduling destination. The Google short link discards query
+ * parameters, so page attribution is recorded in the click event instead.
  */
-export function calendlyLink(source?: string): string {
-  if (!source) return CALENDLY_URL;
-  return `${CALENDLY_BASE}?utm_source=site&utm_medium=cta&utm_campaign=launchpadhub&utm_content=${encodeURIComponent(source)}`;
+export function schedulingLink(_source?: string): string {
+  return SCHEDULING_URL;
 }
 
 /**

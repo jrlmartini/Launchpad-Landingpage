@@ -6,10 +6,11 @@
  * uma revisão relevante, nunca em ajuste de redação.
  */
 
-export const PRIVACY_NOTICE_VERSION = "1.0-2026-08-20";
+export const PRIVACY_NOTICE_VERSION = "1.1-2026-08-30";
 export const MARKETING_CONSENT_VERSION = "1.0-2026-08-20";
 export const TERMS_VERSION = "1.0-2026-08-20";
-export const LEGAL_DATA = "20 de agosto de 2026";
+export const PRIVACY_NOTICE_DATE = "30 de agosto de 2026";
+export const TERMS_DATE = "20 de agosto de 2026";
 
 export const CONTROLADORA = {
   razaoSocial: "Launchpad Desenvolvimento Empresarial Ltda. — ME",

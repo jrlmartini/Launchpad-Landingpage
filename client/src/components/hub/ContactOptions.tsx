@@ -1,6 +1,6 @@
 import { CalendarClock, ArrowRight } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import { waLink, calendlyLink, WHATSAPP_DISPLAY } from "@/lib/contact";
+import { waLink, schedulingLink, WHATSAPP_DISPLAY } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 
 interface ContactOptionsProps {
@@ -14,7 +14,7 @@ interface ContactOptionsProps {
 }
 
 /**
- * Two ways to talk: WhatsApp for right now, Calendly for a scheduled call.
+ * Two ways to talk: WhatsApp for right now, Google Calendar for a scheduled call.
  * Used at the bottom of every service section and page.
  */
 export function ContactOptions({
@@ -25,8 +25,13 @@ export function ContactOptions({
 }: ContactOptionsProps) {
   const onWhats = () =>
     trackEvent("click_whatsapp", { source, variant });
-  const onCalendly = () =>
-    trackEvent("click_calendly", { source, variant });
+  const onScheduling = () =>
+    trackEvent("click_scheduling", {
+      source,
+      variant,
+      provider: "google_calendar",
+      duration_minutes: 30,
+    });
 
   if (variant === "buttons") {
     return (
@@ -44,15 +49,15 @@ export function ContactOptions({
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
         <a
-          href={calendlyLink(source)}
+          href={schedulingLink(source)}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={onCalendly}
+          onClick={onScheduling}
           className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 text-base font-semibold text-text border border-stroke hover:border-cta/40 rounded-2xl transition-all duration-200"
-          data-testid="cta-calendly"
+          data-testid="cta-scheduling"
         >
           <CalendarClock className="w-5 h-5 text-cta" strokeWidth={1.5} />
-          Agendar triagem de 20 min
+          Agendar conversa de 30 min
         </a>
       </div>
     );
@@ -91,12 +96,12 @@ export function ContactOptions({
       </a>
 
       <a
-        href={calendlyLink(source)}
+        href={schedulingLink(source)}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={onCalendly}
+        onClick={onScheduling}
         className="group flex flex-col h-full p-7 bg-surface/50 border border-stroke/50 hover:border-cta/40 rounded-3xl card-glow transition-all duration-200 text-left"
-        data-testid="card-calendly"
+        data-testid="card-scheduling"
       >
         <div className="w-12 h-12 mb-4 grid place-items-center bg-cta/10 rounded-2xl">
           <CalendarClock className="w-6 h-6 text-cta" strokeWidth={1.5} />
@@ -105,7 +110,7 @@ export function ContactOptions({
         <h3 className="font-display font-semibold text-xl text-text mb-1">
           Agendar uma conversa
         </h3>
-        <p className="text-sm font-mono text-cta mb-3">Calendly · 20 minutos</p>
+        <p className="text-sm font-mono text-cta mb-3">Google Calendar · 30 minutos</p>
 
         <p className="text-text-muted leading-relaxed mb-6">
           Uma call rápida para eu entender o seu caso e dizer se é curso, escrita,

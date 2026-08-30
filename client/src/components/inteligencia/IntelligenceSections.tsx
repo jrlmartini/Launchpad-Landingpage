@@ -585,7 +585,7 @@ export function IntelligenceContact() {
         <p className="text-lg text-text-muted leading-relaxed mb-8">
           Me conte qual tecnologia, startup ou fornecedor está em avaliação, qual
           compromisso vem a seguir e quando é o gate interno. Em uma conversa de
-          20 minutos dá para saber se o Sprint resolve ou se o caso pede outra
+          30 minutos dão para saber se o Sprint resolve ou se o caso pede outra
           coisa.
         </p>
         <div className="flex items-center justify-center gap-2 text-sm text-text-muted mb-8">

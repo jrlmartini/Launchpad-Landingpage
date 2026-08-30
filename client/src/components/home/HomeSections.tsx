@@ -12,7 +12,7 @@ import {
   Leaf,
 } from "lucide-react";
 import { ContactOptions } from "@/components/hub/ContactOptions";
-import { WA_MESSAGES, calendlyLink } from "@/lib/contact";
+import { WA_MESSAGES, schedulingLink } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 
 /* ------------------------------------------------------------------ */
@@ -52,14 +52,20 @@ export function HomeHero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 animate-fade-in-up animate-delay-200">
             <a
-              href={calendlyLink("home-hero")}
+              href={schedulingLink("home-hero")}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent("click_calendly", { source: "home-hero" })}
+              onClick={() =>
+                trackEvent("click_scheduling", {
+                  source: "home-hero",
+                  provider: "google_calendar",
+                  duration_minutes: 30,
+                })
+              }
               className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-cta hover:bg-cta/90 rounded-2xl transition-all duration-200 cta-glow group"
-              data-testid="button-home-calendly"
+              data-testid="button-home-scheduling"
             >
-              Avaliar meu caso em 20 minutos
+              Avaliar meu caso em 30 minutos
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a

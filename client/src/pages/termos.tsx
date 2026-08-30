@@ -1,5 +1,5 @@
 import { DocumentoLegal, type SecaoLegal } from "@/components/legal/DocumentoLegal";
-import { CONTROLADORA, TERMS_VERSION, LEGAL_DATA } from "@/lib/legal";
+import { CONTROLADORA, TERMS_VERSION, TERMS_DATE } from "@/lib/legal";
 import { CONTACT_EMAIL } from "@/lib/contact";
 
 /** Termos de Uso V1. Texto canônico de TERMOS-DE-USO-V1.md. */
@@ -314,7 +314,7 @@ export default function Termos() {
     <DocumentoLegal
       titulo="Termos de Uso"
       versao={TERMS_VERSION.split("-")[0]}
-      data={LEGAL_DATA}
+      data={TERMS_DATE}
       intro={
         <p>
           Estes Termos de Uso regulam o acesso e a utilização dos sites, páginas

@@ -14,7 +14,7 @@ import {
 
 import { ContactOptions } from "./ContactOptions";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import { waLink, calendlyLink, WA_MESSAGES } from "@/lib/contact";
+import { waLink, schedulingLink, WA_MESSAGES } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 
 export function HubHero() {
@@ -273,13 +273,20 @@ export function OtherServicesSection() {
                   Conversar no WhatsApp
                 </a>
                 <a
-                  href={calendlyLink(service.id)}
+                  href={schedulingLink(service.id)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent("click_scheduling", {
+                      source: service.id,
+                      provider: "google_calendar",
+                      duration_minutes: 30,
+                    })
+                  }
                   className="inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-cta transition-colors"
                 >
                   <CalendarClock className="w-4 h-4" strokeWidth={1.5} />
-                  Agendar 20 min
+                  Agendar 30 min
                 </a>
               </div>
             </div>

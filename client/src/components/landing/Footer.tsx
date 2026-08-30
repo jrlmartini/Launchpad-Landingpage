@@ -1,7 +1,8 @@
 import { Instagram, Youtube, Linkedin, Mail, CalendarClock } from "lucide-react";
 import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
-import { waLink, WA_MESSAGES, CALENDLY_URL, WHATSAPP_DISPLAY, CONTACT_EMAIL } from "@/lib/contact";
+import { waLink, WA_MESSAGES, SCHEDULING_URL, WHATSAPP_DISPLAY, CONTACT_EMAIL } from "@/lib/contact";
 import { CONTROLADORA } from "@/lib/legal";
+import { trackEvent } from "@/lib/analytics";
 
 export function Footer({ productName = "Fomento para Deeptechs" }: { productName?: string }) {
   return (
@@ -32,14 +33,21 @@ export function Footer({ productName = "Fomento para Deeptechs" }: { productName
               <span>{WHATSAPP_DISPLAY}</span>
             </a>
             <a
-              href={CALENDLY_URL}
+              href={SCHEDULING_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("click_scheduling", {
+                  source: "footer",
+                  provider: "google_calendar",
+                  duration_minutes: 30,
+                })
+              }
               className="flex items-center gap-2 text-text-muted hover:text-cta transition-colors"
-              data-testid="link-calendly-footer"
+              data-testid="link-scheduling-footer"
             >
               <CalendarClock className="w-5 h-5" strokeWidth={1.5} />
-              <span>Agendar 20 min</span>
+              <span>Agendar 30 min</span>
             </a>
             <a
               href={`mailto:${CONTACT_EMAIL}`}

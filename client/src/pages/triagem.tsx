@@ -13,14 +13,14 @@ import {
 import { Navbar } from "@/components/landing/Navbar";
 import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
 import { Footer } from "@/components/landing/Footer";
-import { waLink, calendlyLink } from "@/lib/contact";
+import { waLink, schedulingLink } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 
 /**
  * Triagem — qualificação sem backend.
  *
  * As respostas são montadas em uma mensagem estruturada e entregues pelo
- * WhatsApp (ou levam ao Calendly). Nenhum dado é armazenado ou enviado a
+ * WhatsApp (ou levam ao Google Calendar). Nenhum dado é armazenado ou enviado a
  * terceiros: o visitante revisa tudo antes de enviar, o que também simplifica
  * a conformidade com a LGPD. Quando houver CRM, basta trocar o handoff.
  */
@@ -301,21 +301,22 @@ export default function Triagem() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
-                  href={calendlyLink("triagem")}
+                  href={schedulingLink("triagem")}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() =>
                     trackEvent("submit_qualification_form", {
-                      canal: "calendly",
+                      canal: "google_calendar",
+                      duration_minutes: 30,
                       situacao: situacao ?? "nao-informada",
                       prazo: prazo || "nao-informado",
                     })
                   }
                   className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 text-base font-semibold text-text border border-stroke hover:border-cta/40 rounded-2xl transition-all duration-200"
-                  data-testid="triagem-calendly"
+                  data-testid="triagem-scheduling"
                 >
                   <CalendarClock className="w-5 h-5 text-cta" strokeWidth={1.5} />
-                  Agendar 20 minutos
+                  Agendar 30 minutos
                 </a>
               </div>
             </section>
