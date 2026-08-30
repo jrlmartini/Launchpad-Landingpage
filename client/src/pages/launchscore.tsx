@@ -11,9 +11,7 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
-import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { LAUNCHSCORE } from "@/lib/launchscore";
-import { WA_MESSAGES } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 
 const sections = [
@@ -23,31 +21,43 @@ const sections = [
   { href: "#faq", label: "Perguntas" },
 ];
 
-const dimensoes = [
+const leituras = [
   {
-    titulo: "Elegibilidade e completude",
-    texto: "Alertas para requisitos formais, campos incompletos e condições que precisam ser verificadas antes da submissão.",
+    numero: "01",
+    titulo: "LaunchScore · visão estrutural",
+    texto: "A proposta recebe um score de 0 a 100 a partir de três pilares com o mesmo peso: inovação e risco tecnológico, capacidade de execução e mercado potencial.",
   },
   {
-    titulo: "Critérios e pesos do edital",
-    texto: "Leitura da proposta pela estrutura de avaliação definida na chamada, com score estimado por critério.",
+    numero: "02",
+    titulo: "Leitura pelo edital",
+    texto: "Os critérios, as escalas e os pesos oficiais são aplicados por dois perfis independentes: um avaliador técnico equilibrado e outro rigoroso.",
+  },
+];
+
+const pilares = [
+  {
+    titulo: "Inovação e risco tecnológico",
+    texto: "Examina novidade, estado da arte, desafio tecnológico, riscos, plausibilidade científica, desempenho esperado e propriedade intelectual.",
   },
   {
-    titulo: "Coerência interna",
-    texto: "Confronto entre problema, objetivos, método, equipe, cronograma, entregáveis, orçamento e impacto.",
+    titulo: "Capacidade de execução",
+    texto: "Avalia equipe, competências, parceiros, infraestrutura, metas, cronograma, orçamento e histórico de execução.",
   },
   {
-    titulo: "Padrões de propostas aprovadas",
-    texto: "Comparação com padrões observados na base histórica de projetos aprovados disponível à Launchpad.",
+    titulo: "Mercado potencial",
+    texto: "Analisa relevância do problema, cliente, mercado, adoção, demanda, impacto, validação e benefício econômico.",
   },
 ];
 
 const relatorio = [
-  "Alertas de elegibilidade e completude",
-  "Score estimado para cada critério de avaliação",
-  "Evidências fortes, fragilidades e inconsistências",
-  "Trechos que precisam de melhor sustentação",
-  "Cinco melhorias prioritárias antes da submissão",
+  "LaunchScore de 0 a 100 e radar dos três pilares",
+  "Avaliação pelos critérios e pesos oficiais do edital",
+  "Leituras dos avaliadores técnico equilibrado e rigoroso",
+  "Matriz de coerência entre risco, método, equipe, orçamento e prazo",
+  "Pesquisa externa dirigida e contradições relevantes",
+  "Perguntas prováveis dos avaliadores",
+  "Plano priorizado de correções da proposta e do projeto",
+  "Conclusão sobre a competitividade da versão analisada",
 ];
 
 const faqs = [
@@ -132,7 +142,7 @@ export default function LaunchScore() {
                   Descubra onde sua proposta perde força antes da submissão.
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-text/85 lg:text-xl">
-                  Envie uma versão da proposta e receba um relatório completo com alertas, scores por critério, fragilidades e melhorias prioritárias.
+                  Envie uma versão da proposta e receba um relatório completo que combina diagnóstico estrutural, leitura pelos critérios do edital e um plano priorizado de correções.
                 </p>
                 <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <a
@@ -160,13 +170,13 @@ export default function LaunchScore() {
                     <p className="mt-1 font-display text-4xl font-bold text-text">R$ 329</p>
                   </div>
                 </div>
-                <h2 className="mt-7 font-display text-2xl font-bold text-text">Revisão estruturada da proposta</h2>
+                <h2 className="mt-7 font-display text-2xl font-bold text-text">Duas leituras da mesma proposta</h2>
                 <ul className="mt-6 space-y-4">
                   {[
+                    "LaunchScore de 0 a 100 em três pilares",
                     "Critérios e pesos oficiais do edital",
-                    "Coerência entre todas as partes do projeto",
-                    "Padrões observados em projetos aprovados",
-                    "Prioridades claras para a próxima revisão",
+                    "Dois perfis independentes de avaliador",
+                    "Plano priorizado para a próxima revisão",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-text-muted">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cta" strokeWidth={1.5} />
@@ -181,19 +191,32 @@ export default function LaunchScore() {
           <section id="analise" className="scroll-mt-32 border-y border-stroke/30 bg-surface/30 py-20 lg:py-28">
             <div className="mx-auto max-w-6xl px-6 lg:px-8">
               <div className="mx-auto mb-12 max-w-3xl text-center">
-                <h2 className="font-display text-3xl font-bold text-text lg:text-4xl">O relatório é baseado em quatro dimensões</h2>
+                <h2 className="font-display text-3xl font-bold text-text lg:text-4xl">Duas leituras complementares</h2>
                 <p className="mt-5 text-lg leading-relaxed text-text-muted">
-                  O LaunchScore organiza a revisão pela lógica do edital e pela coerência da proposta. Cada apontamento precisa mostrar o problema e orientar a correção.
+                  Uma leitura testa a arquitetura do projeto. A outra simula como a proposta responde aos critérios e pesos da chamada. Juntas, elas mostram onde a versão está forte e onde precisa mudar.
                 </p>
               </div>
               <div className="grid gap-5 md:grid-cols-2">
-                {dimensoes.map((item, index) => (
+                {leituras.map((item) => (
                   <article key={item.titulo} className="rounded-3xl border border-stroke/50 bg-background/45 p-7">
-                    <p className="font-mono text-xs text-cta">0{index + 1}</p>
+                    <p className="font-mono text-xs text-cta">{item.numero}</p>
                     <h3 className="mt-3 font-display text-xl font-semibold text-text">{item.titulo}</h3>
                     <p className="mt-3 leading-relaxed text-text-muted">{item.texto}</p>
                   </article>
                 ))}
+              </div>
+
+              <div className="mt-14">
+                <h3 className="text-center font-display text-2xl font-bold text-text lg:text-3xl">Os três pilares do LaunchScore</h3>
+                <div className="mt-8 grid gap-5 md:grid-cols-3">
+                  {pilares.map((item, index) => (
+                    <article key={item.titulo} className="rounded-3xl border border-cta/20 bg-cta/[0.04] p-7">
+                      <p className="font-mono text-xs text-cta">PILAR {index + 1}</p>
+                      <h4 className="mt-3 font-display text-xl font-semibold text-text">{item.titulo}</h4>
+                      <p className="mt-3 leading-relaxed text-text-muted">{item.texto}</p>
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
@@ -204,7 +227,7 @@ export default function LaunchScore() {
                 <FileSearch className="h-9 w-9 text-cta" strokeWidth={1.5} aria-hidden />
                 <h2 className="mt-5 font-display text-3xl font-bold text-text lg:text-4xl">O que você recebe</h2>
                 <p className="mt-5 text-lg leading-relaxed text-text-muted">
-                  O resultado é um relatório de revisão para orientar a próxima versão da proposta. Os problemas aparecem organizados por impacto e prioridade.
+                  Você recebe o relatório completo e uma visão resumida para orientar a próxima versão. Os problemas aparecem organizados por impacto, esforço e prioridade.
                 </p>
               </div>
               <div className="rounded-3xl border border-cta/25 bg-surface/60 p-7 lg:p-9">
@@ -219,7 +242,7 @@ export default function LaunchScore() {
                 <div className="mt-7 border-t border-stroke/50 pt-6">
                   <p className="flex items-start gap-3 text-sm leading-relaxed text-text-muted">
                     <Scale className="mt-0.5 h-5 w-5 shrink-0 text-cta" strokeWidth={1.5} aria-hidden />
-                    O score organiza o diagnóstico da Launchpad. Ele não é a nota oficial da agência nem uma previsão do resultado do comitê.
+                    O score dos três pilares e a leitura pelos critérios oficiais são resultados distintos. A conclusão de competitividade integra as duas leituras, os alertas críticos e as contradições encontradas.
                   </p>
                 </div>
               </div>
@@ -235,8 +258,8 @@ export default function LaunchScore() {
               <div className="grid gap-5 md:grid-cols-3">
                 {[
                   ["01", "Envio", "Você envia a proposta, o edital e os anexos que definem os critérios de avaliação."],
-                  ["02", "Análise", "A Launchpad aplica a estrutura de avaliação e confronta critérios, evidências e coerência interna."],
-                  ["03", "Relatório", "Você recebe os scores, os alertas e as cinco melhorias que devem entrar primeiro na revisão."],
+                  ["02", "Análise", "A Launchpad aplica os três pilares, os dois perfis de avaliação, a matriz de coerência e a pesquisa externa dirigida."],
+                  ["03", "Relatório", "Você recebe o diagnóstico completo e uma visão resumida com as cinco correções que devem entrar primeiro na revisão."],
                 ].map(([numero, titulo, texto]) => (
                   <article key={numero} className="rounded-3xl border border-stroke/50 bg-background/45 p-7">
                     <p className="font-mono text-sm text-cta">{numero}</p>
@@ -305,7 +328,6 @@ export default function LaunchScore() {
         </main>
 
         <Footer />
-        <FloatingWhatsApp message={WA_MESSAGES.revisao} />
       </div>
     </div>
   );

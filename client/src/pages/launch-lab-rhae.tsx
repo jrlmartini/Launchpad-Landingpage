@@ -398,10 +398,10 @@ export default function LaunchLabRhae() {
                 <p className="mt-6 font-mono text-xs uppercase tracking-[0.16em] text-cta">LaunchScore Report</p>
                 <h3 className="mt-3 font-display text-3xl font-bold text-text">Uma segunda leitura estruturada</h3>
                 <p className="mt-5 leading-relaxed text-text-muted">
-                  O relatório analisa uma versão da proposta com base nos critérios e pesos oficiais, nos requisitos formais, na coerência interna e em padrões observados na base histórica de projetos aprovados disponível à Launchpad.
+                  O relatório combina o LaunchScore em três pilares com uma leitura pelos critérios e pesos oficiais. Dois perfis de avaliador testam a versão da proposta e ajudam a definir as correções prioritárias.
                 </p>
                 <ul className="mt-6 space-y-3">
-                  {["Alertas de elegibilidade e completude", "Score estimado por critério", "Evidências, fragilidades e inconsistências", "Cinco melhorias prioritárias"].map((item) => (
+                  {["Score de 0 a 100 em três pilares", "Leitura pelos critérios oficiais", "Matriz de coerência e pesquisa externa", "Plano priorizado de correções"].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-text">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-cta" aria-hidden />
                       {item}
@@ -409,7 +409,7 @@ export default function LaunchLabRhae() {
                   ))}
                 </ul>
                 <p className="mt-7 border-t border-cta/20 pt-5 text-sm leading-relaxed text-text-muted">
-                  O LaunchScore é um diagnóstico da Launchpad. Não corresponde à nota do CNPq, não estima probabilidade de aprovação e não substitui a decisão do comitê julgador.
+                  A conclusão integra os três pilares, a leitura do edital, os alertas críticos e as contradições encontradas na análise.
                 </p>
                 <a
                   href="/projetos/launchscore"

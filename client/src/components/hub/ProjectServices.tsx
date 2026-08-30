@@ -166,15 +166,15 @@ const projectServices = [
     lead:
       "Você envia uma versão da proposta e recebe um diagnóstico das fragilidades e melhorias prioritárias.",
     body:
-      "O LaunchScore analisa a proposta com base nos critérios e pesos do edital, nos requisitos formais, na coerência interna e em padrões observados na base histórica de projetos aprovados disponível à Launchpad.",
+      "O LaunchScore combina um diagnóstico em três pilares com a avaliação pelos critérios e pesos do edital. Duas personas técnicas, uma equilibrada e outra rigorosa, testam a força da versão analisada.",
     bullets: [
-      "Alertas de elegibilidade e completude",
-      "Score estimado por critério",
-      "Evidências, fragilidades e inconsistências",
-      "Cinco melhorias prioritárias antes da submissão",
+      "Score de 0 a 100 em três pilares",
+      "Leitura pelos critérios oficiais do edital",
+      "Matriz de coerência e pesquisa externa dirigida",
+      "Plano priorizado de correções",
     ],
     closing:
-      "O LaunchScore é um diagnóstico da Launchpad. Não corresponde à nota da agência, não estima probabilidade de aprovação e não substitui a decisão do comitê julgador.",
+      "A entrega mostra como inovação, execução e mercado se sustentam na proposta e quais mudanças devem entrar primeiro na próxima versão.",
     cta: "",
     waMessage: "",
     featured: false,
@@ -381,8 +381,8 @@ export function ProjectServicesComparison() {
 export function ProjectsFAQ() {
   const faqs = [
     {
-      q: "Você garante que o projeto será aprovado?",
-      a: "Não. A decisão é de um comitê, com critérios e concorrência que ninguém controla. A escrita e o LaunchScore ajudam a identificar problemas de enquadramento, coerência, evidência e execução antes da submissão, sem prever nota ou aprovação.",
+      q: "Como o LaunchScore chega ao diagnóstico?",
+      a: "A análise combina um score em três pilares, a leitura pelos critérios oficiais, uma matriz de coerência e pesquisa externa dirigida. A conclusão integra essas evidências e orienta o plano priorizado de correções.",
     },
     {
       q: "Funciona para qual edital?",

@@ -5,7 +5,7 @@
  * Asaas em 30/08/2026. Não reutilizar estes links em outras ofertas.
  */
 export const LAUNCHSCORE = {
-  VERSAO: "launchscore-fomento-2026-v03",
+  VERSAO: "launchscore-methodology-v0.1-site-v05",
   nome: "LaunchScore",
   preco: 329,
   moeda: "BRL",

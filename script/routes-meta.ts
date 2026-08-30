@@ -245,7 +245,7 @@ const PAGINAS_FIXAS: RouteMeta[] = [
           siteUrl,
           "/projetos/launchscore",
           "LaunchScore para Projeto de Fomento",
-          "Diagnóstico da proposta com alertas de elegibilidade e completude, score estimado por critério, fragilidades, inconsistências e cinco melhorias prioritárias.",
+          "Diagnóstico da proposta com score em três pilares, leitura pelos critérios oficiais, dois perfis de avaliador, matriz de coerência e plano priorizado de correções.",
         ),
         offers: {
           "@type": "Offer",
@@ -281,7 +281,7 @@ const PAGINAS_FIXAS: RouteMeta[] = [
     path: "/projetos/launchscore",
     title: "LaunchScore: Revisão de Projetos de Fomento | Launchpad",
     description:
-      "Relatório completo de revisão da proposta por R$ 329, com alertas, score estimado por critério, fragilidades e cinco melhorias prioritárias.",
+      "Relatório completo por R$ 329 com score em três pilares, leitura pelos critérios oficiais, dois perfis de avaliador e plano priorizado de correções.",
     priority: 0.9,
     crumb: "LaunchScore",
     crumbParent: { name: "Projetos de fomento", path: "/projetos" },
@@ -294,7 +294,7 @@ const PAGINAS_FIXAS: RouteMeta[] = [
           siteUrl,
           "/projetos/launchscore",
           "LaunchScore para Projeto de Fomento",
-          "Diagnóstico da proposta com alertas de elegibilidade e completude, score estimado por critério, fragilidades, inconsistências e cinco melhorias prioritárias.",
+          "Diagnóstico da proposta com score em três pilares, leitura pelos critérios oficiais, dois perfis de avaliador, matriz de coerência e plano priorizado de correções.",
         ),
         offers: {
           "@type": "Offer",

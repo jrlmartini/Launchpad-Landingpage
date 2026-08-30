@@ -131,9 +131,9 @@ export const FAQ_LAUNCH_LAB = [
       "Não. O programa fornece método, ferramentas, clínicas coletivas e um diagnóstico de prontidão. O participante continua responsável pela redação, pelas informações e pela submissão da proposta.",
   },
   {
-    pergunta: "O LaunchScore prevê a aprovação?",
+    pergunta: "Como o LaunchScore avalia a proposta?",
     resposta:
-      "Não. O LaunchScore é um diagnóstico de prontidão produzido a partir de uma versão da proposta. Ele considera os critérios e pesos oficiais, requisitos formais, coerência interna e padrões observados na base histórica de projetos aprovados disponível à Launchpad. O resultado não corresponde à nota do CNPq nem representa probabilidade de aprovação.",
+      "O diagnóstico combina um score de 0 a 100 em inovação e risco tecnológico, capacidade de execução e mercado potencial com uma leitura pelos critérios e pesos oficiais. Dois perfis de avaliador testam a proposta e alimentam o plano priorizado de correções.",
   },
   {
     pergunta: "O programa serve para projetos fora de software?",
