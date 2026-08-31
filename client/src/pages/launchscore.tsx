@@ -78,11 +78,6 @@ const faqs = [
     resposta:
       "O preço de lançamento do LaunchScore Report é R$ 329,00. Você pode pagar por Pix à vista ou no cartão de crédito em até 10 parcelas de R$ 32,90 sem juros.",
   },
-  {
-    pergunta: "E a sessão individual?",
-    resposta:
-      "A modalidade com relatório e uma sessão individual de 60 minutos tem valor de R$ 1.297,00. Ela não está disponível nos checkouts desta página durante a validação inicial do produto.",
-  },
 ];
 
 function PaymentCard({ method }: { method: "pix" | "cartao" }) {
@@ -359,11 +354,10 @@ export default function LaunchScore() {
                 <div>
                   <p className="font-mono text-xs uppercase tracking-[0.14em] text-cta">Referência da modalidade individual</p>
                   <h3 className="mt-2 font-display text-xl font-semibold text-text">LaunchScore Report + sessão de 60 minutos</h3>
-                  <p className="mt-2 leading-relaxed text-text-muted">Discussão dos achados, prioridades e sequência de correção. Não inclui reescrita nem uma nova avaliação.</p>
+                  <p className="mt-2 leading-relaxed text-text-muted">Discussão dos achados, prioridades e sequência de correção.</p>
                 </div>
                 <div className="sm:text-right">
                   <p className="font-display text-3xl font-bold text-text">R$ 1.297</p>
-                  <p className="mt-1 text-sm text-text-muted">Fora do checkout atual</p>
                 </div>
               </div>
 
@@ -371,10 +365,6 @@ export default function LaunchScore() {
                 <PaymentCard method="pix" />
                 <PaymentCard method="cartao" />
               </div>
-
-              <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-text-muted">
-                Os checkouts abrem em uma nova aba. Esta página permanece disponível para você consultar as informações da entrega.
-              </p>
             </div>
           </section>
 
