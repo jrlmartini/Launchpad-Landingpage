@@ -10,7 +10,6 @@ import {
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { LogoCarousel } from "@/components/landing/LogoCarousel";
-import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { WhatsAppIcon } from "@/components/hub/WhatsAppIcon";
 import { Testimonials } from "@/components/shared/Testimonials";
 import { waLink, WA_MESSAGES } from "@/lib/contact";
@@ -254,7 +253,6 @@ export default function EscritaDeProjetos() {
         </main>
 
         <Footer />
-        <FloatingWhatsApp message={WA_MESSAGES.escrita} />
       </div>
     </div>
   );

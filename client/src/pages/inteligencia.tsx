@@ -1,7 +1,5 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
-import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
-import { WA_MESSAGES } from "@/lib/contact";
 import {
   IntelligenceHero,
   IntelligenceProblem,
@@ -49,7 +47,6 @@ export default function Inteligencia() {
           <IntelligenceContact />
         </main>
         <Footer />
-        <FloatingWhatsApp message={WA_MESSAGES.inteligencia} source="inteligencia" />
       </div>
     </div>
   );

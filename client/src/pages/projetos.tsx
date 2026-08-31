@@ -12,8 +12,6 @@ import {
   TechCrossLink,
 } from "@/components/hub/ProjectServices";
 import { Testimonials } from "@/components/shared/Testimonials";
-import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
-import { WA_MESSAGES } from "@/lib/contact";
 
 const sections = [
   { href: "#escrita", label: "Escrita do Projeto" },
@@ -60,7 +58,6 @@ export default function Projetos() {
           <ProjectsContact />
         </main>
         <Footer />
-        <FloatingWhatsApp message={WA_MESSAGES.geral} />
       </div>
     </div>
   );

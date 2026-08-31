@@ -12,8 +12,6 @@ import {
   ContactSection,
   ProjectsCrossLink,
 } from "@/components/hub/HubSections";
-import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
-import { WA_MESSAGES } from "@/lib/contact";
 
 const sections = [
   { href: "#metodo", label: "Método" },
@@ -46,7 +44,6 @@ export default function Tecnologia() {
           <ContactSection />
         </main>
         <Footer />
-        <FloatingWhatsApp message={WA_MESSAGES.tecnologia} />
       </div>
     </div>
   );

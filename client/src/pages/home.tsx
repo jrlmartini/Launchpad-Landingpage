@@ -9,8 +9,6 @@ import {
   HomeContact,
 } from "@/components/home/HomeSections";
 import { Testimonials } from "@/components/shared/Testimonials";
-import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
-import { WA_MESSAGES } from "@/lib/contact";
 
 const sections = [
   { href: "#caminhos", label: "Como trabalho" },
@@ -43,7 +41,6 @@ export default function Home() {
           <HomeContact />
         </main>
         <Footer />
-        <FloatingWhatsApp message={WA_MESSAGES.geral} />
       </div>
     </div>
   );

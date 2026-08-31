@@ -2,7 +2,6 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { MatrizTrlCrl } from "@/components/metodo/MatrizTrlCrl";
 import { Autodiagnostico } from "@/components/metodo/Autodiagnostico";
-import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { ContactOptions } from "@/components/hub/ContactOptions";
 import { WA_MESSAGES } from "@/lib/contact";
 import { ArrowRight, Users, Banknote, ShieldCheck, Network, Factory, Microscope, Route } from "lucide-react";
@@ -352,7 +351,6 @@ export default function Metodo() {
         </main>
 
         <Footer />
-        <FloatingWhatsApp message={WA_MESSAGES.tecnologia} source="metodo" />
       </div>
     </div>
   );

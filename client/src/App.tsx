@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -23,6 +23,26 @@ import Inteligencia from "@/pages/inteligencia";
 import Artigos from "@/pages/artigos";
 import Artigo from "@/pages/artigo";
 import LaunchLabRhae from "@/pages/launch-lab-rhae";
+import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
+import { WA_MESSAGES } from "@/lib/contact";
+
+function GlobalFloatingWhatsApp() {
+  const [location] = useLocation();
+
+  const message = location.startsWith("/projetos/escrita-de-projetos")
+    ? WA_MESSAGES.escrita
+    : location.startsWith("/projetos/launchscore")
+      ? WA_MESSAGES.revisao
+      : location.startsWith("/inteligencia")
+        ? WA_MESSAGES.inteligencia
+        : location.startsWith("/tecnologia") || location.startsWith("/metodo")
+          ? WA_MESSAGES.tecnologia
+          : WA_MESSAGES.geral;
+
+  const source = location === "/" ? "home" : location.slice(1);
+
+  return <FloatingWhatsApp message={message} source={source} />;
+}
 
 function Router() {
   return (
@@ -63,6 +83,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <GlobalFloatingWhatsApp />
       </TooltipProvider>
     </QueryClientProvider>
   );

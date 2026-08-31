@@ -2,7 +2,6 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { ArrowRight, PenTool, ClipboardCheck, Microscope, Route, Scale, Radar, Telescope } from "lucide-react";
 import { ContactOptions } from "@/components/hub/ContactOptions";
-import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { WA_MESSAGES } from "@/lib/contact";
 
 const tracks = [
@@ -134,7 +133,6 @@ export default function Servicos() {
           </section>
         </main>
         <Footer />
-        <FloatingWhatsApp message={WA_MESSAGES.geral} />
       </div>
     </div>
   );
