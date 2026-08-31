@@ -5,14 +5,14 @@ import { Autodiagnostico } from "@/components/metodo/Autodiagnostico";
 import { FloatingWhatsApp } from "@/components/hub/FloatingWhatsApp";
 import { ContactOptions } from "@/components/hub/ContactOptions";
 import { WA_MESSAGES } from "@/lib/contact";
-import { ArrowRight, Users, Banknote, ShieldCheck, Network, Factory, Gauge, ListChecks } from "lucide-react";
+import { ArrowRight, Users, Banknote, ShieldCheck, Network, Factory, Microscope, Route } from "lucide-react";
 
 const sections = [
   { href: "#matriz", label: "A matriz" },
   { href: "#eixos", label: "Os 5 eixos" },
   { href: "#niveis", label: "Os 9 níveis" },
   { href: "#autodiagnostico", label: "Autodiagnóstico" },
-  { href: "#triagem", label: "Qual caminho seguir" },
+  { href: "#aplicacoes", label: "Onde se aplica" },
 ];
 
 const eixos = [
@@ -90,7 +90,7 @@ export default function Metodo() {
             </div>
             <div className="max-w-4xl mx-auto px-6 lg:px-8 relative text-center">
               <p className="text-xs font-mono uppercase tracking-widest text-cta mb-4">
-                O método · Prontidão Comercial
+                Método do Diagnóstico de Prontidão Comercial
               </p>
               <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-text leading-tight mb-6">
                 Toda tecnologia tem duas maturidades.
@@ -98,9 +98,11 @@ export default function Metodo() {
                 <span className="text-gradient-accent">Você provavelmente só mediu uma.</span>
               </h1>
               <p className="text-lg lg:text-xl text-text/85 leading-relaxed">
-                As agências de fomento exigem a maturidade técnica (TRL) há décadas. A
-                maturidade comercial (CRL) quase ninguém mede e é ela que explica
-                por que tecnologias prontas ficam paradas.
+                O CRL organiza a análise comercial de tecnologias que já passaram
+                por desenvolvimento técnico e precisam encontrar uma aplicação,
+                um primeiro cliente e uma rota de entrada no mercado. Ele é usado
+                no Diagnóstico de Prontidão Comercial e orienta a Assessoria de
+                Rota Comercial da Launchpad.
               </p>
             </div>
           </section>
@@ -256,64 +258,64 @@ export default function Metodo() {
           {/* Autodiagnóstico */}
           <Autodiagnostico />
 
-          {/* Triagem. Saiu da barra primária para deixá-la mais limpa: é uma
-              ferramenta de orientação, não uma seção do site. Aqui fica ao lado
-              do autodiagnóstico, que é a outra ferramenta de autoavaliação. */}
-          <section id="triagem" className="py-20 lg:py-28 scroll-mt-32">
+          {/* Aplicações comerciais do método. O CRL não é apresentado como
+              método geral da Launchpad: ele aparece apenas nos produtos em que
+              mede e orienta a prontidão comercial de uma tecnologia própria. */}
+          <section id="aplicacoes" className="py-20 lg:py-28 scroll-mt-32">
             <div className="max-w-4xl mx-auto px-6 lg:px-8">
               <div className="max-w-2xl mb-10">
                 <p className="text-xs font-mono uppercase tracking-widest text-cta mb-3">
-                  Duas ferramentas, duas perguntas
+                  Produtos que usam o CRL
                 </p>
                 <h2 className="font-display font-bold text-3xl lg:text-4xl text-text mb-5">
-                  Sabe onde a tecnologia está. E agora?
+                  Onde este método entra
                 </h2>
                 <p className="text-lg text-text-muted leading-relaxed">
-                  O autodiagnóstico acima responde onde a sua tecnologia está.
-                  A triagem responde outra coisa: qual trabalho faz sentido a
-                  partir daí.
+                  O CRL faz sentido quando a decisão envolve levar uma tecnologia
+                  própria ao mercado. Ele não é a metodologia dos produtos de
+                  fomento nem das avaliações de tecnologias de terceiros.
                 </p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-5">
-                <div className="p-7 bg-surface/40 border border-stroke/50 rounded-3xl">
-                  <div className="w-11 h-11 grid place-items-center bg-stroke/40 rounded-xl mb-5">
-                    <Gauge className="w-5 h-5 text-text-muted" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-display font-semibold text-lg text-text mb-2">
-                    Autodiagnóstico
-                  </h3>
-                  <p className="text-text-muted leading-relaxed mb-4">
-                    Onde a tecnologia está, em TRL e CRL, e qual o descompasso
-                    entre as duas maturidades.
-                  </p>
-                  <a
-                    href="#autodiagnostico"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-text-muted hover:text-cta transition-colors"
-                  >
-                    Voltar ao autodiagnóstico
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-
                 <a
-                  href="/triagem"
+                  href="/tecnologia#diagnostico"
                   className="group p-7 bg-surface/60 border border-cta/30 rounded-3xl card-glow transition-all hover:border-cta/50"
-                  data-testid="link-triagem-metodo"
                 >
                   <div className="w-11 h-11 grid place-items-center bg-cta/10 rounded-xl mb-5">
-                    <ListChecks className="w-5 h-5 text-cta" strokeWidth={1.5} />
+                    <Microscope className="w-5 h-5 text-cta" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-display font-semibold text-lg text-text mb-2">
-                    Triagem de 2 minutos
+                    Diagnóstico de Prontidão Comercial
                   </h3>
                   <p className="text-text-muted leading-relaxed mb-4">
-                    Cinco perguntas e eu digo qual caminho se encaixa: curso,
-                    escrita, revisão, diagnóstico ou parecer. Se nenhum servir,
-                    eu falo isso também.
+                    O CRL estrutura a avaliação dos cinco eixos, explicita o
+                    descompasso em relação ao TRL e ajuda a definir os próximos
+                    experimentos comerciais.
                   </p>
                   <span className="inline-flex items-center gap-2 text-sm font-semibold text-cta">
-                    Fazer a triagem
+                    Ver o Diagnóstico
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </a>
+
+                <a
+                  href="/tecnologia#rota"
+                  className="group p-7 bg-surface/40 border border-stroke/50 rounded-3xl transition-all hover:border-cta/40"
+                >
+                  <div className="w-11 h-11 grid place-items-center bg-stroke/40 rounded-xl mb-5">
+                    <Route className="w-5 h-5 text-text-muted" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-display font-semibold text-lg text-text mb-2">
+                    Assessoria de Rota Comercial
+                  </h3>
+                  <p className="text-text-muted leading-relaxed mb-4">
+                    O diagnóstico de prontidão se transforma em uma sequência de
+                    aplicações, pilotos, parceiros e decisões para avançar a
+                    tecnologia até o primeiro cliente.
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-text-muted group-hover:text-cta transition-colors">
+                    Ver a Assessoria
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </a>

@@ -164,7 +164,7 @@ const paths = [
     items: [
       "Diagnóstico de Prontidão Comercial",
       "Assessoria de Rota Comercial",
-      "Matriz TRL × CRL",
+      "Plano dos próximos experimentos comerciais",
     ],
     cta: "Ver diagnóstico de 30 dias",
     featured: false,

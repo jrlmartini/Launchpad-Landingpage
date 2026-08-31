@@ -133,12 +133,6 @@ export function Footer({ productName = "Fomento para Deeptechs" }: { productName
               Tecnologia e mercado
             </a>
             <a
-              href="/metodo"
-              className="text-sm text-text-muted hover:text-cta transition-colors"
-            >
-              Método TRL × CRL
-            </a>
-            <a
               href="/privacidade"
               className="text-sm text-text-muted hover:text-cta transition-colors"
             >

@@ -370,9 +370,6 @@ export function Navbar({
                 )}
               </div>
 
-              <a href="/metodo" className={primaryLinkClass(false)}>
-                Método
-              </a>
               {/* Só aparece quando existe artigo publicado. */}
               {temArtigos && (
                 <a
