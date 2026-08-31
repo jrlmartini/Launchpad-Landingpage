@@ -348,7 +348,7 @@ export default function LaunchScore() {
               <div className="mx-auto mb-12 max-w-3xl text-center">
                 <p className="font-mono text-xs uppercase tracking-[0.16em] text-cta">Preço de lançamento</p>
                 <h2 className="mt-3 font-display text-3xl font-bold text-text lg:text-4xl">Adquira o LaunchScore por R$ 329</h2>
-                <p className="mt-5 text-lg leading-relaxed text-text-muted">Relatório completo em HTML e PDF. O pagamento é processado no ambiente seguro do Asaas.</p>
+                <p className="mt-5 text-lg leading-relaxed text-text-muted">Relatório completo em PDF. O pagamento é processado no ambiente seguro do Asaas.</p>
               </div>
 
               <div className="mx-auto mb-6 grid max-w-4xl gap-4 rounded-3xl border border-cta/25 bg-cta/[0.05] p-6 sm:grid-cols-[1fr_auto] sm:items-center lg:p-7">
