@@ -185,7 +185,7 @@ export default function LaunchScore() {
                   <p className="max-w-56 text-sm leading-relaxed text-text-muted">Relatório completo com sessão individual de 60 minutos</p>
                   <p className="shrink-0 sm:text-right">
                     <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-text-muted">Modalidade individual</span>
-                    <strong className="mt-1 block font-display text-2xl text-text">R$ 1.297</strong>
+                    <strong className="mt-1 block font-display text-2xl text-text">Em breve</strong>
                   </p>
                 </div>
               </div>
@@ -357,7 +357,7 @@ export default function LaunchScore() {
                   <p className="mt-2 leading-relaxed text-text-muted">Discussão dos achados, prioridades e sequência de correção.</p>
                 </div>
                 <div className="sm:text-right">
-                  <p className="font-display text-3xl font-bold text-text">R$ 1.297</p>
+                  <p className="font-display text-3xl font-bold text-text">Em breve</p>
                 </div>
               </div>
 
