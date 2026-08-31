@@ -5,7 +5,7 @@
  * Asaas em 30/08/2026. Não reutilizar estes links em outras ofertas.
  */
 export const LAUNCHSCORE = {
-  VERSAO: "launchscore-methodology-v0.1-site-v05",
+  VERSAO: "launchscore-report-v0.9-site-v07",
   nome: "LaunchScore",
   preco: 329,
   moeda: "BRL",
@@ -21,12 +21,5 @@ export const LAUNCHSCORE = {
       detalhe: "Até 10x de R$ 32,90 sem juros",
       parcelas: 10,
     },
-  },
-  mentoria: {
-    nome: "LaunchScore + 1h de mentoria",
-    preco: 697,
-    status: "em breve",
-    descricao:
-      "Relatório LaunchScore e uma sessão individual de uma hora para discutir os ajustes prioritários da proposta.",
   },
 } as const;

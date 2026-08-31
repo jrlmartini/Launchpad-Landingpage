@@ -4,8 +4,8 @@ import {
   CheckCircle2,
   ClipboardCheck,
   CreditCard,
+  Download,
   FileSearch,
-  MessageSquareText,
   QrCode,
   Scale,
 } from "lucide-react";
@@ -17,6 +17,7 @@ import { trackEvent } from "@/lib/analytics";
 const sections = [
   { href: "#analise", label: "O que analisa" },
   { href: "#entrega", label: "O relatório" },
+  { href: "#modelo", label: "Ver modelo" },
   { href: "#comprar", label: "Comprar" },
   { href: "#faq", label: "Perguntas" },
 ];
@@ -51,8 +52,9 @@ const pilares = [
 
 const relatorio = [
   "LaunchScore de 0 a 100 e radar dos três pilares",
+  "Síntese analítica e justificativa de cada subcritério",
   "Avaliação pelos critérios e pesos oficiais do edital",
-  "Leituras dos avaliadores técnico equilibrado e rigoroso",
+  "Notas e comentários dos avaliadores equilibrado e rigoroso",
   "Matriz de coerência entre risco, método, equipe, orçamento e prazo",
   "Pesquisa externa dirigida e contradições relevantes",
   "Perguntas prováveis dos avaliadores",
@@ -74,12 +76,12 @@ const faqs = [
   {
     pergunta: "Como funciona o pagamento?",
     resposta:
-      "O LaunchScore custa R$ 329,00. Você pode pagar por Pix à vista ou no cartão de crédito em até 10 parcelas de R$ 32,90 sem juros.",
+      "O preço de lançamento do LaunchScore Report é R$ 329,00. Você pode pagar por Pix à vista ou no cartão de crédito em até 10 parcelas de R$ 32,90 sem juros.",
   },
   {
-    pergunta: "E a modalidade com mentoria?",
+    pergunta: "E a sessão individual?",
     resposta:
-      "O LaunchScore com uma sessão individual de uma hora será oferecido por R$ 697,00. A abertura dessa modalidade será anunciada nesta página.",
+      "A modalidade com relatório e uma sessão individual de 60 minutos tem valor de R$ 1.297,00. Ela não está disponível nos checkouts desta página durante a validação inicial do produto.",
   },
 ];
 
@@ -142,7 +144,7 @@ export default function LaunchScore() {
                   Descubra onde sua proposta perde força antes da submissão.
                 </h1>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-text/85 lg:text-xl">
-                  Envie uma versão da proposta e receba um relatório completo que combina diagnóstico estrutural, leitura pelos critérios do edital e um plano priorizado de correções.
+                  Envie a proposta e o edital. O relatório aponta lacunas, contradições e perguntas prováveis, aplica os critérios oficiais e organiza o que deve ser corrigido primeiro.
                 </p>
                 <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <a
@@ -153,8 +155,8 @@ export default function LaunchScore() {
                     Adquirir por R$ 329
                     <ArrowRight className="h-5 w-5" aria-hidden />
                   </a>
-                  <a href="#analise" className="inline-flex items-center gap-2 px-3 py-3 font-semibold text-text-muted transition-colors hover:text-cta">
-                    Entender a análise
+                  <a href="#modelo" className="inline-flex items-center gap-2 px-3 py-3 font-semibold text-text-muted transition-colors hover:text-cta">
+                    Ver relatório-modelo
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </a>
                 </div>
@@ -166,7 +168,7 @@ export default function LaunchScore() {
                     <ClipboardCheck className="h-7 w-7 text-cta" strokeWidth={1.5} aria-hidden />
                   </div>
                   <div className="text-right">
-                    <p className="font-mono text-xs uppercase tracking-[0.14em] text-text-muted">Investimento</p>
+                    <p className="font-mono text-xs uppercase tracking-[0.14em] text-cta">Preço de lançamento</p>
                     <p className="mt-1 font-display text-4xl font-bold text-text">R$ 329</p>
                   </div>
                 </div>
@@ -176,7 +178,7 @@ export default function LaunchScore() {
                     "LaunchScore de 0 a 100 em três pilares",
                     "Critérios e pesos oficiais do edital",
                     "Dois perfis independentes de avaliador",
-                    "Plano priorizado para a próxima revisão",
+                    "Justificativa das notas e plano de correções",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-text-muted">
                       <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cta" strokeWidth={1.5} />
@@ -184,6 +186,13 @@ export default function LaunchScore() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-7 flex flex-col items-start gap-4 border-t border-stroke/50 pt-5 sm:flex-row sm:items-end sm:justify-between sm:gap-5">
+                  <p className="max-w-56 text-sm leading-relaxed text-text-muted">Relatório completo com sessão individual de 60 minutos</p>
+                  <p className="shrink-0 sm:text-right">
+                    <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-text-muted">Modalidade individual</span>
+                    <strong className="mt-1 block font-display text-2xl text-text">R$ 1.297</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -249,7 +258,74 @@ export default function LaunchScore() {
             </div>
           </section>
 
-          <section className="border-y border-stroke/30 bg-surface/30 py-20 lg:py-28">
+          <section id="modelo" className="scroll-mt-32 border-y border-stroke/30 bg-surface/30 py-20 lg:py-28">
+            <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-cta">Relatório-modelo</p>
+                <h2 className="mt-3 font-display text-3xl font-bold text-text lg:text-4xl">Veja a entrega antes de comprar</h2>
+                <p className="mt-5 text-lg leading-relaxed text-text-muted">
+                  A versão demonstrativa usa um projeto e dados sintéticos. Ela mostra a estrutura completa do relatório, o nível de detalhamento das avaliações e como as correções são priorizadas.
+                </p>
+                <ul className="mt-7 space-y-3 text-text-muted">
+                  {[
+                    "Radar e notas dos três pilares",
+                    "Análise dos subcritérios e justificativa das notas",
+                    "Comentários dos avaliadores pelos critérios do edital",
+                    "Perguntas prováveis e plano priorizado de melhorias",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cta" strokeWidth={1.5} aria-hidden />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/launchscore/launchscore-report-modelo.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent("launchscore_sample_report_open", {
+                      page: "launchscore",
+                      format: "pdf",
+                      location: "sample_section",
+                    })
+                  }
+                  className="mt-8 inline-flex items-center justify-center gap-3 rounded-2xl border border-cta/45 px-6 py-3.5 font-semibold text-text transition-colors hover:border-cta hover:text-cta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta"
+                  data-testid="cta-launchscore-sample-report"
+                >
+                  Abrir relatório-modelo em PDF
+                  <Download className="h-5 w-5" aria-hidden />
+                </a>
+              </div>
+
+              <a
+                href="/launchscore/launchscore-report-modelo.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir relatório-modelo do LaunchScore em PDF"
+                onClick={() =>
+                  trackEvent("launchscore_sample_report_open", {
+                    page: "launchscore",
+                    format: "pdf",
+                    location: "sample_preview",
+                  })
+                }
+                className="group block overflow-hidden rounded-3xl border border-cta/25 bg-background/50 p-3 shadow-2xl shadow-black/20 transition-transform hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta"
+              >
+                <img
+                  src="/launchscore/launchscore-report-modelo-preview.png"
+                  alt="Página demonstrativa do LaunchScore Report com radar e notas dos três pilares"
+                  className="w-full rounded-2xl border border-stroke/40"
+                  loading="lazy"
+                />
+                <p className="px-3 pb-2 pt-4 text-sm leading-relaxed text-text-muted">
+                  Demonstração visual com dados sintéticos. O conteúdo de cada entrega depende da proposta e dos critérios do edital avaliado.
+                </p>
+              </a>
+            </div>
+          </section>
+
+          <section className="py-20 lg:py-28">
             <div className="mx-auto max-w-6xl px-6 lg:px-8">
               <div className="mb-12 max-w-3xl">
                 <p className="font-mono text-xs uppercase tracking-[0.16em] text-cta">Fluxo da entrega</p>
@@ -274,33 +350,27 @@ export default function LaunchScore() {
           <section id="comprar" className="scroll-mt-32 py-20 lg:py-28">
             <div className="mx-auto max-w-6xl px-6 lg:px-8">
               <div className="mx-auto mb-12 max-w-3xl text-center">
-                <p className="font-mono text-xs uppercase tracking-[0.16em] text-cta">Escolha a forma de pagamento</p>
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-cta">Preço de lançamento</p>
                 <h2 className="mt-3 font-display text-3xl font-bold text-text lg:text-4xl">Adquira o LaunchScore por R$ 329</h2>
-                <p className="mt-5 text-lg leading-relaxed text-text-muted">O pagamento é processado no ambiente seguro do Asaas.</p>
+                <p className="mt-5 text-lg leading-relaxed text-text-muted">Relatório completo em HTML e PDF. O pagamento é processado no ambiente seguro do Asaas.</p>
+              </div>
+
+              <div className="mx-auto mb-6 grid max-w-4xl gap-4 rounded-3xl border border-cta/25 bg-cta/[0.05] p-6 sm:grid-cols-[1fr_auto] sm:items-center lg:p-7">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.14em] text-cta">Referência da modalidade individual</p>
+                  <h3 className="mt-2 font-display text-xl font-semibold text-text">LaunchScore Report + sessão de 60 minutos</h3>
+                  <p className="mt-2 leading-relaxed text-text-muted">Discussão dos achados, prioridades e sequência de correção. Não inclui reescrita nem uma nova avaliação.</p>
+                </div>
+                <div className="sm:text-right">
+                  <p className="font-display text-3xl font-bold text-text">R$ 1.297</p>
+                  <p className="mt-1 text-sm text-text-muted">Fora do checkout atual</p>
+                </div>
               </div>
 
               <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
                 <PaymentCard method="pix" />
                 <PaymentCard method="cartao" />
               </div>
-
-              <article className="mx-auto mt-6 max-w-4xl rounded-3xl border border-dashed border-cta/40 bg-cta/[0.05] p-7 lg:p-8">
-                <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-cta/10">
-                      <MessageSquareText className="h-6 w-6 text-cta" strokeWidth={1.5} aria-hidden />
-                    </div>
-                    <div>
-                      <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="font-display text-xl font-semibold text-text">{LAUNCHSCORE.mentoria.nome}</h3>
-                        <span className="rounded-full border border-cta/30 bg-cta/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-cta">Em breve</span>
-                      </div>
-                      <p className="mt-3 max-w-2xl leading-relaxed text-text-muted">{LAUNCHSCORE.mentoria.descricao}</p>
-                    </div>
-                  </div>
-                  <p className="shrink-0 font-display text-3xl font-bold text-text">R$ 697</p>
-                </div>
-              </article>
 
               <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-relaxed text-text-muted">
                 Os checkouts abrem em uma nova aba. Esta página permanece disponível para você consultar as informações da entrega.

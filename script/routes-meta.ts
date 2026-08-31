@@ -281,13 +281,13 @@ const PAGINAS_FIXAS: RouteMeta[] = [
     path: "/projetos/launchscore",
     title: "LaunchScore: Revisão de Projetos de Fomento | Launchpad",
     description:
-      "Relatório completo por R$ 329 com score em três pilares, leitura pelos critérios oficiais, dois perfis de avaliador e plano priorizado de correções.",
+      "Preço de lançamento de R$ 329 para diagnóstico com três pilares, critérios oficiais, justificativas das notas, dois avaliadores e correções priorizadas.",
     priority: 0.9,
     crumb: "LaunchScore",
     crumbParent: { name: "Projetos de fomento", path: "/projetos" },
     ogTitle: "LaunchScore: revisão completa da sua proposta",
     ogDescription:
-      "Avalie critérios, coerência, fragilidades e prioridades antes da submissão. Pix à vista ou cartão em até 10x sem juros.",
+      "Veja onde a proposta perde competitividade e o que corrigir primeiro. Preço de lançamento: R$ 329.",
     schema: (siteUrl) => [
       {
         ...service(
